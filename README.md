@@ -24,6 +24,7 @@ This is a list with all the topics I want to tackle, the ones already ticked are
 
 - [ ] Boardgame
 - [ ] Bullet hell
+- [ ] Clicker
 - [ ] Couch coop
 - [ ] Growing plant
 - [ ] Logistics game
