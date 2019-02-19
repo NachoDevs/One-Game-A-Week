@@ -605,7 +605,7 @@ PrefabInstance:
     - target: {fileID: 3596462458500673572, guid: ffb551eb60cb0b34293c27409968b03b,
         type: 3}
       propertyPath: growingRate
-      value: 1
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffb551eb60cb0b34293c27409968b03b, type: 3}

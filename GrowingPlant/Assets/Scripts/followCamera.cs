@@ -17,6 +17,6 @@ public class followCamera : MonoBehaviour
     {
         transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x,
                                                                             tipOfPlant.position.y / 2,
-                                                                            -tipOfPlant.position.y / 2), Time.deltaTime);
+                                                                            transform.position.z/*-tipOfPlant.position.y / 5*/), Time.deltaTime);
     }
 }
