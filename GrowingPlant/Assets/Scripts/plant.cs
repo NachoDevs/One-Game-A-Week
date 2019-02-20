@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class plant : MonoBehaviour
+public class Plant : MonoBehaviour
 {
     public float growingRate = .001f;
     public float growthState = .0f;
+
+    public DateTime lastTimeConected;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +21,7 @@ public class plant : MonoBehaviour
     {
     }
 
-    private void SimulateSeconds(int t_seconds)
+    public void SimulateSeconds(int t_seconds)
     {
         for(int i = 0; i < t_seconds; ++i)
         {
@@ -36,9 +38,11 @@ public class plant : MonoBehaviour
         transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(transform.localScale.x + (growingRate * .1f),
                                                                                 transform.localScale.y + (growingRate * .1f),
                                                                                 transform.localScale.z), Time.deltaTime);
+
+        lastTimeConected = DateTime.Now;
     }
 
-    private double TimeDifference(DateTime t_past, DateTime t_now)
+    public double TimeDifference(DateTime t_past, DateTime t_now)
     {
         return t_now.Subtract(t_past).TotalSeconds;
     }
