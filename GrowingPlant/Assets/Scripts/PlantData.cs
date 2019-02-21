@@ -2,11 +2,17 @@
 public class PlantData
 {
     public float growthState;
-    public int[] dateTime;  
+    public float waterLevel;
+    public float foodLevel;
+    public int[] dateTime;
+
 
     public PlantData(Plant t_plant)
     {
         growthState = t_plant.growthState;
+
+        waterLevel = t_plant.waterLevel;
+        foodLevel = t_plant.foodLevel;
 
         dateTime = new int[6];
         dateTime[0] = t_plant.lastTimeConected.Year;

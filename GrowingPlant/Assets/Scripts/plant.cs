@@ -8,7 +8,13 @@ public class Plant : MonoBehaviour
     public float growingRate = .001f;
     public float growthState = .0f;
 
+    public float waterLevel = 100f;
+    public float foodLevel = 100f;
+
     public DateTime lastTimeConected;
+
+    private float waterLossingRate = .01f;
+    private float foodLossingRate = .001f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +25,16 @@ public class Plant : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    }
+
+    public void WaterPlant(float t_amount)
+    {
+        waterLevel+= t_amount;
+    }
+
+    public void FeedPlant(float t_amount)
+    {
+        foodLevel += t_amount;
     }
 
     public void SimulateSeconds(int t_seconds)
@@ -38,6 +54,9 @@ public class Plant : MonoBehaviour
         transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(transform.localScale.x + (growingRate * .1f),
                                                                                 transform.localScale.y + (growingRate * .1f),
                                                                                 transform.localScale.z), Time.deltaTime);
+
+        waterLevel -= waterLossingRate;
+        foodLevel -= foodLossingRate;
 
         lastTimeConected = DateTime.Now;
     }

@@ -1,10 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public Plant plant;
+
+    public Slider waterSlider;
+    public Slider foodSlider;
 
     void Start()
     {
@@ -27,6 +29,9 @@ public class GameManager : MonoBehaviour
 
                 break;
         }
+
+        waterSlider.value = plant.waterLevel;
+        foodSlider.value = plant.foodLevel;
     }
 
     private void LoadPlant()
