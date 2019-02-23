@@ -1,14 +1,17 @@
 ﻿[System.Serializable]
 public class PlantData
 {
+    public int money;
     public float growthState;
     public float waterLevel;
     public float foodLevel;
     public int[] dateTime;
 
 
-    public PlantData(Plant t_plant)
+    public PlantData(Plant t_plant, GameManager t_gm)
     {
+        money = t_gm.money;
+
         growthState = t_plant.growthState;
 
         waterLevel = t_plant.waterLevel;

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -7,6 +8,10 @@ public class GameManager : MonoBehaviour
 
     public Slider waterSlider;
     public Slider foodSlider;
+
+    public TextMeshProUGUI moneyText;
+
+    public int money;
 
     void Start()
     {
@@ -17,13 +22,11 @@ public class GameManager : MonoBehaviour
     {
         switch(Input.inputString)
         {
-            case "s":
-                SaveSystem.SaveGame(plant);
+            case "o":
+                SaveSystem.SaveGame(plant, this);
                 break;
             case "l":
-
                 LoadPlant();
-
                 break;
             default:
 
@@ -32,6 +35,8 @@ public class GameManager : MonoBehaviour
 
         waterSlider.value = plant.waterLevel;
         foodSlider.value = plant.foodLevel;
+
+        moneyText.text = money.ToString();
     }
 
     private void LoadPlant()
@@ -39,7 +44,11 @@ public class GameManager : MonoBehaviour
         PlantData data = SaveSystem.LoadGame();
 
         plant.growthState = data.growthState;
+        plant.waterLevel = data.waterLevel;
+        plant.foodLevel = data.foodLevel;
         System.DateTime dt = new System.DateTime(data.dateTime[0], data.dateTime[1], data.dateTime[2], data.dateTime[3], data.dateTime[4], data.dateTime[5]);
+
+        money = data.money;
 
         double secondsElapsed = System.DateTime.Now.Subtract(dt).TotalSeconds;
 

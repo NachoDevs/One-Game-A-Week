@@ -5,6 +5,12 @@ using System;
 
 public class Plant : MonoBehaviour
 {
+    public GameObject fruit;
+
+    public GameObject tip;
+
+    public Transform fruitsParent;
+
     public float growingRate = .001f;
     public float growthState = .0f;
 
@@ -13,18 +19,13 @@ public class Plant : MonoBehaviour
 
     public DateTime lastTimeConected;
 
-    private float waterLossingRate = .01f;
-    private float foodLossingRate = .001f;
+    private float waterLossingRate = 1;
+    private float foodLossingRate = 1;
 
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("Grow", .0f, 1.0f);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 
     public void WaterPlant(float t_amount)
@@ -59,6 +60,16 @@ public class Plant : MonoBehaviour
         foodLevel -= foodLossingRate;
 
         lastTimeConected = DateTime.Now;
+
+        growthState += growingRate;
+
+        if((int)growthState % 100 == 0 && growthState > 1)
+        {
+            Vector3 v = transform.position;
+            v.y = UnityEngine.Random.Range(5, tip.transform.position.y - 5);
+            GameObject go = Instantiate(fruit, v, new Quaternion(), fruitsParent);
+            go.transform.Rotate(-90 + UnityEngine.Random.Range(-20.0f, 20.0f), 90, 0);
+        }
     }
 
     public double TimeDifference(DateTime t_past, DateTime t_now)

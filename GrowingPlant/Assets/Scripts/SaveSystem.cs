@@ -6,12 +6,12 @@ public static class SaveSystem
 {
     private static string savePath = Application.persistentDataPath + "/saveFile.grw";
 
-    public static void SaveGame(Plant t_plant)
+    public static void SaveGame(Plant t_plant, GameManager t_gm)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         FileStream stream = new FileStream(savePath, FileMode.Create);
 
-        PlantData data = new PlantData(t_plant);
+        PlantData data = new PlantData(t_plant, t_gm);
 
         formatter.Serialize(stream, data);
         stream.Close();
