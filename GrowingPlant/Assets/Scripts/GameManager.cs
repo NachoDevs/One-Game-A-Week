@@ -1,10 +1,15 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public Plant plant;
+
+    public GameObject UICanvas;
+    public GameObject MenuCanvas;
+    public GameObject SaveCheckCanvas;
 
     public Slider waterSlider;
     public Slider foodSlider;
@@ -20,16 +25,21 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(SaveCheckCanvas.activeSelf)
+            {
+                ToggleSaveCheck();
+            }
+            else
+            {
+                TogglMenu();
+            }
+        }
+
         switch(Input.inputString)
         {
-            case "o":
-                SaveSystem.SaveGame(plant, this);
-                break;
-            case "l":
-                LoadPlant();
-                break;
             default:
-
                 break;
         }
 
@@ -39,9 +49,19 @@ public class GameManager : MonoBehaviour
         moneyText.text = money.ToString();
     }
 
-    private void LoadPlant()
+    public void Save()
+    {
+        SaveSystem.SaveGame(plant, this);
+    }
+
+    public void LoadPlant()
     {
         PlantData data = SaveSystem.LoadGame();
+
+        if(data == null)
+        {
+            return;
+        }
 
         plant.growthState = data.growthState;
         plant.waterLevel = data.waterLevel;
@@ -55,6 +75,33 @@ public class GameManager : MonoBehaviour
         plant.lastTimeConected = dt;
 
         plant.SimulateSeconds((int)secondsElapsed);
+    }
+
+    public void TogglMenu()
+    {
+        UICanvas.SetActive(!UICanvas.activeSelf);
+        MenuCanvas.SetActive(!MenuCanvas.activeSelf);
+
+        MenuCanvas.GetComponent<AudioSource>().Play();
+    }
+
+    public void ToggleSaveCheck()
+    {
+        SaveCheckCanvas.SetActive(!SaveCheckCanvas.activeSelf);
+        MenuCanvas.SetActive(!MenuCanvas.activeSelf);
+
+        MenuCanvas.GetComponent<AudioSource>().Play();
+    }
+
+    public void SaveAndQuit()
+    {
+        Save();
+        Quit();
+    }
+
+    public void Quit()
+    {
+        SceneManager.LoadScene(0);
     }
 
 }

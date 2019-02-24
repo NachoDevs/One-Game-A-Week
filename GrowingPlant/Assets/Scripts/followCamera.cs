@@ -40,13 +40,13 @@ public class FollowCamera : MonoBehaviour
                 {
                     p = transform.position;
                     transform.position = new Vector3(p.x, p.y, p.z += Input.mouseScrollDelta.y);
+                    if (p.z >= 5)
+                    {
+                        transform.position = new Vector3(p.x, p.y, 5);
+                    }
                 }
 
                     break;
         }
-
-        //transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x,
-        //                                                                    tipOfPlant.position.y / 2,
-        //                                                                    transform.position.z -tipOfPlant.position.y / 3), Time.deltaTime);
     }
 }
