@@ -5,7 +5,6 @@ using System.IO;
 
 public class MainMenuManager : MonoBehaviour
 {
-   
     public void NewGame()
     {
         // We delete the save file (only one save file allowed)

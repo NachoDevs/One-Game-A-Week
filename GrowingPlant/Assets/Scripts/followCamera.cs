@@ -8,18 +8,13 @@ public class FollowCamera : MonoBehaviour
 
     public float cameraSpeed = .5f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
+        // Input handeling for the camera
         switch (Input.inputString)
         {
-            case "w":
+            case "w":   // Going up
                 Vector3 p = transform.position;
                 transform.position = new Vector3(p.x, p.y += cameraSpeed, p.z);
                 if (p.y >= tipOfPlant.transform.position.y)
@@ -27,7 +22,7 @@ public class FollowCamera : MonoBehaviour
                     transform.position = new Vector3(p.x, tipOfPlant.transform.position.y, p.z);
                 }
                 break;
-            case "s":
+            case "s":   // Going down
                 p = transform.position;
                 transform.position = new Vector3(p.x, p.y -= cameraSpeed, p.z);
                 if(p.y <= 6.5f)
@@ -36,7 +31,7 @@ public class FollowCamera : MonoBehaviour
                 }
                 break;
             default:
-                if (Input.mouseScrollDelta.y != 0)
+                if (Input.mouseScrollDelta.y != 0) // Zoom In/Out
                 {
                     p = transform.position;
                     transform.position = new Vector3(p.x, p.y, p.z += Input.mouseScrollDelta.y);
@@ -45,8 +40,7 @@ public class FollowCamera : MonoBehaviour
                         transform.position = new Vector3(p.x, p.y, 5);
                     }
                 }
-
-                    break;
+                break;
         }
     }
 }

@@ -20,32 +20,30 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        // We load the game everytime we open the game scene
         LoadPlant();
     }
 
     void Update()
     {
+        // Cheking for the "menu" key
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if(SaveCheckCanvas.activeSelf)
+            if(SaveCheckCanvas.activeSelf)  // We are pressing "Quit" in the menu
             {
                 ToggleSaveCheck();
             }
-            else
+            else    // We are opening the main menu
             {
                 TogglMenu();
             }
         }
 
-        switch(Input.inputString)
-        {
-            default:
-                break;
-        }
-
+        // Update resources UI
         waterSlider.value = plant.waterLevel;
         foodSlider.value = plant.foodLevel;
 
+        // Update money UI
         moneyText.text = money.ToString();
     }
 
@@ -58,6 +56,7 @@ public class GameManager : MonoBehaviour
     {
         PlantData data = SaveSystem.LoadGame();
 
+        // "There is no save file"
         if(data == null)
         {
             return;

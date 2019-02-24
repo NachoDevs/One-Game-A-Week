@@ -8,6 +8,7 @@ public static class SaveSystem
 
     public static void SaveGame(Plant t_plant, GameManager t_gm)
     {
+        // We create a save file and add serializable data (so it is binary)
         BinaryFormatter formatter = new BinaryFormatter();
         FileStream stream = new FileStream(savePath, FileMode.Create);
 
@@ -21,7 +22,7 @@ public static class SaveSystem
 
     public static PlantData LoadGame()
     {
-        if(File.Exists(savePath))
+        if(File.Exists(savePath))   // Check if the file exists
         {
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(savePath, FileMode.Open);
