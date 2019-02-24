@@ -26,7 +26,7 @@ This is a list with all the topics I want to tackle, the ones already ticked are
 - [ ] Bullet hell
 - [ ] Clicker
 - [ ] Couch coop
-- [ x ] Growing plant;  18->24.02.19; https://trello.com/b/ElPueIoH/growing-plant
+- [x] Growing plant;  18->24.02.19; https://trello.com/b/ElPueIoH/growing-plant
 - [ ] Logistics game
 - [ ] Platformer
 - [ ] Tower defense
