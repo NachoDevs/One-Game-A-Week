@@ -27,7 +27,8 @@ This is a list with all the topics I want to tackle, the ones already ticked are
 - [ ] Clicker
 - [ ] Couch coop
 - [x] Growing plant;  18->24.02.19; https://trello.com/b/ElPueIoH/growing-plant
-- [ ] Logistics game
+- [ ] Fighting game
+- [x] Logistics game;	25.02.19->03.03.19; https://trello.com/b/Vha8bVYV/logistics-game; Not finished in time :( 
 - [ ] Platformer
 - [ ] Tower defense
 - [ ] Town building game
