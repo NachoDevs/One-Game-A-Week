@@ -7,7 +7,11 @@ public class Boat : Vehicle
     // Start is called before the first frame update
     void Start()
     {
-        
+        maxFuel = currentFuel = 1250;
+        name = "boat_" + boatNumber;
+        ++boatNumber;
+
+        maxCapacity = 1000;
     }
 
     // Update is called once per frame

@@ -13,16 +13,23 @@ public abstract class Vehicle : MonoBehaviour
 
     public float fuelConsumptionModifier;
 
+    public Color assignedColor;
+
     public City currentCity;
+    public City destination;
 
     [Header("Lists")]
     public List<Vector3> currentPath;
-    public List<ItemPrice> cargo;
+    public List<GoodCard> delivering = new List<GoodCard>();
+
+    protected static int truckNumber;
+    protected static int airplaneNumber;
+    protected static int boatNumber;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        assignedColor = new Color(Random.Range(0, 255), Random.Range(0, 255), Random.Range(0, 255));       
     }
 
     // Update is called once per frame
@@ -30,23 +37,40 @@ public abstract class Vehicle : MonoBehaviour
     {
         if(moving)
         {
-            currentFuel -= fuelConsumptionModifier * Time.deltaTime;
+            currentFuel -= fuelConsumptionModifier * Time.deltaTime;    // Moving
+            transform.position = Vector3.MoveTowards(transform.position, destination.transform.position, Time.deltaTime * 10);
+            if(transform.position.Equals(destination.transform.position))
+            {
+                moving = false;
+            }
         }
+        else
+        {
+            currentFuel += fuelConsumptionModifier * Time.deltaTime;    // Refueling
+        }
+    }
+
+    public void HideVehicle(bool t_hide)
+    {
+        GetComponentInChildren<MeshRenderer>().enabled = !t_hide;
+        GetComponentInChildren<Collider>().enabled = !t_hide;
+
     }
 
     public void MoveTo(City t_destination)
     {
-        currentPath = FindPath(t_destination);
+        //currentPath = FindPath(t_destination);
 
         moving = true;
 
-        foreach(Vector3 position in currentPath)
+        transform.LookAt(t_destination.transform.position);
+        destination = t_destination;
+
+        /*foreach(Vector3 position in currentPath)
         {
             transform.LookAt(position);
             transform.Translate(position);
-        }
-
-        moving = false;
+        }*/
     }
 
     abstract public List<Vector3> FindPath(City t_destination);

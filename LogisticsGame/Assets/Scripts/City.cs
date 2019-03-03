@@ -14,23 +14,6 @@ public enum CityType
     warehouse
 }
 
-public struct ItemPrice
-{
-    public string  item;
-    public int     price;
-
-    public ItemPrice(string t_item, int t_price)
-    {
-        item = t_item;
-        price = t_price;
-    }
-
-    public override string ToString()
-    {
-        return item + " (" + price + ")";
-    }
-}
-
 public class City : MonoBehaviour
 {
     public bool owned;
@@ -42,15 +25,15 @@ public class City : MonoBehaviour
 
     public CityType cityType = CityType.city;
 
-    public string produces;
-
     public Material notOwnedMaterial;
     public Material hoverNotOwnedMaterial;
     public Material ownedMaterial;
     public Material hoverOwnedMaterial;
 
-    public List<ItemPrice> items;
-    public List<ItemPrice> needs;
+    public List<Truck> trucks;
+    public List<Vehicle> specialVehicles;
+
+    public List<GoodCard> items;
 
     private GameManager m_gm;
 
@@ -58,9 +41,7 @@ public class City : MonoBehaviour
 
     [Header("UI")]
     public Canvas popUpInfo;
-    public TextMeshProUGUI itemsText;
-    public TextMeshProUGUI needsText;
-    public TextMeshProUGUI producesText;
+    public RectTransform goodsScrollView;
     public Button buyButton;
 
     [Header("Meshes")]
@@ -80,37 +61,25 @@ public class City : MonoBehaviour
         m_gm.airportCostText.text = upgradeCost.ToString();
         m_gm.harborCostText.text = upgradeCost.ToString();
 
+        trucks = new List<Truck>();
+        specialVehicles = new List<Vehicle>();
 
-        produces = "Wood";
+        items = new List<GoodCard>();
 
-        items = new List<ItemPrice>();
-        needs = new List<ItemPrice>();
-        int randomInt = Random.Range(1, 3);
-        for(int i = 0; i < randomInt; ++i)
-        {
-            needs.Add(new ItemPrice("Wood", 2));
-        }
-
-        randomInt = Random.Range(1, 3);
+        int randomInt = Random.Range(1, 5);
         for (int i = 0; i < randomInt; ++i)
         {
-            needs.Add(new ItemPrice("Planks", 4));
+            int randomInt2 = Random.Range(0, m_gm.allCities.Count);
+            Good g = new Good("Wood", 2, 20, this, m_gm.allCities[randomInt2]);
+
+            GameObject good = Instantiate(m_gm.goodInfoPrefab, goodsScrollView.transform);
+
+            good.GetComponent<GoodCard>().goodData.item = g.item;
+            good.GetComponent<GoodCard>().goodData.price = g.price;
+            good.GetComponent<GoodCard>().goodData.weight = g.weight;
+            good.GetComponent<GoodCard>().goodData.owner = g.owner;
+            good.GetComponent<GoodCard>().goodData.destination = g.destination;
         }
-
-
-        itemsText.text = "";
-        needsText.text = "";
-
-        foreach(ItemPrice ip in items)
-        {
-            itemsText.text += ip.ToString() + "\n";
-        }
-
-        foreach (ItemPrice ip in needs)
-        {
-            needsText.text += ip.ToString() + "\n";
-        }
-        producesText.text = produces;
     }
 
     // Update is called once per frame
@@ -159,6 +128,10 @@ public class City : MonoBehaviour
                     if(hit.transform.parent.GetComponent<City>() != null)
                     {
                         m_gm.selectedCity = hit.transform.parent.gameObject;
+                        if(hit.transform.parent.GetComponent<City>().owned)
+                        {
+                            m_gm.warehousePanel.ShowPanel();
+                        }
                     }
                 }
             }
@@ -167,6 +140,10 @@ public class City : MonoBehaviour
                 if (Input.GetMouseButtonUp(0))
                 {
                     clicked = false;
+                    //if(hit.transform.parent.GetComponent<WarehousePanel>() == null)
+                    //{
+                    //    m_gm.warehousePanel.HidePanel();
+                    //}
                 }
             }
         }
@@ -190,6 +167,8 @@ public class City : MonoBehaviour
         if(!owned)
         {
             BuyCity();
+
+            m_gm.firstWarehousePanel.SetActive(false);
         }
         else
         {

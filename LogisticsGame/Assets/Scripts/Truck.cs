@@ -5,20 +5,24 @@ using UnityEngine;
 public class Truck : Vehicle
 {
     [Header("Truck Specific")]
-    public GameObject wareHouse;
+    public City wareHouse;
 
-    public List<ItemPrice> backCargo;
+    public List<GoodCard> collecting = new List<GoodCard>();
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        maxFuel = currentFuel = 250;
+        name = "truck_" + truckNumber;
+        ++truckNumber;
+
+        maxCapacity = 100;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     // Simple, not definitive pathfinding
