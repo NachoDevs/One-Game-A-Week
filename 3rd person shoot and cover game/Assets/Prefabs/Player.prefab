@@ -402,4 +402,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 7
   gravityScale: 5
-  movementSmoothTime: 0.1
+  movementSmoothTime: 0
