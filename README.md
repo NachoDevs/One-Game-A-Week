@@ -35,7 +35,7 @@ This is a list with all the topics I want to tackle, the ones already ticked are
 - [ ] Turn based game
 - [ ] Social game(relations with npcs)
 - [ ] Stealth game
-- [ ] 3rd person shoot and cover game
+- [ ] 3rd person shoot and cover game; 04->10.03.19; https://trello.com/b/cl4YwOPN/3rd-person-shoot-and-cover-game
 
 ## Links
 Trello: [trello.com/onegameaweek](https://trello.com/onegameaweek/)
