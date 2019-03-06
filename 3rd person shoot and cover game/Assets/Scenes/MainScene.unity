@@ -207,7 +207,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 179894103}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: b9b109d686a16f446acd588596597274, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -508,7 +508,7 @@ PrefabInstance:
     - target: {fileID: 7840835838126445928, guid: 5c323832dc0b93d44b465e3f8f8fd1b7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.01
       objectReference: {fileID: 0}
     - target: {fileID: 7840835838126445928, guid: 5c323832dc0b93d44b465e3f8f8fd1b7,
         type: 3}
@@ -557,8 +557,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7840835838126445934, guid: 5c323832dc0b93d44b465e3f8f8fd1b7,
         type: 3}
-      propertyPath: desiredRotationSpeed
-      value: 0.1
+      propertyPath: walkingSpeed
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7840835838126445934, guid: 5c323832dc0b93d44b465e3f8f8fd1b7,
+        type: 3}
+      propertyPath: runningSpeed
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7831478416534696992, guid: 5c323832dc0b93d44b465e3f8f8fd1b7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1652921292, guid: 5c323832dc0b93d44b465e3f8f8fd1b7, type: 3}
+      propertyPath: m_Mass
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c323832dc0b93d44b465e3f8f8fd1b7, type: 3}
