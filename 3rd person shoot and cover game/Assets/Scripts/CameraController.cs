@@ -14,8 +14,10 @@ public class CameraController : MonoBehaviour
 
     public Transform target;
 
-    private float m_yaw;
-    private float m_pitch;
+    [HideInInspector]
+    public float m_yaw;
+    [HideInInspector]
+    public float m_pitch;
 
     private Vector3 m_currentRotation;
     private Vector3 m_rotationSmoothVelocity;
@@ -26,6 +28,8 @@ public class CameraController : MonoBehaviour
     {
         //m_playerCamera.GetComponent<Camera>();
         LockCursor(lockCursor);
+
+        m_pitch = 7;
     }
 
     void Update()
