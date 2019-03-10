@@ -1,14 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
-using UnityEngine.UI;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [Header("UI")]
     public GameObject pauseMenu;
 
+    public PlayerController player;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +22,7 @@ public class GameManager : MonoBehaviour
             pauseMenu.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            player.canInput = false;
         }
     }
 
@@ -32,10 +31,11 @@ public class GameManager : MonoBehaviour
         pauseMenu.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        player.canInput = true;
     }
 
     public void QuitGame()
     {
-
+        SceneManager.LoadScene(0);
     }
 }

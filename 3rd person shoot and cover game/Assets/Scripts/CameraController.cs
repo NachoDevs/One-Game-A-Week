@@ -22,10 +22,14 @@ public class CameraController : MonoBehaviour
     private Vector3 m_currentRotation;
     private Vector3 m_rotationSmoothVelocity;
 
+    private PlayerController m_player;
+
     //private Camera m_playerCamera;
 
     void Start()
     {
+        m_player = transform.parent.GetComponent<PlayerController>();
+
         //m_playerCamera.GetComponent<Camera>();
         LockCursor(lockCursor);
 
@@ -34,24 +38,30 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyUp(KeyCode.LeftAlt))
+        if (m_player.canInput)
         {
-            lockCursor = !lockCursor;
-            LockCursor(lockCursor);
+            if (Input.GetKeyUp(KeyCode.LeftAlt))
+            {
+                lockCursor = !lockCursor;
+                LockCursor(lockCursor);
+            }
         }
     }
 
     void LateUpdate()
     {
-        m_yaw += Input.GetAxis("Mouse X");
-        m_pitch -= Input.GetAxis("Mouse Y");
-        m_pitch = Mathf.Clamp(m_pitch, pitchMinMax.x, pitchMinMax.y);
+        if (m_player.canInput)
+        {
+            m_yaw += Input.GetAxis("Mouse X");
+            m_pitch -= Input.GetAxis("Mouse Y");
+            m_pitch = Mathf.Clamp(m_pitch, pitchMinMax.x, pitchMinMax.y);
 
-        m_currentRotation = Vector3.SmoothDamp(m_currentRotation, new Vector3(m_pitch, m_yaw), ref m_rotationSmoothVelocity, cameraSmoothTime);
+            m_currentRotation = Vector3.SmoothDamp(m_currentRotation, new Vector3(m_pitch, m_yaw), ref m_rotationSmoothVelocity, cameraSmoothTime);
 
-        transform.eulerAngles = m_currentRotation;
+            transform.eulerAngles = m_currentRotation;
 
-        transform.position = target.position - transform.forward * dstFromTarget;
+            transform.position = target.position - transform.forward * dstFromTarget;
+        }
     }
 
     void LockCursor(bool t_lockCursor)

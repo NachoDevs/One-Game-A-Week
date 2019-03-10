@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
+    public bool m_isReloading = false;
+
     public int currAmmo = 6;
     public int maxAmmo = 6;
 
@@ -21,7 +23,8 @@ public class Gun : MonoBehaviour
 
     public TextMeshProUGUI ammoIndicator;
 
-    public bool m_isReloading = false;
+    public AudioSource shotAudio;
+    public AudioSource reloadAudio;
 
     private float m_timer;
 
@@ -31,41 +34,51 @@ public class Gun : MonoBehaviour
 
     private Animator m_shootAnimationController;
 
+    private PlayerController m_player;
+
+    private float[] m_shootSoundTime= {.5f, 3.1f, 5.5f, 7.6f, 9.9f, 12.3f, 14.8f, 17.1f, 20.0f, 22.9f};
+
     void Start()
     {
+        m_player = transform.parent.GetComponent<PlayerController>();
         playerCam = transform.parent.GetComponentInChildren<Camera>();
         m_playerCamTarget = playerCam.GetComponent<CameraController>();
         m_shootAnimationController = GetComponentInChildren<Animator>();
+        shotAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
         m_timer += Time.deltaTime;
-        if (Input.GetButtonUp("Fire1"))
+
+        if(m_player.canInput)
         {
-            if(!m_isReloading)
+            if (Input.GetButtonUp("Fire1"))
             {
-                if (m_timer >= fireRate)
+                if(!m_isReloading)
                 {
-                    if (currAmmo > 0)
+                    if (m_timer >= fireRate)
                     {
-                        m_timer = .0f;
-                        Shoot();
-                    }
-                    else
-                    {
-                        StartCoroutine("Reload");
+                        if (currAmmo > 0)
+                        {
+                            m_timer = .0f;
+                            Shoot();
+                        }
+                        else
+                        {
+                            StartCoroutine("Reload");
+                        }
                     }
                 }
             }
-        }
 
-        if (Input.GetKeyUp(KeyCode.R))
-        {
-            if (!m_isReloading)
+            if (Input.GetKeyUp(KeyCode.R))
             {
-                StartCoroutine("Reload");
+                if (!m_isReloading)
+                {
+                    StartCoroutine("Reload");
+                }
             }
         }
     }
@@ -81,6 +94,7 @@ public class Gun : MonoBehaviour
 
         muzzleFlash.Play();
         m_shootAnimationController.SetTrigger("Shooting");
+        StartCoroutine("PlayRandomShot");
 
         // Knockback
         GetComponentInParent<Rigidbody>().AddForce(-GetComponentInParent<Transform>().right * impactForce);
@@ -101,7 +115,13 @@ public class Gun : MonoBehaviour
 
             if(m_hit.rigidbody != null)
             {
-                m_hit.rigidbody.AddForce(-m_hit.normal * impactForce);
+                m_hit.rigidbody.AddForce(-m_hit.normal * impactForce * 50);
+            }
+
+            PlayerController targetPC = m_hit.transform.GetComponent<PlayerController>();
+            if(targetPC != null)
+            {
+                targetPC.canInput = false;
             }
 
             Destroy(Instantiate(impactEffect, m_hit.point, Quaternion.LookRotation(m_hit.normal)), 5f);
@@ -116,11 +136,22 @@ public class Gun : MonoBehaviour
 
     IEnumerator Reload()
     {
+        reloadAudio.Play();
         m_isReloading = true;
         m_shootAnimationController.SetBool("Reloading", true);
         yield return new WaitForSeconds(4);
         IncrementAmmo(maxAmmo);
         m_isReloading = false;
         m_shootAnimationController.SetBool("Reloading", false);
+        reloadAudio.Stop();
+    }
+
+    IEnumerator PlayRandomShot()
+    {
+        int index = Random.Range(0, 9);
+        shotAudio.Play();
+        shotAudio.time = m_shootSoundTime[index];
+        yield return new WaitForSeconds(.9f);
+        shotAudio.Stop();
     }
 }
