@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class Gun : MonoBehaviour
@@ -18,19 +19,23 @@ public class Gun : MonoBehaviour
 
     public GameObject impactEffect;
 
+    public TextMeshProUGUI ammoIndicator;
+
+    public bool m_isReloading = false;
+
     private float m_timer;
 
     private RaycastHit m_hit;
 
     private CameraController m_playerCamTarget;
 
-    private Animation m_shootAnimation;
+    private Animator m_shootAnimationController;
 
     void Start()
     {
         playerCam = transform.parent.GetComponentInChildren<Camera>();
         m_playerCamTarget = playerCam.GetComponent<CameraController>();
-        m_shootAnimation = GetComponentInChildren<Animation>();
+        m_shootAnimationController = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -39,17 +44,28 @@ public class Gun : MonoBehaviour
         m_timer += Time.deltaTime;
         if (Input.GetButtonUp("Fire1"))
         {
-            if(m_timer >= fireRate)
+            if(!m_isReloading)
             {
-                if(currAmmo > 0)
+                if (m_timer >= fireRate)
                 {
-                    m_timer = .0f;
-                    Shoot();
+                    if (currAmmo > 0)
+                    {
+                        m_timer = .0f;
+                        Shoot();
+                    }
+                    else
+                    {
+                        StartCoroutine("Reload");
+                    }
                 }
-                else
-                {
-                    StartCoroutine("Reload");
-                }
+            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.R))
+        {
+            if (!m_isReloading)
+            {
+                StartCoroutine("Reload");
             }
         }
     }
@@ -61,10 +77,10 @@ public class Gun : MonoBehaviour
 
         Vector3 shootDirection = m_hit.point - barrel.position;
 
-        --currAmmo;
+        IncrementAmmo(currAmmo-1);
 
         muzzleFlash.Play();
-        m_shootAnimation.Play();
+        m_shootAnimationController.SetTrigger("Shooting");
 
         // Knockback
         GetComponentInParent<Rigidbody>().AddForce(-GetComponentInParent<Transform>().right * impactForce);
@@ -92,9 +108,19 @@ public class Gun : MonoBehaviour
         }
     }
 
+    public void IncrementAmmo(int t_ammo)
+    {
+        currAmmo = t_ammo;
+        ammoIndicator.text = t_ammo + " / " + maxAmmo;
+    }
+
     IEnumerator Reload()
     {
+        m_isReloading = true;
+        m_shootAnimationController.SetBool("Reloading", true);
         yield return new WaitForSeconds(4);
-        currAmmo = maxAmmo;
+        IncrementAmmo(maxAmmo);
+        m_isReloading = false;
+        m_shootAnimationController.SetBool("Reloading", false);
     }
 }

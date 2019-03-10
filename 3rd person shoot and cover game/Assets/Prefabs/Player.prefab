@@ -1,21 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!111 &1896011533
-Animation:
+--- !u!95 &496775687
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1424871875462961752}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 9294b9447d168d64ebb13fdf05549a84, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 9294b9447d168d64ebb13fdf05549a84, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7a79ce9a52d6b064aa548964c1371259, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4498914647536614341
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,11 +536,6 @@ PrefabInstance:
         type: 3}
       propertyPath: impactForce
       value: 1500
-      objectReference: {fileID: 0}
-    - target: {fileID: 803866077046641044, guid: 3c877632ae8114941a7ecda666003466,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c877632ae8114941a7ecda666003466, type: 3}

@@ -76,6 +76,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d6d30328d1245243a279aa2078db0ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currAmmo: 6
+  maxAmmo: 6
   damage: 10
   range: 100
   fireRate: 0.01
@@ -85,6 +87,8 @@ MonoBehaviour:
   muzzleFlash: {fileID: 1313148770451177015}
   impactEffect: {fileID: 8262776975486214985, guid: 578958623b953a447bd1fafde6139298,
     type: 3}
+  ammoIndicator: {fileID: 0}
+  m_isReloading: 0
 --- !u!1 &3737735550930224791
 GameObject:
   m_ObjectHideFlags: 0
@@ -4922,6 +4926,7 @@ GameObject:
   - component: {fileID: 8069775776554476499}
   - component: {fileID: 9075652872752705764}
   - component: {fileID: 8251047017508136051}
+  - component: {fileID: 8604264918291465512}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -4996,3 +5001,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!95 &8604264918291465512
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9157533063002685222}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 918e9e7c6954bee41804ac56e96d3df1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
