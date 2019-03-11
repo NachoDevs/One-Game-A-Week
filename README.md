@@ -30,7 +30,7 @@ This is a list with all the topics I want to tackle, the ones already ticked are
 - [ ] Fighting game
 - [x] Logistics game;	25.02.19->03.03.19; https://trello.com/b/Vha8bVYV/logistics-game; Unity 2018.3.0.f2; Not finished in time :( 
 - [ ] Platformer
-- [ ] Tower defense
+- [ ] Tower defense; 11->17.03.19; https://trello.com/b/Lq1sfXny/tower-defense; Unity 2018.3.0.f2
 - [ ] Town building game
 - [ ] Turn based game
 - [ ] Social game(relations with npcs)
