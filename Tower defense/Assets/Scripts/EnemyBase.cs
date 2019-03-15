@@ -64,9 +64,18 @@ public class EnemyBase : MonoBehaviour
             }
         }
 
-        healthBar.value = health;
+        if(health >= m_maxHealth)
+        {
+            healthBar.transform.gameObject.SetActive(false);
+        }
+        else
+        {
+            healthBar.transform.gameObject.SetActive(true);
 
-        healthbarFill.color = Color.Lerp(Color.red, Color.green, (health / m_maxHealth));
+            healthBar.value = health;
+
+            healthbarFill.color = Color.Lerp(Color.red, Color.green, (health / m_maxHealth));
+        }
 
         if(health <= 0)
         {
@@ -83,5 +92,6 @@ public class EnemyBase : MonoBehaviour
     {
         Destroy(transform.gameObject);
         --m_gm.aliveEnemies;
+        m_gm.enemies.Remove(transform.gameObject);
     }
 }

@@ -14,11 +14,16 @@ public class GameManager : MonoBehaviour
     public float timeBetweenRounds = 5.0f;
 
     public Transform enemyParent;
+    public Transform turretsParent;
 
+    public GameObject turretPrefab;
     public GameObject enemyPrefab;
     public GameObject pathEndPrefab;
 
-    public Tilemap map;
+    [HideInInspector]
+    public List<GameObject> enemies;
+
+    public Grid map;
 
     public TileBase tile;
 
@@ -41,6 +46,8 @@ public class GameManager : MonoBehaviour
         Instantiate(pathEndPrefab, EnemyBase.path[EnemyBase.path.Length - 1], new Quaternion());
 
         roundNumber.text = "Round: " + 1;
+
+        enemies = new List<GameObject>();
     }
 
     // Update is called once per frame
@@ -55,27 +62,33 @@ public class GameManager : MonoBehaviour
 
         if(Input.GetMouseButtonUp(0))
         {
-            //Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            //TODO: check if there is turret
 
-            Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            RaycastHit hit = new RaycastHit();
+            //Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
 
+            //RaycastHit hit = new RaycastHit();
+            Vector3Int localPlace = map.WorldToCell(mousePos);
 
-            //TileBase tb = map.GetTile(new Vector3Int((int)Input.mousePosition.x, (int)Input.mousePosition.y, (int)Input.mousePosition.z));
+            Vector3 tilePos = map.CellToWorld(localPlace);
 
-            if (Physics.Raycast(r, out hit))
-            {
-                if(hit.transform.gameObject.GetComponent<EnemyBase>() != null)
-                {
-                    hit.transform.gameObject.GetComponent<EnemyBase>().TakeDamage(25);
-                }
-                //tb = hit.transform.gameObject.GetComponent<TileBase>();
-            }
+            tilePos.x += .5f;
+            tilePos.y += .325f;
+            //tilePos.z += .5f;
+
+            GameObject turret = Instantiate(turretPrefab, tilePos, new Quaternion(), turretsParent);
+            turret.GetComponentInChildren<MeshFilter>().transform.rotation.eulerAngles.Set(-180, 0, 90);
+
+            //if (Physics.Raycast(r, out hit))
+            //{
+
+            //    //tb = hit.transform.gameObject.GetComponent<TileBase>();
+            //}
 
             //TileBase tb = map.GetTile(new Vector3Int((int)mousePos.x, (int)mousePos.y, (int)mousePos.z));
 
-           // map.SwapTile(tb, tile); //.SetTile(new Vector3Int((int)Input.mousePosition.x, (int)Input.mousePosition.y, (int)Input.mousePosition.z), tile);
+            //map.SwapTile(tb, tile); //.SetTile(new Vector3Int((int)Input.mousePosition.x, (int)Input.mousePosition.y, (int)Input.mousePosition.z), tile);
         }
     }
 
@@ -127,7 +140,7 @@ public class GameManager : MonoBehaviour
     {
         for(int i = 0; i < t_enemyNum; ++i)
         {
-            Instantiate(enemyPrefab, EnemyBase.path[0], new Quaternion(), enemyParent);
+            enemies.Add(Instantiate(enemyPrefab, EnemyBase.path[0], new Quaternion(), enemyParent));
             ++spawnedEnemies;
             yield return new WaitForSeconds(1);
         }
