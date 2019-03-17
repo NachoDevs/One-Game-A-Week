@@ -18,6 +18,7 @@ public class PathEnd : MonoBehaviour
         if (go.GetComponentInParent<EnemyBase>() != null)
         {
             --m_gm.aliveEnemies;
+            m_gm.health -= 10;
             Destroy(go);
         }
     }

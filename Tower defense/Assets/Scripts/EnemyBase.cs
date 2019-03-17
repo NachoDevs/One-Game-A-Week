@@ -50,8 +50,12 @@ public class EnemyBase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (m_gm.isMenuUp)
+        {
+            return;
+        }
 
-        if(current < path.Length)
+        if (current < path.Length)
         {
             if(transform.position != path[current])
             {
@@ -93,5 +97,6 @@ public class EnemyBase : MonoBehaviour
         Destroy(transform.gameObject);
         --m_gm.aliveEnemies;
         m_gm.enemies.Remove(transform.gameObject);
+        m_gm.gold += 5;
     }
 }

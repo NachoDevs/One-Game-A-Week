@@ -2,34 +2,51 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public bool isMenuUp = false;
+
     public int tileSize = 32;
     public int maxEnemies = 5;
+    public int wood = 1500;
+    public int gold = 50;
+    public int gathererCost = 49;
+    public int turretCost = 100;
     [HideInInspector]
     public int aliveEnemies, roundNum = 1;
 
     public float timeBetweenRounds = 5.0f;
+    public float health = 100;
 
-    public Transform enemyParent;
+    public Transform charactersParent;
     public Transform turretsParent;
+
+    public Transform gatherPoint;
+    public Transform recolectPoint;
+    public Transform recolectorSpawnPoint;
 
     public GameObject turretPrefab;
     public GameObject enemyPrefab;
+    public GameObject gathererPrefab;
     public GameObject pathEndPrefab;
+
+    public Sprite interactableTileSprite;
 
     [HideInInspector]
     public List<GameObject> enemies;
 
     public Grid map;
 
-    public TileBase tile;
+    public GameObject interactTileMap;
 
     private bool m_inPause = true;
     private bool m_spawningEnemies = false;
 
+    private int spawnedGatherers = 1;
     private int spawnedEnemies;
 
     private float currTime = .0f;
@@ -37,6 +54,12 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
     public TextMeshProUGUI timer;
     public TextMeshProUGUI roundNumber;
+    public TextMeshProUGUI woodIndicator;
+    public TextMeshProUGUI goldIndicator;
+    public Button buyGatherer;
+    public Toggle placingTurretToggle;
+    public Slider healthSlider;
+    public GameObject pauseMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -53,54 +76,94 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(Input.GetKeyUp(KeyCode.Escape))
+        {
+            isMenuUp = true;
+            pauseMenu.SetActive(true);
+        }
+
+        if (isMenuUp)
+        {
+            return;
+        }
+
         currTime += Time.deltaTime;
 
-        if(timer.gameObject.activeSelf)
+        woodIndicator.text = wood.ToString();
+        goldIndicator.text = gold.ToString();
+
+        healthSlider.value = health;
+
+        if (timer.gameObject.activeSelf)
         {
             timer.text = (int)(timeBetweenRounds - currTime + 1) + "s";
         }
 
         if(Input.GetMouseButtonUp(0))
         {
-            //TODO: check if there is turret
+            if(!placingTurretToggle.isOn)
+            {
+                return;
+            }
+
+            if (wood < turretCost)
+            {
+                return;
+            }
 
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            //Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            //RaycastHit hit = new RaycastHit();
             Vector3Int localPlace = map.WorldToCell(mousePos);
 
             Vector3 tilePos = map.CellToWorld(localPlace);
 
             tilePos.x += .5f;
             tilePos.y += .325f;
-            //tilePos.z += .5f;
+
+            //print(map.GetComponentInChildren<Tilemap>().GetTile(localPlace).GetTileData();
+
+            Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            RaycastHit hit = new RaycastHit();
+
+            if (Physics.Raycast(r, out hit))
+            {
+                Turret t = hit.transform.gameObject.GetComponent<Turret>();
+                if (t != null)
+                {
+                    return;
+                }
+            }
+
+            //BoundsInt bounds = interactTileMap.GetComponent<Tilemap>().cellBounds;
+            //TileBase[] allTiles = interactTileMap.GetComponent<Tilemap>().GetTilesBlock(bounds);
+
+            //print(allTiles.Length);
+            //foreach(var a in allTiles)
+            //{
+            //    print(a.name);
+            //}
+
+            //if (!interactTileMap.HasTile(localPlace))
+            //{
+            //    Debug.Log("Nope");
+            //    return;
+            //}
 
             GameObject turret = Instantiate(turretPrefab, tilePos, new Quaternion(), turretsParent);
             turret.GetComponentInChildren<MeshFilter>().transform.rotation.eulerAngles.Set(-180, 0, 90);
-
-            //if (Physics.Raycast(r, out hit))
-            //{
-
-            //    //tb = hit.transform.gameObject.GetComponent<TileBase>();
-            //}
-
-            //TileBase tb = map.GetTile(new Vector3Int((int)mousePos.x, (int)mousePos.y, (int)mousePos.z));
-
-            //map.SwapTile(tb, tile); //.SetTile(new Vector3Int((int)Input.mousePosition.x, (int)Input.mousePosition.y, (int)Input.mousePosition.z), tile);
         }
     }
 
     private void ManageSpawn()
     {
-        // TODO:
-        //if(m_menuIsUp)
-        //{
-        //    return;
-        //}
+        if (isMenuUp)
+        {
+            return;
+        }
 
-        if(!m_spawningEnemies)
+        if (!m_spawningEnemies)
         {
             spawnedEnemies = 0;
             if (m_inPause)
@@ -140,10 +203,31 @@ public class GameManager : MonoBehaviour
     {
         for(int i = 0; i < t_enemyNum; ++i)
         {
-            enemies.Add(Instantiate(enemyPrefab, EnemyBase.path[0], new Quaternion(), enemyParent));
+            enemies.Add(Instantiate(enemyPrefab, EnemyBase.path[0], new Quaternion(), charactersParent));
             ++spawnedEnemies;
             yield return new WaitForSeconds(1);
         }
+    }
+
+    public void SpawnGatherer()
+    {
+        if(gold >= gathererCost)
+        {
+            Instantiate(gathererPrefab, charactersParent);
+            gold -= gathererCost;
+            ++spawnedGatherers;
+        }
+    }
+
+    public void Resume()
+    {
+        isMenuUp = false;
+        pauseMenu.SetActive(false);
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
     }
 
 }

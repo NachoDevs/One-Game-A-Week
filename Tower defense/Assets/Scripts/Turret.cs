@@ -24,11 +24,21 @@ public class Turret : MonoBehaviour
 
         InvokeRepeating("FindTarget", .0f, 1);
 
+        m_gm.wood -= m_gm.turretCost;
+
+        m_gm.turretCost += 5;
+
         currAmmo = maxAmmo;
     }
 
     void Update()
     {
+
+        if (m_gm.isMenuUp)
+        {
+            return;
+        }
+
         m_timer += Time.deltaTime;
 
         if (currTarget == null)
