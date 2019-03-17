@@ -30,11 +30,12 @@ This is a list with all the topics I want to tackle, the ones already ticked are
 - [ ] Fighting game
 - [x] Logistics game;	25.02.19->03.03.19; https://trello.com/b/Vha8bVYV/logistics-game; Unity 2018.3.0.f2; Not finished in time :( 
 - [ ] Platformer
+- [ ] Real Time Strategy
+- [ ] Social game(relations with npcs)
+- [ ] Stealth game
 - [x] Tower defense; 11->17.03.19; https://trello.com/b/Lq1sfXny/tower-defense; Unity 2018.3.0.f2
 - [ ] Town building game
 - [ ] Turn based game
-- [ ] Social game(relations with npcs)
-- [ ] Stealth game
 - [x] 3rd person shoot and cover game; 04->10.03.19; https://trello.com/b/cl4YwOPN/3rd-person-shoot-and-cover-game; Unity 2018.3.0.f2
 
 ## Links
