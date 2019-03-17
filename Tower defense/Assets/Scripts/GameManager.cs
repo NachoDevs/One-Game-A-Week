@@ -56,10 +56,13 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI roundNumber;
     public TextMeshProUGUI woodIndicator;
     public TextMeshProUGUI goldIndicator;
+    public TextMeshProUGUI turretCostText;
+    public TextMeshProUGUI gathererCostText;
     public Button buyGatherer;
     public Toggle placingTurretToggle;
     public Slider healthSlider;
     public GameObject pauseMenu;
+    public GameObject gameOverMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -77,6 +80,13 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
+        if(health <= 0)
+        {
+            isMenuUp = true;
+            gameOverMenu.SetActive(true);
+            return;
+        }
+
         if(Input.GetKeyUp(KeyCode.Escape))
         {
             isMenuUp = true;
@@ -92,6 +102,9 @@ public class GameManager : MonoBehaviour
 
         woodIndicator.text = wood.ToString();
         goldIndicator.text = gold.ToString();
+
+        turretCostText.text = turretCost.ToString();
+        gathererCostText.text = gathererCost.ToString();
 
         healthSlider.value = health;
 
