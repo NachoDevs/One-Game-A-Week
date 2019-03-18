@@ -29,7 +29,7 @@ This is a list with all the topics I want to tackle, the ones already ticked are
 - [x] Growing plant;  18->24.02.19; https://trello.com/b/ElPueIoH/growing-plant; Unity 2018.3.0.f2
 - [ ] Fighting game
 - [x] Logistics game;	25.02.19->03.03.19; https://trello.com/b/Vha8bVYV/logistics-game; Unity 2018.3.0.f2; Not finished in time :( 
-- [ ] Platformer
+- [ ] Platformer; 18->24.03.19; https://trello.com/b/IH3tcNoT/platformer; Unity 2018.3.0.f2
 - [ ] Real Time Strategy
 - [ ] Social game(relations with npcs)
 - [ ] Stealth game
