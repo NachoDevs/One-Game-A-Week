@@ -12,10 +12,10 @@ public class Player : MonoBehaviour
         {
             if(Input.GetKeyUp(KeyCode.E))
             {
-                print("out");
                 m_ingredient.StartCoroutine("EnableIngredientColliders", true);
 
-                m_ingredient.GetComponent<Rigidbody2D>().AddForce(new Vector2(200.5f, 200.5f));
+                m_ingredient.GetComponent<Rigidbody2D>().AddForce(new Vector2(200.5f, 200.5f) 
+                    * ((GetComponent<CharacterController2D>().isFacingRight) ? transform.right : -transform.right));
 
                 m_ingredient = null;
             }

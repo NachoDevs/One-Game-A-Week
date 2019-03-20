@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Ingredient : MonoBehaviour
 {
-    public Sprite[] ingredients;
-
     bool m_haveTarget = false;
 
     Vector3 m_target;
@@ -13,13 +11,20 @@ public class Ingredient : MonoBehaviour
     BoxCollider2D m_collider;
     CircleCollider2D m_detectionArea;
 
+    static GameManager m_gm;
+
     void Awake()
     {
+        if(m_gm == null)
+        {
+            m_gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        }
+
         m_collider = GetComponentInChildren<BoxCollider2D>();
         m_detectionArea = GetComponentInChildren<CircleCollider2D>();
 
-        int rnd = Random.Range(0, ingredients.Length);
-        GetComponentInChildren<SpriteRenderer>().sprite = ingredients[rnd];
+        int rnd = Random.Range(0, m_gm.ingredients.Length);
+        GetComponentInChildren<SpriteRenderer>().sprite = m_gm.ingredients[rnd];
     }
 
     void Update()
@@ -37,9 +42,6 @@ public class Ingredient : MonoBehaviour
             m_haveTarget = true;
             m_target = collision.transform.position;
         }
-        //if(m_detectionArea.IsTouching(collision))
-        //{
-        //}
     }
 
     void OnCollisionStay2D(Collision2D collision)
