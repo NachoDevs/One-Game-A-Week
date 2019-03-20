@@ -7,6 +7,9 @@ TextureImporter:
     21300004: sp_sprites_2
     21300006: sp_sprites_3
     21300008: sp_sprites_4
+    21300010: sp_sprites_5
+    21300012: sp_sprites_6
+    21300014: sp_sprites_7
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -125,7 +128,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51eb72756c212f84a9fd443529308ee3
+      spriteID: 13c2bd99f3f9adf4cae73afaca1156ca
       vertices: []
       indices: 
       edges: []
@@ -145,7 +148,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13e92d61663cbac45b01013767aa79af
+      spriteID: b0df42c4fdcb42a48bebada834ad99ca
       vertices: []
       indices: 
       edges: []
@@ -165,7 +168,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6169d469145e8b45b30004503b1053d
+      spriteID: 7a291dd3913df224f8eb2df9118b3e46
       vertices: []
       indices: 
       edges: []
@@ -185,7 +188,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 590cbb31f5040b940962f6065163d661
+      spriteID: 23ad1d524d73f6e43a68dd41f8089796
       vertices: []
       indices: 
       edges: []
@@ -205,7 +208,67 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89990b6e61fcb7d4dba7b26fd5691a12
+      spriteID: 28157c00a4443844081aaecbe32f9e49
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_sprites_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b5a713b8dab1f04b99e375afa850274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_sprites_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28edac5acd9f5554f88d5f0de79785fa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_sprites_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcf44da8b14f601408f173a9ed9eef03
       vertices: []
       indices: 
       edges: []
