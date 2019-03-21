@@ -1,37 +1,64 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    List<Sprite> roundRecipe;
-
     public Sprite[] ingredients;
 
-    private Dictionary<string, Sprite> ingredientsNameSprite;
+    public Dictionary<Sprite, int> roundRecipe;
+
+    public GameObject ingredientFrame;
+
+    public Transform recipePanel;
+
+    Dictionary<string, Sprite> m_ingredientsNameSprite;
+
+    List<GameObject> recipeUIList;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         InitializeDictionary();
 
+        roundRecipe = new Dictionary<Sprite, int>();
+        recipeUIList = new List<GameObject>();
+
         int rnd = Random.Range(2, 4);
-        for(int i = 0; i < rnd; ++i)
+        int i = 0;
+        while(i < rnd)
         {
-            int rnd2 = Random.Range(0, ingredients.Length);
-            roundRecipe.Add(ingredients[rnd2]);
+            int rndSprite = Random.Range(0, ingredients.Length - 1);
+            int rndQuantity = Random.Range(1, 3);
+            roundRecipe.Add(ingredients[rndSprite], rndQuantity);
+            GameObject f = Instantiate(ingredientFrame, recipePanel);
+            if(!recipeUIList.Contains(f))
+            {
+                f.GetComponentsInChildren<Image>()[1].sprite = ingredients[rndSprite];
+                recipeUIList.Add(f);
+                i++;
+            }
+            else
+            {
+                Destroy(f);
+            }
         }
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        foreach(GameObject go in recipeUIList)
+        {
+            go.GetComponentInChildren<TextMeshProUGUI>().text = ("x" + roundRecipe[go.GetComponentsInChildren<Image>()[1].sprite]);
+        }
     }
 
     void InitializeDictionary()
     {
-        ingredientsNameSprite = new Dictionary<string, Sprite>{
+        m_ingredientsNameSprite = new Dictionary<string, Sprite>{
         {"cherry", ingredients[0] },
         {"orange", ingredients[1] },
         {"spring_onion", ingredients[2] },

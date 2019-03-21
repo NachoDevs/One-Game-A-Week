@@ -21,12 +21,23 @@ public class Pot : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        Ingredient i = collision.GetComponent<Ingredient>();
-        if (collision.GetComponent<Ingredient>())
+        Ingredient i = collision.GetComponentInParent<Ingredient>();
+        if (i != null)
         {
-            recipe.Add(i);
+            Sprite sp = i.GetComponentInChildren<SpriteRenderer>().sprite;
+
+            if (m_gm.roundRecipe.ContainsKey(sp))
+            {
+                if(m_gm.roundRecipe[sp] > 0)
+                {
+                    --m_gm.roundRecipe[sp];
+                    Destroy(i.gameObject);
+                    return;
+                }
+            }
+            collision.GetComponentInParent<Rigidbody2D>().AddForce(new Vector2(500f, 500f));
         }
     }
 }
