@@ -17,8 +17,11 @@ public class Player2DMovement : MonoBehaviour
     CharacterController2D m_controller;
     Rigidbody2D m_rb;
 
+    GameManager m_gm;
+
     void Awake()
     {
+        m_gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         m_controller = GetComponent<CharacterController2D>();
         m_rb = GetComponent<Rigidbody2D>();
     }
@@ -26,6 +29,11 @@ public class Player2DMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (m_gm.m_timePaused)
+        {
+            return;
+        }
+
         m_horizontalMove = Input.GetAxisRaw("Horizontal") * movementSpeed;
 
         if (Input.GetButtonDown("Jump"))
@@ -37,6 +45,11 @@ public class Player2DMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (m_gm.m_timePaused)
+        {
+            return;
+        }
+
         m_controller.Move(m_horizontalMove * Time.fixedDeltaTime, false, m_isJumping);
 
         m_isJumping = false;

@@ -15,12 +15,6 @@ public class Pot : MonoBehaviour
         m_gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void OnTriggerEnter2D(Collider2D collision)
     {
         Ingredient i = collision.GetComponentInParent<Ingredient>();

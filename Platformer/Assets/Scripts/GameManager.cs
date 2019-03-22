@@ -17,12 +17,15 @@ public class GameManager : MonoBehaviour
 
     public Transform recipePanel;
 
-    float currTime;
-    float roundTime;
+    [HideInInspector]
+    public bool m_timePaused = false;
+
+    float m_currTime;
+    float m_roundTime;
 
     Dictionary<string, Sprite> m_ingredientsNameSprite;
 
-    List<GameObject> recipeUIList;
+    List<GameObject> m_recipeUIList;
 
     [Header("UI")]
     public TextMeshProUGUI timerText;
@@ -34,11 +37,11 @@ public class GameManager : MonoBehaviour
         InitializeDictionary();
 
         roundRecipe = new Dictionary<Sprite, int>();
-        recipeUIList = new List<GameObject>();
+        m_recipeUIList = new List<GameObject>();
 
         int rnd = Random.Range(2, 5);
 
-        roundTime = roundTimePerIngredient * rnd;
+        m_roundTime = roundTimePerIngredient * rnd;
 
         int i = 0;
         while(i < rnd)
@@ -47,10 +50,10 @@ public class GameManager : MonoBehaviour
             int rndQuantity = Random.Range(1, 3);
             roundRecipe.Add(ingredients[rndSprite], rndQuantity);
             GameObject f = Instantiate(ingredientFrame, recipePanel);
-            if(!recipeUIList.Contains(f))
+            if(!m_recipeUIList.Contains(f))
             {
                 f.GetComponentsInChildren<Image>()[1].sprite = ingredients[rndSprite];
-                recipeUIList.Add(f);
+                m_recipeUIList.Add(f);
                 i++;
 
                 foreach (KeyValuePair<Sprite, int> recipeIngredient in roundRecipe)
@@ -62,7 +65,7 @@ public class GameManager : MonoBehaviour
                 }
 
                 // Recipe Completed
-
+                m_timePaused = true;
             }
             else
             {
@@ -73,13 +76,19 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        currTime += Time.deltaTime;
 
-        timerImage.fillAmount = 1 - (1 / (roundTime / currTime));
-        timerText.text = ((int)(roundTime - currTime)).ToString();
+        if(m_timePaused)
+        {
+            return;
+        }
+
+        m_currTime += Time.deltaTime;
+
+        timerImage.fillAmount = 1 - (1 / (m_roundTime / m_currTime));
+        timerText.text = ((int)(m_roundTime - m_currTime)).ToString();
 
 
-        if (currTime >= roundTime)
+        if (m_currTime >= m_roundTime)
         {
             SceneManager.LoadScene(0);
         }
@@ -88,7 +97,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        foreach(GameObject go in recipeUIList)
+        if (m_timePaused)
+        {
+            return;
+        }
+
+        foreach (GameObject go in m_recipeUIList)
         {
             go.GetComponentInChildren<TextMeshProUGUI>().text = ("x" + roundRecipe[go.GetComponentsInChildren<Image>()[1].sprite]);
         }

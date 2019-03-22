@@ -6,8 +6,20 @@ public class Player : MonoBehaviour
 {
     Ingredient m_ingredient;
 
+    GameManager m_gm;
+
+    void Awake()
+    {
+        m_gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+    }
+
     void Update()
     {
+        if(m_gm.m_timePaused)
+        {
+            return;
+        }
+
         if (m_ingredient != null)
         {
             if(Input.GetKeyUp(KeyCode.E))

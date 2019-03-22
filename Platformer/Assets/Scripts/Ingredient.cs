@@ -29,7 +29,12 @@ public class Ingredient : MonoBehaviour
 
     void Update()
     {
-        if(m_haveTarget)
+        if (m_gm.m_timePaused)
+        {
+            return;
+        }
+
+        if (m_haveTarget)
         {
             transform.position = Vector3.MoveTowards(transform.position, m_target, Time.deltaTime * 10);
         }
