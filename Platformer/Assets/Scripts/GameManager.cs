@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public float roundTimePerIngredient = 5;
+
     public Sprite[] ingredients;
 
     public Dictionary<Sprite, int> roundRecipe;
@@ -14,9 +17,16 @@ public class GameManager : MonoBehaviour
 
     public Transform recipePanel;
 
+    float currTime;
+    float roundTime;
+
     Dictionary<string, Sprite> m_ingredientsNameSprite;
 
     List<GameObject> recipeUIList;
+
+    [Header("UI")]
+    public TextMeshProUGUI timerText;
+    public Image timerImage;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +36,10 @@ public class GameManager : MonoBehaviour
         roundRecipe = new Dictionary<Sprite, int>();
         recipeUIList = new List<GameObject>();
 
-        int rnd = Random.Range(2, 4);
+        int rnd = Random.Range(2, 5);
+
+        roundTime = roundTimePerIngredient * rnd;
+
         int i = 0;
         while(i < rnd)
         {
@@ -39,11 +52,36 @@ public class GameManager : MonoBehaviour
                 f.GetComponentsInChildren<Image>()[1].sprite = ingredients[rndSprite];
                 recipeUIList.Add(f);
                 i++;
+
+                foreach (KeyValuePair<Sprite, int> recipeIngredient in roundRecipe)
+                {
+                    if (recipeIngredient.Value > 0)
+                    {
+                        return;
+                    }
+                }
+
+                // Recipe Completed
+
             }
             else
             {
                 Destroy(f);
             }
+        }
+    }
+
+    void Update()
+    {
+        currTime += Time.deltaTime;
+
+        timerImage.fillAmount = 1 - (1 / (roundTime / currTime));
+        timerText.text = ((int)(roundTime - currTime)).ToString();
+
+
+        if (currTime >= roundTime)
+        {
+            SceneManager.LoadScene(0);
         }
     }
 
