@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public float roundTimePerIngredient = 5;
     public float nextRoundTime = 5;
 
+    [HideInInspector]
     public Sprite[] ingredients;
 
     public Dictionary<Sprite, int> roundRecipe;
@@ -20,7 +21,12 @@ public class GameManager : MonoBehaviour
     public GameObject ingredientFrame;
     public GameObject nextRoundMenu;
 
+    public GameObject boxPrefab;
+
     public Transform recipePanel;
+    public Transform boxesParent;
+
+    public Transform[] boxSpawns;
 
     float m_currTime;
     float m_roundTime;
@@ -62,8 +68,14 @@ public class GameManager : MonoBehaviour
 
         m_currTime += Time.deltaTime;
 
+        if (m_currTime > m_roundTime)
+        {
+            StartCoroutine(ShowNextRoundMenu());
+        }
+
         timerImage.fillAmount = 1 - (1 / (m_roundTime / m_currTime));
         timerText.text = ((int)(m_roundTime - m_currTime)).ToString();
+
 
         foreach (KeyValuePair<Sprite, int> recipeIngredient in roundRecipe)
         {
@@ -141,7 +153,11 @@ public class GameManager : MonoBehaviour
 
         NewRound();
 
-        yield return new WaitForSeconds(nextRoundTime);
+        yield return new WaitForSeconds((nextRoundTime * 75) / 100);
+
+        InstantiateBoxes();
+
+        yield return new WaitForSeconds((nextRoundTime * 25) / 100);
 
         m_timePaused = false;
         nextRoundMenu.SetActive(false);
@@ -181,6 +197,41 @@ public class GameManager : MonoBehaviour
                 m_recipeUIList.Add(f);
                 i++;
             }
+        }
+    }
+
+    void InstantiateBoxes()
+    {
+        foreach(Transform child in boxesParent)
+        {
+            Destroy(child.gameObject);
+        }
+
+        int index = 0;
+        foreach(Transform t in boxSpawns)
+        {
+            IngredientSpawner iSpawner = Instantiate(boxPrefab, t.position, t.rotation, boxesParent).GetComponent<IngredientSpawner>();
+
+            if(index < m_recipeUIList.Count)
+            {
+                iSpawner.ingredientSprite.sprite = m_recipeUIList[index].GetComponentsInChildren<Image>()[1].sprite;
+                iSpawner.ingredient = m_recipeUIList[index].GetComponentsInChildren<Image>()[1].sprite; ;
+            }
+            else
+            {
+                while(true)
+                {
+                    int rnd = Random.Range(0, ingredients.Length - 1);
+
+                    if (!roundRecipe.ContainsKey(ingredients[rnd]))
+                    {
+                        iSpawner.ingredientSprite.sprite = ingredients[rnd];
+                        iSpawner.ingredient = ingredients[rnd];
+                        break;
+                    }
+                }
+            }
+            ++index;
         }
     }
 }

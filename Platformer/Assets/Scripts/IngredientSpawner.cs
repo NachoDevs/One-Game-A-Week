@@ -6,19 +6,23 @@ public class IngredientSpawner : MonoBehaviour
 {
     public GameObject ingredientPrefab;
 
-    public Transform ingredientesParent;
+    public SpriteRenderer ingredientSprite;
+
+    public Sprite ingredient;
 
     Vector3 m_spawnPos;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.GetComponentInParent<CharacterController2D>() != null)
+        if (collision.GetComponentInParent<CharacterController2D>() != null)
         {
-            m_spawnPos = new Vector3( collision.gameObject.transform.position.x
-                                    , collision.gameObject.transform.position.y + 2.5f
-                                    , collision.gameObject.transform.position.z );
+            m_spawnPos = new Vector3( transform.position.x
+                                    , gameObject.transform.position.y + 2.5f
+                                    , gameObject.transform.position.z );
 
-            Instantiate(ingredientPrefab, m_spawnPos, collision.gameObject.transform.rotation, ingredientesParent);
+            GameObject go = Instantiate(ingredientPrefab, m_spawnPos, transform.rotation, transform);
+            go.GetComponent<Ingredient>().ingredientSprite = ingredient;
+            go.GetComponent<Ingredient>().GetComponentInChildren<SpriteRenderer>().sprite = ingredient;
         }
     }
 

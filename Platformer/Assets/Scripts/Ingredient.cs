@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Ingredient : MonoBehaviour
 {
+    public Sprite ingredientSprite;
+
     bool m_haveTarget = false;
 
     Vector3 m_target;
@@ -23,8 +25,7 @@ public class Ingredient : MonoBehaviour
         m_collider = GetComponentInChildren<BoxCollider2D>();
         m_detectionArea = GetComponentInChildren<CircleCollider2D>();
 
-        int rnd = Random.Range(0, m_gm.ingredients.Length);
-        GetComponentInChildren<SpriteRenderer>().sprite = m_gm.ingredients[rnd];
+        GetComponentInChildren<SpriteRenderer>().sprite = ingredientSprite;
     }
 
     void Update()
