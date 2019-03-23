@@ -5,8 +5,6 @@ using UnityEngine;
 public class Pot : MonoBehaviour
 {
 
-    public List<Ingredient> recipe;
-
     GameManager m_gm;
 
     // Start is called before the first frame update

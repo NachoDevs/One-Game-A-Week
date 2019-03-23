@@ -7,21 +7,24 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [HideInInspector]
+    public bool m_timePaused = false;
+
     public float roundTimePerIngredient = 5;
+    public float nextRoundTime = 5;
 
     public Sprite[] ingredients;
 
     public Dictionary<Sprite, int> roundRecipe;
 
     public GameObject ingredientFrame;
+    public GameObject nextRoundMenu;
 
     public Transform recipePanel;
 
-    [HideInInspector]
-    public bool m_timePaused = false;
-
     float m_currTime;
     float m_roundTime;
+    float m_newRoundTimer;
 
     Dictionary<string, Sprite> m_ingredientsNameSprite;
 
@@ -30,6 +33,7 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
     public TextMeshProUGUI timerText;
     public Image timerImage;
+    public TextMeshProUGUI nextRoundTimerText;
 
     // Start is called before the first frame update
     void Start()
@@ -39,30 +43,19 @@ public class GameManager : MonoBehaviour
         roundRecipe = new Dictionary<Sprite, int>();
         m_recipeUIList = new List<GameObject>();
 
-        int rnd = Random.Range(2, 5);
-
-        m_roundTime = roundTimePerIngredient * rnd;
-
-        int i = 0;
-        while(i < rnd)
-        {
-            int rndSprite = Random.Range(0, ingredients.Length - 1);
-            int rndQuantity = Random.Range(1, 3);
-            roundRecipe.Add(ingredients[rndSprite], rndQuantity);
-            GameObject f = Instantiate(ingredientFrame, recipePanel);
-            if(!m_recipeUIList.Contains(f))
-            {
-                f.GetComponentsInChildren<Image>()[1].sprite = ingredients[rndSprite];
-                m_recipeUIList.Add(f);
-                i++;
-            }
-        }
+        StartCoroutine(ShowNextRoundMenu());
     }
 
     void Update()
     {
+        if(nextRoundMenu.activeSelf)
+        {
+            m_newRoundTimer += Time.deltaTime;
 
-        if(m_timePaused)
+            nextRoundTimerText.text = ((int)(nextRoundTime - m_newRoundTimer)).ToString();
+        }
+
+        if (m_timePaused)
         {
             return;
         }
@@ -71,13 +64,6 @@ public class GameManager : MonoBehaviour
 
         timerImage.fillAmount = 1 - (1 / (m_roundTime / m_currTime));
         timerText.text = ((int)(m_roundTime - m_currTime)).ToString();
-
-
-
-        if (m_currTime >= m_roundTime)
-        {
-            SceneManager.LoadScene(0);
-        }
 
         foreach (KeyValuePair<Sprite, int> recipeIngredient in roundRecipe)
         {
@@ -88,7 +74,7 @@ public class GameManager : MonoBehaviour
         }
 
         // Recipe Completed
-        print("win win");
+        StartCoroutine(ShowNextRoundMenu());
     }
 
     // Update is called once per frame
@@ -145,5 +131,56 @@ public class GameManager : MonoBehaviour
         {"round_melon", ingredients[34] },
         {"celery", ingredients[35] },
         {"onigiri", ingredients[36] }};
+    }
+
+    IEnumerator ShowNextRoundMenu()
+    {
+        m_timePaused = true;
+        m_newRoundTimer = 0;
+        nextRoundMenu.SetActive(true);
+
+        NewRound();
+
+        yield return new WaitForSeconds(nextRoundTime);
+
+        m_timePaused = false;
+        nextRoundMenu.SetActive(false);
+    }
+
+    void NewRound()
+    {
+        int rnd = Random.Range(2, 5);
+
+        m_roundTime = roundTimePerIngredient * rnd;
+        m_currTime = 0;
+        roundRecipe.Clear();
+
+        foreach (GameObject go in m_recipeUIList)
+        {
+            Destroy(go);
+        }
+
+        m_recipeUIList.Clear();
+
+        int i = 0;
+        while (i < rnd)
+        {
+            int rndSprite = Random.Range(0, ingredients.Length - 1);
+            int rndQuantity = Random.Range(1, 3);
+
+            if(roundRecipe.ContainsKey(ingredients[rndSprite]))
+            {
+                continue;
+            }
+
+            roundRecipe.Add(ingredients[rndSprite], rndQuantity);
+            GameObject f = Instantiate(ingredientFrame, recipePanel);
+            if (!m_recipeUIList.Contains(f))
+            {
+                f.GetComponentsInChildren<Image>()[1].sprite = ingredients[rndSprite];
+                m_recipeUIList.Add(f);
+                i++;
+            }
+        }
     }
 }
