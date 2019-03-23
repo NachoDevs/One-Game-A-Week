@@ -55,21 +55,6 @@ public class GameManager : MonoBehaviour
                 f.GetComponentsInChildren<Image>()[1].sprite = ingredients[rndSprite];
                 m_recipeUIList.Add(f);
                 i++;
-
-                foreach (KeyValuePair<Sprite, int> recipeIngredient in roundRecipe)
-                {
-                    if (recipeIngredient.Value > 0)
-                    {
-                        return;
-                    }
-                }
-
-                // Recipe Completed
-                m_timePaused = true;
-            }
-            else
-            {
-                Destroy(f);
             }
         }
     }
@@ -88,10 +73,22 @@ public class GameManager : MonoBehaviour
         timerText.text = ((int)(m_roundTime - m_currTime)).ToString();
 
 
+
         if (m_currTime >= m_roundTime)
         {
             SceneManager.LoadScene(0);
         }
+
+        foreach (KeyValuePair<Sprite, int> recipeIngredient in roundRecipe)
+        {
+            if (recipeIngredient.Value > 0)
+            {
+                return;
+            }
+        }
+
+        // Recipe Completed
+        print("win win");
     }
 
     // Update is called once per frame
