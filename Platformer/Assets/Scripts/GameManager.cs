@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
 
     public Transform[] boxSpawns;
 
+    int strike = 0;
+
     float m_currTime;
     float m_roundTime;
     float m_newRoundTimer;
@@ -40,6 +42,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI timerText;
     public Image timerImage;
     public TextMeshProUGUI nextRoundTimerText;
+    public TextMeshProUGUI strikeText;
 
     // Start is called before the first frame update
     void Start()
@@ -68,14 +71,17 @@ public class GameManager : MonoBehaviour
 
         m_currTime += Time.deltaTime;
 
+        // Round not completed
         if (m_currTime > m_roundTime)
         {
+            strike = 0;
             StartCoroutine(ShowNextRoundMenu());
         }
 
         timerImage.fillAmount = 1 - (1 / (m_roundTime / m_currTime));
         timerText.text = ((int)(m_roundTime - m_currTime)).ToString();
 
+        strikeText.text = "Strike: " + strike;
 
         foreach (KeyValuePair<Sprite, int> recipeIngredient in roundRecipe)
         {
@@ -86,6 +92,7 @@ public class GameManager : MonoBehaviour
         }
 
         // Recipe Completed
+        ++strike;
         StartCoroutine(ShowNextRoundMenu());
     }
 
@@ -233,5 +240,10 @@ public class GameManager : MonoBehaviour
             }
             ++index;
         }
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

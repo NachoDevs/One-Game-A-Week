@@ -18,18 +18,21 @@ public class Pot : MonoBehaviour
         Ingredient i = collision.GetComponentInParent<Ingredient>();
         if (i != null)
         {
-            Sprite sp = i.GetComponentInChildren<SpriteRenderer>().sprite;
-
-            if (m_gm.roundRecipe.ContainsKey(sp))
+            if (collision.GetComponent<CircleCollider2D>() != null)
             {
-                if(m_gm.roundRecipe[sp] > 0)
+                Sprite sp = i.GetComponentInChildren<SpriteRenderer>().sprite;
+
+                if (m_gm.roundRecipe.ContainsKey(sp))
                 {
-                    --m_gm.roundRecipe[sp];
-                    Destroy(i.gameObject);
-                    return;
+                    if(m_gm.roundRecipe[sp] > 0)
+                    {
+                        --m_gm.roundRecipe[sp];
+                        Destroy(i.gameObject);
+                        return;
+                    }
                 }
+                collision.GetComponentInParent<Rigidbody2D>().AddForce(new Vector2(500f, 500f));
             }
-            collision.GetComponentInParent<Rigidbody2D>().AddForce(new Vector2(500f, 500f));
         }
     }
 }
