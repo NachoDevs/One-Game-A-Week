@@ -80,23 +80,23 @@ public class CharacterController2D : MonoBehaviour
         {
 
             // If crouching
-            if (crouch)
-            {
-                if (!m_wasCrouching)
-                {
-                    m_wasCrouching = true;
-                    OnCrouchEvent.Invoke(true);
-                }
+            //if (crouch)
+            //{
+            //    if (!m_wasCrouching)
+            //    {
+            //        m_wasCrouching = true;
+            //        OnCrouchEvent.Invoke(true);
+            //    }
 
-                // Reduce the speed by the crouchSpeed multiplier
-                move *= m_CrouchSpeed;
+            //    // Reduce the speed by the crouchSpeed multiplier
+            //    move *= m_CrouchSpeed;
 
-                // Disable one of the colliders when crouching
-                if (m_CrouchDisableCollider != null)
-                    m_CrouchDisableCollider.enabled = false;
-            }
-            else
-            {
+            //    // Disable one of the colliders when crouching
+            //    if (m_CrouchDisableCollider != null)
+            //        m_CrouchDisableCollider.enabled = false;
+            //}
+            //else
+            //{
                 // Enable the collider when not crouching
                 if (m_CrouchDisableCollider != null)
                     m_CrouchDisableCollider.enabled = true;
@@ -106,7 +106,7 @@ public class CharacterController2D : MonoBehaviour
                     m_wasCrouching = false;
                     OnCrouchEvent.Invoke(false);
                 }
-            }
+            //}
 
             // Move the character by finding the target velocity
             Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);

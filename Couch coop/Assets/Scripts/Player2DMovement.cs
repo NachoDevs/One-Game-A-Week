@@ -10,7 +10,7 @@ public class Player2DMovement : MonoBehaviour
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
 
-    bool m_isJumping;
+    bool m_isJumping = false;
 
     float m_horizontalMove = 0f;
 
