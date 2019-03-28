@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 8449767167411075761}
   - component: {fileID: 5055304925723543893}
   m_Layer: 11
-  m_Name: Enemy
+  m_Name: BasicEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -238,7 +238,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &5055304925723543893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,6 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ff27f95bd56714189f9e974165684f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isControlled: 0
   movementSpeed: 100
   groundCheck: {fileID: 561273875}
   wallCheck: {fileID: 207411343}

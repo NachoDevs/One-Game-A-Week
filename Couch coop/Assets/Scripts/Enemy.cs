@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public bool isControlled  = false;
 
     public float movementSpeed = 5;
 
     public Transform groundCheck;
     public Transform wallCheck;
 
-    bool m_isControlled  = false;
     bool m_isFacingRight = false;
 
     float m_movementSmoothing;
-    float t_speed;
+    float m_speed;
 
     Vector3 m_velocity;
 
@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!m_isControlled)
+        if(!isControlled)
         {
             Move();
         }
@@ -69,8 +69,8 @@ public class Enemy : MonoBehaviour
 
     void Move()
     {
-        t_speed = movementSpeed * Time.deltaTime * transform.localScale.x;
-        Vector3 targetVelocity = new Vector2(t_speed, m_rigidbody.velocity.y);
+        m_speed = movementSpeed * Time.deltaTime * transform.localScale.x;
+        Vector3 targetVelocity = new Vector2(m_speed, m_rigidbody.velocity.y);
         // And then smoothing it out and applying it to the character
         m_rigidbody.velocity = Vector3.SmoothDamp(m_rigidbody.velocity, targetVelocity, ref m_velocity, m_movementSmoothing);
 
