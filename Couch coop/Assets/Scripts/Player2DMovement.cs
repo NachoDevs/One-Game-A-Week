@@ -14,7 +14,10 @@ public class Player2DMovement : MonoBehaviour
 
     float m_horizontalMove = 0f;
 
+    Animator m_animator;
+
     CharacterController2D m_controller;
+
     Rigidbody2D m_rb;
 
     GameManager m_gm;
@@ -24,6 +27,7 @@ public class Player2DMovement : MonoBehaviour
         m_gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         m_controller = GetComponent<CharacterController2D>();
         m_rb = GetComponent<Rigidbody2D>();
+        m_animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -36,9 +40,12 @@ public class Player2DMovement : MonoBehaviour
 
         m_horizontalMove = Input.GetAxisRaw("Horizontal") * movementSpeed;
 
+        m_animator.SetFloat("Speed", Mathf.Abs(m_horizontalMove));
+
         if (Input.GetButtonDown("Jump"))
         {
             m_isJumping = true;
+            m_animator.SetBool("Falling", true);
         }
 
     }
@@ -62,5 +69,10 @@ public class Player2DMovement : MonoBehaviour
         {
             m_rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
+    }
+
+    public void OnLanding()
+    {
+        m_animator.SetBool("Falling", false);
     }
 }
