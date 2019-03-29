@@ -11,12 +11,16 @@ public class Enemy : MonoBehaviour
     public Transform groundCheck;
     public Transform wallCheck;
 
-    bool m_isFacingRight = false;
+    public GameObject selectedImage;
+
+    bool m_isFacingRight = true;
 
     float m_movementSmoothing;
     float m_speed;
+    float m_horizontalMove;
 
     Vector3 m_velocity;
+    Vector3 m_targetVelocity;
 
     CapsuleCollider2D m_deathCollider;
 
@@ -36,26 +40,30 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!isControlled)
+        if(isControlled)
         {
-            Move();
+            m_horizontalMove = Input.GetAxisRaw("HorizontalMasterMind") * movementSpeed;
         }
+        Move();
     }
 
     void FixedUpdate()
     {
-        // Checking if there is ground infront
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, CHECKRADIUS, m_WhatIsEnvironment);
-        if (colliders.Length == 0)
+        if (!isControlled)
         {
-            Flip();
-        }
+            // Checking if there is ground infront
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, CHECKRADIUS, m_WhatIsEnvironment);
+            if (colliders.Length == 0)
+            {
+                Flip();
+            }
 
-        // Checking if there is a wall infront
-        colliders = Physics2D.OverlapCircleAll(groundCheck.position, CHECKRADIUS, m_WhatIsEnvironment);
-        if (colliders.Length == 0)
-        {
-            Flip();
+            // Checking if there is a wall infront
+            colliders = Physics2D.OverlapCircleAll(groundCheck.position, CHECKRADIUS, m_WhatIsEnvironment);
+            if (colliders.Length == 0)
+            {
+                Flip();
+            }
         }
     }
 
@@ -69,23 +77,31 @@ public class Enemy : MonoBehaviour
 
     void Move()
     {
-        m_speed = movementSpeed * Time.deltaTime * transform.localScale.x;
-        Vector3 targetVelocity = new Vector2(m_speed, m_rigidbody.velocity.y);
-        // And then smoothing it out and applying it to the character
-        m_rigidbody.velocity = Vector3.SmoothDamp(m_rigidbody.velocity, targetVelocity, ref m_velocity, m_movementSmoothing);
+        if (isControlled)
+        {
+            m_speed = m_horizontalMove * Time.fixedDeltaTime;
+            m_targetVelocity = new Vector2(m_speed, m_rigidbody.velocity.y);
 
-        // If the input is moving the player right and the player is facing left...
-        /*if (t_speed > 0 && !m_isFacingRight)
-        {
-            // ... flip the player.
-            Flip();
+            // If the input is moving the player right and the player is facing left...
+            if (m_speed > 0 && !m_isFacingRight)
+            {
+                // ... flip the player.
+                Flip();
+            }
+            // Otherwise if the input is moving the player left and the player is facing right...
+            else if (m_speed < 0 && m_isFacingRight)
+            {
+                // ... flip the player.
+                Flip();
+            }
         }
-        // Otherwise if the input is moving the player left and the player is facing right...
-        else if (t_speed < 0 && m_isFacingRight)
+        else
         {
-            // ... flip the player.
-            Flip();
-        }*/
+            m_speed = movementSpeed * Time.deltaTime * transform.localScale.x;
+            m_targetVelocity = new Vector2(m_speed, m_rigidbody.velocity.y);
+            // And then smoothing it out and applying it to the character
+        }
+        m_rigidbody.velocity = Vector3.SmoothDamp(m_rigidbody.velocity, m_targetVelocity, ref m_velocity, m_movementSmoothing);
     }
 
     void Flip()
