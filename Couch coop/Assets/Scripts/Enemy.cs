@@ -48,6 +48,14 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.GetComponentInParent<Player>() != null)
+        {
+            collision.gameObject.transform.position = new Vector3();
+        }
+    }
+
     void Move()
     {
         if (isControlled)
