@@ -25,7 +25,7 @@ This is a list with all the topics I want to tackle, the ones already ticked are
 - [ ] Boardgame
 - [ ] Bullet hell
 - [ ] Clicker
-- [ ] Couch coop; 25->31.03.19; https://trello.com/b/pe8qGy9H/couch-coop; Unity 2018.3.0.f2
+- [x] Couch coop; 25->31.03.19; https://trello.com/b/pe8qGy9H/couch-coop; Unity 2018.3.0.f2
 - [x] Growing plant;  18->24.02.19; https://trello.com/b/ElPueIoH/growing-plant; Unity 2018.3.0.f2
 - [ ] Fighting game
 - [x] Logistics game;	25.02.19->03.03.19; https://trello.com/b/Vha8bVYV/logistics-game; Unity 2018.3.0.f2; Not finished in time :( 
