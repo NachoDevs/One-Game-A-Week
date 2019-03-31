@@ -8,9 +8,6 @@ public class Enemy : MonoBehaviour
 
     public float movementSpeed = 5;
 
-    public Transform groundCheck;
-    public Transform wallCheck;
-
     public GameObject selectedImage;
 
     bool m_isFacingRight = true;
@@ -25,10 +22,6 @@ public class Enemy : MonoBehaviour
     CapsuleCollider2D m_deathCollider;
 
     Rigidbody2D m_rigidbody;
-
-    [SerializeField] LayerMask m_WhatIsEnvironment;
-
-    const float CHECKRADIUS = .2f;
 
     // Start is called before the first frame update
     void Start()
@@ -45,26 +38,6 @@ public class Enemy : MonoBehaviour
             m_horizontalMove = Input.GetAxisRaw("HorizontalMasterMind") * movementSpeed;
         }
         Move();
-    }
-
-    void FixedUpdate()
-    {
-        if (!isControlled)
-        {
-            // Checking if there is ground infront
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, CHECKRADIUS, m_WhatIsEnvironment);
-            if (colliders.Length == 0)
-            {
-                Flip();
-            }
-
-            // Checking if there is a wall infront
-            colliders = Physics2D.OverlapCircleAll(groundCheck.position, CHECKRADIUS, m_WhatIsEnvironment);
-            if (colliders.Length == 0)
-            {
-                Flip();
-            }
-        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -104,7 +77,7 @@ public class Enemy : MonoBehaviour
         m_rigidbody.velocity = Vector3.SmoothDamp(m_rigidbody.velocity, m_targetVelocity, ref m_velocity, m_movementSmoothing);
     }
 
-    void Flip()
+    public void Flip()
     {
         // Switch the way the player is labelled as facing.
         m_isFacingRight = !m_isFacingRight;

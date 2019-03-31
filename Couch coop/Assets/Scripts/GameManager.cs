@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public bool m_timePaused = false;
 
+    public Texture2D cursor;
+    public Texture2D cursorClicked;
+
     public Camera mainCamera;
 
     Enemy selectedEnemy;
@@ -14,9 +17,9 @@ public class GameManager : MonoBehaviour
     RaycastHit2D m_hit;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
     }
 
     // Update is called once per frame
@@ -25,6 +28,11 @@ public class GameManager : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             m_hit = Physics2D.Raycast(mainCamera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+
+            if(m_hit.collider == null)
+            {
+                return;
+            }
 
             Enemy enemy = m_hit.collider.GetComponentInParent<Enemy>();
             if (enemy != null)
@@ -47,5 +55,15 @@ public class GameManager : MonoBehaviour
                 selectedEnemy = enemy;
             }
         }
+    }
+
+    void OnMouseDown()
+    {
+        Cursor.SetCursor(cursorClicked, Vector2.zero, CursorMode.Auto);
+    }
+
+    void OnMouseUp()
+    {
+        Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
     }
 }

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4585e71bad87504ba14c840d9448aa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flipTime: 0
 --- !u!1001 &3054709497699936289
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82,6 +83,11 @@ PrefabInstance:
     - target: {fileID: 8449767167411075761, guid: 85d69ffbc6ebe4a448613ed6fc9496be,
         type: 3}
       propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8449767167411075761, guid: 85d69ffbc6ebe4a448613ed6fc9496be,
+        type: 3}
+      propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5055304925723543893, guid: 85d69ffbc6ebe4a448613ed6fc9496be,
@@ -99,7 +105,8 @@ PrefabInstance:
       propertyPath: m_SpriteSortPoint
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4000589361977918967, guid: 85d69ffbc6ebe4a448613ed6fc9496be, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 85d69ffbc6ebe4a448613ed6fc9496be, type: 3}
 --- !u!1 &5004881573928959855 stripped
 GameObject:

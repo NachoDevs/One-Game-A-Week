@@ -293,6 +293,7 @@ GameObject:
   - component: {fileID: 8003014583981987657}
   - component: {fileID: 8449767167411075761}
   - component: {fileID: 5055304925723543893}
+  - component: {fileID: 4000589361977918967}
   - component: {fileID: 8003014583981987663}
   m_Layer: 11
   m_Name: BasicEnemy
@@ -354,10 +355,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isControlled: 0
   movementSpeed: 100
+  selectedImage: {fileID: 9021855498889984650}
+--- !u!114 &4000589361977918967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8003014583981987662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb169de3b223a7841818913736661733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   groundCheck: {fileID: 561273875}
   wallCheck: {fileID: 207411343}
-  selectedImage: {fileID: 9021855498889984650}
-  m_WhatIsEnvironment:
+  m_whatIsEnvironment:
     serializedVersion: 2
     m_Bits: 512
 --- !u!114 &8003014583981987663

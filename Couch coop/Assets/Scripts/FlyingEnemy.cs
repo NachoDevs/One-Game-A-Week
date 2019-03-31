@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class FlyingEnemy : MonoBehaviour
 {
+    public float flipTime = 0f;
+
     float m_movementSmoothing;
     float m_speed;
+    float m_flipTimer = 0f;
 
     Vector3 m_velocity;
 
@@ -20,12 +23,18 @@ public class FlyingEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!GetComponent<Enemy>().isControlled)
-        {
-            Fly();
-        }
-    }
+        m_flipTimer += Time.deltaTime;
 
+        if (m_flipTimer >= flipTime)
+        {
+            GetComponent<Enemy>().Flip();
+            m_flipTimer = 0f;
+        }
+        //if (!GetComponent<Enemy>().isControlled)
+        //{
+            Fly();
+        //}
+    }
     void Fly()
     {
         m_speed = Mathf.Sin(Time.time * 5) * 2;
