@@ -7,11 +7,18 @@ public class CameraMovement : MonoBehaviour
     public float cameraMovementeSpeed = 10f;
     public float cameraZoomSpeed = 100f;
 
+    public GameObject player;
+
     // Update is called once per frame
     void Update()
     {
         MovementChecks();
         ZoomChecks();
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            transform.position = player.transform.position;
+        }
     }
 
     void MovementChecks()
