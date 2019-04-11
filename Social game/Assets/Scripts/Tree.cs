@@ -9,7 +9,9 @@ public class Tree : MonoBehaviour
 
     public List<GameObject> fruitSpawn;
 
-    List<GameObject> fruits;
+    bool m_canSpawn;
+
+    public List<GameObject> fruits;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +19,8 @@ public class Tree : MonoBehaviour
         fruits = new List<GameObject>();
 
         StartCoroutine(SpawnNewFruits(0));
+
+        InvokeRepeating("CanSpawn", 1f, 1f);
     }
 
     // Update is called once per frame
@@ -30,7 +34,21 @@ public class Tree : MonoBehaviour
 
         foreach (GameObject go in fruitSpawn)
         {
-            fruits.Add(Instantiate(fruit, go.transform));
+            GameObject fruitGO = Instantiate(fruit, go.transform);
+            fruitGO.GetComponent<Fruit>().tree = this;
+            fruits.Add(fruitGO);
+
+        }
+
+        m_canSpawn = false;
+    }
+
+    void CanSpawn()
+    {
+        if(fruits.Count <= 0)
+        {
+            m_canSpawn = true;
+            StartCoroutine(SpawnNewFruits(2));
         }
     }
 
@@ -38,15 +56,18 @@ public class Tree : MonoBehaviour
     {
         if(other.GetComponentInParent<Player>() != null)
         {
-            if (Input.GetKey(KeyCode.E))
+            if(m_canSpawn)
+            {
+                return;
+            }
+
+            if (Input.GetKeyUp(KeyCode.E))
             {
                 foreach (GameObject go in fruits)
                 {
                     go.GetComponent<Rigidbody>().useGravity = true;
-                    //go.GetComponent<Fruit>().
+                    go.GetComponent<Fruit>().enabled = true;
                 }
-                fruits.Clear();
-                StartCoroutine(SpawnNewFruits(2));
             }
         }
     }

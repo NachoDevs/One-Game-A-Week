@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 33660874149414388}
   - component: {fileID: 23053647269642574}
   - component: {fileID: 465262841235508921}
-  - component: {fileID: 1907362336293401825}
+  - component: {fileID: 6446522432208633990}
+  - component: {fileID: 1981082933223868669}
+  - component: {fileID: 5003471689442532242}
   m_Layer: 0
   m_Name: peach
   m_TagString: Untagged
@@ -95,8 +97,33 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &1907362336293401825
+--- !u!114 &6446522432208633990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541859410316496}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6111840fb3faa25499bef208a4443275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &1981082933223868669
 SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541859410316496}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.025
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &5003471689442532242
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -106,5 +133,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.008151753
+  m_Size: {x: 0.016303506, y: 0.015081163, z: 0.016258402}
   m_Center: {x: 0.0010625503, y: 0.00045279335, z: 0.0000000018626448}
