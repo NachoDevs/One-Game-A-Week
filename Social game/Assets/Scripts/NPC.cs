@@ -17,12 +17,16 @@ public class NPC : MonoBehaviour
     public GameObject fullHeartUI;
     public GameObject halfHeartUI;
 
+    public Personality personality;
+
     readonly int maxFriendshipLevel = 6;
 
     readonly float m_walkRadius = 5;
 
     [SerializeField]
     Animator stateAnimator;
+
+    Dictionary<string, List<string>> speech;
 
     List<GameObject> hearts;
 
@@ -36,12 +40,8 @@ public class NPC : MonoBehaviour
 
     //////////////////////////
 
-    public Personality personality;
-
     List<Transform> interestPoints;
     List<GameObject> preferedItems;
-
-    Dictionary<string, List<string>> speech;
 
     /////////////////////////
         
@@ -118,7 +118,7 @@ public class NPC : MonoBehaviour
     public void ShowLove()
     {
         stateAnimator.SetTrigger("isCrying");
-        print(speech["greets"][0]);
+        print(speech["thanks"][0]);
     }
 
     private void LoadJSON()
