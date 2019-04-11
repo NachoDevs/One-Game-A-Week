@@ -86,12 +86,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_isTalking: 0
-  friendshipLevel: 0
+  friendshipLevel: 3
   friendshipLevelPanel: {fileID: 5007877264346981048}
+  statePanel: {fileID: 8168969349047180741}
   fullHeartUI: {fileID: 7605458360303053581, guid: eef15dbd011d6ab4ebf21c2b9380eb47,
     type: 3}
   halfHeartUI: {fileID: 8514367873054093971, guid: 20c31cde58eb5294ca757c76650c6149,
     type: 3}
+  stateAnimator: {fileID: 3995030060837544772}
 --- !u!1 &1467146282119817932
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +242,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0.025, y: 0}
+  m_AnchoredPosition: {x: 0.024999976, y: 0}
   m_SizeDelta: {x: -0.05, y: 3}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &7388307017594063261

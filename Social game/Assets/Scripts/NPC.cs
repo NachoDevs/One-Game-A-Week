@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
+using System.IO;
+using SimpleJSON;
+using System;
 
 public class NPC : MonoBehaviour
 {
@@ -10,12 +12,17 @@ public class NPC : MonoBehaviour
     public int friendshipLevel;
 
     public GameObject friendshipLevelPanel;
+    public GameObject statePanel;
+
     public GameObject fullHeartUI;
     public GameObject halfHeartUI;
 
     readonly int maxFriendshipLevel = 6;
 
     readonly float m_walkRadius = 5;
+
+    [SerializeField]
+    Animator stateAnimator;
 
     List<GameObject> hearts;
 
@@ -26,9 +33,24 @@ public class NPC : MonoBehaviour
 
     RaycastHit hit;
 
+
+    //////////////////////////
+
+    public Personality personality;
+
+    List<Transform> interestPoints;
+    List<GameObject> preferedItems;
+
+    Dictionary<string, List<string>> speech;
+
+    /////////////////////////
+        
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        hearts = new List<GameObject>();
+
+        LoadJSON();
     }
 
     // Start is called before the first frame update
@@ -36,7 +58,7 @@ public class NPC : MonoBehaviour
     {
         InvokeRepeating("NPCMovement", .0f, 5);
         //friendshipLevel = 3;
-        hearts = new List<GameObject>();
+        LoadJSON();
     }
 
     // Update is called once per frame
@@ -48,17 +70,19 @@ public class NPC : MonoBehaviour
             {
                 ManageFriendlyLevel();
                 friendshipLevelPanel.SetActive(true);
+                statePanel.SetActive(false);
             }
             else
             {
                 friendshipLevelPanel.SetActive(false);
+                statePanel.SetActive(true);
             }
         }
     }
 
     void NPCMovement()
     {
-        m_walkDirection = Random.insideUnitSphere * m_walkRadius;
+        m_walkDirection = UnityEngine.Random.insideUnitSphere * m_walkRadius;
         m_walkDirection += transform.position;
         NavMeshHit nmhit;
         NavMesh.SamplePosition(m_walkDirection, out nmhit, m_walkRadius, 1);
@@ -90,4 +114,47 @@ public class NPC : MonoBehaviour
             hearts.Add(Instantiate(halfHeartUI, friendshipLevelPanel.transform));
         }
     }
+
+    public void ShowLove()
+    {
+        stateAnimator.SetTrigger("isCrying");
+        print(speech["greets"][0]);
+    }
+
+    private void LoadJSON()
+    {
+
+        string path = Application.dataPath + "/JSONs/speech.json";
+        string jsonString = File.ReadAllText(path);
+
+        JSONObject speechJSON = JSON.Parse(jsonString) as JSONObject;
+
+        speech = new Dictionary<string, List<string>>();
+
+        foreach(var personalityStuation in speechJSON)
+        {
+            if(personalityStuation.Key != personality.ToString())
+            {
+                continue;
+            }
+
+            foreach (var situationText in personalityStuation.Value)
+            {
+                speech.Add(situationText.Key, new List<string>());
+                foreach (var text in situationText.Value)
+                {
+                    speech[situationText.Key].Add(text.Value);
+                }
+            }
+        }
+
+    }
+}
+
+public enum Personality
+{
+    funny,
+    sad,
+    loving,
+    bored
 }

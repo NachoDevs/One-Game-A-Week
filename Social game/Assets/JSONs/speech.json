@@ -1,0 +1,70 @@
+{
+    "funny":
+    {
+        "greets":
+        [
+            "Hello!",
+            "Hi! How you doing?"
+        ],
+        "goodbyes":
+        [
+            "Bye bye!!",
+            "C ya!"
+        ],
+        "conversation":
+        [
+
+        ]
+    },
+    "sad":
+    {
+        "greets":
+        [
+            "What now?",
+            "Uh?"
+        ],
+        "goodbyes":
+        [
+            "Bye.",
+            "..."
+        ],
+        "conversation":
+        [
+
+        ]
+    },
+    "loving":
+    {
+        "greets":
+        [
+            "Hi!!! How are you?",
+            "Hello bb."
+        ],
+        "goodbyes":
+        [
+            "See you very very soon!",
+            "Can't we talk a little bit more? No?... aww."
+        ],
+        "conversation":
+        [
+
+        ]
+    },
+    "bored":
+    {
+        "greets":
+        [
+            "What do you need now?",
+            "I am bussy you know..."
+        ],
+        "goodbyes":
+        [
+            "Yeah yeah, whatever...",
+            "Later."
+        ],
+        "conversation":
+        [
+
+        ]
+    }
+}
