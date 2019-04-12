@@ -93,6 +93,7 @@ MonoBehaviour:
     type: 3}
   halfHeartUI: {fileID: 8514367873054093971, guid: 20c31cde58eb5294ca757c76650c6149,
     type: 3}
+  personality: 2
   stateAnimator: {fileID: 3995030060837544772}
 --- !u!1 &1467146282119817932
 GameObject:
@@ -409,6 +410,7 @@ GameObject:
   - component: {fileID: 2408374593171578611}
   - component: {fileID: 2058835805162883037}
   - component: {fileID: 3995030060837544772}
+  - component: {fileID: 2107404116}
   m_Layer: 5
   m_Name: states
   m_TagString: Untagged
@@ -491,3 +493,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2107404116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8168969349047180741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e76907bafc11ed04f881a2e6257cd401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

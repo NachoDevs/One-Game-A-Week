@@ -70,12 +70,12 @@ public class NPC : MonoBehaviour
             {
                 ManageFriendlyLevel();
                 friendshipLevelPanel.SetActive(true);
-                statePanel.SetActive(false);
+                //statePanel.SetActive(false);
             }
             else
             {
                 friendshipLevelPanel.SetActive(false);
-                statePanel.SetActive(true);
+                //statePanel.SetActive(true);
             }
         }
     }
@@ -117,6 +117,7 @@ public class NPC : MonoBehaviour
 
     public void ShowLove()
     {
+        //statePanel.SetActive(true);
         stateAnimator.SetTrigger("isCrying");
         print(speech["thanks"][0]);
     }
