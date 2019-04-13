@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 
     public GameObject carrying;
 
+    public NPC talkingTo;
+
     SphereCollider interactionArea;
 
     // Start is called before the first frame update
@@ -17,7 +19,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(carrying != null)
+        if (isTalking)
+        {
+            GetComponent<Pathfinding>().agent.SetDestination(transform.position);
+        }
+
+        if (carrying != null)
         {
             carrying.transform.position = new Vector3(transform.position.x, transform.position.y + 2.5f, transform.position.z);
         }
@@ -33,6 +40,8 @@ public class Player : MonoBehaviour
                 {
                     NPC npc = other.GetComponentInParent<NPC>();
                     isTalking = true;
+                    npc.isTalking = true;
+                    talkingTo = npc;
                     if(npc.waitingForFruit)
                     {
                         if(carrying == null)

@@ -60,10 +60,11 @@ public class SpeechBubble : MonoBehaviour
                         speechIndex = 0;
                         toSay.Clear();
                         m_player.isTalking = false;
+                        m_player.talkingTo.isTalking = false;
                     }
                     else
                     {
-                        Talk(toSay[speechIndex]);
+                        WriteSpeech(toSay[speechIndex]);
                         ++speechIndex;
                     }
                 }
@@ -79,12 +80,12 @@ public class SpeechBubble : MonoBehaviour
 
         if(speechIndex <= 0)
         {
-            Talk(toSay[speechIndex]);
+            WriteSpeech(toSay[speechIndex]);
             ++speechIndex;
         }
     }
 
-    void Talk(string t_speech)
+    void WriteSpeech(string t_speech)
     {
         m_speechText.text = t_speech;
     }

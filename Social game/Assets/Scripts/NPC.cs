@@ -7,15 +7,16 @@ using SimpleJSON;
 public class NPC : MonoBehaviour
 {
     public bool isTalking = false;
+    public bool isHome = false;
     public bool waitingForFruit = false;
 
     public int friendshipLevel;
 
     public GameObject friendshipLevelPanel;
-    public GameObject statePanel;
-
     public GameObject fullHeartUI;
     public GameObject halfHeartUI;
+    public GameObject home;
+    public GameObject statePanel;
 
     public FruitsEnum wantedFruit;
 
@@ -41,14 +42,6 @@ public class NPC : MonoBehaviour
     NavMeshAgent m_agent;
 
     RaycastHit m_hit;
-
-
-    //////////////////////////
-
-    List<Transform> interestPoints;
-    List<GameObject> preferedItems;
-
-    /////////////////////////
         
     void Awake()
     {
@@ -65,23 +58,36 @@ public class NPC : MonoBehaviour
         //friendshipLevel = 3;
 
         m_gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+
+        transform.position = home.GetComponent<House>().rallyPosition.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isTalking)
+        {
+            m_agent.SetDestination(transform.position);
+        }
+        else
+        {
+            float time = m_gm.GetComponent<DayNightController>().currentTimeOfDay;
+            if (time < .2f || time > .8f)
+            {
+                m_agent.SetDestination(home.GetComponent<House>().rallyPosition.transform.position);
+            }
+        }
+
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out m_hit))
         {
             if (m_hit.collider == GetComponentInChildren<CapsuleCollider>())
             {
                 ManageFriendlyLevel();
                 friendshipLevelPanel.SetActive(true);
-                //statePanel.SetActive(false);
             }
             else
             {
                 friendshipLevelPanel.SetActive(true);
-                //statePanel.SetActive(true);
             }
         }
     }

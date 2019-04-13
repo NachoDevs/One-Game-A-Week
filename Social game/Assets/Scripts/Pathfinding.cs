@@ -5,7 +5,7 @@ public class Pathfinding : MonoBehaviour
 {
     public Camera cam;
 
-    NavMeshAgent agent;
+    public NavMeshAgent agent;
 
     void Awake()
     {
