@@ -8,8 +8,13 @@ public class SpeechBubble : MonoBehaviour
 {
     public List<string> toSay;
 
+    int speechIndex = 0;    // Used to track the conversation state
+
     [SerializeField]
     TextMeshProUGUI m_speechText;
+
+    [SerializeField]
+    Player m_player;
 
     GraphicRaycaster m_Raycaster;
     PointerEventData m_PointerEventData;
@@ -49,16 +54,38 @@ public class SpeechBubble : MonoBehaviour
             {
                 if(result.gameObject == gameObject)
                 {
-                    gameObject.SetActive(false);
+                    if(toSay.Count < (speechIndex + 1))
+                    {
+                        gameObject.SetActive(false);
+                        speechIndex = 0;
+                        toSay.Clear();
+                        m_player.isTalking = false;
+                    }
+                    else
+                    {
+                        Talk(toSay[speechIndex]);
+                        ++speechIndex;
+                    }
                 }
             }
         }
     }
 
-    public void Talk(string t_speech)
+    public void AddToSay(string t_speech)
     {
+        toSay.Add(t_speech);
+
         gameObject.SetActive(true);
 
+        if(speechIndex <= 0)
+        {
+            Talk(toSay[speechIndex]);
+            ++speechIndex;
+        }
+    }
+
+    void Talk(string t_speech)
+    {
         m_speechText.text = t_speech;
     }
 }

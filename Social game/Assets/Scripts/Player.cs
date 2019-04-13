@@ -2,6 +2,7 @@
 
 public class Player : MonoBehaviour
 {
+    public bool isTalking;
 
     public GameObject carrying;
 
@@ -26,9 +27,34 @@ public class Player : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E))
         {
-            if(other.GetComponentInParent<NPC>() != null)
+            if(!isTalking)
             {
-                other.GetComponentInParent<NPC>().ShowLove();
+                if(other.GetComponentInParent<NPC>() != null)
+                {
+                    NPC npc = other.GetComponentInParent<NPC>();
+                    isTalking = true;
+                    if(npc.waitingForFruit)
+                    {
+                        if(carrying == null)
+                        {
+                            npc.Talk("goodbyes");
+                        }
+                        else
+                        {
+                            npc.Talk("thanks");
+
+                            npc.IncrementFriendshipLevel((carrying.GetComponent<Fruit>().fruitType == npc.wantedFruit) ? 1 : -1);
+
+                            npc.waitingForFruit = false;
+
+                            Destroy(carrying);
+                        }
+                    }
+                    else
+                    {
+                        npc.Quest();
+                    }
+                }
             }
         }
     }

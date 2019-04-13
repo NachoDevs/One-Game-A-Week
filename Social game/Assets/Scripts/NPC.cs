@@ -6,7 +6,8 @@ using SimpleJSON;
 
 public class NPC : MonoBehaviour
 {
-    public bool m_isTalking = false;
+    public bool isTalking = false;
+    public bool waitingForFruit = false;
 
     public int friendshipLevel;
 
@@ -16,6 +17,8 @@ public class NPC : MonoBehaviour
     public GameObject fullHeartUI;
     public GameObject halfHeartUI;
 
+    public FruitsEnum wantedFruit;
+
     public Personality personality;
 
     readonly int maxFriendshipLevel = 6;
@@ -24,6 +27,7 @@ public class NPC : MonoBehaviour
 
     [SerializeField]
     Animator m_stateAnimator;
+
 
     Dictionary<string, List<string>> m_speech;
 
@@ -76,7 +80,7 @@ public class NPC : MonoBehaviour
             }
             else
             {
-                friendshipLevelPanel.SetActive(false);
+                friendshipLevelPanel.SetActive(true);
                 //statePanel.SetActive(true);
             }
         }
@@ -90,7 +94,7 @@ public class NPC : MonoBehaviour
         NavMesh.SamplePosition(m_walkDirection, out nmhit, m_walkRadius, 1);
         m_targetPosition = nmhit.position;
 
-        if (!m_isTalking)
+        if (!isTalking)
         {
             m_agent.SetDestination(m_targetPosition);
         }
@@ -117,11 +121,36 @@ public class NPC : MonoBehaviour
         }
     }
 
-    public void ShowLove()
+    public void IncrementFriendshipLevel(int t_ammountToIncrement)
     {
-        //statePanel.SetActive(true);
-        m_stateAnimator.SetTrigger("isCrying");
-        m_gm.m_speechBubble.Talk(m_speech["greets"][0]);
+        if(personality == Personality.loving)
+        {
+            t_ammountToIncrement = Mathf.Abs(t_ammountToIncrement);
+        }
+
+        if(friendshipLevel < maxFriendshipLevel)
+        {
+            friendshipLevel += t_ammountToIncrement;
+        }
+
+        m_stateAnimator.SetTrigger((t_ammountToIncrement > 0) ? "isInLove" : "isSad");
+    }
+
+    public void Talk(string t_sentenceType)
+    {
+        //m_stateAnimator.SetTrigger("isCrying");
+        m_gm.m_speechBubble.AddToSay(m_speech[t_sentenceType][Random.Range(0, m_speech[t_sentenceType].Count)]);
+    }
+
+    public void Quest()
+    {
+        FruitsEnum randomFruit = (Random.Range(0, 2) > 0) ? FruitsEnum.apple: FruitsEnum.peach;
+
+        wantedFruit = randomFruit;
+        waitingForFruit = true;
+
+        m_gm.m_speechBubble.AddToSay(m_speech["greets"][Random.Range(0, m_speech["greets"].Count)]);
+        m_gm.m_speechBubble.AddToSay("Would you mind getting me a fruit? I would love a juicy " + randomFruit + ".");
     }
 
     private void LoadJSON()

@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Fruit : MonoBehaviour
 {
+    public FruitsEnum fruitType;
 
     public Tree tree;
+
 
     // Start is called before the first frame update
     void Start()

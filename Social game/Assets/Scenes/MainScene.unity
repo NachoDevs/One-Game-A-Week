@@ -345,6 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toSay: []
   m_speechText: {fileID: 1572854097}
+  m_player: {fileID: 1384772050}
 --- !u!1001 &533777162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -686,6 +687,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5503835180462872311, guid: 9e2791d305ae89e4984dfbf80fec6279,
+        type: 3}
+      propertyPath: personality
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e2791d305ae89e4984dfbf80fec6279, type: 3}
 --- !u!4 &934290334 stripped
@@ -724,6 +730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_speechBubble: {fileID: 433918740}
+  fruits: []
 --- !u!4 &1012821991
 Transform:
   m_ObjectHideFlags: 0
@@ -1125,6 +1132,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7595546591425616054}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1384772050 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8924134624002779763, guid: 87f56360b1dddf64888597b6f419a331,
+    type: 3}
+  m_PrefabInstance: {fileID: 7595546591425616054}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384772048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b479e1f800849b45a249dd65ea51c44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1572854095
 GameObject:
   m_ObjectHideFlags: 0

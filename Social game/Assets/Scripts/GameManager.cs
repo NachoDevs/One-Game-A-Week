@@ -1,8 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public SpeechBubble m_speechBubble;
+
+    public List<GameObject> fruits;
 
     Camera m_cam;
 
@@ -13,8 +16,13 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-
     }
 
 
+}
+
+public enum FruitsEnum
+{
+    apple,
+    peach
 }
