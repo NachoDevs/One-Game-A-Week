@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.IO;
 using SimpleJSON;
-using System;
 
 public class NPC : MonoBehaviour
 {
@@ -24,18 +23,20 @@ public class NPC : MonoBehaviour
     readonly float m_walkRadius = 5;
 
     [SerializeField]
-    Animator stateAnimator;
+    Animator m_stateAnimator;
 
-    Dictionary<string, List<string>> speech;
+    Dictionary<string, List<string>> m_speech;
 
-    List<GameObject> hearts;
+    GameManager m_gm;
+
+    List<GameObject> m_hearts;
 
     Vector3 m_targetPosition;
     Vector3 m_walkDirection;
 
-    NavMeshAgent agent;
+    NavMeshAgent m_agent;
 
-    RaycastHit hit;
+    RaycastHit m_hit;
 
 
     //////////////////////////
@@ -47,8 +48,8 @@ public class NPC : MonoBehaviour
         
     void Awake()
     {
-        agent = GetComponent<NavMeshAgent>();
-        hearts = new List<GameObject>();
+        m_agent = GetComponent<NavMeshAgent>();
+        m_hearts = new List<GameObject>();
 
         LoadJSON();
     }
@@ -58,15 +59,16 @@ public class NPC : MonoBehaviour
     {
         InvokeRepeating("NPCMovement", .0f, 5);
         //friendshipLevel = 3;
-        LoadJSON();
+
+        m_gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out m_hit))
         {
-            if (hit.collider == GetComponentInChildren<CapsuleCollider>())
+            if (m_hit.collider == GetComponentInChildren<CapsuleCollider>())
             {
                 ManageFriendlyLevel();
                 friendshipLevelPanel.SetActive(true);
@@ -90,15 +92,15 @@ public class NPC : MonoBehaviour
 
         if (!m_isTalking)
         {
-            agent.SetDestination(m_targetPosition);
+            m_agent.SetDestination(m_targetPosition);
         }
     }
 
     void ManageFriendlyLevel()
     {
-        if (hearts.Count > 0)
+        if (m_hearts.Count > 0)
         {
-            foreach(GameObject heart in hearts)
+            foreach(GameObject heart in m_hearts)
             {
                 Destroy(heart.gameObject);
             }
@@ -106,20 +108,20 @@ public class NPC : MonoBehaviour
 
         for (int i = 0; i < (friendshipLevel / 2); ++i)
         {
-            hearts.Add(Instantiate(fullHeartUI, friendshipLevelPanel.transform));
+            m_hearts.Add(Instantiate(fullHeartUI, friendshipLevelPanel.transform));
         }
 
         if(friendshipLevel % 2 != 0)
         {
-            hearts.Add(Instantiate(halfHeartUI, friendshipLevelPanel.transform));
+            m_hearts.Add(Instantiate(halfHeartUI, friendshipLevelPanel.transform));
         }
     }
 
     public void ShowLove()
     {
         //statePanel.SetActive(true);
-        stateAnimator.SetTrigger("isCrying");
-        print(speech["thanks"][0]);
+        m_stateAnimator.SetTrigger("isCrying");
+        m_gm.m_speechBubble.Talk(m_speech["greets"][0]);
     }
 
     private void LoadJSON()
@@ -130,7 +132,7 @@ public class NPC : MonoBehaviour
 
         JSONObject speechJSON = JSON.Parse(jsonString) as JSONObject;
 
-        speech = new Dictionary<string, List<string>>();
+        m_speech = new Dictionary<string, List<string>>();
 
         foreach(var personalityStuation in speechJSON)
         {
@@ -141,15 +143,16 @@ public class NPC : MonoBehaviour
 
             foreach (var situationText in personalityStuation.Value)
             {
-                speech.Add(situationText.Key, new List<string>());
+                m_speech.Add(situationText.Key, new List<string>());
                 foreach (var text in situationText.Value)
                 {
-                    speech[situationText.Key].Add(text.Value);
+                    m_speech[situationText.Key].Add(text.Value);
                 }
             }
         }
 
     }
+
 }
 
 public enum Personality

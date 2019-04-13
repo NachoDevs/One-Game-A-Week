@@ -14,12 +14,13 @@ GameObject:
   - component: {fileID: 13618792}
   - component: {fileID: 6587822}
   - component: {fileID: 7133467054188151861}
+  - component: {fileID: 9039503787951004558}
   m_Layer: 0
   m_Name: tree_a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &432352
 Transform:
@@ -128,6 +129,22 @@ MonoBehaviour:
   - {fileID: 5973488771774973620}
   - {fileID: 1562965401759189471}
   fruits: []
+--- !u!208 &9039503787951004558
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129214}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.4, y: 0.9, z: 0.4}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.095000006, y: 0.8, z: -0.035}
+  m_TimeToStationary: 0.5
 --- !u!1 &1562965401759189471
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +158,7 @@ GameObject:
   m_Name: GameObject (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7788747432399100709
@@ -171,7 +188,7 @@ GameObject:
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3133285610989123634
@@ -201,7 +218,7 @@ GameObject:
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6666914134614552236
