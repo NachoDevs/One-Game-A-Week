@@ -8,6 +8,7 @@ public class NPC : MonoBehaviour
 {
     public bool isTalking = false;
     public bool isHome = false;
+    public bool questReady = false;
     public bool waitingForFruit = false;
 
     public int friendshipLevel;
@@ -28,7 +29,6 @@ public class NPC : MonoBehaviour
 
     [SerializeField]
     Animator m_stateAnimator;
-
 
     Dictionary<string, List<string>> m_speech;
 
@@ -55,7 +55,7 @@ public class NPC : MonoBehaviour
     void Start()
     {
         InvokeRepeating("NPCMovement", .0f, 5);
-        //friendshipLevel = 3;
+        InvokeRepeating("ReadyQuest", 5, 15);
 
         m_gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
@@ -139,7 +139,8 @@ public class NPC : MonoBehaviour
             friendshipLevel += t_ammountToIncrement;
         }
 
-        m_stateAnimator.SetTrigger((t_ammountToIncrement > 0) ? "isInLove" : "isSad");
+        print(t_ammountToIncrement);
+        m_stateAnimator.SetTrigger((t_ammountToIncrement > -.5f) ? "isInLove" : "isSad");
     }
 
     public void Talk(string t_sentenceType)
@@ -150,16 +151,30 @@ public class NPC : MonoBehaviour
 
     public void Quest()
     {
-        FruitsEnum randomFruit = (Random.Range(0, 2) > 0) ? FruitsEnum.apple: FruitsEnum.peach;
+        FruitsEnum randomFruit = (Random.Range(0, 2) > 0) ? FruitsEnum.apple : FruitsEnum.peach;
 
         wantedFruit = randomFruit;
         waitingForFruit = true;
 
-        m_gm.m_speechBubble.AddToSay(m_speech["greets"][Random.Range(0, m_speech["greets"].Count)]);
-        m_gm.m_speechBubble.AddToSay("Would you mind getting me a fruit? I would love a juicy " + randomFruit + ".");
+        m_gm.m_speechBubble.AddToSay("Hey, would you mind getting me a fruit? I would love a juicy " + randomFruit + ".");
+
+        ConfirmationPopUp();
     }
 
-    private void LoadJSON()
+    public void ChitChat()
+    {
+        Talk("greets");
+        Talk("conversation");
+        Talk("goodbyes");
+    }
+
+    void ConfirmationPopUp()
+    {
+        m_gm.ConfirmationPanel.SetActive(true);
+    }
+
+
+    void LoadJSON()
     {
 
         string path = Application.dataPath + "/JSONs/speech.json";
@@ -185,7 +200,14 @@ public class NPC : MonoBehaviour
                 }
             }
         }
+    }
 
+    void ReadyQuest()
+    {
+        if(!questReady)
+        {
+            questReady = true;
+        }
     }
 
 }

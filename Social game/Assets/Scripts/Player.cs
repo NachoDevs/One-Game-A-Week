@@ -8,12 +8,14 @@ public class Player : MonoBehaviour
 
     public NPC talkingTo;
 
+    GameManager m_gm;
+
     SphereCollider interactionArea;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -61,10 +63,35 @@ public class Player : MonoBehaviour
                     }
                     else
                     {
-                        npc.Quest();
+                        if(npc.questReady)
+                        {
+                            npc.Quest();
+                        }
+                        else
+                        {
+                            npc.ChitChat();
+                        }
                     }
                 }
             }
         }
+    }
+
+    public void AcceptConfirmation()
+    {
+        talkingTo.Talk("thanks");
+        m_gm.ConfirmationPanel.SetActive(false);
+
+        talkingTo.IncrementFriendshipLevel(0);
+    }
+
+    public void DenyConfirmation()
+    {
+        talkingTo.waitingForFruit = false;
+
+        talkingTo.Talk("goodbyes");
+        m_gm.ConfirmationPanel.SetActive(false);
+
+        talkingTo.IncrementFriendshipLevel(-1);
     }
 }

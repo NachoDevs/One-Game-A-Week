@@ -15,7 +15,7 @@ public class DayNightController : MonoBehaviour
     void Start()
     {
         m_sunInitialIntensity = sun.intensity;
-        currentTimeOfDay = .55f;
+        currentTimeOfDay = .3f;
     }
 
     void Update()

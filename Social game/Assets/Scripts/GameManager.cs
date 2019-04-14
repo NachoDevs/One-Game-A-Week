@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> fruits;
 
+    [Header("UI")]
+    public GameObject ConfirmationPanel;
+
     Camera m_cam;
 
     private void Start()
