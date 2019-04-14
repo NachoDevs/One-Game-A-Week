@@ -139,7 +139,6 @@ public class NPC : MonoBehaviour
             friendshipLevel += t_ammountToIncrement;
         }
 
-        print(t_ammountToIncrement);
         m_stateAnimator.SetTrigger((t_ammountToIncrement > -.5f) ? "isInLove" : "isSad");
     }
 
