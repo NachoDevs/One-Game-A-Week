@@ -101,7 +101,7 @@ public class PathfindingManager : MonoBehaviour
                     if (foundObstacle == false)
                     {
                         //if we havent found an obstacle then we create a walkable node and assign its grid coords
-                        GameObject node = (GameObject)Instantiate(nodePrefab, new Vector3(x + 0.5f + gridBase.transform.position.x, y + 0.5f + gridBase.transform.position.y, 0), Quaternion.Euler(0, 0, 0), walkableNodesParent);
+                        GameObject node = (GameObject)Instantiate(nodePrefab, new Vector3(x + 0.5f + gridBase.transform.position.x, y + 0.5f + gridBase.transform.position.y, -.5f), Quaternion.Euler(0, 0, 0), walkableNodesParent);
                         WorldTile wt = node.GetComponent<WorldTile>();
                         wt.gridX = gridX;
                         wt.gridY = gridY;
@@ -114,9 +114,9 @@ public class PathfindingManager : MonoBehaviour
                     else
                     {
                         //if we have found an obstacle then we do the same but make the node unwalkable
-                        GameObject node = (GameObject)Instantiate(nodePrefab, new Vector3(x + 0.5f + gridBase.transform.position.x, y + 0.5f + gridBase.transform.position.y, 0), Quaternion.Euler(0, 0, 0), /*non*/walkableNodesParent);
+                        GameObject node = (GameObject)Instantiate(nodePrefab, new Vector3(x + 0.5f + gridBase.transform.position.x, y + 0.5f + gridBase.transform.position.y, -.5f), Quaternion.Euler(0, 0, 0), nonWalkableNodesParent);
                         //we add the gridBase position to ensure that the nodes are ontop of the tile they relate too
-                        node.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+                        //node.GetComponentInChildren<SpriteRenderer>().color = Color.red;
                         WorldTile wt = node.GetComponent<WorldTile>();
                         wt.gridX = gridX;
                         wt.gridY = gridY;
@@ -693,16 +693,14 @@ public class PathfindingManager : MonoBehaviour
 
     public WorldTile GetTile(int t_x, int t_y)
     {
-        WorldTile wt;
-
         foreach(var tile in unsortedNodes)
         {
-            WorldTile tileWT = tile.GetComponent<WorldTile>();
-            if (tileWT.walkable)
+            WorldTile wt = tile.GetComponent<WorldTile>();
+            if (wt.walkable)
             {
-                if(tileWT.gridX == t_x && tileWT.gridY == t_y)
+                if(wt.gridX == t_x && wt.gridY == t_y)
                 {
-                    return tileWT;
+                    return wt;
                 }
             }
         }

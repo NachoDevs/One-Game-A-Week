@@ -26,7 +26,7 @@ public class CharacterMovement : MonoBehaviour
         {
             m_hit = Physics2D.Raycast(m_cam.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
-            if (m_hit.collider.gameObject.GetComponent<TilemapCollider2D>() != null)
+            if (m_hit.collider.gameObject.GetComponentInParent<WorldTile>() != null)
             {
                 m_path = Pathfinding.FindPath(m_pfm.GetTile((int)transform.position.x, (int)transform.position.y)
                                                         , m_pfm.GetTile((int)m_hit.point.x, (int)m_hit.point.y));
@@ -39,7 +39,7 @@ public class CharacterMovement : MonoBehaviour
     {
         foreach(WorldTile wt in t_path)
         {
-            transform.position = new Vector3(wt.gridX + .5f, wt.gridY + .5f, 0);
+            transform.position = new Vector3(wt.gridX + .5f, wt.gridY + .5f, -1);
 
             yield return new WaitForSeconds(.2f);
         }
