@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 using System;
 
 public enum GameState
@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI stateText;
 
     [Header("Character")]
-    public Transform charactersFather;
+    public Transform charactersParent;
     public GameObject princeCharacter;
     public GameObject pirateCaptainCharacter;
 
@@ -90,9 +90,9 @@ public class GameManager : MonoBehaviour
 
     void LoadGame()
     {
-        GameObject prince = Instantiate(princeCharacter, new Vector3(13.5f, 49.5f, -1f), new Quaternion(), charactersFather);
+        GameObject prince = Instantiate(princeCharacter, new Vector3(13.5f, 49.5f, -1f), new Quaternion(), charactersParent);
         m_characters.Add(prince);
-        GameObject captain = Instantiate(pirateCaptainCharacter, new Vector3(15.5f, 51.5f, -1f), new Quaternion(), charactersFather);
+        GameObject captain = Instantiate(pirateCaptainCharacter, new Vector3(15.5f, 51.5f, -1f), new Quaternion(), charactersParent);
         m_characters.Add(captain);
 
         GameData gd = SaveSystem.LoadGame();
@@ -182,6 +182,8 @@ public class GameManager : MonoBehaviour
 
                     break;
             case GameState.PlayerAttack:
+                SaveGame();
+                SceneManager.LoadScene(1);
                 break;
             case GameState.AIturn:
                 break;

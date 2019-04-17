@@ -1317,7 +1317,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919286271}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15, y: 57, z: 0}
+  m_LocalPosition: {x: 14.77, y: 49.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 519420032}
@@ -80940,7 +80940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currGameState: 0
   stateText: {fileID: 876942465}
-  charactersFather: {fileID: 1744317353}
+  charactersParent: {fileID: 0}
   princeCharacter: {fileID: 3878854558787122232, guid: 29ed9ef3d3db47c4aaf1e56eb0fd3ebd,
     type: 3}
   pirateCaptainCharacter: {fileID: 4442655876910246509, guid: be12acc730911ae49b9d16256fdac993,
