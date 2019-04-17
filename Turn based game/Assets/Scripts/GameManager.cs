@@ -75,22 +75,42 @@ public class GameManager : MonoBehaviour
                         //break;
                     }         
                     
-                }catch( Exception e) { }
+                }catch (Exception e) { print(e.Message); }
 
                 break;
             case GameState.PlayerMove:
-
-                // Edit to do it just once
-                List<WorldTile> lwt = m_pfm.getNeighbours((int)m_selectedCharacter.transform.position.x, (int)m_selectedCharacter.transform.position.y, m_pfm.gridBoundX, m_pfm.gridBoundY);
-                foreach (WorldTile wt in lwt)
+                
+                try
                 {
-                    if(!wt.selected)
+                    if(Input.GetMouseButtonUp(0))
                     {
-                        wt.UpdateTIle(TileState.Selected);
-                    }
-                }
+                        m_hit = Physics2D.Raycast(m_cam.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
-                break;
+                        m_previousTile = m_currentTile;
+
+                        m_currentTile = m_pfm.GetTile((int)m_hit.transform.position.x, (int)m_hit.transform.position.y);
+
+                        if(m_currentTile.selected)
+                        {
+                            m_selectedCharacter.MoveTo(m_currentTile);
+                        }
+
+                        if(m_currentTile != m_previousTile)
+                        {
+                            foreach (WorldTile wt in m_previousTile.myNeighbours)
+                            {
+                                if (wt.selected)
+                                {
+                                    wt.UpdateTIle(TileState.Default);
+                                }
+                            }
+                        }
+
+                        currGameState = GameState.PlayerSelectTile;
+                    }
+                }catch(Exception e) { print(e.Message); }
+
+                    break;
             case GameState.PlayerAttack:
                 break;
             case GameState.AIturn:
@@ -119,10 +139,10 @@ public class GameManager : MonoBehaviour
                 m_currentTile.UpdateTIle(TileState.Hovered);
             }
 
-            if (Input.GetMouseButtonUp(0))
+            /*if (Input.GetMouseButtonUp(0))
             {
                 m_currentTile.UpdateTIle(TileState.Selected);
-            }
+            }*/
 
             m_previousTile = m_currentTile;
         }
@@ -131,5 +151,14 @@ public class GameManager : MonoBehaviour
     void CharacterSelectedBehaviour()
     {
         currGameState = GameState.PlayerMove;
+
+        // Change for "in walking range" tiles. Do it on the character script?
+        foreach (WorldTile wt in m_currentTile.myNeighbours)
+        {
+            if (!wt.selected)
+            {
+                wt.UpdateTIle(TileState.Selected);
+            }
+        }
     }
 }

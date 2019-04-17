@@ -5,37 +5,30 @@ using UnityEngine.Tilemaps;
 
 public class CharacterMovement : MonoBehaviour
 {
+    public int movesLeft;
+
     Camera m_cam;
 
     static PathfindingManager m_pfm; // Pathfinding manager
 
     List<WorldTile> m_path;
 
-    RaycastHit2D m_hit;
-
     void Awake()
     {
         m_cam = Camera.main;
         m_pfm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<PathfindingManager>();
+
+        movesLeft = 3;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MoveTo(WorldTile t_destination)
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            m_hit = Physics2D.Raycast(m_cam.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-
-            if (m_hit.collider.gameObject.GetComponentInParent<WorldTile>() != null)
-            {
-                m_path = Pathfinding.FindPath(m_pfm.GetTile((int)transform.position.x, (int)transform.position.y)
-                                                        , m_pfm.GetTile((int)m_hit.point.x, (int)m_hit.point.y));
-                StartCoroutine(Move(m_path));
-            }
-        }
+        m_path = Pathfinding.FindPath(m_pfm.GetTile((int)transform.position.x, (int)transform.position.y)
+                                        , t_destination);
+        StartCoroutine(MoveCoroutine(m_path));
     }
 
-    IEnumerator Move(List<WorldTile> t_path)
+    IEnumerator MoveCoroutine(List<WorldTile> t_path)
     {
         foreach(WorldTile wt in t_path)
         {
