@@ -18,7 +18,15 @@ public class GameManager : MonoBehaviour
 {
     public GameState currGameState;
 
+    [Header("UI")]
     public TextMeshProUGUI stateText;
+
+    [Header("Character")]
+    public Transform charactersFather;
+    public GameObject princeCharacter;
+    public GameObject pirateCaptainCharacter;
+
+    List<GameObject> m_characters;
 
     PathfindingManager m_pfm;
 
@@ -31,15 +39,22 @@ public class GameManager : MonoBehaviour
     WorldTile m_previousTile;
     WorldTile m_currentTile;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         m_pfm = GetComponent<PathfindingManager>();
         m_cam = Camera.main;
+        m_characters = new List<GameObject>();
 
         m_previousTile = m_pfm.GetTile(0, 0);
 
         currGameState = GameState.PlayerSelectTile;
+
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        LoadGame();
     }
 
     // Update is called once per frame
@@ -47,7 +62,54 @@ public class GameManager : MonoBehaviour
     {
         HandleGameState();
     }
-    
+
+    public void SaveGame()
+    {
+        List<int> partyHealth = new List<int>();
+        List<int> partyAttackDamage = new List<int>();
+        foreach (GameObject c in m_characters)
+        {
+            partyHealth.Add(c.GetComponent<Character>().health);
+            partyAttackDamage.Add(c.GetComponent<Character>().attackDamage);
+        }
+
+        int charaterCount = partyHealth.Count;
+        int auxIndex = 0;
+        float[,] partyPos = new float[2 , charaterCount];
+
+        foreach (GameObject c in m_characters)
+        {
+            partyPos[0, auxIndex] = c.transform.position.x;
+            partyPos[1, auxIndex] = c.transform.position.y;
+
+            ++auxIndex;
+        }
+
+        SaveSystem.SaveGame(SaveSystem.GenerateGameData(partyHealth, partyAttackDamage, partyPos));
+    }
+
+    void LoadGame()
+    {
+        GameObject prince = Instantiate(princeCharacter, new Vector3(13.5f, 49.5f, -1f), new Quaternion(), charactersFather);
+        m_characters.Add(prince);
+        GameObject captain = Instantiate(pirateCaptainCharacter, new Vector3(15.5f, 51.5f, -1f), new Quaternion(), charactersFather);
+        m_characters.Add(captain);
+
+        GameData gd = SaveSystem.LoadGame();
+
+        if (gd != null)
+        {
+            prince.transform.position = new Vector3(gd.partyPositions[0, 0], gd.partyPositions[1, 0], -1);
+            captain.transform.position = new Vector3(gd.partyPositions[0, 1], gd.partyPositions[1, 1], -1);
+
+            prince.GetComponent<Character>().health = gd.partyHealth[0];
+            captain.GetComponent<Character>().health = gd.partyHealth[1];
+
+            prince.GetComponent<Character>().attackDamage = gd.partyAttackDamage[0];
+            captain.GetComponent<Character>().attackDamage = gd.partyAttackDamage[1];
+        }
+    }
+
     void HandleGameState()
     {
         stateText.text = "Game State:\n" + currGameState.ToString();
@@ -93,7 +155,15 @@ public class GameManager : MonoBehaviour
 
                         if(m_currentTile.selected)
                         {
-                            m_selectedCharacter.MoveTo(m_currentTile);
+                            if(m_hit.collider.gameObject.GetComponentInParent<Enemy>() != null)
+                            {
+                                currGameState = GameState.PlayerAttack;
+                            }
+                            else
+                            {
+                                m_selectedCharacter.MoveTo(m_currentTile);
+                                currGameState = GameState.PlayerSelectTile;
+                            }
                         }
 
                         if(m_currentTile != m_previousTile)
@@ -107,7 +177,6 @@ public class GameManager : MonoBehaviour
                             }
                         }
 
-                        currGameState = GameState.PlayerSelectTile;
                     }
                 }catch(Exception e) { print(e.Message); }
 
@@ -162,4 +231,5 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
 }
