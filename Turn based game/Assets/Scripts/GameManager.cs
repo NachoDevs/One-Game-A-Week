@@ -60,9 +60,10 @@ public class GameManager : MonoBehaviour
                 {
                     m_currentTile = m_pfm.GetTile((int)m_hit.transform.position.x, (int)m_hit.transform.position.y);
 
-                    if ((m_selectedCharacter = m_hit.collider.gameObject.GetComponentInParent<Character>()) != null)
+                    if (m_hit.collider.gameObject.GetComponentInParent<Player>() != null)
                     {
-                        if(Input.GetMouseButtonUp(0))
+                        m_selectedCharacter = m_hit.collider.gameObject.GetComponentInParent<Character>();
+                        if (Input.GetMouseButtonUp(0))
                         {
                             CharacterSelectedBehaviour();
                             //break;
