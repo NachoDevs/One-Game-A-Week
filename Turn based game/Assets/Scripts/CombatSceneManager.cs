@@ -10,7 +10,8 @@ using SimpleJSON;
 
 enum CombatFace
 {
-    PlayerFace,
+    PlayerSelect,
+    PlayerAttack,
     AIFace
 }
 
@@ -24,7 +25,9 @@ public class CombatSceneManager : MonoBehaviour
     public Transform enemyInfoPanelParent;
     public GameObject characterInfoPanel;
     public GameObject enemyInfoPanel;
+    public GameObject abilityButton;
     public GameObject abilitiesPanel;
+    public GameObject characterSelectionArrow;
 
     [Header("Character")]
     public Transform charactersParent;
@@ -38,14 +41,22 @@ public class CombatSceneManager : MonoBehaviour
     Camera m_cam;
 
     Character m_selectedCharacter;
+    Character m_selectedEnemy;
+
+    GameObject playerArrow;
+    GameObject enemyArrow;
 
     RaycastHit2D m_hit;
 
+    List<int> m_charactersHealth;
     List<GameObject> m_characters;
+    List<GameObject> m_infoPanels;
 
     void Awake()
     {
+        m_charactersHealth = new List<int>();
         m_characters = new List<GameObject>();
+        m_infoPanels = new List<GameObject>(); ;
         m_cam = Camera.main;
     }
 
@@ -54,8 +65,8 @@ public class CombatSceneManager : MonoBehaviour
     {
         LoadCharacters();
         LoadAbilities();
-        abilitiesPanel.SetActive(false);
-        m_currFace = CombatFace.PlayerFace;
+        HideAbilitiesPanel();
+        m_currFace = CombatFace.PlayerSelect;
     }
 
     // Update is called once per frame
@@ -63,13 +74,33 @@ public class CombatSceneManager : MonoBehaviour
     {
         stateText.text = "CombatState:\n" + m_currFace.ToString();
 
+        // this here will change as more characters can join the battle, this is not a good way to implement this
+        m_charactersHealth.Clear();
+        foreach (GameObject ch in m_characters)
+        {
+            m_charactersHealth.Add(ch.GetComponent<Character>().health);
+        }
+
+        for(int i = 0, j = 0; i < m_charactersHealth.Count + 1; ++i, j = 0)
+        {
+            foreach(GameObject iPanel in m_infoPanels)
+            {
+                if (i == j)
+                {
+                    iPanel.GetComponentInChildren<Slider>().value = m_charactersHealth[i];
+                }
+                ++j;
+            }
+        }
+        // ---------
+
         HandleCombatState();
     }
 
     void StartTurn()
     {
         endTurnButton.interactable = true;
-        m_currFace = CombatFace.PlayerFace;
+        m_currFace = CombatFace.PlayerSelect;
     }
 
     public void EndTurn()
@@ -98,11 +129,12 @@ public class CombatSceneManager : MonoBehaviour
         switch (m_currFace)
         {
             default:    // Playerface is the default state
-            case CombatFace.PlayerFace:
+            case CombatFace.PlayerSelect:
                 if (Input.GetMouseButtonUp(0))
                 {
                     m_hit = Physics2D.Raycast(m_cam.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
+                    HideAbilitiesPanel();
                     try
                     {
                         if (m_hit.collider.gameObject.GetComponentInParent<Player>() != null)
@@ -115,8 +147,31 @@ public class CombatSceneManager : MonoBehaviour
                             }
                             else
                             {
-                                
+                                m_currFace = CombatFace.PlayerAttack;
+                                ShowAbilitiesPanel();
+                                SelectCharacter(m_selectedCharacter);
                             }
+                        }
+                    }
+                    catch (Exception e) { }
+                }
+                break;
+            case CombatFace.PlayerAttack:
+                if(Input.GetMouseButtonUp(0))
+                {
+                    m_hit = Physics2D.Raycast(m_cam.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+
+                    try
+                    {
+                        if (m_hit.collider.gameObject.GetComponentInParent<Enemy>() != null)
+                        {
+                            m_selectedEnemy = m_hit.collider.gameObject.GetComponentInParent<Character>();
+                            SelectCharacter(m_selectedEnemy);
+                        }
+                        else if (m_hit.collider.gameObject.GetComponentInParent<Character>() == m_selectedCharacter)
+                        {
+                            UnselectCharacter(m_selectedCharacter);
+                            m_currFace = CombatFace.PlayerSelect;
                         }
                     }
                     catch (Exception e) { }
@@ -131,13 +186,19 @@ public class CombatSceneManager : MonoBehaviour
 
     void LoadCharacters()
     {
-        GameObject prince = Instantiate(princeCharacter, new Vector3(-4f, -4f, -1f), new Quaternion(), charactersParent);
+        GameObject prince = Instantiate(princeCharacter, new Vector3(-4f, 0f, -1f), new Quaternion(), charactersParent);
         m_characters.Add(prince);
+        prince.transform.localScale = new Vector3(3, 3, 1);
         SetUpCharacterInfoPanel(prince.GetComponent<Character>().name, prince.GetComponent<Character>().health, (prince.GetComponent<Player>() == null) ? true : false);
-        GameObject captain = Instantiate(pirateCaptainCharacter, new Vector3(4f, -4f, -1f), new Quaternion(), charactersParent);
-        captain.GetComponentInChildren<SpriteRenderer>().flipX = true;
+        m_charactersHealth.Add(prince.GetComponent<Character>().health);
+
+
+        GameObject captain = Instantiate(pirateCaptainCharacter, new Vector3(4f, 0f, -1f), new Quaternion(), charactersParent);
         m_characters.Add(captain);
+        captain.transform.localScale = new Vector3(3, 3, 1);
+        /* if he is an enemy then*/ captain.GetComponentInChildren<SpriteRenderer>().flipX = true;
         SetUpCharacterInfoPanel(captain.GetComponent<Character>().name, captain.GetComponent<Character>().health, (captain.GetComponent<Player>() == null) ? true : false);
+        m_charactersHealth.Add(prince.GetComponent<Character>().health);
 
         foreach (GameObject c in m_characters)
         {
@@ -169,7 +230,7 @@ public class CombatSceneManager : MonoBehaviour
     }
 
 
-    GameObject SetUpCharacterInfoPanel(string t_characterName, int t_characterHealth, bool t_isEnemy)
+    void SetUpCharacterInfoPanel(string t_characterName, int t_characterHealth, bool t_isEnemy)
     {
         GameObject panel = Instantiate((t_isEnemy)? enemyInfoPanel : characterInfoPanel
                                         , (t_isEnemy) ? enemyInfoPanelParent : characterInfoPanelParent);
@@ -177,14 +238,45 @@ public class CombatSceneManager : MonoBehaviour
         panel.GetComponentInChildren<TextMeshProUGUI>().text = t_characterName;
         panel.GetComponentInChildren<Slider>().value = t_characterHealth;
 
-        return panel;
+        m_infoPanels.Add(panel);
     }
 
     void ShowAbilitiesPanel()
     {
         abilitiesPanel.SetActive(true);
 
+        foreach (Ability ability in m_selectedCharacter.abilities)
+        {
+            GameObject button = Instantiate(abilityButton, abilitiesPanel.transform);
 
+            button.GetComponentInChildren<TextMeshProUGUI>().text = ability.type.ToString();
+
+            button.GetComponent<Button>().onClick.AddListener(() => 
+            {
+                if(m_selectedEnemy == null)
+                {
+                    print("select and enemy!");
+                }
+                else
+                {
+                    m_selectedCharacter.UseAbility(ability.type, m_selectedEnemy);
+                    m_selectedEnemy.health -= ability.damage;
+                    m_currFace = CombatFace.PlayerSelect;
+                    UnselectCharacter(m_selectedCharacter);
+                    UnselectCharacter(m_selectedEnemy);
+                }
+            });
+        }
+    }
+
+    void HideAbilitiesPanel()
+    {
+        abilitiesPanel.SetActive(false);
+
+        foreach (Transform abilityButton in abilitiesPanel.transform)
+        {
+            Destroy(abilityButton.gameObject);
+        }
     }
 
     void LoadAbilities()
@@ -197,8 +289,6 @@ public class CombatSceneManager : MonoBehaviour
         foreach(GameObject character in m_characters)
         {
             Character charC = character.GetComponent<Character>();
-
-            charC.abilities = new List<Ability>();
 
             foreach (var characterJSON in abilitiesJSON)
             {
@@ -216,6 +306,46 @@ public class CombatSceneManager : MonoBehaviour
             }
 
         }
+    }
+
+    void SelectCharacter(Character t_character)
+    {
+        GameObject arrow = Instantiate(characterSelectionArrow, t_character.gameObject.transform);
+        arrow.transform.position = new Vector3(t_character.gameObject.transform.position.x
+                                            , t_character.gameObject.transform.position.y + 1
+                                            , t_character.gameObject.transform.position.z);
+        arrow.transform.localScale /= 3;
+
+        try
+        {
+            if(t_character.GetComponent<Player>() != null)
+            {
+                arrow.GetComponentInChildren<SpriteRenderer>().color = Color.green;
+                playerArrow = arrow;
+            }
+            else
+            {
+                arrow.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+                enemyArrow = arrow;
+            }
+        } catch(Exception e) { }
+    }
+
+    void UnselectCharacter(Character t_character)
+    {
+        try
+        {
+            if (t_character.GetComponent<Player>() != null)
+            {
+                m_selectedCharacter = null;
+                Destroy(playerArrow);
+            }
+            else
+            {
+                m_selectedEnemy = null;
+                Destroy(enemyArrow);
+            }
+        } catch(Exception e) { }
     }
 
 }

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum AttackType
+public enum AbilityType
 {
     melee,
     range,
@@ -14,7 +14,7 @@ public class Ability
 {
     public int damage;
 
-    public AttackType type;
+    public AbilityType type;
 
     public Ability()
     {
@@ -27,17 +27,17 @@ public class Ability
         switch(type)
         {
             default:    // Melee ability is default
-            case AttackType.melee:
-                damage = 3;
-                type = AttackType.melee;
+            case AbilityType.melee:
+                damage = 25;
+                type = AbilityType.melee;
                 break;
-            case AttackType.range:
-                damage = 5;
-                type = AttackType.range;
+            case AbilityType.range:
+                damage = 30;
+                type = AbilityType.range;
                 break;
-            case AttackType.special:
-                damage = 10;
-                type = AttackType.special;
+            case AbilityType.special:
+                damage = 60;
+                type = AbilityType.special;
                 break;
         }
     }
