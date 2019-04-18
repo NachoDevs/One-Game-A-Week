@@ -19,7 +19,9 @@ public class CombatSceneManager : MonoBehaviour
     public Button endTurnButton;
     public TextMeshProUGUI stateText;
     public Transform characterInfoPanelParent;
+    public Transform enemyInfoPanelParent;
     public GameObject characterInfoPanel;
+    public GameObject enemyInfoPanel;
 
     [Header("Character")]
     public Transform charactersParent;
@@ -118,10 +120,11 @@ public class CombatSceneManager : MonoBehaviour
     {
         GameObject prince = Instantiate(princeCharacter, new Vector3(-4f, -4f, -1f), new Quaternion(), charactersParent);
         m_characters.Add(prince);
-        SetUpCharacterInfoPanel(prince.GetComponent<Character>().name, prince.GetComponent<Character>().health);
+        SetUpCharacterInfoPanel(prince.GetComponent<Character>().name, prince.GetComponent<Character>().health, (prince.GetComponent<Player>() == null) ? true : false);
         GameObject captain = Instantiate(pirateCaptainCharacter, new Vector3(4f, -4f, -1f), new Quaternion(), charactersParent);
         captain.GetComponentInChildren<SpriteRenderer>().flipX = true;
         m_characters.Add(captain);
+        SetUpCharacterInfoPanel(captain.GetComponent<Character>().name, captain.GetComponent<Character>().health, (captain.GetComponent<Player>() == null) ? true : false);
 
         foreach (GameObject c in m_characters)
         {
@@ -153,9 +156,10 @@ public class CombatSceneManager : MonoBehaviour
     }
 
 
-    GameObject SetUpCharacterInfoPanel(string t_characterName, int t_characterHealth)
+    GameObject SetUpCharacterInfoPanel(string t_characterName, int t_characterHealth, bool t_isEnemy)
     {
-        GameObject panel = Instantiate(characterInfoPanel, characterInfoPanelParent);
+        GameObject panel = Instantiate((t_isEnemy)? enemyInfoPanel : characterInfoPanel
+                                        , (t_isEnemy) ? enemyInfoPanelParent : characterInfoPanelParent);
 
         panel.GetComponentInChildren<TextMeshProUGUI>().text = t_characterName;
         panel.GetComponentInChildren<Slider>().value = t_characterHealth;
