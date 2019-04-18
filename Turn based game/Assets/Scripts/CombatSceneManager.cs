@@ -75,26 +75,6 @@ public class CombatSceneManager : MonoBehaviour
     {
         stateText.text = "CombatState:\n" + m_currFace.ToString();
 
-        // this here will change as more characters can join the battle, this is not a good way to implement this
-        /*m_charactersHealth.Clear();
-        foreach (GameObject ch in m_characters)
-        {
-            m_charactersHealth.Add(ch.GetComponent<Character>().health);
-        }
-
-        for(int i = 0, j = 0; i < m_charactersHealth.Count + 1; ++i, j = 0)
-        {
-            foreach(GameObject iPanel in m_infoPanels)
-            {
-                if (i == j)
-                {
-                    iPanel.GetComponentInChildren<Slider>().value = m_charactersHealth[i];
-                }
-                ++j;
-            }
-        }*/
-        // ---------
-
         HandleCombatState();
     }
 
@@ -199,20 +179,14 @@ public class CombatSceneManager : MonoBehaviour
             int allyCount = 0, enemyCount = 0;
             for(int i = 0; i < numOfCharacters; ++i)
             {
-                // TODO: cant be this way
-                /*GameObject go;
-                if (i == 0) go = princeCharacter;
-                else if (i == 1) go = elfCharacter;
-                else go = pirateCaptainCharacter;*/
-
-                GameObject character = /*Instantiate(*/Character.id_prefab[i]/*, charactersParent)*/;
+                GameObject character = Character.id_prefab[i];
                 Character characterC = character.GetComponent<Character>();
                 // Position
                 character.transform.position = new Vector3((character.GetComponent<Enemy>() == null) ? (-4f - ((allyCount++) * 2)): (4f + ((enemyCount++) * 2) ), 0f, -1f);
                 // Local scale
                 character.transform.localScale = new Vector3(3, 3, 1);
                 // Info Panel
-                SetUpCharacterInfoPanel(character.GetComponent<Character>().characterName, character.GetComponent<Character>().health, (character.GetComponent<Player>() == null) ? true : false);
+                SetUpCharacterInfoPanel(character.GetComponent<Character>(), (character.GetComponent<Player>() == null) ? true : false);
                 // 
                 m_charactersHealth.Add(character.GetComponent<Character>().health);
                 // Disable movement script
@@ -229,37 +203,17 @@ public class CombatSceneManager : MonoBehaviour
 
                 m_characters.Add(character);
             }
-
-            //GameObject captain = Instantiate(pirateCaptainCharacter, new Vector3(4f, 0f, -1f), new Quaternion(), charactersParent);
-            //m_characters.Add(captain);
-            //captain.transform.localScale = new Vector3(3, 3, 1);
-            ///* if he is an enemy then*/ captain.GetComponentInChildren<SpriteRenderer>().flipX = true;
-            //SetUpCharacterInfoPanel(captain.GetComponent<Character>().name, captain.GetComponent<Character>().health, (captain.GetComponent<Player>() == null) ? true : false);
-            //m_charactersHealth.Add(prince.GetComponent<Character>().health);
-
-            //prince.GetComponent<Character>().health = gd.partyHealth[0];
-            //captain.GetComponent<Character>().health = gd.partyHealth[1];
-
-            //prince.GetComponent<Character>().attackDamageBoost = gd.partyDamageBoost[0];
-            //captain.GetComponent<Character>().attackDamageBoost = gd.partyDamageBoost[1];
-
-
-            //foreach (GameObject c in m_characters)
-            //{
-
-            //    ++auxIndex;
-            //}
         }
     }
 
 
-    void SetUpCharacterInfoPanel(string t_characterName, int t_characterHealth, bool t_isEnemy)
+    void SetUpCharacterInfoPanel(Character t_character, bool t_isEnemy)
     {
         GameObject panel = Instantiate((t_isEnemy)? enemyInfoPanel : characterInfoPanel
                                         , (t_isEnemy) ? enemyInfoPanelParent : characterInfoPanelParent);
 
-        panel.GetComponentInChildren<TextMeshProUGUI>().text = t_characterName;
-        panel.GetComponentInChildren<Slider>().value = t_characterHealth;
+        panel.GetComponentInChildren<TextMeshProUGUI>().text = t_character.characterName;
+        t_character.healthBar = panel.GetComponentInChildren<Slider>();
 
         m_infoPanels.Add(panel);
     }

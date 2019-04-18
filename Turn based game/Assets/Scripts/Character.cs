@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Character : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Character : MonoBehaviour
     public static Dictionary<int, GameObject> id_prefab;
 
     public bool hasAttacked;
+    public bool isDead;
 
     public int health = 100;
     public int damageBoost = 1;
@@ -16,7 +18,12 @@ public class Character : MonoBehaviour
 
     public string characterName;
 
+    public Sprite deadSprite;
+
     public List<Ability> abilities;
+
+    [HideInInspector]
+    public Slider healthBar;
 
     bool m_attacking = false;
 
@@ -62,6 +69,19 @@ public class Character : MonoBehaviour
 
     void Update()
     {
+        if(healthBar != null)
+        {
+            healthBar.value = health;
+        }
+
+        if(!isDead)
+        {
+            if(health < 1)
+            {
+                Die();
+            }
+        }
+
         if(m_combatTarget != null)
         {
             if (m_attacking)
@@ -137,5 +157,13 @@ public class Character : MonoBehaviour
     void OnDestroy()
     {
         --s_nextCharacterIndex;
+    }
+
+    void Die()
+    {
+        isDead = true;
+        m_animator.SetTrigger("die");
+        m_animator.enabled = false;
+        GetComponentInChildren<SpriteRenderer>().sprite = deadSprite;
     }
 }

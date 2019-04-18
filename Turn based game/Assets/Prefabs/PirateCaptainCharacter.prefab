@@ -49,6 +49,12 @@ PrefabInstance:
       propertyPath: characterName
       value: Pirate Captain
       objectReference: {fileID: 0}
+    - target: {fileID: 5891184392644207099, guid: f11de07b7a65b024eb4ccb8e0df009d9,
+        type: 3}
+      propertyPath: deadSprite
+      value: 
+      objectReference: {fileID: 21300078, guid: 59bbc4f15319a724ba9fe4e4681a4441,
+        type: 3}
     - target: {fileID: 5891184392644207096, guid: f11de07b7a65b024eb4ccb8e0df009d9,
         type: 3}
       propertyPath: m_LocalPosition.x
