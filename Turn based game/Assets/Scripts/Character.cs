@@ -6,6 +6,7 @@ public enum AttackType
 {
     melee,
     range,
+    both,
     pacifist
 }
 
@@ -13,8 +14,13 @@ public class Character : MonoBehaviour
 {
     public int health;
     public int attackDamage;
+    public int characterIndex;
+
+    public string name;
 
     public AttackType attackType;
+
+    static int nextCharacterIndex;
 
     CharacterMovement m_cm;
 
@@ -24,6 +30,7 @@ public class Character : MonoBehaviour
         {
             m_cm = GetComponent<CharacterMovement>();
         }
+        characterIndex = ++nextCharacterIndex;
     }
 
     public void MoveTo(WorldTile t_destination)

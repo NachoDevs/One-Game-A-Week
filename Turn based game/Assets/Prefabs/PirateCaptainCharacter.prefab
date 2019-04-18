@@ -22,7 +22,27 @@ PrefabInstance:
     - target: {fileID: 5891184392644207103, guid: f11de07b7a65b024eb4ccb8e0df009d9,
         type: 3}
       propertyPath: m_Name
-      value: EnemyCharacter
+      value: PirateCaptainCharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: 5891184392644207099, guid: f11de07b7a65b024eb4ccb8e0df009d9,
+        type: 3}
+      propertyPath: name
+      value: Pirate Captain
+      objectReference: {fileID: 0}
+    - target: {fileID: 5891184392644207099, guid: f11de07b7a65b024eb4ccb8e0df009d9,
+        type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5891184392644207099, guid: f11de07b7a65b024eb4ccb8e0df009d9,
+        type: 3}
+      propertyPath: attackDamage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5891184392644207099, guid: f11de07b7a65b024eb4ccb8e0df009d9,
+        type: 3}
+      propertyPath: attackType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5891184392644207096, guid: f11de07b7a65b024eb4ccb8e0df009d9,
         type: 3}
