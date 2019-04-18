@@ -1,0 +1,12 @@
+{
+    "Prince":
+    [
+        "melee",
+        "special"
+    ],
+    "Pirate Captain":
+    [
+        "melee",
+        "range"
+    ]
+}

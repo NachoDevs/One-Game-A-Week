@@ -2,23 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum AttackType
-{
-    melee,
-    range,
-    both,
-    pacifist
-}
-
 public class Character : MonoBehaviour
 {
+    public bool hasAttacked;
+
     public int health;
-    public int attackDamage;
+    public int attackDamageBoost = 1;
     public int characterIndex;
 
     public string name;
 
-    public AttackType attackType;
+
+    public List<Ability> abilities;
 
     static int nextCharacterIndex;
 
@@ -31,6 +26,10 @@ public class Character : MonoBehaviour
             m_cm = GetComponent<CharacterMovement>();
         }
         characterIndex = ++nextCharacterIndex;
+    }
+
+    void Start()
+    {
     }
 
     public void MoveTo(WorldTile t_destination)

@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
         foreach (GameObject c in m_characters)
         {
             partyHealth.Add(c.GetComponent<Character>().health);
-            partyAttackDamage.Add(c.GetComponent<Character>().attackDamage);
+            partyAttackDamage.Add(c.GetComponent<Character>().attackDamageBoost);
         }
 
         int charaterCount = partyHealth.Count;
@@ -105,8 +105,8 @@ public class GameManager : MonoBehaviour
             prince.GetComponent<Character>().health = gd.partyHealth[0];
             captain.GetComponent<Character>().health = gd.partyHealth[1];
 
-            prince.GetComponent<Character>().attackDamage = gd.partyAttackDamage[0];
-            captain.GetComponent<Character>().attackDamage = gd.partyAttackDamage[1];
+            prince.GetComponent<Character>().attackDamageBoost = gd.partyAttackDamage[0];
+            captain.GetComponent<Character>().attackDamageBoost = gd.partyAttackDamage[1];
         }
     }
 
@@ -115,6 +115,7 @@ public class GameManager : MonoBehaviour
         stateText.text = "Game State:\n" + currGameState.ToString();
         switch(currGameState)
         {
+            default:    // PlayerSelectTile is the default state
             case GameState.PlayerSelectTile:
                 m_hit = Physics2D.Raycast(m_cam.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
@@ -188,8 +189,6 @@ public class GameManager : MonoBehaviour
             case GameState.AIturn:
                 break;
             case GameState.GameOver:
-                break;
-            default:
                 break;
         }
     }

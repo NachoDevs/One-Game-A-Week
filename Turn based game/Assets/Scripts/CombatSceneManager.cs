@@ -5,6 +5,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.IO;
+using SimpleJSON;
 
 enum CombatFace
 {
@@ -22,6 +24,7 @@ public class CombatSceneManager : MonoBehaviour
     public Transform enemyInfoPanelParent;
     public GameObject characterInfoPanel;
     public GameObject enemyInfoPanel;
+    public GameObject abilitiesPanel;
 
     [Header("Character")]
     public Transform charactersParent;
@@ -50,6 +53,8 @@ public class CombatSceneManager : MonoBehaviour
     void Start()
     {
         LoadCharacters();
+        LoadAbilities();
+        abilitiesPanel.SetActive(false);
         m_currFace = CombatFace.PlayerFace;
     }
 
@@ -80,7 +85,7 @@ public class CombatSceneManager : MonoBehaviour
         foreach (GameObject c in m_characters)
         {
             partyHealth.Add(c.GetComponent<Character>().health);
-            partyAttackDamage.Add(c.GetComponent<Character>().attackDamage);
+            partyAttackDamage.Add(c.GetComponent<Character>().attackDamageBoost);
         }
 
         SaveSystem.SaveGame(SaveSystem.GenerateGameData(partyHealth, partyAttackDamage, m_partyPos));
@@ -92,6 +97,7 @@ public class CombatSceneManager : MonoBehaviour
     {
         switch (m_currFace)
         {
+            default:    // Playerface is the default state
             case CombatFace.PlayerFace:
                 if (Input.GetMouseButtonUp(0))
                 {
@@ -102,6 +108,15 @@ public class CombatSceneManager : MonoBehaviour
                         if (m_hit.collider.gameObject.GetComponentInParent<Player>() != null)
                         {
                             m_selectedCharacter = m_hit.collider.gameObject.GetComponentInParent<Character>();
+                            if(m_selectedCharacter.hasAttacked)
+                            {
+                                print("already attacked");
+                                m_selectedCharacter = null;
+                            }
+                            else
+                            {
+                                
+                            }
                         }
                     }
                     catch (Exception e) { }
@@ -110,8 +125,6 @@ public class CombatSceneManager : MonoBehaviour
             case CombatFace.AIFace:
                 print("AI face");
                 StartTurn();
-                break;
-            default:
                 break;
         }
     }
@@ -128,7 +141,7 @@ public class CombatSceneManager : MonoBehaviour
 
         foreach (GameObject c in m_characters)
         {
-            c.GetComponent<Character>().enabled = false;
+            c.GetComponent<CharacterMovement>().enabled = false;
         }
 
         GameData gd = SaveSystem.LoadGame();
@@ -138,8 +151,8 @@ public class CombatSceneManager : MonoBehaviour
             prince.GetComponent<Character>().health = gd.partyHealth[0];
             captain.GetComponent<Character>().health = gd.partyHealth[1];
 
-            prince.GetComponent<Character>().attackDamage = gd.partyAttackDamage[0];
-            captain.GetComponent<Character>().attackDamage = gd.partyAttackDamage[1];
+            prince.GetComponent<Character>().attackDamageBoost = gd.partyAttackDamage[0];
+            captain.GetComponent<Character>().attackDamageBoost = gd.partyAttackDamage[1];
 
             int charaterCount = gd.partyHealth.Length;
             int auxIndex = 0;
@@ -165,6 +178,44 @@ public class CombatSceneManager : MonoBehaviour
         panel.GetComponentInChildren<Slider>().value = t_characterHealth;
 
         return panel;
+    }
+
+    void ShowAbilitiesPanel()
+    {
+        abilitiesPanel.SetActive(true);
+
+
+    }
+
+    void LoadAbilities()
+    {
+        string path = Application.dataPath + "/JSONs/characterAbilities.json";
+        string jsonString = File.ReadAllText(path);
+
+        JSONObject abilitiesJSON = JSON.Parse(jsonString) as JSONObject;
+
+        foreach(GameObject character in m_characters)
+        {
+            Character charC = character.GetComponent<Character>();
+
+            charC.abilities = new List<Ability>();
+
+            foreach (var characterJSON in abilitiesJSON)
+            {
+                if (characterJSON.Key.ToLower() != charC.name.ToLower())
+                {
+                    continue;
+                }
+
+                foreach (var ability in characterJSON.Value)
+                {
+                    Ability newAbility = new Ability();
+                    newAbility.SetAbilityAs(ability.Value);
+                    charC.abilities.Add(newAbility);
+                }
+            }
+
+        }
     }
 
 }
