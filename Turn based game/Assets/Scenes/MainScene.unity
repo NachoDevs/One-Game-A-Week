@@ -80805,36 +80805,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663905467}
   m_CullTransparentMesh: 0
---- !u!1 &1744317352
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1744317353}
-  m_Layer: 0
-  m_Name: Characters
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1744317353
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1744317352}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1852496199
 GameObject:
   m_ObjectHideFlags: 0
@@ -80940,8 +80910,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currGameState: 0
   stateText: {fileID: 876942465}
-  charactersParent: {fileID: 0}
   princeCharacter: {fileID: 3878854558787122232, guid: 29ed9ef3d3db47c4aaf1e56eb0fd3ebd,
+    type: 3}
+  elfCharacter: {fileID: 7686842087584088405, guid: 7f2b2bc33ca4adc438305a71bc48d7f8,
     type: 3}
   pirateCaptainCharacter: {fileID: 4442655876910246509, guid: be12acc730911ae49b9d16256fdac993,
     type: 3}

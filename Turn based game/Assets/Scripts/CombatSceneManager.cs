@@ -32,6 +32,7 @@ public class CombatSceneManager : MonoBehaviour
     [Header("Character")]
     public Transform charactersParent;
     public GameObject princeCharacter;
+    public GameObject elfCharacter;
     public GameObject pirateCaptainCharacter;
 
     float[,] m_partyPos;
@@ -75,7 +76,7 @@ public class CombatSceneManager : MonoBehaviour
         stateText.text = "CombatState:\n" + m_currFace.ToString();
 
         // this here will change as more characters can join the battle, this is not a good way to implement this
-        m_charactersHealth.Clear();
+        /*m_charactersHealth.Clear();
         foreach (GameObject ch in m_characters)
         {
             m_charactersHealth.Add(ch.GetComponent<Character>().health);
@@ -91,7 +92,7 @@ public class CombatSceneManager : MonoBehaviour
                 }
                 ++j;
             }
-        }
+        }*/
         // ---------
 
         HandleCombatState();
@@ -116,7 +117,7 @@ public class CombatSceneManager : MonoBehaviour
         foreach (GameObject c in m_characters)
         {
             partyHealth.Add(c.GetComponent<Character>().health);
-            partyAttackDamage.Add(c.GetComponent<Character>().attackDamageBoost);
+            partyAttackDamage.Add(c.GetComponent<Character>().damageBoost);
         }
 
         SaveSystem.SaveGame(SaveSystem.GenerateGameData(partyHealth, partyAttackDamage, m_partyPos));
@@ -153,7 +154,7 @@ public class CombatSceneManager : MonoBehaviour
                             }
                         }
                     }
-                    catch (Exception e) { }
+                    catch (Exception e) { GameManager.PrintException(e); }
                 }
                 break;
             case CombatFace.PlayerAttack:
@@ -171,10 +172,12 @@ public class CombatSceneManager : MonoBehaviour
                         else if (m_hit.collider.gameObject.GetComponentInParent<Character>() == m_selectedCharacter)
                         {
                             UnselectCharacter(m_selectedCharacter);
+                            UnselectCharacter(m_selectedEnemy);
+                            HideAbilitiesPanel();
                             m_currFace = CombatFace.PlayerSelect;
                         }
                     }
-                    catch (Exception e) { }
+                    catch (Exception e) { GameManager.PrintException(e); }
                 }
                 break;
             case CombatFace.AIFace:
@@ -186,46 +189,66 @@ public class CombatSceneManager : MonoBehaviour
 
     void LoadCharacters()
     {
-        GameObject prince = Instantiate(princeCharacter, new Vector3(-4f, 0f, -1f), new Quaternion(), charactersParent);
-        m_characters.Add(prince);
-        prince.transform.localScale = new Vector3(3, 3, 1);
-        SetUpCharacterInfoPanel(prince.GetComponent<Character>().name, prince.GetComponent<Character>().health, (prince.GetComponent<Player>() == null) ? true : false);
-        m_charactersHealth.Add(prince.GetComponent<Character>().health);
-
-
-        GameObject captain = Instantiate(pirateCaptainCharacter, new Vector3(4f, 0f, -1f), new Quaternion(), charactersParent);
-        m_characters.Add(captain);
-        captain.transform.localScale = new Vector3(3, 3, 1);
-        /* if he is an enemy then*/ captain.GetComponentInChildren<SpriteRenderer>().flipX = true;
-        SetUpCharacterInfoPanel(captain.GetComponent<Character>().name, captain.GetComponent<Character>().health, (captain.GetComponent<Player>() == null) ? true : false);
-        m_charactersHealth.Add(prince.GetComponent<Character>().health);
-
-        foreach (GameObject c in m_characters)
-        {
-            c.GetComponent<CharacterMovement>().enabled = false;
-        }
-
         GameData gd = SaveSystem.LoadGame();
-
+        
         if (gd != null)
         {
-            prince.GetComponent<Character>().health = gd.partyHealth[0];
-            captain.GetComponent<Character>().health = gd.partyHealth[1];
+            int numOfCharacters = gd.partyHealth.Length;
+            m_partyPos = new float[2, numOfCharacters];
 
-            prince.GetComponent<Character>().attackDamageBoost = gd.partyAttackDamage[0];
-            captain.GetComponent<Character>().attackDamageBoost = gd.partyAttackDamage[1];
-
-            int charaterCount = gd.partyHealth.Length;
-            int auxIndex = 0;
-            m_partyPos = new float[2, charaterCount];
-
-            foreach (GameObject c in m_characters)
+            int allyCount = 0, enemyCount = 0;
+            for(int i = 0; i < numOfCharacters; ++i)
             {
-                m_partyPos[0, auxIndex] = gd.partyPositions[0, auxIndex];
-                m_partyPos[1, auxIndex] = gd.partyPositions[1, auxIndex];
+                // TODO: cant be this way
+                /*GameObject go;
+                if (i == 0) go = princeCharacter;
+                else if (i == 1) go = elfCharacter;
+                else go = pirateCaptainCharacter;*/
 
-                ++auxIndex;
+                GameObject character = /*Instantiate(*/Character.id_prefab[i]/*, charactersParent)*/;
+                Character characterC = character.GetComponent<Character>();
+                // Position
+                character.transform.position = new Vector3((character.GetComponent<Enemy>() == null) ? (-4f - ((allyCount++) * 2)): (4f + ((enemyCount++) * 2) ), 0f, -1f);
+                // Local scale
+                character.transform.localScale = new Vector3(3, 3, 1);
+                // Info Panel
+                SetUpCharacterInfoPanel(character.GetComponent<Character>().characterName, character.GetComponent<Character>().health, (character.GetComponent<Player>() == null) ? true : false);
+                // 
+                m_charactersHealth.Add(character.GetComponent<Character>().health);
+                // Disable movement script
+                character.GetComponent<CharacterMovement>().enabled = false;
+                // Flip sprite if enemy
+                character.GetComponentInChildren<SpriteRenderer>().flipX = (character.GetComponent<Enemy>() != null) ? true : false;
+                // Load health
+                characterC.health = gd.partyHealth[i];
+                // Load attackBoost
+                characterC.damageBoost= gd.partyDamageBoost[characterC.characterIndex];
+
+                m_partyPos[0, i] = gd.partyPositions[0, i];
+                m_partyPos[1, i] = gd.partyPositions[1, i];
+
+                m_characters.Add(character);
             }
+
+            //GameObject captain = Instantiate(pirateCaptainCharacter, new Vector3(4f, 0f, -1f), new Quaternion(), charactersParent);
+            //m_characters.Add(captain);
+            //captain.transform.localScale = new Vector3(3, 3, 1);
+            ///* if he is an enemy then*/ captain.GetComponentInChildren<SpriteRenderer>().flipX = true;
+            //SetUpCharacterInfoPanel(captain.GetComponent<Character>().name, captain.GetComponent<Character>().health, (captain.GetComponent<Player>() == null) ? true : false);
+            //m_charactersHealth.Add(prince.GetComponent<Character>().health);
+
+            //prince.GetComponent<Character>().health = gd.partyHealth[0];
+            //captain.GetComponent<Character>().health = gd.partyHealth[1];
+
+            //prince.GetComponent<Character>().attackDamageBoost = gd.partyDamageBoost[0];
+            //captain.GetComponent<Character>().attackDamageBoost = gd.partyDamageBoost[1];
+
+
+            //foreach (GameObject c in m_characters)
+            //{
+
+            //    ++auxIndex;
+            //}
         }
     }
 
@@ -292,7 +315,7 @@ public class CombatSceneManager : MonoBehaviour
 
             foreach (var characterJSON in abilitiesJSON)
             {
-                if (characterJSON.Key.ToLower() != charC.name.ToLower())
+                if (characterJSON.Key.ToLower() != charC.characterName.ToLower())
                 {
                     continue;
                 }
@@ -320,15 +343,17 @@ public class CombatSceneManager : MonoBehaviour
         {
             if(t_character.GetComponent<Player>() != null)
             {
+                Destroy(playerArrow);
                 arrow.GetComponentInChildren<SpriteRenderer>().color = Color.green;
                 playerArrow = arrow;
             }
             else
             {
+                Destroy(enemyArrow);
                 arrow.GetComponentInChildren<SpriteRenderer>().color = Color.red;
                 enemyArrow = arrow;
             }
-        } catch(Exception e) { }
+        } catch(Exception e) { GameManager.PrintException(e); }
     }
 
     void UnselectCharacter(Character t_character)
@@ -345,7 +370,7 @@ public class CombatSceneManager : MonoBehaviour
                 m_selectedEnemy = null;
                 Destroy(enemyArrow);
             }
-        } catch(Exception e) { }
+        } catch(Exception e) { GameManager.PrintException(e); }
     }
 
 }

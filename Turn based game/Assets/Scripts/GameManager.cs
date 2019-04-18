@@ -22,8 +22,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI stateText;
 
     [Header("Character")]
-    public Transform charactersParent;
     public GameObject princeCharacter;
+    public GameObject elfCharacter;
     public GameObject pirateCaptainCharacter;
 
     List<GameObject> m_characters;
@@ -48,7 +48,6 @@ public class GameManager : MonoBehaviour
         m_previousTile = m_pfm.GetTile(0, 0);
 
         currGameState = GameState.PlayerSelectTile;
-
     }
 
     // Start is called before the first frame update
@@ -70,19 +69,17 @@ public class GameManager : MonoBehaviour
         foreach (GameObject c in m_characters)
         {
             partyHealth.Add(c.GetComponent<Character>().health);
-            partyAttackDamage.Add(c.GetComponent<Character>().attackDamageBoost);
+            partyAttackDamage.Add(c.GetComponent<Character>().damageBoost);
         }
 
         int charaterCount = partyHealth.Count;
-        int auxIndex = 0;
         float[,] partyPos = new float[2 , charaterCount];
 
-        foreach (GameObject c in m_characters)
+        foreach (GameObject character in m_characters)
         {
-            partyPos[0, auxIndex] = c.transform.position.x;
-            partyPos[1, auxIndex] = c.transform.position.y;
-
-            ++auxIndex;
+            Character characterC = character.GetComponent<Character>();
+            partyPos[0, characterC.characterIndex] = character.transform.position.x;
+            partyPos[1, characterC.characterIndex] = character.transform.position.y;
         }
 
         SaveSystem.SaveGame(SaveSystem.GenerateGameData(partyHealth, partyAttackDamage, partyPos));
@@ -90,23 +87,41 @@ public class GameManager : MonoBehaviour
 
     void LoadGame()
     {
-        GameObject prince = Instantiate(princeCharacter, new Vector3(13.5f, 49.5f, -1f), new Quaternion(), charactersParent);
-        m_characters.Add(prince);
-        GameObject captain = Instantiate(pirateCaptainCharacter, new Vector3(15.5f, 51.5f, -1f), new Quaternion(), charactersParent);
-        m_characters.Add(captain);
+        // Thinking on a better way...
+        if(Character.id_prefab == null)
+        {
+            GameObject prince = Instantiate(princeCharacter, new Vector3(13.5f, 49.5f, -1f), new Quaternion());
+            m_characters.Add(prince);
+
+            GameObject elf = Instantiate(elfCharacter, new Vector3(13.5f, 48.5f, -1f), new Quaternion());
+            m_characters.Add(elf);
+
+            GameObject captain = Instantiate(pirateCaptainCharacter, new Vector3(15.5f, 51.5f, -1f), new Quaternion());
+            m_characters.Add(captain);
+        }
+        else
+        {
+            foreach(GameObject character in Character.id_prefab.Values)
+            {
+                m_characters.Add(character);
+            }
+        }
 
         GameData gd = SaveSystem.LoadGame();
 
         if (gd != null)
         {
-            prince.transform.position = new Vector3(gd.partyPositions[0, 0], gd.partyPositions[1, 0], -1);
-            captain.transform.position = new Vector3(gd.partyPositions[0, 1], gd.partyPositions[1, 1], -1);
+            foreach(GameObject character in m_characters)
+            {
+                character.GetComponent<CharacterMovement>().enabled = true;
 
-            prince.GetComponent<Character>().health = gd.partyHealth[0];
-            captain.GetComponent<Character>().health = gd.partyHealth[1];
-
-            prince.GetComponent<Character>().attackDamageBoost = gd.partyAttackDamage[0];
-            captain.GetComponent<Character>().attackDamageBoost = gd.partyAttackDamage[1];
+                Character characterC = character.GetComponent<Character>();
+                int characterIndex = characterC.characterIndex;
+                character.transform.position = new Vector3(gd.partyPositions[0, characterIndex], gd.partyPositions[1, characterIndex], -1);
+                character.transform.localScale = Vector3.one;
+                characterC.health = gd.partyHealth[characterIndex];
+                characterC.damageBoost = gd.partyDamageBoost[characterIndex];
+            }
         }
     }
 
@@ -139,7 +154,7 @@ public class GameManager : MonoBehaviour
                         //break;
                     }         
                     
-                }catch (Exception e) { print(e.Message); }
+                }catch (Exception e) { PrintException(e); }
 
                 break;
             case GameState.PlayerMove:
@@ -179,12 +194,12 @@ public class GameManager : MonoBehaviour
                         }
 
                     }
-                }catch(Exception e) { print(e.Message); }
+                }catch(Exception e) { PrintException(e); }
 
                     break;
             case GameState.PlayerAttack:
                 SaveGame();
-                SceneManager.LoadScene(1);
+                LoadCombatScene();
                 break;
             case GameState.AIturn:
                 break;
@@ -233,4 +248,28 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void LoadCombatScene()
+    {
+        //foreach(GameObject character in m_characters)
+        //{
+        //    Destroy(character);
+        //}
+        Character.s_nextCharacterIndex = 0;
+
+
+        SceneManager.LoadScene(1);
+    }
+
+
+    public static void PrintException(Exception t_e)
+    {
+        print
+            (
+            "---------Exception---------\n"
+            + "Message: \t" + t_e.Message + "\n"
+            + "Source: \t" + t_e.Source + "\n"
+            + "Data: \t" + t_e.Data + "\n"
+            + "Trace: \t" + t_e.StackTrace+ "\n"
+            );
+    }
 }

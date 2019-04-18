@@ -728,6 +728,8 @@ MonoBehaviour:
   charactersParent: {fileID: 1949052827}
   princeCharacter: {fileID: 3878854558787122232, guid: 29ed9ef3d3db47c4aaf1e56eb0fd3ebd,
     type: 3}
+  elfCharacter: {fileID: 7686842087584088405, guid: 7f2b2bc33ca4adc438305a71bc48d7f8,
+    type: 3}
   pirateCaptainCharacter: {fileID: 4442655876910246509, guid: be12acc730911ae49b9d16256fdac993,
     type: 3}
 --- !u!1 &1345520314

@@ -4,6 +4,11 @@
         "melee",
         "special"
     ],
+	"Elf":
+    [
+        "range",
+        "special"
+    ],
     "Pirate Captain":
     [
         "melee",

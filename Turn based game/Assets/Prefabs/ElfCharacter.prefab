@@ -1,18 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &1000844361187755984
+--- !u!114 &2591084894184101455
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3878854558787122232}
+  m_GameObject: {fileID: 7686842087584088405}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0d1a0b58a7dced47a1439686d0420fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &7211887349482591687
+--- !u!1001 &4281963204191117482
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -22,27 +22,17 @@ PrefabInstance:
     - target: {fileID: 5891184392644207103, guid: f11de07b7a65b024eb4ccb8e0df009d9,
         type: 3}
       propertyPath: m_Name
-      value: PrinceCharacter
+      value: ElfCharacter
       objectReference: {fileID: 0}
     - target: {fileID: 5891184392644207099, guid: f11de07b7a65b024eb4ccb8e0df009d9,
         type: 3}
       propertyPath: name
-      value: Prince
-      objectReference: {fileID: 0}
-    - target: {fileID: 5891184392644207099, guid: f11de07b7a65b024eb4ccb8e0df009d9,
-        type: 3}
-      propertyPath: health
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 5891184392644207099, guid: f11de07b7a65b024eb4ccb8e0df009d9,
-        type: 3}
-      propertyPath: attackDamage
-      value: 25
+      value: Elf
       objectReference: {fileID: 0}
     - target: {fileID: 5891184392644207099, guid: f11de07b7a65b024eb4ccb8e0df009d9,
         type: 3}
       propertyPath: characterName
-      value: Prince
+      value: Elf
       objectReference: {fileID: 0}
     - target: {fileID: 5891184392644207096, guid: f11de07b7a65b024eb4ccb8e0df009d9,
         type: 3}
@@ -99,11 +89,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5891184394641547803, guid: f11de07b7a65b024eb4ccb8e0df009d9,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7f55dd0376f02564c830218f30ba9789,
+        type: 3}
+    - target: {fileID: 5891184394641547802, guid: f11de07b7a65b024eb4ccb8e0df009d9,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 522909c8cf11e994a851b223c602e865, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f11de07b7a65b024eb4ccb8e0df009d9, type: 3}
---- !u!1 &3878854558787122232 stripped
+--- !u!1 &7686842087584088405 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5891184392644207103, guid: f11de07b7a65b024eb4ccb8e0df009d9,
     type: 3}
-  m_PrefabInstance: {fileID: 7211887349482591687}
+  m_PrefabInstance: {fileID: 4281963204191117482}
   m_PrefabAsset: {fileID: 0}

@@ -45,7 +45,7 @@ public static class SaveSystem
         gd.partyPositions = t_partyPosition;
 
         gd.partyHealth = t_partyHealt.ToArray();
-        gd.partyAttackDamage = t_partyAttackDamage.ToArray();
+        gd.partyDamageBoost = t_partyAttackDamage.ToArray();
 
         return gd;
     }

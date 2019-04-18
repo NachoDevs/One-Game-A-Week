@@ -2,7 +2,7 @@
 public class GameData
 {
     public int[] partyHealth;
-    public int[] partyAttackDamage;
+    public int[] partyDamageBoost;
 
     public float[,] partyPositions;
 

@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    static int nextCharacterIndex;
+    public static int s_nextCharacterIndex;
+
+    public static Dictionary<int, GameObject> id_prefab;
 
     public bool hasAttacked;
 
     public int health = 100;
-    public int attackDamageBoost = 1;
+    public int damageBoost = 1;
     public int characterIndex;
 
-    public string name;
+    public string characterName;
 
     public List<Ability> abilities;
 
@@ -39,11 +41,23 @@ public class Character : MonoBehaviour
         {
             m_cm = GetComponent<CharacterMovement>();
         }
-        characterIndex = nextCharacterIndex++;
+
+        if(id_prefab == null)
+        {
+            id_prefab = new Dictionary<int, GameObject>();
+        }
+
+        DontDestroyOnLoad(transform.gameObject);
     }
 
     void Start()
     {
+        characterIndex = s_nextCharacterIndex++;
+
+        if(!id_prefab.ContainsKey(characterIndex))
+        {
+            id_prefab.Add(characterIndex, gameObject);
+        }
     }
 
     void Update()
@@ -118,5 +132,10 @@ public class Character : MonoBehaviour
                 print("special");
                 break;
         }
+    }
+
+    void OnDestroy()
+    {
+        --s_nextCharacterIndex;
     }
 }

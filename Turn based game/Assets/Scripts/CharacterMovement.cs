@@ -21,6 +21,12 @@ public class CharacterMovement : MonoBehaviour
         movesLeft = 3;
     }
 
+    void OnEnable()
+    {
+        m_cam = Camera.main;
+        m_pfm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<PathfindingManager>();
+    }
+
     public void MoveTo(WorldTile t_destination)
     {
         m_path = Pathfinding.FindPath(m_pfm.GetTile((int)transform.position.x, (int)transform.position.y)
