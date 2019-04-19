@@ -12,7 +12,8 @@ enum CombatFace
 {
     PlayerSelect,
     PlayerAttack,
-    AIFace
+    AIFace,
+    ResetFace
 }
 
 public class CombatSceneManager : MonoBehaviour
@@ -49,15 +50,15 @@ public class CombatSceneManager : MonoBehaviour
 
     RaycastHit2D m_hit;
 
-    List<int> m_charactersHealth;
-    List<GameObject> m_characters;
+    List<GameObject> m_party;
+    List<GameObject> m_enemies;
     List<GameObject> m_infoPanels;
 
     void Awake()
     {
-        m_charactersHealth = new List<int>();
-        m_characters = new List<GameObject>();
-        m_infoPanels = new List<GameObject>(); ;
+        m_party = new List<GameObject>();
+        m_enemies = new List<GameObject>();
+        m_infoPanels = new List<GameObject>();
         m_cam = Camera.main;
     }
 
@@ -94,7 +95,11 @@ public class CombatSceneManager : MonoBehaviour
     {
         List<int> partyHealth = new List<int>();
         List<int> partyAttackDamage = new List<int>();
-        foreach (GameObject c in m_characters)
+
+        List<GameObject> characters = new List<GameObject>();
+        characters.AddRange(m_party);
+        characters.AddRange(m_enemies);
+        foreach (GameObject c in characters)
         {
             partyHealth.Add(c.GetComponent<Character>().health);
             partyAttackDamage.Add(c.GetComponent<Character>().damageBoost);
@@ -161,10 +166,36 @@ public class CombatSceneManager : MonoBehaviour
                 }
                 break;
             case CombatFace.AIFace:
-                print("AI face");
-                StartTurn();
+                HandleAI();
+                break;
+            case CombatFace.ResetFace:
+                ResetCombat();
                 break;
         }
+    }
+
+    void HandleAI()
+    {
+        foreach(GameObject enemy in m_enemies)
+        {
+            Character enemyC = enemy.GetComponent<Character>();
+
+            Character target = m_party[UnityEngine.Random.Range(0, m_party.Count)].GetComponent<Character>();
+            Ability ability = enemyC.abilities[UnityEngine.Random.Range(0, enemyC.abilities.Count)];
+
+            enemyC.UseAbility(ability, target);
+        }
+        m_currFace = CombatFace.ResetFace;
+    }
+
+    void ResetCombat()
+    {
+        foreach(GameObject character in m_party)
+        {
+            character.GetComponent<Character>().hasAttacked = false;
+        }
+
+        m_currFace = CombatFace.PlayerSelect;
     }
 
     void LoadCharacters()
@@ -187,8 +218,6 @@ public class CombatSceneManager : MonoBehaviour
                 character.transform.localScale = new Vector3(3, 3, 1);
                 // Info Panel
                 SetUpCharacterInfoPanel(character.GetComponent<Character>(), (character.GetComponent<Player>() == null) ? true : false);
-                // 
-                m_charactersHealth.Add(character.GetComponent<Character>().health);
                 // Disable movement script
                 character.GetComponent<CharacterMovement>().enabled = false;
                 // Flip sprite if enemy
@@ -201,7 +230,14 @@ public class CombatSceneManager : MonoBehaviour
                 m_partyPos[0, i] = gd.partyPositions[0, i];
                 m_partyPos[1, i] = gd.partyPositions[1, i];
 
-                m_characters.Add(character);
+                if(character.GetComponent<Player>() != null)
+                {
+                    m_party.Add(character);
+                }
+                else
+                {
+                    m_enemies.Add(character);
+                }
             }
         }
     }
@@ -236,11 +272,25 @@ public class CombatSceneManager : MonoBehaviour
                 }
                 else
                 {
-                    m_selectedCharacter.UseAbility(ability.type, m_selectedEnemy);
-                    m_selectedEnemy.health -= ability.damage;
+                    m_selectedCharacter.UseAbility(ability, m_selectedEnemy);
+                    //m_selectedEnemy.health -= ability.damage;
                     m_currFace = CombatFace.PlayerSelect;
                     UnselectCharacter(m_selectedCharacter);
                     UnselectCharacter(m_selectedEnemy);
+
+                    bool partyFinished = true;
+                    foreach(GameObject character in m_party)
+                    {
+                        if(!character.GetComponent<Character>().hasAttacked)
+                        {
+                            partyFinished = false;
+                            break;
+                        }
+                    }
+                    if(partyFinished)
+                    {
+                        m_currFace = CombatFace.AIFace;
+                    }
                 }
             });
         }
@@ -263,7 +313,10 @@ public class CombatSceneManager : MonoBehaviour
 
         JSONObject abilitiesJSON = JSON.Parse(jsonString) as JSONObject;
 
-        foreach(GameObject character in m_characters)
+        List<GameObject> characters = new List<GameObject>();
+        characters.AddRange(m_party);
+        characters.AddRange(m_enemies);
+        foreach(GameObject character in characters)
         {
             Character charC = character.GetComponent<Character>();
 

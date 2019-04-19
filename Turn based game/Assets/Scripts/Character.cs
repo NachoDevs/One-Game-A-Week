@@ -132,9 +132,10 @@ public class Character : MonoBehaviour
         }
     }
 
-    public void UseAbility(AbilityType t_ability, Character t_target)
+    public void UseAbility(Ability t_ability, Character t_target)
     {
-        switch (t_ability)
+        hasAttacked = true;
+        switch (t_ability.type)
         {
             default:    // Melee ability is default
             case AbilityType.melee:
@@ -144,6 +145,7 @@ public class Character : MonoBehaviour
                 GetComponentInChildren<SpriteRenderer>().sortingOrder = 10;
                 m_combatInitialPosition = transform.position;
                 m_combatTarget = t_target;
+                m_combatTarget.health -= t_ability.damage;
                 break;
             case AbilityType.range:
                 m_animator.SetTrigger("shoot");
