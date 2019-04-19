@@ -22,10 +22,12 @@ public class Character : MonoBehaviour
 
     public List<Ability> abilities;
 
+    public Vector3 combatInitialPosition;
+
     [HideInInspector]
     public Slider healthBar;
 
-    bool m_attacking = false;
+    bool m_isAttacking = false;
 
     int m_initialOrderInLayer;
 
@@ -34,8 +36,6 @@ public class Character : MonoBehaviour
     CharacterMovement m_cm;
 
     Animator m_animator;
-
-    Vector3 m_combatInitialPosition;
 
     Character m_combatTarget;
 
@@ -84,7 +84,7 @@ public class Character : MonoBehaviour
 
         if(m_combatTarget != null)
         {
-            if (m_attacking)
+            if (m_isAttacking)
             {
                 if (Vector3.Distance(transform.position, m_combatTarget.gameObject.transform.position) > .1f)
                 {
@@ -99,14 +99,14 @@ public class Character : MonoBehaviour
                 }
                 else
                 {
-                    m_attacking = false;
+                    m_isAttacking = false;
                 }
             }
             else
             {
-                if (Vector3.Distance(transform.position, m_combatInitialPosition) > .1f)
+                if (Vector3.Distance(transform.position, combatInitialPosition) > .1f)
                 {
-                    Vector3 directionOfTravel = m_combatInitialPosition - transform.position;
+                    Vector3 directionOfTravel = combatInitialPosition - transform.position;
                     directionOfTravel.Normalize();
 
                     transform.Translate(
@@ -134,26 +134,38 @@ public class Character : MonoBehaviour
 
     public void UseAbility(Ability t_ability, Character t_target)
     {
+        m_isAttacking = true;
         hasAttacked = true;
+
+        if(t_ability.damage > 0)
+        {
+            t_target.health -= t_ability.damage;
+        }
+
         switch (t_ability.type)
         {
             default:    // Melee ability is default
             case AbilityType.melee:
                 m_animator.SetTrigger("melee");
-                m_attacking = true;
                 m_initialOrderInLayer = GetComponentInChildren<SpriteRenderer>().sortingOrder;
                 GetComponentInChildren<SpriteRenderer>().sortingOrder = 10;
-                m_combatInitialPosition = transform.position;
+                //combatInitialPosition = transform.position;
                 m_combatTarget = t_target;
-                m_combatTarget.health -= t_ability.damage;
                 break;
             case AbilityType.range:
                 m_animator.SetTrigger("shoot");
                 break;
-            case AbilityType.special:
-                print("special");
+            case AbilityType.heal:
+                health += 15;
                 break;
         }
+    }
+
+    public void NewCombatTurn()
+    {
+        hasAttacked = false;
+        m_isAttacking = false;
+        m_combatTarget = null;
     }
 
     void OnDestroy()

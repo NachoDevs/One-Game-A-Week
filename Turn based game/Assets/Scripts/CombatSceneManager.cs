@@ -139,7 +139,7 @@ public class CombatSceneManager : MonoBehaviour
                             }
                         }
                     }
-                    catch (Exception e) { GameManager.PrintException(e); }
+                    catch (Exception e) { /*GameManager.PrintException(e);*/ }
                 }
                 break;
             case CombatFace.PlayerAttack:
@@ -169,7 +169,8 @@ public class CombatSceneManager : MonoBehaviour
                 HandleAI();
                 break;
             case CombatFace.ResetFace:
-                ResetCombat();
+                CheckIfCombatHasEneded();
+                ResetCombatTurn();
                 break;
         }
     }
@@ -180,22 +181,74 @@ public class CombatSceneManager : MonoBehaviour
         {
             Character enemyC = enemy.GetComponent<Character>();
 
-            Character target = m_party[UnityEngine.Random.Range(0, m_party.Count)].GetComponent<Character>();
-            Ability ability = enemyC.abilities[UnityEngine.Random.Range(0, enemyC.abilities.Count)];
+            if(!enemyC.isDead)
+            {
+                Character target = m_party[UnityEngine.Random.Range(0, m_party.Count)].GetComponent<Character>();
+                Ability ability = enemyC.abilities[UnityEngine.Random.Range(0, enemyC.abilities.Count)];
 
-            enemyC.UseAbility(ability, target);
+                enemyC.UseAbility(ability, target);
+
+                //CheckIfCombatHasEneded();
+            }
         }
         m_currFace = CombatFace.ResetFace;
     }
 
-    void ResetCombat()
+    void ResetCombatTurn()
     {
         foreach(GameObject character in m_party)
         {
-            character.GetComponent<Character>().hasAttacked = false;
+            character.GetComponent<Character>().NewCombatTurn();
         }
 
         m_currFace = CombatFace.PlayerSelect;
+    }
+
+    void EndCombat()
+    {
+        ResetCombatTurn();
+        LoadMainMap();
+    }
+
+    void CheckIfCombatHasEneded()
+    {
+        bool combatEnded = false;
+
+        foreach(GameObject character in m_enemies)
+        {
+            if(character.GetComponent<Character>().isDead)
+            {
+                combatEnded = true;
+            }
+            else
+            {
+                combatEnded = false;
+                break;
+            }
+        }
+
+        if(combatEnded)
+        {
+            EndCombat();
+        }
+
+        foreach (GameObject character in m_party)
+        {
+            if (character.GetComponent<Character>().isDead)
+            {
+                combatEnded = true;
+            }
+            else
+            {
+                combatEnded = false;
+                break;
+            }
+        }
+
+        if (combatEnded)
+        {
+            EndCombat();
+        }
     }
 
     void LoadCharacters()
@@ -226,6 +279,8 @@ public class CombatSceneManager : MonoBehaviour
                 characterC.health = gd.partyHealth[i];
                 // Load attackBoost
                 characterC.damageBoost= gd.partyDamageBoost[characterC.characterIndex];
+                // For combat movement
+                characterC.combatInitialPosition = character.transform.position;
 
                 m_partyPos[0, i] = gd.partyPositions[0, i];
                 m_partyPos[1, i] = gd.partyPositions[1, i];
@@ -241,7 +296,6 @@ public class CombatSceneManager : MonoBehaviour
             }
         }
     }
-
 
     void SetUpCharacterInfoPanel(Character t_character, bool t_isEnemy)
     {
@@ -266,31 +320,34 @@ public class CombatSceneManager : MonoBehaviour
 
             button.GetComponent<Button>().onClick.AddListener(() => 
             {
-                if(m_selectedEnemy == null)
+                if (ability.damage != 0)
                 {
-                    print("select and enemy!");
+                    if (m_selectedEnemy == null)
+                    {
+                        print("select and enemy!");
+                        return;
+                    }
                 }
-                else
-                {
-                    m_selectedCharacter.UseAbility(ability, m_selectedEnemy);
-                    //m_selectedEnemy.health -= ability.damage;
-                    m_currFace = CombatFace.PlayerSelect;
-                    UnselectCharacter(m_selectedCharacter);
-                    UnselectCharacter(m_selectedEnemy);
 
-                    bool partyFinished = true;
-                    foreach(GameObject character in m_party)
+                m_selectedCharacter.UseAbility(ability, m_selectedEnemy);
+                m_currFace = CombatFace.PlayerSelect;
+                UnselectCharacter(m_selectedCharacter);
+                UnselectCharacter(m_selectedEnemy);
+
+                CheckIfCombatHasEneded();
+
+                bool partyFinished = true;
+                foreach (GameObject character in m_party)
+                {
+                    if (!character.GetComponent<Character>().hasAttacked)
                     {
-                        if(!character.GetComponent<Character>().hasAttacked)
-                        {
-                            partyFinished = false;
-                            break;
-                        }
+                        partyFinished = false;
+                        break;
                     }
-                    if(partyFinished)
-                    {
-                        m_currFace = CombatFace.AIFace;
-                    }
+                }
+                if (partyFinished)
+                {
+                    m_currFace = CombatFace.AIFace;
                 }
             });
         }
@@ -367,6 +424,11 @@ public class CombatSceneManager : MonoBehaviour
     {
         try
         {
+            if(t_character == null)
+            {
+                return;
+            }
+
             if (t_character.GetComponent<Player>() != null)
             {
                 m_selectedCharacter = null;

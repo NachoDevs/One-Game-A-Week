@@ -2,12 +2,12 @@
     "Prince":
     [
         "melee",
-        "special"
+        "heal"
     ],
 	"Elf":
     [
         "range",
-        "special"
+        "heal"
     ],
     "Pirate Captain":
     [

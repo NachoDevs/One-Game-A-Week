@@ -18,7 +18,7 @@ public static class SaveSystem
         formatter.Serialize(stream, data);
         stream.Close();
 
-        Debug.Log("Saved in " + savePath);
+        //Debug.Log("Saved in " + savePath);
     }
 
     public static GameData LoadGame()
@@ -34,7 +34,7 @@ public static class SaveSystem
             return data;
         }
 
-        Debug.Log("Save file not found in " + savePath);
+        //Debug.Log("Save file not found in " + savePath);
         return null;
     }
 

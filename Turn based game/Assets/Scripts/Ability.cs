@@ -7,7 +7,7 @@ public enum AbilityType
 {
     melee,
     range,
-    special
+    heal
 }
 
 public class Ability
@@ -35,9 +35,9 @@ public class Ability
                 damage = 30;
                 type = AbilityType.range;
                 break;
-            case AbilityType.special:
-                damage = 60;
-                type = AbilityType.special;
+            case AbilityType.heal:
+                damage = 0;
+                type = AbilityType.heal;
                 break;
         }
     }
