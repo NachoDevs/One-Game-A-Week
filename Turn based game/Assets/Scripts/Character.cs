@@ -14,7 +14,8 @@ public class Character : MonoBehaviour
 
     public int health = 100;
     public int damageBoost = 1;
-    public int characterIndex;
+    [HideInInspector]
+    public int characterIndex = -1;
 
     public string characterName;
 
@@ -41,6 +42,8 @@ public class Character : MonoBehaviour
 
     void Awake()
     {
+        characterIndex = -1;
+
         abilities = new List<Ability>();
         m_animator = GetComponentInChildren<Animator>();
 
@@ -59,9 +62,9 @@ public class Character : MonoBehaviour
 
     void Start()
     {
-        characterIndex = s_nextCharacterIndex++;
+        CheckIndex();
 
-        if(!id_prefab.ContainsKey(characterIndex))
+        if (!id_prefab.ContainsKey(characterIndex))
         {
             id_prefab.Add(characterIndex, gameObject);
         }
@@ -124,6 +127,14 @@ public class Character : MonoBehaviour
         }
     }
 
+    public void CheckIndex()
+    {
+        if (characterIndex == -1)
+        {
+            characterIndex = s_nextCharacterIndex++;
+        }
+    }
+
     public void MoveTo(WorldTile t_destination)
     {
         if(m_cm != null)
@@ -173,11 +184,12 @@ public class Character : MonoBehaviour
         --s_nextCharacterIndex;
     }
 
-    void Die()
+    public void Die()
     {
         isDead = true;
         m_animator.SetTrigger("die");
         m_animator.enabled = false;
         GetComponentInChildren<SpriteRenderer>().sprite = deadSprite;
+        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 1);
     }
 }

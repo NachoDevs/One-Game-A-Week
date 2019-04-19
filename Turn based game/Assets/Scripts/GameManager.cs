@@ -64,25 +64,28 @@ public class GameManager : MonoBehaviour
 
     public void SaveGame()
     {
-        List<int> partyHealth = new List<int>();
-        List<int> partyAttackDamage = new List<int>();
+        List<bool> charsDead = new List<bool>();
+        List<int> charsHealth = new List<int>();
+        List<int> charsAttackDamage = new List<int>();
         foreach (GameObject c in m_characters)
         {
-            partyHealth.Add(c.GetComponent<Character>().health);
-            partyAttackDamage.Add(c.GetComponent<Character>().damageBoost);
+            Character cc = c.GetComponent<Character>();
+            charsDead.Add(cc.isDead);
+            charsHealth.Add(cc.health);
+            charsAttackDamage.Add(cc.damageBoost);
         }
 
-        int charaterCount = partyHealth.Count;
-        float[,] partyPos = new float[2 , charaterCount];
+        int charaterCount = charsHealth.Count;
+        float[,] charsPos = new float[2 , charaterCount];
 
         foreach (GameObject character in m_characters)
         {
             Character characterC = character.GetComponent<Character>();
-            partyPos[0, characterC.characterIndex] = character.transform.position.x;
-            partyPos[1, characterC.characterIndex] = character.transform.position.y;
+            charsPos[0, characterC.characterIndex] = character.transform.position.x;
+            charsPos[1, characterC.characterIndex] = character.transform.position.y;
         }
 
-        SaveSystem.SaveGame(SaveSystem.GenerateGameData(partyHealth, partyAttackDamage, partyPos));
+        SaveSystem.SaveGame(SaveSystem.GenerateGameData(charsDead, charsHealth, charsAttackDamage, charsPos));
     }
 
     void LoadGame()
@@ -91,12 +94,15 @@ public class GameManager : MonoBehaviour
         if(Character.id_prefab == null)
         {
             GameObject prince = Instantiate(princeCharacter, new Vector3(13.5f, 49.5f, -1f), new Quaternion());
+            prince.GetComponent<Character>().CheckIndex();
             m_characters.Add(prince);
 
             GameObject elf = Instantiate(elfCharacter, new Vector3(13.5f, 48.5f, -1f), new Quaternion());
+            elf.GetComponent<Character>().CheckIndex();
             m_characters.Add(elf);
 
             GameObject captain = Instantiate(pirateCaptainCharacter, new Vector3(15.5f, 51.5f, -1f), new Quaternion());
+            captain.GetComponent<Character>().CheckIndex();
             m_characters.Add(captain);
         }
         else
@@ -117,10 +123,16 @@ public class GameManager : MonoBehaviour
 
                 Character characterC = character.GetComponent<Character>();
                 int characterIndex = characterC.characterIndex;
-                character.transform.position = new Vector3(gd.partyPositions[0, characterIndex], gd.partyPositions[1, characterIndex], -1);
+                character.transform.position = new Vector3(gd.charsPositions[0, characterIndex], gd.charsPositions[1, characterIndex], -1);
                 character.transform.localScale = Vector3.one;
-                characterC.health = gd.partyHealth[characterIndex];
-                characterC.damageBoost = gd.partyDamageBoost[characterIndex];
+                characterC.health = gd.charsHealth[characterIndex];
+                characterC.damageBoost = gd.charsDamageBoost[characterIndex];
+                characterC.isDead = gd.charsDead[characterIndex];
+
+                if (characterC.isDead)
+                {
+                    characterC.Die();
+                }
             }
         }
     }
@@ -173,7 +185,15 @@ public class GameManager : MonoBehaviour
                         {
                             if(m_hit.collider.gameObject.GetComponentInParent<Enemy>() != null)
                             {
-                                currGameState = GameState.PlayerAttack;
+                                if(m_hit.collider.gameObject.GetComponentInParent<Character>().isDead)
+                                {
+                                    m_selectedCharacter.MoveTo(m_currentTile);
+                                    currGameState = GameState.PlayerSelectTile;
+                                }
+                                else
+                                {
+                                    currGameState = GameState.PlayerAttack;
+                                }
                             }
                             else
                             {

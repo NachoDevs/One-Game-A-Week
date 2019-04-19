@@ -93,19 +93,22 @@ public class CombatSceneManager : MonoBehaviour
 
     public void LoadMainMap()
     {
-        List<int> partyHealth = new List<int>();
-        List<int> partyAttackDamage = new List<int>();
+        List<bool> charsDead = new List<bool>();
+        List<int> charsHealth = new List<int>();
+        List<int> charsAttackDamage = new List<int>();
 
         List<GameObject> characters = new List<GameObject>();
         characters.AddRange(m_party);
         characters.AddRange(m_enemies);
         foreach (GameObject c in characters)
         {
-            partyHealth.Add(c.GetComponent<Character>().health);
-            partyAttackDamage.Add(c.GetComponent<Character>().damageBoost);
+            Character cc = c.GetComponent<Character>();
+            charsDead.Add(cc.isDead);
+            charsHealth.Add(cc.health);
+            charsAttackDamage.Add(cc.damageBoost);
         }
 
-        SaveSystem.SaveGame(SaveSystem.GenerateGameData(partyHealth, partyAttackDamage, m_partyPos));
+        SaveSystem.SaveGame(SaveSystem.GenerateGameData(charsDead, charsHealth, charsAttackDamage, m_partyPos));
 
         SceneManager.LoadScene(0);
     }
@@ -257,7 +260,7 @@ public class CombatSceneManager : MonoBehaviour
         
         if (gd != null)
         {
-            int numOfCharacters = gd.partyHealth.Length;
+            int numOfCharacters = gd.charsHealth.Length;
             m_partyPos = new float[2, numOfCharacters];
 
             int allyCount = 0, enemyCount = 0;
@@ -265,33 +268,39 @@ public class CombatSceneManager : MonoBehaviour
             {
                 GameObject character = Character.id_prefab[i];
                 Character characterC = character.GetComponent<Character>();
-                // Position
-                character.transform.position = new Vector3((character.GetComponent<Enemy>() == null) ? (-4f - ((allyCount++) * 2)): (4f + ((enemyCount++) * 2) ), 0f, -1f);
-                // Local scale
-                character.transform.localScale = new Vector3(3, 3, 1);
-                // Info Panel
-                SetUpCharacterInfoPanel(character.GetComponent<Character>(), (character.GetComponent<Player>() == null) ? true : false);
-                // Disable movement script
-                character.GetComponent<CharacterMovement>().enabled = false;
-                // Flip sprite if enemy
-                character.GetComponentInChildren<SpriteRenderer>().flipX = (character.GetComponent<Enemy>() != null) ? true : false;
-                // Load health
-                characterC.health = gd.partyHealth[i];
-                // Load attackBoost
-                characterC.damageBoost= gd.partyDamageBoost[characterC.characterIndex];
-                // For combat movement
-                characterC.combatInitialPosition = character.transform.position;
 
-                m_partyPos[0, i] = gd.partyPositions[0, i];
-                m_partyPos[1, i] = gd.partyPositions[1, i];
+                if(!characterC.isDead)
+                {
+                    // To make sure the index is set before the rest of the operations
+                    characterC.CheckIndex();
+                    // Position
+                    character.transform.position = new Vector3((character.GetComponent<Enemy>() == null) ? (-4f - ((allyCount++) * 2)): (4f + ((enemyCount++) * 2) ), 0f, -1f);
+                    // Local scale
+                    character.transform.localScale = new Vector3(3, 3, 1);
+                    // Info Panel
+                    SetUpCharacterInfoPanel(character.GetComponent<Character>(), (character.GetComponent<Player>() == null) ? true : false);
+                    // Disable movement script
+                    character.GetComponent<CharacterMovement>().enabled = false;
+                    // Flip sprite if enemy
+                    character.GetComponentInChildren<SpriteRenderer>().flipX = (character.GetComponent<Enemy>() != null) ? true : false;
+                    // Load health
+                    characterC.health = gd.charsHealth[i];
+                    // Load attackBoost
+                    characterC.damageBoost= gd.charsDamageBoost[characterC.characterIndex];
+                    // For combat movement
+                    characterC.combatInitialPosition = character.transform.position;
 
-                if(character.GetComponent<Player>() != null)
-                {
-                    m_party.Add(character);
-                }
-                else
-                {
-                    m_enemies.Add(character);
+                    m_partyPos[0, i] = gd.charsPositions[0, i];
+                    m_partyPos[1, i] = gd.charsPositions[1, i];
+
+                    if(character.GetComponent<Player>() != null)
+                    {
+                        m_party.Add(character);
+                    }
+                    else
+                    {
+                        m_enemies.Add(character);
+                    }
                 }
             }
         }

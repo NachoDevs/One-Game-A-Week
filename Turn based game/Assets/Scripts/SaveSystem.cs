@@ -38,14 +38,15 @@ public static class SaveSystem
         return null;
     }
 
-    public static GameData GenerateGameData(List<int> t_partyHealt, List<int> t_partyAttackDamage, float[,] t_partyPosition)
+    public static GameData GenerateGameData(List<bool> t_charsDeads, List<int> t_charsHealt, List<int> t_charsAttackDamage, float[,] t_charsPosition)
     {
         GameData gd = new GameData();
 
-        gd.partyPositions = t_partyPosition;
+        gd.charsPositions = t_charsPosition;
 
-        gd.partyHealth = t_partyHealt.ToArray();
-        gd.partyDamageBoost = t_partyAttackDamage.ToArray();
+        gd.charsDead = t_charsDeads.ToArray();
+        gd.charsHealth = t_charsHealt.ToArray();
+        gd.charsDamageBoost = t_charsAttackDamage.ToArray();
 
         return gd;
     }

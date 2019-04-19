@@ -1,10 +1,12 @@
 ﻿[System.Serializable]
 public class GameData
 {
-    public int[] partyHealth;
-    public int[] partyDamageBoost;
+    public bool[] charsDead;
 
-    public float[,] partyPositions;
+    public int[] charsHealth;
+    public int[] charsDamageBoost;
+
+    public float[,] charsPositions;
 
     public GameData() { }
 }
