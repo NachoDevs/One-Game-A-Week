@@ -9,12 +9,13 @@ public class Character : MonoBehaviour
 
     public static Dictionary<int, GameObject> id_prefab;
 
+    public bool hasMoved;
     public bool hasAttacked;
     public bool isDead;
 
     public int health = 100;
     public int damageBoost = 1;
-    [HideInInspector]
+    //[HideInInspector]
     public int characterIndex = -1;
 
     public string characterName;
@@ -31,6 +32,7 @@ public class Character : MonoBehaviour
     bool m_isAttacking = false;
 
     int m_initialOrderInLayer;
+    int m_maxHealth = 100;
 
     float m_combatSpeed = 6;
 
@@ -168,6 +170,10 @@ public class Character : MonoBehaviour
                 break;
             case AbilityType.heal:
                 health += 15;
+                if(health > m_maxHealth)
+                {
+                    health = m_maxHealth;
+                }
                 break;
         }
     }
