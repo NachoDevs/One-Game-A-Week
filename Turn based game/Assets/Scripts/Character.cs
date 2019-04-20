@@ -18,6 +18,8 @@ public class Character : MonoBehaviour
     //[HideInInspector]
     public int characterIndex = -1;
 
+    public float targettingRange = 2.5f;
+
     public string characterName;
 
     public Sprite deadSprite;

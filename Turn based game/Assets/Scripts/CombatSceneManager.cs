@@ -131,7 +131,7 @@ public class CombatSceneManager : MonoBehaviour
                             }
                         }
                     }
-                    catch (Exception e) { /*GameManager.PrintException(e);*/ }
+                    catch (Exception e) { GameManager.PrintException(e); }
                 }
                 break;
             case CombatFace.PlayerAttack:

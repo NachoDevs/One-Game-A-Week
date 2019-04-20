@@ -143,7 +143,6 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-
     }
 
     void HandleGameState()
@@ -236,11 +235,10 @@ public class GameManager : MonoBehaviour
 
                     break;
             case GameState.PlayerAttack:
-                SaveGame();
                 LoadCombatScene();
                 break;
             case GameState.AIturn:
-                print("AI turn");
+                HandleAI();
                 EndTurn();
                 break;
             case GameState.NewTurn:
@@ -289,6 +287,62 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void HandleAI()
+    {
+        foreach (GameObject enemy in m_enemies)
+        {
+            if(enemy.GetComponent<Character>().isDead)
+            {
+                continue;
+            }
+
+            WorldTile enemyTile = m_pfm.GetTile((int)enemy.transform.position.x, (int)enemy.transform.position.y);
+            List<WorldTile> neighbours = enemyTile.myNeighbours;
+
+            bool badTile = true;
+            WorldTile target = null;
+            while (badTile)
+            {
+                target = neighbours[UnityEngine.Random.Range(0, neighbours.Count)];
+                if(target.walkable)
+                {
+                    badTile = false;
+                }
+            }
+
+            float closest = float.MaxValue;
+            GameObject targetChar = null;
+            foreach (GameObject character in m_party)
+            {
+                float dist = Vector3.Distance(enemy.transform.position, character.transform.position);
+                if (dist < closest)
+                {
+                    closest = dist;
+                    targetChar = character;
+                }
+            }
+
+            if (closest < enemy.GetComponent<Character>().targettingRange)
+            {
+                if (targetChar != null)
+                {
+                    target = Pathfinding.FindPath(enemyTile, m_pfm.GetTile((int)targetChar.transform.position.x, (int)targetChar.transform.position.y))[0];
+                }
+            }
+
+            foreach (GameObject character in m_party)
+            {
+                if(m_pfm.GetTile((int)targetChar.transform.position.x, (int)targetChar.transform.position.y) == target)
+                {
+                    LoadCombatScene();
+                    break;
+                }
+            }
+
+            enemy.GetComponent<Character>().MoveTo(target);
+        }
+    }
+
     void ResetTurn()
     {
         foreach (GameObject character in m_party)
@@ -301,6 +355,8 @@ public class GameManager : MonoBehaviour
 
     void LoadCombatScene()
     {
+        SaveGame();
+
         Character.s_nextCharacterIndex = 0;
 
         SceneManager.LoadScene(1);
