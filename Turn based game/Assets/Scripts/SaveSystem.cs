@@ -38,15 +38,44 @@ public static class SaveSystem
         return null;
     }
 
-    public static GameData GenerateGameData(List<bool> t_charsDeads, List<int> t_charsHealt, List<int> t_charsAttackDamage, float[,] t_charsPosition)
+    public static GameData GenerateGameData(List<GameObject> characters, float[,] t_charsPosition)
     {
         GameData gd = new GameData();
 
-        gd.charsPositions = t_charsPosition;
+        List<bool> charsDead = new List<bool>();
+        List<bool> charsHaveMoved = new List<bool>();
+        List<int> charsHealth = new List<int>();
+        List<int> charsAttackDamage = new List<int>();
 
-        gd.charsDead = t_charsDeads.ToArray();
-        gd.charsHealth = t_charsHealt.ToArray();
-        gd.charsDamageBoost = t_charsAttackDamage.ToArray();
+        foreach (GameObject character in characters)
+        {
+            Character characterC = character.GetComponent<Character>();
+            charsDead.Add(characterC.isDead);
+            charsHaveMoved.Add(characterC.hasMoved);
+            charsHealth.Add(characterC.health);
+            charsAttackDamage.Add(characterC.damageBoost);
+        }
+
+        int charaterCount = charsHealth.Count;
+        float[,] charsPos = new float[2, charaterCount];
+
+        foreach (GameObject character in characters)
+        {
+            Character characterC = character.GetComponent<Character>();
+            charsPos[0, characterC.characterIndex] = character.transform.position.x;
+            charsPos[1, characterC.characterIndex] = character.transform.position.y;
+        }
+
+        gd.charsPositions = charsPos;
+        if (t_charsPosition != null)
+        {
+            gd.charsPositions = t_charsPosition;
+        }
+
+        gd.charsDead = charsDead.ToArray();
+        gd.charsHaveMoved = charsHaveMoved.ToArray();
+        gd.charsHealth = charsHealth.ToArray();
+        gd.charsDamageBoost = charsAttackDamage.ToArray();
 
         return gd;
     }

@@ -178,6 +178,11 @@ public class Character : MonoBehaviour
         }
     }
 
+    public void NewTurn()
+    {
+        hasMoved = false;
+    }
+
     public void NewCombatTurn()
     {
         hasAttacked = false;

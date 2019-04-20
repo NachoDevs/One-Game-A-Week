@@ -11,7 +11,7 @@ public enum GameState
     PlayerMove,
     PlayerAttack,
     AIturn,
-    GameOver
+    NewTurn
 }
 
 public class GameManager : MonoBehaviour
@@ -26,7 +26,8 @@ public class GameManager : MonoBehaviour
     public GameObject elfCharacter;
     public GameObject pirateCaptainCharacter;
 
-    List<GameObject> m_characters;
+    List<GameObject> m_party;
+    List<GameObject> m_enemies;
 
     PathfindingManager m_pfm;
 
@@ -43,7 +44,8 @@ public class GameManager : MonoBehaviour
     {
         m_pfm = GetComponent<PathfindingManager>();
         m_cam = Camera.main;
-        m_characters = new List<GameObject>();
+        m_party = new List<GameObject>();
+        m_enemies = new List<GameObject>();
 
         m_previousTile = m_pfm.GetTile(0, 0);
 
@@ -64,28 +66,23 @@ public class GameManager : MonoBehaviour
 
     public void SaveGame()
     {
-        List<bool> charsDead = new List<bool>();
-        List<int> charsHealth = new List<int>();
-        List<int> charsAttackDamage = new List<int>();
-        foreach (GameObject c in m_characters)
+        List<GameObject> characters = new List<GameObject>();
+        characters.AddRange(m_party);
+        characters.AddRange(m_enemies);
+
+        SaveSystem.SaveGame(SaveSystem.GenerateGameData(characters, null));
+    }
+
+    public void EndTurn()
+    {
+        if(currGameState == GameState.AIturn)
         {
-            Character cc = c.GetComponent<Character>();
-            charsDead.Add(cc.isDead);
-            charsHealth.Add(cc.health);
-            charsAttackDamage.Add(cc.damageBoost);
+            currGameState = GameState.NewTurn;
         }
-
-        int charaterCount = charsHealth.Count;
-        float[,] charsPos = new float[2 , charaterCount];
-
-        foreach (GameObject character in m_characters)
+        else
         {
-            Character characterC = character.GetComponent<Character>();
-            charsPos[0, characterC.characterIndex] = character.transform.position.x;
-            charsPos[1, characterC.characterIndex] = character.transform.position.y;
+            currGameState = GameState.AIturn;
         }
-
-        SaveSystem.SaveGame(SaveSystem.GenerateGameData(charsDead, charsHealth, charsAttackDamage, charsPos));
     }
 
     void LoadGame()
@@ -95,21 +92,28 @@ public class GameManager : MonoBehaviour
         {
             GameObject prince = Instantiate(princeCharacter, new Vector3(13.5f, 49.5f, -1f), new Quaternion());
             prince.GetComponent<Character>().CheckIndex();
-            m_characters.Add(prince);
+            m_party.Add(prince);
 
             GameObject elf = Instantiate(elfCharacter, new Vector3(13.5f, 48.5f, -1f), new Quaternion());
             elf.GetComponent<Character>().CheckIndex();
-            m_characters.Add(elf);
+            m_party.Add(elf);
 
             GameObject captain = Instantiate(pirateCaptainCharacter, new Vector3(15.5f, 51.5f, -1f), new Quaternion());
             captain.GetComponent<Character>().CheckIndex();
-            m_characters.Add(captain);
+            m_enemies.Add(captain);
         }
         else
         {
             foreach(GameObject character in Character.id_prefab.Values)
             {
-                m_characters.Add(character);
+                if(character.GetComponent<Player>() != null)
+                {
+                    m_party.Add(character);
+                }
+                else
+                {
+                    m_enemies.Add(character);
+                }
             }
         }
 
@@ -117,7 +121,10 @@ public class GameManager : MonoBehaviour
 
         if (gd != null)
         {
-            foreach(GameObject character in m_characters)
+            List<GameObject> characters = new List<GameObject>();
+            characters.AddRange(m_party);
+            characters.AddRange(m_enemies);
+            foreach (GameObject character in characters)
             {
                 character.GetComponent<CharacterMovement>().enabled = true;
 
@@ -128,6 +135,7 @@ public class GameManager : MonoBehaviour
                 characterC.health = gd.charsHealth[characterIndex];
                 characterC.damageBoost = gd.charsDamageBoost[characterIndex];
                 characterC.isDead = gd.charsDead[characterIndex];
+                characterC.hasMoved = gd.charsHaveMoved[characterIndex];
 
                 if (characterC.isDead)
                 {
@@ -135,6 +143,7 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+
     }
 
     void HandleGameState()
@@ -155,8 +164,15 @@ public class GameManager : MonoBehaviour
                         m_selectedCharacter = m_hit.collider.gameObject.GetComponentInParent<Character>();
                         if (Input.GetMouseButtonUp(0))
                         {
-                            CharacterSelectedBehaviour();
-                            //break;
+                            if(!m_selectedCharacter.hasMoved)
+                            {
+                                CharacterSelectedBehaviour();
+                                //break;
+                            }
+                            else
+                            {
+                                print("Already moved");
+                            }
                         }
                     }
 
@@ -183,6 +199,8 @@ public class GameManager : MonoBehaviour
 
                         if(m_currentTile.selected)
                         {
+                            m_selectedCharacter.hasMoved = true;
+
                             if(m_hit.collider.gameObject.GetComponentInParent<Enemy>() != null)
                             {
                                 if(m_hit.collider.gameObject.GetComponentInParent<Character>().isDead)
@@ -200,6 +218,7 @@ public class GameManager : MonoBehaviour
                                 m_selectedCharacter.MoveTo(m_currentTile);
                                 currGameState = GameState.PlayerSelectTile;
                             }
+
                         }
 
                         if(m_currentTile != m_previousTile)
@@ -212,7 +231,6 @@ public class GameManager : MonoBehaviour
                                 }
                             }
                         }
-
                     }
                 }catch(Exception e) { PrintException(e); }
 
@@ -222,8 +240,11 @@ public class GameManager : MonoBehaviour
                 LoadCombatScene();
                 break;
             case GameState.AIturn:
+                print("AI turn");
+                EndTurn();
                 break;
-            case GameState.GameOver:
+            case GameState.NewTurn:
+                ResetTurn();
                 break;
         }
     }
@@ -268,14 +289,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void ResetTurn()
+    {
+        foreach (GameObject character in m_party)
+        {
+            character.GetComponent<Character>().NewTurn();
+        }
+
+        currGameState = GameState.PlayerSelectTile;
+    }
+
     void LoadCombatScene()
     {
-        //foreach(GameObject character in m_characters)
-        //{
-        //    Destroy(character);
-        //}
         Character.s_nextCharacterIndex = 0;
-
 
         SceneManager.LoadScene(1);
     }

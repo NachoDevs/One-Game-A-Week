@@ -93,22 +93,11 @@ public class CombatSceneManager : MonoBehaviour
 
     public void LoadMainMap()
     {
-        List<bool> charsDead = new List<bool>();
-        List<int> charsHealth = new List<int>();
-        List<int> charsAttackDamage = new List<int>();
-
         List<GameObject> characters = new List<GameObject>();
         characters.AddRange(m_party);
         characters.AddRange(m_enemies);
-        foreach (GameObject c in characters)
-        {
-            Character cc = c.GetComponent<Character>();
-            charsDead.Add(cc.isDead);
-            charsHealth.Add(cc.health);
-            charsAttackDamage.Add(cc.damageBoost);
-        }
 
-        SaveSystem.SaveGame(SaveSystem.GenerateGameData(charsDead, charsHealth, charsAttackDamage, m_partyPos));
+        SaveSystem.SaveGame(SaveSystem.GenerateGameData(characters, m_partyPos));
 
         SceneManager.LoadScene(0);
     }
@@ -287,6 +276,8 @@ public class CombatSceneManager : MonoBehaviour
                     characterC.health = gd.charsHealth[i];
                     // Load attackBoost
                     characterC.damageBoost= gd.charsDamageBoost[characterC.characterIndex];
+                    // To check if the can move after the combat
+                    characterC.hasMoved = gd.charsHaveMoved[characterC.characterIndex];
                     // For combat movement
                     characterC.combatInitialPosition = character.transform.position;
 
