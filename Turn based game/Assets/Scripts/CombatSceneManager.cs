@@ -349,6 +349,8 @@ public class CombatSceneManager : MonoBehaviour
                 {
                     m_currFace = CombatFace.AIFace;
                 }
+
+                HideAbilitiesPanel();
             });
         }
     }
