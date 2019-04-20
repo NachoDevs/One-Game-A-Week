@@ -97,7 +97,7 @@ public class CombatSceneManager : MonoBehaviour
         characters.AddRange(m_party);
         characters.AddRange(m_enemies);
 
-        SaveSystem.SaveGame(SaveSystem.GenerateGameData(characters, m_partyPos));
+        SaveSystem.SaveGame(SaveSystem.GenerateGameData(characters, null, m_partyPos));
 
         SceneManager.LoadScene(0);
     }
@@ -245,6 +245,9 @@ public class CombatSceneManager : MonoBehaviour
 
     void LoadCharacters()
     {
+        // TODO: Instead of the current system
+        // We have to also include the rest of the characters to complete the save file, but we have to exclude them from the combat
+
         GameData gd = SaveSystem.LoadGame();
         
         if (gd != null)
@@ -257,6 +260,22 @@ public class CombatSceneManager : MonoBehaviour
             {
                 GameObject character = Character.id_prefab[i];
                 Character characterC = character.GetComponent<Character>();
+
+                bool inCombat = false;
+                foreach(int index in gd.charactersInvolvedInCombat)
+                {
+                    if(characterC.characterIndex == index)
+                    {
+                        inCombat = true;
+                        break;
+                    }
+                }
+                if(!inCombat)
+                {
+
+
+                    continue;
+                }
 
                 if(!characterC.isDead)
                 {

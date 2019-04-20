@@ -38,7 +38,7 @@ public static class SaveSystem
         return null;
     }
 
-    public static GameData GenerateGameData(List<GameObject> characters, float[,] t_charsPosition)
+    public static GameData GenerateGameData(List<GameObject> characters, List<int> t_charactersInvolvedInCombat, float[,] t_charsPosition)
     {
         GameData gd = new GameData();
 
@@ -76,6 +76,11 @@ public static class SaveSystem
         gd.charsHaveMoved = charsHaveMoved.ToArray();
         gd.charsHealth = charsHealth.ToArray();
         gd.charsDamageBoost = charsAttackDamage.ToArray();
+
+        if (t_charactersInvolvedInCombat != null)
+        {
+            gd.charactersInvolvedInCombat = t_charactersInvolvedInCombat.ToArray();
+        }
 
         return gd;
     }

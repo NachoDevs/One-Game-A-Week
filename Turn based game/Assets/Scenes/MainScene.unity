@@ -81117,6 +81117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeb5a56eb761b3848adac8b38c26a22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxCombatJoinRange: 2
   currGameState: 0
   stateText: {fileID: 876942465}
   princeCharacter: {fileID: 3878854558787122232, guid: 29ed9ef3d3db47c4aaf1e56eb0fd3ebd,

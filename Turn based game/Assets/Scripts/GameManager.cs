@@ -16,6 +16,8 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
+    public float maxCombatJoinRange = 3.5f;
+
     public GameState currGameState;
 
     [Header("UI")]
@@ -64,13 +66,13 @@ public class GameManager : MonoBehaviour
         HandleGameState();
     }
 
-    public void SaveGame()
+    public void SaveGame(List<int> t_charactersInvolved)
     {
         List<GameObject> characters = new List<GameObject>();
         characters.AddRange(m_party);
         characters.AddRange(m_enemies);
 
-        SaveSystem.SaveGame(SaveSystem.GenerateGameData(characters, null));
+        SaveSystem.SaveGame(SaveSystem.GenerateGameData(characters, t_charactersInvolved, null));
     }
 
     public void EndTurn()
@@ -235,7 +237,7 @@ public class GameManager : MonoBehaviour
 
                     break;
             case GameState.PlayerAttack:
-                LoadCombatScene();
+                LoadCombatScene(GetInvolvedCharacters(m_selectedCharacter.transform.position));
                 break;
             case GameState.AIturn:
                 HandleAI();
@@ -334,13 +336,30 @@ public class GameManager : MonoBehaviour
             {
                 if(m_pfm.GetTile((int)targetChar.transform.position.x, (int)targetChar.transform.position.y) == target)
                 {
-                    LoadCombatScene();
+                    LoadCombatScene(GetInvolvedCharacters(character.transform.position));
                     break;
                 }
             }
 
             enemy.GetComponent<Character>().MoveTo(target);
         }
+    }
+
+    List<int> GetInvolvedCharacters(Vector3 t_combatCenterPoint)
+    {
+        List<int> joining = new List<int>();
+        List<GameObject> characters = new List<GameObject>();
+        characters.AddRange(m_party);
+        characters.AddRange(m_enemies);
+        foreach (GameObject character in characters)
+        {
+            if(Vector3.Distance(t_combatCenterPoint, character.transform.position) < maxCombatJoinRange)
+            {
+                joining.Add(character.GetComponent<Character>().characterIndex);
+            }
+        }
+
+        return joining;
     }
 
     void ResetTurn()
@@ -353,9 +372,9 @@ public class GameManager : MonoBehaviour
         currGameState = GameState.PlayerSelectTile;
     }
 
-    void LoadCombatScene()
+    void LoadCombatScene(List<int> t_charactersInvolved)
     {
-        SaveGame();
+        SaveGame(t_charactersInvolved);
 
         Character.s_nextCharacterIndex = 0;
 
