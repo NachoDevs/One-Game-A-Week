@@ -4,24 +4,16 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
-    public float dragSpeed = 2;
-
-    private Vector3 dragOrigin;
+    public float dragSpeed = .5f;
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButton(1))
         {
-            dragOrigin = Input.mousePosition;
-            return;
+            float x = Input.GetAxis("Mouse X") * dragSpeed;
+            float y = Input.GetAxis("Mouse Y") * dragSpeed;
+            transform.Translate(-x, -y, 0);
         }
-
-        if (!Input.GetMouseButton(1)) return;
-
-        Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - dragOrigin);
-        Vector3 move = new Vector3(-pos.x * dragSpeed, -pos.y * dragSpeed, 0);
-
-        transform.Translate(move, Space.World);
     }
 
     public void StartCameraPosition(Vector3 posA, Vector3 posB)
