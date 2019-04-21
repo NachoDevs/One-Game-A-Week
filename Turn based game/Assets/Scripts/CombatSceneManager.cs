@@ -36,6 +36,10 @@ public class CombatSceneManager : MonoBehaviour
     public GameObject elfCharacter;
     public GameObject pirateCaptainCharacter;
 
+    public GameObject background;
+
+    public List<Sprite> backgrounds;
+
     float[,] m_partyPos;
 
     CombatFace m_currFace;
@@ -305,11 +309,13 @@ public class CombatSceneManager : MonoBehaviour
                     if (character.GetComponent<Player>() != null)
                     {
                         m_party.Add(character);
+                        SelectBackground(i);
                     }
                     else
                     {
                         m_enemies.Add(character);
                     }
+
                 }
             }
         }
@@ -462,4 +468,97 @@ public class CombatSceneManager : MonoBehaviour
         } catch(Exception e) { GameManager.PrintException(e); }
     }
 
+    void SelectBackground(int t_charIndex)
+    {
+        Sprite backgroundSprite = backgrounds[0];
+
+        List<Vector2> foresTile = new List<Vector2>();
+        List<Vector2> castleTile = new List<Vector2>();
+        List<Vector2> villageTile = new List<Vector2>();
+
+        {
+            foresTile.Add(new Vector2(4.5f, 63.5f));
+            foresTile.Add(new Vector2(4.5f, 62.5f));
+            foresTile.Add(new Vector2(4.5f, 61.5f));
+            foresTile.Add(new Vector2(5.5f, 62.5f));
+            foresTile.Add(new Vector2(5.5f, 61.5f));
+            foresTile.Add(new Vector2(6.5f, 62.5f));
+            foresTile.Add(new Vector2(6.5f, 61.5f));
+            foresTile.Add(new Vector2(6.5f, 60.5f));
+            foresTile.Add(new Vector2(7.5f, 61.5f));
+            foresTile.Add(new Vector2(7.5f, 62.5f));
+            foresTile.Add(new Vector2(11.5f, 61.5f));
+            foresTile.Add(new Vector2(11.5f, 60.5f));
+            foresTile.Add(new Vector2(12.5f, 61.5f));
+            foresTile.Add(new Vector2(12.5f, 60.5f));
+            foresTile.Add(new Vector2(13.5f, 60.5f));
+            foresTile.Add(new Vector2(17.5f, 64.5f));
+            foresTile.Add(new Vector2(18.5f, 65.5f));
+            foresTile.Add(new Vector2(18.5f, 64.5f));
+            foresTile.Add(new Vector2(18.5f, 63.5f));
+            foresTile.Add(new Vector2(19.5f, 64.5f));
+            foresTile.Add(new Vector2(19.5f, 63.5f));
+            foresTile.Add(new Vector2(20.5f, 57.5f));
+            foresTile.Add(new Vector2(20.5f, 56.5f));
+            foresTile.Add(new Vector2(20.5f, 55.5f));
+            foresTile.Add(new Vector2(21.5f, 55.5f));
+            foresTile.Add(new Vector2(21.5f, 54.5f));
+            foresTile.Add(new Vector2(22.5f, 54.5f));
+            foresTile.Add(new Vector2(12.5f, 53.5f));
+            foresTile.Add(new Vector2(12.5f, 52.5f));
+            foresTile.Add(new Vector2(13.5f, 53.5f));
+            foresTile.Add(new Vector2(13.5f, 52.5f));
+            foresTile.Add(new Vector2(14.5f, 52.5f));
+        }
+
+        {
+            villageTile.Add(new Vector2(13.5f, 49.5f));
+            villageTile.Add(new Vector2(13.5f, 48.5f));
+            villageTile.Add(new Vector2(14.5f, 49.5f));
+            villageTile.Add(new Vector2(20.5f, 60.5f));
+            villageTile.Add(new Vector2(20.5f, 59.5f));
+            villageTile.Add(new Vector2(4.5f, 65.5f));
+            villageTile.Add(new Vector2(4.5f, 64.5f));
+            villageTile.Add(new Vector2(5.5f, 65.5f));
+            villageTile.Add(new Vector2(5.5f, 64.5f));
+        }
+
+        {
+            castleTile.Add(new Vector2(12.5f, 64.5f));
+            castleTile.Add(new Vector2(12.5f, 65.5f));
+            castleTile.Add(new Vector2(12.5f, 66.5f));
+            castleTile.Add(new Vector2(12.5f, 67.5f));
+            castleTile.Add(new Vector2(13.5f, 64.5f));
+            castleTile.Add(new Vector2(13.5f, 65.5f));
+            castleTile.Add(new Vector2(13.5f, 66.5f));
+            castleTile.Add(new Vector2(13.5f, 67.5f));
+            castleTile.Add(new Vector2(15.5f, 64.5f));
+            castleTile.Add(new Vector2(15.5f, 65.5f));
+            castleTile.Add(new Vector2(15.5f, 66.5f));
+            castleTile.Add(new Vector2(15.5f, 67.5f));
+            castleTile.Add(new Vector2(16.5f, 64.5f));
+            castleTile.Add(new Vector2(16.5f, 65.5f));
+            castleTile.Add(new Vector2(16.5f, 66.5f));
+            castleTile.Add(new Vector2(16.5f, 67.5f));
+        }
+
+        Vector2 charPos = new Vector2(m_partyPos[0, t_charIndex], m_partyPos[1, t_charIndex]);
+
+        if(foresTile.Contains(charPos))
+        {
+            backgroundSprite = backgrounds[1];
+        }
+
+        if (villageTile.Contains(charPos))
+        {
+            backgroundSprite = backgrounds[2];
+        }
+
+        if (castleTile.Contains(charPos))
+        {
+            backgroundSprite = backgrounds[3];
+        }
+
+        background.GetComponent<SpriteRenderer>().sprite = backgroundSprite;
+    }
 }

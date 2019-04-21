@@ -327,7 +327,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 973c341c9e76e45429867e7cc9c6bb51, type: 3}
+  m_Sprite: {fileID: 21300000, guid: edc3c713a97f8554991ea24db8be3d93, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -729,6 +729,12 @@ MonoBehaviour:
     type: 3}
   pirateCaptainCharacter: {fileID: 4442655876910246509, guid: be12acc730911ae49b9d16256fdac993,
     type: 3}
+  background: {fileID: 783970706}
+  backgrounds:
+  - {fileID: 21300000, guid: edc3c713a97f8554991ea24db8be3d93, type: 3}
+  - {fileID: 21300000, guid: 55e7a8f8e3496b349896e3ee220a93b4, type: 3}
+  - {fileID: 21300000, guid: 66b35e2703936a840a815c234c062050, type: 3}
+  - {fileID: 21300000, guid: 80be70f3c52a0894daaf3cb2ffa7b204, type: 3}
 --- !u!1 &1345520314
 GameObject:
   m_ObjectHideFlags: 0
