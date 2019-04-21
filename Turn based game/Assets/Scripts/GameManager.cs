@@ -68,7 +68,12 @@ public class GameManager : MonoBehaviour
         HandleGameState();
     }
 
-    public void SaveGame(List<int> t_charactersInvolved)
+    public void SaveButton()
+    {
+        SaveGame(null);
+    }
+
+    void SaveGame(List<int> t_charactersInvolved)
     {
         List<GameObject> characters = new List<GameObject>();
         characters.AddRange(m_party);
