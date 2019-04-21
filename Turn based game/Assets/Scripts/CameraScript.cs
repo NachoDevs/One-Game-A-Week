@@ -23,4 +23,9 @@ public class CameraScript : MonoBehaviour
 
         transform.Translate(move, Space.World);
     }
+
+    public void StartCameraPosition(Vector3 posA, Vector3 posB)
+    {
+        transform.position = (posA + posB) * .5f;
+    }
 }

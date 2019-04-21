@@ -196,6 +196,8 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+
+        m_cam.GetComponentInParent<CameraScript>().StartCameraPosition(m_party[0].transform.position, m_party[1].transform.position);
     }
 
     void HandleGameState()
