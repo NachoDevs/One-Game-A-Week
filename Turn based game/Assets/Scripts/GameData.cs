@@ -6,7 +6,8 @@ public class GameData
 
     public int[] charactersInvolvedInCombat;
     public int[] charsHealth;
-    public int[] charsDamageBoost;
+
+    public float[] charsDamageBoost;
 
     public float[,] charsPositions;
 

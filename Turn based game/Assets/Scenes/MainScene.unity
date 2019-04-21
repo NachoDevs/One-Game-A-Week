@@ -81126,6 +81126,10 @@ MonoBehaviour:
     type: 3}
   pirateCaptainCharacter: {fileID: 4442655876910246509, guid: be12acc730911ae49b9d16256fdac993,
     type: 3}
+  pirate1Character: {fileID: 4629049728403166608, guid: 71ededa15a83fd54a8db9688fe9d0b41,
+    type: 3}
+  pirate2Character: {fileID: 2357155539971805032, guid: 975bef4c3654ea443a2f6927263109c7,
+    type: 3}
 --- !u!1 &1964882057
 GameObject:
   m_ObjectHideFlags: 0

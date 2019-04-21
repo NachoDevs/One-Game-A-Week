@@ -1,18 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &2591084894184101455
+--- !u!114 &1044600998999966329
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7686842087584088405}
+  m_GameObject: {fileID: 2357155539971805032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0d1a0b58a7dced47a1439686d0420fa, type: 3}
+  m_Script: {fileID: 11500000, guid: a3a79cb804aa6324da7de0942910d8ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &4281963204191117482
+--- !u!1001 &8176281307777543831
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -22,38 +22,33 @@ PrefabInstance:
     - target: {fileID: 5891184392644207103, guid: f11de07b7a65b024eb4ccb8e0df009d9,
         type: 3}
       propertyPath: m_Name
-      value: ElfCharacter
-      objectReference: {fileID: 0}
-    - target: {fileID: 5891184392644207099, guid: f11de07b7a65b024eb4ccb8e0df009d9,
-        type: 3}
-      propertyPath: name
-      value: Elf
+      value: Pirate2Character
       objectReference: {fileID: 0}
     - target: {fileID: 5891184392644207099, guid: f11de07b7a65b024eb4ccb8e0df009d9,
         type: 3}
       propertyPath: characterName
-      value: Elf
+      value: Pirate2
       objectReference: {fileID: 0}
     - target: {fileID: 5891184392644207099, guid: f11de07b7a65b024eb4ccb8e0df009d9,
         type: 3}
       propertyPath: deadSprite
       value: 
-      objectReference: {fileID: 21300078, guid: 7f55dd0376f02564c830218f30ba9789,
+      objectReference: {fileID: 21300034, guid: e7c5f094c70000446b31fcb941b9e9a4,
         type: 3}
     - target: {fileID: 5891184392644207099, guid: f11de07b7a65b024eb4ccb8e0df009d9,
         type: 3}
+      propertyPath: targettingRange
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5891184392644207099, guid: f11de07b7a65b024eb4ccb8e0df009d9,
+        type: 3}
       propertyPath: health
-      value: 90
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 5891184392644207099, guid: f11de07b7a65b024eb4ccb8e0df009d9,
         type: 3}
       propertyPath: maxHealth
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 5891184392644207099, guid: f11de07b7a65b024eb4ccb8e0df009d9,
-        type: 3}
-      propertyPath: damageBoost
-      value: 1.5
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 5891184392644207096, guid: f11de07b7a65b024eb4ccb8e0df009d9,
         type: 3}
@@ -68,7 +63,7 @@ PrefabInstance:
     - target: {fileID: 5891184392644207096, guid: f11de07b7a65b024eb4ccb8e0df009d9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5891184392644207096, guid: f11de07b7a65b024eb4ccb8e0df009d9,
         type: 3}
@@ -114,18 +109,18 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 522909c8cf11e994a851b223c602e865, type: 2}
+      objectReference: {fileID: 9100000, guid: 5fefad259d14e914a8bea84517005620, type: 2}
     - target: {fileID: 5891184394641547803, guid: f11de07b7a65b024eb4ccb8e0df009d9,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7f55dd0376f02564c830218f30ba9789,
+      objectReference: {fileID: 21300000, guid: e7c5f094c70000446b31fcb941b9e9a4,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f11de07b7a65b024eb4ccb8e0df009d9, type: 3}
---- !u!1 &7686842087584088405 stripped
+--- !u!1 &2357155539971805032 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5891184392644207103, guid: f11de07b7a65b024eb4ccb8e0df009d9,
     type: 3}
-  m_PrefabInstance: {fileID: 4281963204191117482}
+  m_PrefabInstance: {fileID: 8176281307777543831}
   m_PrefabAsset: {fileID: 0}

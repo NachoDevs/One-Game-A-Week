@@ -45,7 +45,7 @@ public static class SaveSystem
         List<bool> charsDead = new List<bool>();
         List<bool> charsHaveMoved = new List<bool>();
         List<int> charsHealth = new List<int>();
-        List<int> charsAttackDamage = new List<int>();
+        List<float> charsAttackDamage = new List<float>();
 
         foreach (GameObject character in characters)
         {

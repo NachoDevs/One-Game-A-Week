@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     public GameObject princeCharacter;
     public GameObject elfCharacter;
     public GameObject pirateCaptainCharacter;
+    public GameObject pirate1Character;
+    public GameObject pirate2Character;
 
     List<GameObject> m_party;
     List<GameObject> m_enemies;
@@ -100,9 +102,53 @@ public class GameManager : MonoBehaviour
             elf.GetComponent<Character>().CheckIndex();
             m_party.Add(elf);
 
-            GameObject captain = Instantiate(pirateCaptainCharacter, new Vector3(15.5f, 51.5f, -1f), new Quaternion());
-            captain.GetComponent<Character>().CheckIndex();
-            m_enemies.Add(captain);
+            GameObject captain1 = Instantiate(pirateCaptainCharacter, new Vector3(15.5f, 51.5f, -1f), new Quaternion());
+            captain1.GetComponent<Character>().CheckIndex();
+            m_enemies.Add(captain1);
+
+            GameObject pirate1 = Instantiate(pirate2Character, new Vector3(24.5f, 54.5f, -1f), new Quaternion());
+            pirate1.GetComponent<Character>().CheckIndex();
+            m_enemies.Add(pirate1);
+
+            GameObject pirate2 = Instantiate(pirate2Character, new Vector3(5.5f, 65.5f, -1f), new Quaternion());
+            pirate2.GetComponent<Character>().CheckIndex();
+            m_enemies.Add(pirate2);
+
+            GameObject pirate3 = Instantiate(pirate2Character, new Vector3(12.5f, 60.5f, -1f), new Quaternion());
+            pirate3.GetComponent<Character>().CheckIndex();
+            m_enemies.Add(pirate3);
+
+            GameObject pirate4 = Instantiate(pirate1Character, new Vector3(4.5f, 63.5f), new Quaternion());
+            pirate4.GetComponent<Character>().CheckIndex();
+            m_enemies.Add(pirate4);
+
+            GameObject captain2 = Instantiate(pirateCaptainCharacter, new Vector3(14.5f, 62.5f, -1f), new Quaternion());
+            captain2.GetComponent<Character>().CheckIndex();
+            m_enemies.Add(captain2);
+
+            GameObject pirate6 = Instantiate(pirate2Character, new Vector3(15.5f, 63.5f, -1f), new Quaternion());
+            pirate6.GetComponent<Character>().CheckIndex();
+            m_enemies.Add(pirate6);
+
+            GameObject pirate7 = Instantiate(pirate1Character, new Vector3(13.5f, 63.5f, -1f), new Quaternion());
+            pirate7.GetComponent<Character>().CheckIndex();
+            m_enemies.Add(pirate7);
+
+            GameObject pirate8 = Instantiate(pirate2Character, new Vector3(8.5f, 56.5f, -1f), new Quaternion());
+            pirate8.GetComponent<Character>().CheckIndex();
+            m_enemies.Add(pirate8);
+
+            GameObject pirate9 = Instantiate(pirate1Character, new Vector3(11.5f, 55.5f, -1f), new Quaternion());
+            pirate9.GetComponent<Character>().CheckIndex();
+            m_enemies.Add(pirate9);
+
+            GameObject pirate10 = Instantiate(pirate2Character, new Vector3(20.5f, 59.5f, -1f), new Quaternion());
+            pirate10.GetComponent<Character>().CheckIndex();
+            m_enemies.Add(pirate10);
+
+            GameObject pirate11 = Instantiate(pirate1Character, new Vector3(19.5f, 59.5f, -1f), new Quaternion());
+            pirate11.GetComponent<Character>().CheckIndex();
+            m_enemies.Add(pirate11);
         }
         else
         {

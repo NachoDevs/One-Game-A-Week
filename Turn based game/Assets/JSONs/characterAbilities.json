@@ -13,5 +13,14 @@
     [
         "melee",
         "range"
+    ],
+	"Pirate1":
+    [
+        "melee"
+    ],
+	"Pirate2":
+    [
+        "melee",
+        "heal"
     ]
 }
