@@ -50,12 +50,14 @@ public class CombatSceneManager : MonoBehaviour
 
     RaycastHit2D m_hit;
 
+    List<GameObject> m_characters;
     List<GameObject> m_party;
     List<GameObject> m_enemies;
     List<GameObject> m_infoPanels;
 
     void Awake()
     {
+        m_characters = new List<GameObject>();
         m_party = new List<GameObject>();
         m_enemies = new List<GameObject>();
         m_infoPanels = new List<GameObject>();
@@ -93,11 +95,7 @@ public class CombatSceneManager : MonoBehaviour
 
     public void LoadMainMap()
     {
-        List<GameObject> characters = new List<GameObject>();
-        characters.AddRange(m_party);
-        characters.AddRange(m_enemies);
-
-        SaveSystem.SaveGame(SaveSystem.GenerateGameData(characters, null, m_partyPos));
+        SaveSystem.SaveGame(SaveSystem.GenerateGameData(m_characters, null, m_partyPos));
 
         SceneManager.LoadScene(0);
     }
@@ -245,9 +243,6 @@ public class CombatSceneManager : MonoBehaviour
 
     void LoadCharacters()
     {
-        // TODO: Instead of the current system
-        // We have to also include the rest of the characters to complete the save file, but we have to exclude them from the combat
-
         GameData gd = SaveSystem.LoadGame();
         
         if (gd != null)
@@ -261,6 +256,8 @@ public class CombatSceneManager : MonoBehaviour
                 GameObject character = Character.id_prefab[i];
                 Character characterC = character.GetComponent<Character>();
 
+                m_characters.Add(character);
+
                 bool inCombat = false;
                 foreach(int index in gd.charactersInvolvedInCombat)
                 {
@@ -270,10 +267,12 @@ public class CombatSceneManager : MonoBehaviour
                         break;
                     }
                 }
-                if(!inCombat)
+
+                m_partyPos[0, i] = gd.charsPositions[0, i];
+                m_partyPos[1, i] = gd.charsPositions[1, i];
+
+                if (!inCombat)
                 {
-
-
                     continue;
                 }
 
@@ -299,9 +298,6 @@ public class CombatSceneManager : MonoBehaviour
                     characterC.hasMoved = gd.charsHaveMoved[characterC.characterIndex];
                     // For combat movement
                     characterC.combatInitialPosition = character.transform.position;
-
-                    m_partyPos[0, i] = gd.charsPositions[0, i];
-                    m_partyPos[1, i] = gd.charsPositions[1, i];
 
                     if(character.GetComponent<Player>() != null)
                     {
