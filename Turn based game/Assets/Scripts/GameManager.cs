@@ -202,7 +202,6 @@ public class GameManager : MonoBehaviour
 
     void HandleGameState()
     {
-        stateText.text = "Game State:\n" + currGameState.ToString();
         switch(currGameState)
         {
             default:    // PlayerSelectTile is the default state
@@ -225,7 +224,7 @@ public class GameManager : MonoBehaviour
                             }
                             else
                             {
-                                print("Already moved");
+                                StartCoroutine(PrintText(stateText, "This unit has already moved!"));
                             }
                         }
                     }
@@ -434,6 +433,12 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public static IEnumerator PrintText(TextMeshProUGUI t_textBox, string t_text)
+    {
+        t_textBox.text = t_text;
+        yield return new WaitForSeconds(3);
+        t_textBox.text = "";
+    }
 
     public static void PrintException(Exception t_e)
     {

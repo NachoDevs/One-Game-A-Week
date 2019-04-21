@@ -76,8 +76,6 @@ public class CombatSceneManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        stateText.text = "CombatState:\n" + m_currFace.ToString();
-
         HandleCombatState();
     }
 
@@ -118,7 +116,7 @@ public class CombatSceneManager : MonoBehaviour
                             m_selectedCharacter = m_hit.collider.gameObject.GetComponentInParent<Character>();
                             if(m_selectedCharacter.hasAttacked)
                             {
-                                print("already attacked");
+                                StartCoroutine(GameManager.PrintText(stateText, "This unit has already attacked!"));
                                 m_selectedCharacter = null;
                             }
                             else
@@ -349,7 +347,7 @@ public class CombatSceneManager : MonoBehaviour
                 {
                     if (m_selectedEnemy == null)
                     {
-                        print("select and enemy!");
+                        StartCoroutine(GameManager.PrintText(stateText, "You need to select a taget!"));
                         return;
                     }
                 }
