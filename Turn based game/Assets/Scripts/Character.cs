@@ -192,6 +192,12 @@ public class Character : MonoBehaviour
         m_combatTarget = null;
     }
 
+    public void EndCombat()
+    {
+        NewCombatTurn();
+        abilities.Clear();
+    }
+
     void OnDestroy()
     {
         --s_nextCharacterIndex;

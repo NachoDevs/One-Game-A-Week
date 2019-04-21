@@ -196,7 +196,15 @@ public class CombatSceneManager : MonoBehaviour
 
     void EndCombat()
     {
-        ResetCombatTurn();
+        HideAbilitiesPanel();
+
+        foreach (GameObject character in m_party)
+        {
+            character.GetComponent<Character>().EndCombat();
+        }
+
+        m_currFace = CombatFace.PlayerSelect;
+
         LoadMainMap();
     }
 
