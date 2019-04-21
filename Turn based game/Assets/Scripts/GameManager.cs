@@ -60,6 +60,30 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         LoadGame();
+
+        bool endGame = true;
+        foreach (GameObject character in m_enemies)
+        {
+            if (!character.GetComponent<Character>().isDead)
+            {
+                endGame = false;
+                break;
+            }
+        }
+
+        foreach (GameObject character in m_party)
+        {
+            if (!character.GetComponent<Character>().isDead)
+            {
+                endGame = false;
+                break;
+            }
+        }
+
+        if (endGame)
+        {
+            Application.Quit();
+        }
     }
 
     // Update is called once per frame

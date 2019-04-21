@@ -80,6 +80,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be32c12e6f85cdd4fb750f58e37fd8d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasMoved: 0
+  hasAttacked: 0
+  isDead: 0
+  health: 100
+  maxHealth: 100
+  characterIndex: -1
+  damageBoost: 1
+  targettingRange: 2.5
+  characterName: 
+  deadSprite: {fileID: 0}
+  healEffect: {fileID: 4973173697046212283, guid: d7e4ac2ffc8358144a986781b5fcbffb,
+    type: 3}
+  combatInitialPosition: {x: 0, y: 0, z: 0}
+  healthBar: {fileID: 0}
 --- !u!1 &5891184394641547800
 GameObject:
   m_ObjectHideFlags: 0

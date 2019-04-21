@@ -208,15 +208,10 @@ public class CombatSceneManager : MonoBehaviour
 
     void CheckIfCombatHasEneded()
     {
-        bool combatEnded = false;
-
-        foreach(GameObject character in m_enemies)
+        bool combatEnded = true;
+        foreach (GameObject character in m_enemies)
         {
-            if(character.GetComponent<Character>().isDead)
-            {
-                combatEnded = true;
-            }
-            else
+            if (!character.GetComponent<Character>().isDead)
             {
                 combatEnded = false;
                 break;

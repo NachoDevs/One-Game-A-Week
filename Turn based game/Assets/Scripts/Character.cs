@@ -25,6 +25,8 @@ public class Character : MonoBehaviour
 
     public Sprite deadSprite;
 
+    public GameObject healEffect;
+
     public List<Ability> abilities;
 
     public Vector3 combatInitialPosition;
@@ -172,12 +174,21 @@ public class Character : MonoBehaviour
                 break;
             case AbilityType.heal:
                 health += 15;
+                StartCoroutine(HealParticles());
                 if(health > maxHealth)
                 {
                     health = maxHealth;
                 }
                 break;
         }
+    }
+
+    IEnumerator HealParticles()
+    {
+        GameObject particles = Instantiate(healEffect, transform);
+        particles.GetComponentInChildren<SpriteRenderer>().flipX = GetComponentInChildren<SpriteRenderer>().flipX;
+        yield return new WaitForSeconds(2);
+        Destroy(particles);
     }
 
     public void NewTurn()
