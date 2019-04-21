@@ -306,8 +306,10 @@ public class CombatSceneManager : MonoBehaviour
                     characterC.hasMoved = gd.charsHaveMoved[characterC.characterIndex];
                     // For combat movement
                     characterC.combatInitialPosition = character.transform.position;
+                    // Getting ready for the combat
+                    characterC.NewCombatTurn();
 
-                    if(character.GetComponent<Player>() != null)
+                    if (character.GetComponent<Player>() != null)
                     {
                         m_party.Add(character);
                     }

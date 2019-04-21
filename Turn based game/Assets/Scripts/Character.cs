@@ -190,6 +190,11 @@ public class Character : MonoBehaviour
         hasAttacked = false;
         m_isAttacking = false;
         m_combatTarget = null;
+
+        if (healthBar != null)
+        {
+            healthBar.maxValue = maxHealth;
+        }
     }
 
     public void EndCombat()
