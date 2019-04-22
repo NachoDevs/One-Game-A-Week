@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Asteroid : MonoBehaviour
 {
+    public float asteroidSpeed = 10;
+    public float rotateSpeed = 25;
+
     public List<Sprite> sprites;
 
     PolygonCollider2D m_collider;
@@ -12,12 +15,14 @@ public class Asteroid : MonoBehaviour
     void Start()
     {
         AsteroidSetUp();
+
+        GetComponentInChildren<Rigidbody2D>().AddForce((GameObject.FindGameObjectsWithTag("Player")[0].transform.position - transform.position) * asteroidSpeed);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Rotate(Vector3.forward * rotateSpeed * Time.deltaTime, Space.Self);
     }
 
     void AsteroidSetUp()
