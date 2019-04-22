@@ -24,17 +24,10 @@ public class Asteroid : MonoBehaviour
     {
         GetComponentInChildren<SpriteRenderer>().sprite = sprites[Random.Range(0, sprites.Count)];
         m_collider = GetComponentInChildren<Transform>().gameObject.AddComponent<PolygonCollider2D>();
-        m_collider.isTrigger = true;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject collidedGO = collision.transform.parent.gameObject;
-
-        //if(collidedGO.GetComponent<Player>())
-        {
-
-        }
-
     }
 }
