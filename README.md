@@ -23,7 +23,7 @@ All projects will also have a trello board (all links below)
 This is a list with all the topics I want to tackle, the ones already ticked are the ones already done (the order is not representative of the development order):
 
 - [ ] Boardgame
-- [ ] Bullet hell
+- [ ] Bullet hell; 22 ->28.04.19; https://trello.com/b/ZQOZTI1A/bullet-hell; Unity 2019.1.0.f2 
 - [ ] Clicker
 - [x] Couch coop; 25->31.03.19; https://trello.com/b/pe8qGy9H/couch-coop; Unity 2018.3.0.f2
 - [x] Growing plant;  18->24.02.19; https://trello.com/b/ElPueIoH/growing-plant; Unity 2018.3.0.f2
@@ -35,7 +35,7 @@ This is a list with all the topics I want to tackle, the ones already ticked are
 - [ ] Stealth game
 - [x] Tower defense; 11->17.03.19; https://trello.com/b/Lq1sfXny/tower-defense; Unity 2018.3.0.f2
 - [ ] Town building game
-- [ ] Turn based game; 15->21.04.19; https://trello.com/b/83eNsg5Q/turn-based-game; Unity 2018.3.0.f2
+- [x] Turn based game; 15->21.04.19; https://trello.com/b/83eNsg5Q/turn-based-game; Unity 2018.3.0.f2
 - [x] 3rd person shoot and cover game; 04->10.03.19; https://trello.com/b/cl4YwOPN/3rd-person-shoot-and-cover-game; Unity 2018.3.0.f2
 
 ## Links
