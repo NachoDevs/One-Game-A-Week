@@ -25,6 +25,6 @@ public class Player : MonoBehaviour
     {
         print("dead");
 
-        Destroy(transform.gameObject);
+        //Destroy(transform.gameObject);
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5635154557007264631}
   - component: {fileID: 2780123743568964189}
   m_Layer: 0
-  m_Name: Asteroid
+  m_Name: Asteroid_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,14 +66,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b96f76e171a91f4c84aa1024a8e98c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: -1283825020244850437, guid: ae4ed17369c78ef49b3947d33427c245, type: 3}
-  - {fileID: -5360335524751714191, guid: ae4ed17369c78ef49b3947d33427c245, type: 3}
-  - {fileID: -8802254901284735598, guid: ae4ed17369c78ef49b3947d33427c245, type: 3}
-  - {fileID: 3800012213426357413, guid: ae4ed17369c78ef49b3947d33427c245, type: 3}
-  - {fileID: 5360647982713635170, guid: ae4ed17369c78ef49b3947d33427c245, type: 3}
-  - {fileID: -8841367713913494772, guid: ae4ed17369c78ef49b3947d33427c245, type: 3}
-  - {fileID: -242673686633763637, guid: ae4ed17369c78ef49b3947d33427c245, type: 3}
+  small: 0
+  asteroidSpeed: 10
+  rotateSpeed: 25
 --- !u!1 &6299158722357708421
 GameObject:
   m_ObjectHideFlags: 0
@@ -84,6 +79,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2561551656787623532}
   - component: {fileID: 1125000232408476120}
+  - component: {fileID: 123786032176102935}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -154,3 +150,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &123786032176102935
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6299158722357708421}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.19962068, y: 0.25252676}
+      - {x: 0.18042734, y: 0.3712933}
+      - {x: -0.22076286, y: 0.3731583}
+      - {x: -0.22056922, y: 0.25781715}
+      - {x: -0.36228377, y: 0.14971185}
+      - {x: -0.37049088, y: -0.16891755}
+      - {x: -0.19095829, y: -0.19367799}
+      - {x: -0.058141254, y: -0.34774858}
+      - {x: 0.24364187, y: -0.35192728}
+      - {x: 0.25563756, y: -0.16260807}
+      - {x: 0.40485114, y: -0.022161677}
+      - {x: 0.40189123, y: 0.28288898}
+    - - {x: -0.21875, y: 0.0625}
+      - {x: 0.09375, y: 0.03125}
+      - {x: 0.125, y: -0.125}
+      - {x: 0, y: -0.21875}

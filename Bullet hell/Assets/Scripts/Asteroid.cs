@@ -4,19 +4,28 @@ using UnityEngine;
 
 public class Asteroid : MonoBehaviour
 {
+    public bool small = false;
+
     public float asteroidSpeed = 10;
     public float rotateSpeed = 25;
 
-    public List<Sprite> sprites;
+    GameController m_gc;
 
     PolygonCollider2D m_collider;
 
     // Start is called before the first frame update
     void Start()
     {
-        AsteroidSetUp();
+        m_gc = GameObject.FindGameObjectsWithTag("GameController")[0].GetComponent<GameController>();
+        m_collider = GetComponentInChildren<PolygonCollider2D>();
+        m_collider.enabled = false;
 
-        GetComponentInChildren<Rigidbody2D>().AddForce((GameObject.FindGameObjectsWithTag("Player")[0].transform.position - transform.position) * asteroidSpeed);
+        if (!small)
+        {
+            GetComponentInChildren<Rigidbody2D>().AddForce((GameObject.FindGameObjectsWithTag("Player")[0].transform.position - transform.position) * asteroidSpeed);
+        }
+
+        StartCoroutine(ActivateHitbox());
     }
 
     // Update is called once per frame
@@ -25,14 +34,30 @@ public class Asteroid : MonoBehaviour
         transform.Rotate(Vector3.forward * rotateSpeed * Time.deltaTime, Space.Self);
     }
 
-    void AsteroidSetUp()
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        GetComponentInChildren<SpriteRenderer>().sprite = sprites[Random.Range(0, sprites.Count)];
-        m_collider = GetComponentInChildren<Transform>().gameObject.AddComponent<PolygonCollider2D>();
+        //GameObject collidedGO = collision.transform.parent.gameObject;
+
+        if(!small)
+        {
+            int asteroidNum = Random.Range(3, 7);
+            for (int i = 0; i < asteroidNum; ++i)
+            {
+                GameObject asteroid = Instantiate(m_gc.asteroids[Random.Range(0, m_gc.asteroids.Count)], transform.position, transform.rotation);
+                asteroid.GetComponent<Asteroid>().small = true;
+                asteroid.transform.localScale *= .5f;
+
+                asteroid.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.value, Random.value) * 100);
+            }
+        }
+
+        Destroy(gameObject);
+        
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    IEnumerator ActivateHitbox()
     {
-        GameObject collidedGO = collision.transform.parent.gameObject;
+        yield return new WaitForSeconds(1);
+        m_collider.enabled = true;
     }
 }
