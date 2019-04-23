@@ -5,5 +5,4 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public List<GameObject> asteroids;
-
 }

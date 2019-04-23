@@ -40,14 +40,16 @@ public class Asteroid : MonoBehaviour
 
         if(!small)
         {
-            int asteroidNum = Random.Range(3, 7);
+            int asteroidNum = Random.Range(5, 9);
             for (int i = 0; i < asteroidNum; ++i)
             {
+                Vector2 v2 = Quaternion.AngleAxis((360 / asteroidNum) * i, Vector3.forward) * Vector2.up;
+
                 GameObject asteroid = Instantiate(m_gc.asteroids[Random.Range(0, m_gc.asteroids.Count)], transform.position, transform.rotation);
                 asteroid.GetComponent<Asteroid>().small = true;
                 asteroid.transform.localScale *= .5f;
 
-                asteroid.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.value, Random.value) * 100);
+                asteroid.GetComponent<Rigidbody2D>().AddForce(v2 * 100);
             }
         }
 
