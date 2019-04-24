@@ -234,6 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66d47058dc593b240b86c15906aa288c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnRate: 0.5
   asteroids:
   - {fileID: 4120569351951552332, guid: 41b96b9741d1f2849b1255c09c050974, type: 3}
   - {fileID: 7043204345712001084, guid: 383d1b7c9c472ba43a9068782a8ac72d, type: 3}

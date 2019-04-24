@@ -16,7 +16,7 @@ public class Asteroid : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_gc = GameObject.FindGameObjectsWithTag("GameController")[0].GetComponent<GameController>();
+        m_gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         m_collider = GetComponentInChildren<PolygonCollider2D>();
         m_collider.enabled = false;
 
