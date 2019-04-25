@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public float spawnRate = 2;
+    public int score = 0;
+
+    public float asteroidSpawnRate = 2;
+    public float enemySpawnRate = 5;
+
+    public GameObject enemyPrefab;
 
     public List<GameObject> asteroids;
 
-    float m_timer;
+    float m_asteroidTimer;
+    float m_enemyTimer;
 
     Camera m_cam;
 
@@ -22,16 +28,23 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        m_timer += Time.deltaTime;
+        m_asteroidTimer += Time.deltaTime;
+        m_enemyTimer += Time.deltaTime;
 
-        if(m_timer > spawnRate)
+        if (m_asteroidTimer > Random.Range(asteroidSpawnRate - 1, asteroidSpawnRate + 1))
         {
-            m_timer = 0;
-            SpawnAsteroid();
+            m_asteroidTimer = 0;
+            SpawnObject(asteroids[Random.Range(0, asteroids.Count)]);
+        }
+
+        if (m_enemyTimer > Random.Range(enemySpawnRate - 3, enemySpawnRate + 3))
+        {
+            m_enemyTimer = 0;
+            SpawnObject(enemyPrefab);
         }
     }
 
-    void SpawnAsteroid()
+    void SpawnObject(GameObject t_toSpawn)
     {
 
         float screenAspect = (float)Screen.width / (float)Screen.height;
@@ -50,6 +63,6 @@ public class GameController : MonoBehaviour
             spawnPos.y += Random.Range((-cameraHeight) / 2, cameraHeight / 2);
         }
 
-        GameObject asteroid = Instantiate(asteroids[Random.Range(0, asteroids.Count)], spawnPos, new Quaternion());
+        GameObject asteroid = Instantiate(t_toSpawn, spawnPos, new Quaternion());
     }
 }
