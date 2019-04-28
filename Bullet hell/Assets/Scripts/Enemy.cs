@@ -2,9 +2,15 @@
 
 public class Enemy : MonoBehaviour
 {
+    public static float fireRate = 3.5f;
+
+    public GameObject projectile;
+
     static GameObject m_player;
 
     bool m_moving;
+
+    float m_timer;
 
     Vector3 m_targetPosition;
 
@@ -22,6 +28,14 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        m_timer += Time.deltaTime;
+
+        if (m_timer >= fireRate)
+        {
+            Shoot();
+            m_timer = 0;
+        }
+
         if (m_moving)
         {
             transform.Translate((m_targetPosition - transform.position) * Time.deltaTime, Space.World);
@@ -30,10 +44,18 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    void Shoot()
+    {
+        Vector3 shootDirection = (m_player.transform.position - transform.position);
+        Vector3 instPos = transform.position + (shootDirection * .6f);
+        GameObject proj = Instantiate(projectile, instPos, transform.rotation);
+        proj.GetComponent<Rigidbody2D>().AddForce(shootDirection * 150);
+    }
+
     void MovementBehaviour()
     {
         Vector3 pos = Random.insideUnitSphere;  pos.z = 0;
-        m_targetPosition = pos * 15 + m_player.transform.position;
+        m_targetPosition = pos * 10 + m_player.transform.position;
 
         m_moving = true;
     }
@@ -45,7 +67,7 @@ public class Enemy : MonoBehaviour
             return;
         }
 
-        m_targetPosition = (Random.Range(-1, 1) * Vector2.Perpendicular(collision.gameObject.GetComponentInParent<Rigidbody2D>().velocity)) * .5f;
+        m_targetPosition = /*(Random.Range(-1, 1) **/ Vector2.Perpendicular(collision.gameObject.GetComponentInParent<Rigidbody2D>().velocity).normalized/*)*/;
         m_moving = true;
     }
 

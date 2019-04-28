@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 
     public GameObject projectile;
 
-    private float m_timer;
+    float m_timer;
 
     // Start is called before the first frame update
     void Start()

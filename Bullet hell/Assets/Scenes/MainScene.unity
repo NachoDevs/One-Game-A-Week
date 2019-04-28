@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  asteroidSpawnRate: 2
+  asteroidSpawnRate: 1000
   enemySpawnRate: 5
   enemyPrefab: {fileID: 8379806055278937338, guid: 0b19546532b8e204d89d03ef9ebcea9f,
     type: 3}
