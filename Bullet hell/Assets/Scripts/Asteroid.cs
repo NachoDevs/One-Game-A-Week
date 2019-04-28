@@ -9,6 +9,8 @@ public class Asteroid : MonoBehaviour
     public float asteroidSpeed = 10;
     public float rotateSpeed = 25;
 
+    public GameObject ShieldPoweUp;
+
     GameController m_gc;
 
     GameObject m_player;
@@ -49,8 +51,12 @@ public class Asteroid : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         //GameObject collidedGO = collision.transform.parent.gameObject;
+        if (collision.gameObject.GetComponentInParent<Shield>() != null)
+        {
+            return;
+        }
 
-        if(!small)
+        if (!small)
         {
             int asteroidNum = Random.Range(5, 9);
             for (int i = 0; i < asteroidNum; ++i)
@@ -62,6 +68,11 @@ public class Asteroid : MonoBehaviour
                 GameObject asteroid = Instantiate(m_gc.asteroids[Random.Range(0, m_gc.asteroids.Count)], transform.position, transform.rotation);
                 asteroid.GetComponent<Asteroid>().small = true;
                 asteroid.transform.localScale *= .5f;
+
+                if(Random.Range(0, 25) >= 24)
+                {
+                    Instantiate(ShieldPoweUp, transform.position, Quaternion.identity);
+                }
 
                 asteroid.GetComponent<Rigidbody2D>().AddForce(v2 * 100);
             }

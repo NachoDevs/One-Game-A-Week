@@ -34,6 +34,6 @@ public class Projectile : MonoBehaviour
         {
             m_gc.IncreaseScore((collision.gameObject.GetComponentInParent<Enemy>() != null) ? 25 : 10);
         }
-        Destroy(gameObject.transform.parent);
+        Destroy(gameObject);
     }
 }

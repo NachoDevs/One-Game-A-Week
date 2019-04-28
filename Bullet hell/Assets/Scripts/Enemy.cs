@@ -47,9 +47,9 @@ public class Enemy : MonoBehaviour
     void Shoot()
     {
         Vector3 shootDirection = (m_player.transform.position - transform.position);
-        Vector3 instPos = transform.position + (shootDirection * .6f);
+        Vector3 instPos = transform.position + (shootDirection * .1f);
         GameObject proj = Instantiate(projectile, instPos, transform.rotation);
-        proj.GetComponent<Rigidbody2D>().AddForce(shootDirection * 75);
+        proj.GetComponent<Rigidbody2D>().AddForce(shootDirection * 25);
     }
 
     void MovementBehaviour()
@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponentInParent<Projectile>() != null)
+        if (collision.gameObject.GetComponentInParent<Projectile>() != null || collision.gameObject.GetComponentInParent<Shield>() != null)
         {
             return;
         }

@@ -69,6 +69,8 @@ MonoBehaviour:
   small: 0
   asteroidSpeed: 10
   rotateSpeed: 25
+  ShieldPoweUp: {fileID: 3845848061172615727, guid: 96fb103aa43a3144abb5cf09b6f003f1,
+    type: 3}
 --- !u!1 &6299158722357708421
 GameObject:
   m_ObjectHideFlags: 0
