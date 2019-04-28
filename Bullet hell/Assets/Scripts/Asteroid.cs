@@ -55,6 +55,8 @@ public class Asteroid : MonoBehaviour
             int asteroidNum = Random.Range(5, 9);
             for (int i = 0; i < asteroidNum; ++i)
             {
+                StartCoroutine(m_gc.Shake(.15f, 1f));
+
                 Vector2 v2 = Quaternion.AngleAxis((360 / asteroidNum) * i, Vector3.forward) * Vector2.up;
 
                 GameObject asteroid = Instantiate(m_gc.asteroids[Random.Range(0, m_gc.asteroids.Count)], transform.position, transform.rotation);
