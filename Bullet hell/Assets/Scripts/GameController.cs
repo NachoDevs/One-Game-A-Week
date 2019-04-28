@@ -74,22 +74,9 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public IEnumerator Shake(float t_duration, float t_magnitude)
+    public void Shake(float t_duration, float t_magnitude)
     {
-        m_cameraTimer = .0f;
-        m_originalCamPos = m_cam.transform.localPosition;
-
-        while (m_cameraTimer < t_duration)
-        {
-            float x = Random.Range(-1, 1) * t_magnitude;
-            float y = Random.Range(-1, 1) * t_magnitude;
-
-            m_cam.transform.localPosition = new Vector3(x, y, m_originalCamPos.z);
-
-            m_cameraTimer += Time.deltaTime;
-
-            yield return null;
-        }
+        StartCoroutine(m_cam.GetComponent<CamShake>().Shake(t_duration, t_magnitude));
     }
 
     void SpawnObject(GameObject t_toSpawn)
