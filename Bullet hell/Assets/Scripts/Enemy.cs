@@ -32,8 +32,8 @@ public class Enemy : MonoBehaviour
 
         if (m_timer >= fireRate)
         {
+            m_timer = .0f;
             Shoot();
-            m_timer = 0;
         }
 
         if (m_moving)
@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour
         Vector3 shootDirection = (m_player.transform.position - transform.position);
         Vector3 instPos = transform.position + (shootDirection * .6f);
         GameObject proj = Instantiate(projectile, instPos, transform.rotation);
-        proj.GetComponent<Rigidbody2D>().AddForce(shootDirection * 150);
+        proj.GetComponent<Rigidbody2D>().AddForce(shootDirection * 75);
     }
 
     void MovementBehaviour()

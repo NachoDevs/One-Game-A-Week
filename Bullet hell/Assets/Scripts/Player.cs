@@ -31,8 +31,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        Destroy(collision.gameObject);
         Die();
     }
 
@@ -40,6 +41,7 @@ public class Player : MonoBehaviour
     {
         Vector3 instPos = transform.position + (transform.right * .6f);
         GameObject proj = Instantiate(projectile, instPos, transform.rotation);
+        proj.GetComponent<Projectile>().isPlayers = true;
         proj.GetComponent<Rigidbody2D>().AddForce(transform.right * 500);
     }
 

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -12,6 +13,9 @@ public class GameController : MonoBehaviour
     public GameObject enemyPrefab;
 
     public List<GameObject> asteroids;
+
+    [Header("UI")]
+    public TextMeshProUGUI scoreText;
 
     float m_asteroidTimer;
     float m_enemyTimer;
@@ -31,6 +35,8 @@ public class GameController : MonoBehaviour
         m_asteroidTimer += Time.deltaTime;
         m_enemyTimer += Time.deltaTime;
 
+        scoreText.text = score.ToString();
+
         if (m_asteroidTimer > Random.Range(asteroidSpawnRate - 1, asteroidSpawnRate + 1))
         {
             m_asteroidTimer = 0;
@@ -41,6 +47,27 @@ public class GameController : MonoBehaviour
         {
             m_enemyTimer = 0;
             SpawnObject(enemyPrefab);
+        }
+    }
+
+    public void IncreaseScore(int t_addScore)
+    {
+        score += t_addScore;
+
+        if(score > 500)
+        {
+            asteroidSpawnRate = 1.5f;
+            enemySpawnRate = 4.5f;
+        }
+        if (score > 1000)
+        {
+            asteroidSpawnRate = 1f;
+            enemySpawnRate = 4f;
+        }
+        if (score > 1500)
+        {
+            asteroidSpawnRate = .5f;
+            enemySpawnRate = 3.5f;
         }
     }
 

@@ -11,6 +11,8 @@ public class Asteroid : MonoBehaviour
 
     GameController m_gc;
 
+    GameObject m_player;
+
     PolygonCollider2D m_collider;
 
     // Start is called before the first frame update
@@ -25,12 +27,22 @@ public class Asteroid : MonoBehaviour
             GetComponentInChildren<Rigidbody2D>().AddForce((GameObject.FindGameObjectsWithTag("Player")[0].transform.position - transform.position) * asteroidSpeed);
         }
 
+        if (m_player == null)
+        {
+            m_player = GameObject.FindGameObjectWithTag("Player");
+        }
+
         StartCoroutine(ActivateHitbox());
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(Vector3.Distance(m_player.transform.position, transform.position) > 100)
+        {
+            Destroy(gameObject);
+        }
+
         transform.Rotate(Vector3.forward * rotateSpeed * Time.deltaTime, Space.Self);
     }
 
