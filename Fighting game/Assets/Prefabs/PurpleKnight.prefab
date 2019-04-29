@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 79471587441283678}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.135, y: 0, z: 0}
+  m_LocalPosition: {x: -0.135, y: 0.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3297861929935686894}
@@ -157,8 +157,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3297861929935686894}
   - component: {fileID: 1743568099369087940}
+  - component: {fileID: 8311664956420466548}
   - component: {fileID: 8977091803411420728}
-  - component: {fileID: 1090269425387460972}
+  - component: {fileID: 5579766562564110933}
   m_Layer: 0
   m_Name: PurpleKnight
   m_TagString: Untagged
@@ -204,6 +205,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &8311664956420466548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3297861929935686895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 622faf3bfe458514e87a083f485a7c5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8977091803411420728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,7 +250,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: CharacterController2D+BoolEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &1090269425387460972
+--- !u!114 &5579766562564110933
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -246,7 +259,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3297861929935686895}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45095351440e039488723ae5dafe309d, type: 3}
+  m_Script: {fileID: 11500000, guid: ef8d4c7c4ec802842bb29144cf9ecaca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 20
@@ -276,7 +289,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9221270468997001402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.135, y: -0.5, z: 0}
+  m_LocalPosition: {x: -0.135, y: -0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3297861929935686894}

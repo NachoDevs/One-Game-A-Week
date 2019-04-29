@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
@@ -26,6 +27,8 @@ public class CharacterController2D : MonoBehaviour
 
     public UnityEvent OnLandEvent;
 
+    internal Animator m_animator;
+    
     [System.Serializable]
     public class BoolEvent : UnityEvent<bool> { }
 
@@ -41,10 +44,14 @@ public class CharacterController2D : MonoBehaviour
 
         if (OnCrouchEvent == null)
             OnCrouchEvent = new BoolEvent();
+
+        m_animator = GetComponentInChildren<Animator>();
     }
 
     private void FixedUpdate()
     {
+        m_animator.SetBool("grounded", m_Grounded);
+
         bool wasGrounded = m_Grounded;
         m_Grounded = false;
 
@@ -60,11 +67,13 @@ public class CharacterController2D : MonoBehaviour
                     OnLandEvent.Invoke();
             }
         }
+
     }
 
 
     public void Move(float move, bool crouch, bool jump)
     {
+        m_animator.SetFloat("movSpeed", Math.Abs(move));
         // If crouching, check to see if the character can stand up
         /*if (!crouch)
         {

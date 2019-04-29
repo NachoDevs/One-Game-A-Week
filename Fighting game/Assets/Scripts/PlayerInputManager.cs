@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player2DMovement : MonoBehaviour
+public class PlayerInputManager : MonoBehaviour
 {
-
     public float movementSpeed = 20f;
 
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
 
     bool m_isJumping;
+    bool m_isBlocking;
 
     float m_horizontalMove = 0f;
 
@@ -41,6 +41,13 @@ public class Player2DMovement : MonoBehaviour
             m_isJumping = true;
         }
 
+        m_isBlocking = false;
+        if (Input.GetButton("Fire2"))
+        {
+            m_isBlocking = true;
+            m_horizontalMove = 0;
+        }
+        m_controller.m_animator.SetBool("blocking", m_isBlocking);
     }
 
     void FixedUpdate()
