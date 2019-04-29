@@ -1,0 +1,2309 @@
+fileFormatVersion: 2
+guid: 9c60cc0b628714840b84595bbed91950
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7550295866883523085
+    second: sp_redKnight_0
+  - first:
+      213: -7296813701633610368
+    second: sp_redKnight_1
+  - first:
+      213: 7190755366368083372
+    second: sp_redKnight_2
+  - first:
+      213: -6997889961977559930
+    second: sp_redKnight_3
+  - first:
+      213: -393375345399393892
+    second: sp_redKnight_4
+  - first:
+      213: -411075355956575122
+    second: sp_redKnight_5
+  - first:
+      213: -4174214539198385933
+    second: sp_redKnight_6
+  - first:
+      213: 6799289630291480711
+    second: sp_redKnight_7
+  - first:
+      213: 4360827371302961019
+    second: sp_redKnight_8
+  - first:
+      213: 2765281125747889933
+    second: sp_redKnight_9
+  - first:
+      213: -6165385586773594858
+    second: sp_redKnight_10
+  - first:
+      213: -5794324891636678663
+    second: sp_redKnight_11
+  - first:
+      213: -4914978379218486764
+    second: sp_redKnight_12
+  - first:
+      213: 5001574685489742167
+    second: sp_redKnight_13
+  - first:
+      213: -5125067130071118180
+    second: sp_redKnight_14
+  - first:
+      213: 2933809113650392206
+    second: sp_redKnight_15
+  - first:
+      213: -2913817942006010503
+    second: sp_redKnight_16
+  - first:
+      213: 212961768692887795
+    second: sp_redKnight_17
+  - first:
+      213: 317136603948748593
+    second: sp_redKnight_18
+  - first:
+      213: 9103955817313225648
+    second: sp_redKnight_19
+  - first:
+      213: 7635215356809088942
+    second: sp_redKnight_20
+  - first:
+      213: 4789859462312780619
+    second: sp_redKnight_21
+  - first:
+      213: -5092631284600184140
+    second: sp_redKnight_22
+  - first:
+      213: -4261274657804432010
+    second: sp_redKnight_23
+  - first:
+      213: -7764472005810168067
+    second: sp_redKnight_24
+  - first:
+      213: 6859401787121201033
+    second: sp_redKnight_25
+  - first:
+      213: 1070366331767219280
+    second: sp_redKnight_26
+  - first:
+      213: -542219351460349185
+    second: sp_redKnight_27
+  - first:
+      213: 2420699834218527661
+    second: sp_redKnight_28
+  - first:
+      213: 8518287901508164368
+    second: sp_redKnight_29
+  - first:
+      213: -319631081326343643
+    second: sp_redKnight_30
+  - first:
+      213: -5143591942431342781
+    second: sp_redKnight_31
+  - first:
+      213: 6147264087325254079
+    second: sp_redKnight_32
+  - first:
+      213: 1538653455502250608
+    second: sp_redKnight_33
+  - first:
+      213: 6697956653936479124
+    second: sp_redKnight_34
+  - first:
+      213: -4035571989777372927
+    second: sp_redKnight_35
+  - first:
+      213: 3019706375778439822
+    second: sp_redKnight_36
+  - first:
+      213: 4759588781048876928
+    second: sp_redKnight_37
+  - first:
+      213: 7323905482288163859
+    second: sp_redKnight_38
+  - first:
+      213: -7973288134680986967
+    second: sp_redKnight_39
+  - first:
+      213: 7481759390135372125
+    second: sp_redKnight_40
+  - first:
+      213: -3575292113403118990
+    second: sp_redKnight_41
+  - first:
+      213: -2680873741248286806
+    second: sp_redKnight_42
+  - first:
+      213: -6215517167135847384
+    second: sp_redKnight_43
+  - first:
+      213: 6268878786493065419
+    second: sp_redKnight_44
+  - first:
+      213: -8278562556865565422
+    second: sp_redKnight_45
+  - first:
+      213: -5850808569264918612
+    second: sp_redKnight_46
+  - first:
+      213: -7808358951551772465
+    second: sp_redKnight_47
+  - first:
+      213: -8477643160088333994
+    second: sp_redKnight_48
+  - first:
+      213: 3972072780886397842
+    second: sp_redKnight_49
+  - first:
+      213: -662502863251235892
+    second: sp_redKnight_50
+  - first:
+      213: 6935495883466483423
+    second: sp_redKnight_51
+  - first:
+      213: -3301364085385596465
+    second: sp_redKnight_52
+  - first:
+      213: -9144605590597085042
+    second: sp_redKnight_53
+  - first:
+      213: -5468492465979150287
+    second: sp_redKnight_54
+  - first:
+      213: 8736117836749046551
+    second: sp_redKnight_55
+  - first:
+      213: -2820290584015963672
+    second: sp_redKnight_56
+  - first:
+      213: 645361350205646906
+    second: sp_redKnight_57
+  - first:
+      213: -2084574454901243273
+    second: sp_redKnight_58
+  - first:
+      213: -9004360573572947490
+    second: sp_redKnight_59
+  - first:
+      213: -4454157743955954633
+    second: sp_redKnight_60
+  - first:
+      213: 6389532311586027974
+    second: sp_redKnight_61
+  - first:
+      213: 5759576319278309542
+    second: sp_redKnight_62
+  - first:
+      213: -246676077650357840
+    second: sp_redKnight_63
+  - first:
+      213: 1994042210927853648
+    second: sp_redKnight_64
+  - first:
+      213: 7707640107414223942
+    second: sp_redKnight_65
+  - first:
+      213: -1698716665697097902
+    second: sp_redKnight_66
+  - first:
+      213: -4374259806649652487
+    second: sp_redKnight_67
+  - first:
+      213: 8156751007603285136
+    second: sp_redKnight_68
+  - first:
+      213: 9167007859763916829
+    second: sp_redKnight_69
+  - first:
+      213: -1229105520245639261
+    second: sp_redKnight_70
+  - first:
+      213: -1848127370938720498
+    second: sp_redKnight_71
+  - first:
+      213: 4680122133813939740
+    second: sp_redKnight_72
+  - first:
+      213: -7567869183115881982
+    second: sp_redKnight_73
+  - first:
+      213: -7835041734102531220
+    second: sp_redKnight_74
+  - first:
+      213: 2974028392624933949
+    second: sp_redKnight_75
+  - first:
+      213: -6473077396674039776
+    second: sp_redKnight_76
+  - first:
+      213: -8457989491595770836
+    second: sp_redKnight_77
+  - first:
+      213: -4999936176593884613
+    second: sp_redKnight_78
+  - first:
+      213: 6418198301745232671
+    second: sp_redKnight_79
+  - first:
+      213: 4599452836295140115
+    second: sp_redKnight_80
+  - first:
+      213: -8123764372000241524
+    second: sp_redKnight_81
+  - first:
+      213: 2843353235703735321
+    second: sp_redKnight_82
+  - first:
+      213: -3571418181126269017
+    second: sp_redKnight_83
+  - first:
+      213: -8178141736608278700
+    second: sp_redKnight_84
+  - first:
+      213: 3678825754995464936
+    second: sp_redKnight_85
+  - first:
+      213: 7124615479612191559
+    second: sp_redKnight_86
+  - first:
+      213: 1931623346367299315
+    second: sp_redKnight_87
+  - first:
+      213: -3587537231702478068
+    second: sp_redKnight_88
+  - first:
+      213: 1080135874763711793
+    second: sp_redKnight_89
+  - first:
+      213: -5849081606332850672
+    second: sp_redKnight_90
+  - first:
+      213: -7717640045614492877
+    second: sp_redKnight_91
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 79
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sp_redKnight_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a115c3e062c64ca45b9002e1b236ed27
+      internalID: 7550295866883523085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16cb7115d1a51574dbf9f827fd96b521
+      internalID: -7296813701633610368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_2
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84cd14e8ad0417f40a560908516c9db7
+      internalID: 7190755366368083372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_3
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bae5088db7ce06542855c62478c956c2
+      internalID: -6997889961977559930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_4
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47e47149f87d61b468af2eb31de813cd
+      internalID: -393375345399393892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_5
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aca5576c3b4929149a8b5f7c837f4ea8
+      internalID: -411075355956575122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_6
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b69f2b3fc82649d4fa25795c2589869e
+      internalID: -4174214539198385933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_7
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf4608332a7eb92459f11f382b09f1d0
+      internalID: 6799289630291480711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_8
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 796b467e676ba3f49801c7061f7a9b26
+      internalID: 4360827371302961019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_9
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1359965399f4e6045ba3dfdfffd92462
+      internalID: 2765281125747889933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_10
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e38049ea47468f409f9c1b6d81e0ff3
+      internalID: -6165385586773594858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_11
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 939a2b50c8e602b45a99b42977f953c9
+      internalID: -5794324891636678663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_12
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42c72c76291b3db43b0d1ef9418ffc3d
+      internalID: -4914978379218486764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_13
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df378f6660cc8424e8cf0562b4e178c3
+      internalID: 5001574685489742167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c054775950c7474b8e7c816ab4f59aa
+      internalID: -5125067130071118180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_15
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9340b49f06f00b34c9694b8827c2d64c
+      internalID: 2933809113650392206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_16
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec16935a198f9914f99bb9a2b79c29ec
+      internalID: -2913817942006010503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_17
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae874dd6878bb42449c487329974ae4a
+      internalID: 212961768692887795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_18
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48f2ebb5099061148945df4b15e1c645
+      internalID: 317136603948748593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_19
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92b62db3a83b01646912bed88fa62b68
+      internalID: 9103955817313225648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_20
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45def0e7f381e134e8a773f8a321794d
+      internalID: 7635215356809088942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_21
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd0c9ccb9423e2543abed070969c733c
+      internalID: 4789859462312780619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_22
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c92a61bf5b61ae044866c51e41d50aa5
+      internalID: -5092631284600184140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_23
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 855ab2a479893994f91b7cf0a4310eff
+      internalID: -4261274657804432010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_24
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6f12de2171f4364f84216e9d04140fe
+      internalID: -7764472005810168067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_25
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b24a35f06105bce419cc161c011f532a
+      internalID: 6859401787121201033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_26
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d15918bf3edfb11418a6b194427689e2
+      internalID: 1070366331767219280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 896a5a543e54ab14c828d201ab5dbebd
+      internalID: -542219351460349185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_28
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae4ddaf2164085e42812aac1c12e605a
+      internalID: 2420699834218527661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_29
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1d8078192ecccb4aa7cfaaf608ec821
+      internalID: 8518287901508164368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_30
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9acaa080c81dfde44b3e9ed183cad57a
+      internalID: -319631081326343643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_31
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6d3cf159e7693443af813f4bee3a46a
+      internalID: -5143591942431342781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_32
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c2ae36453b91a34c812b374bc7509a9
+      internalID: 6147264087325254079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_33
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7a5c0638108bb3478c6a41a34d42ef9
+      internalID: 1538653455502250608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_34
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ccbd9cfb112c9b4cb965a17bb3cd30c
+      internalID: 6697956653936479124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_35
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a15040c929273747a5e20e53707164f
+      internalID: -4035571989777372927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_36
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4863217d30fe47f469a1edcaa2351d3b
+      internalID: 3019706375778439822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_37
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6972a74a0071c24a9ceac4aa1fff6d0
+      internalID: 4759588781048876928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_38
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1341030d122177247a664b3c55989f5a
+      internalID: 7323905482288163859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_39
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 051bdf815b91e5f4fa1e176b8a318a85
+      internalID: -7973288134680986967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_40
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f24f144de9e400b41afafc5bda652464
+      internalID: 7481759390135372125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_41
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fa6327df85056a4e951bbf050a8ceb8
+      internalID: -3575292113403118990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_42
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d563bb99b4827f488e452cf0a8d1798
+      internalID: -2680873741248286806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_43
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9becba45d26dc043bf73453a64c4101
+      internalID: -6215517167135847384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_44
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ffe0d8f60321ed4a9a54d8a80cb2149
+      internalID: 6268878786493065419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_45
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ace35e818307d51439345733eadd0ab4
+      internalID: -8278562556865565422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_46
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0c82c779732e264f82470a384d43816
+      internalID: -5850808569264918612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_47
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e41bea905b08baf4381b30f0661da5c1
+      internalID: -7808358951551772465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_48
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0b31277250322149a5c4b03e25fed33
+      internalID: -8477643160088333994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_49
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4e17785f64da2648a22fbe14e6551c4
+      internalID: 3972072780886397842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_50
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b2278587ecec1844a659d4e24791122
+      internalID: -662502863251235892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_51
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 553
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea5c7d1fb65224d47aeb3396da90dfba
+      internalID: 6935495883466483423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_52
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 553
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfc8e00082237aa4eada991ddcfa42e0
+      internalID: -3301364085385596465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_53
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 474
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7fdeec916ed5344a992d117d323dd1a
+      internalID: -9144605590597085042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_54
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 474
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b0fcc66d83c5b14f874f43cbbee509d
+      internalID: -5468492465979150287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_55
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 474
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42c8eaca9d0ebde4aa14405a9cd38cff
+      internalID: 8736117836749046551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_56
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 474
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 104873a5630cf2043908139272a00c32
+      internalID: -2820290584015963672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_57
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 474
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daf3cc9d6cd7f884ea30afddfb22dc2a
+      internalID: 645361350205646906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_58
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 395
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3b73296b763b564eaff44d82075a99c
+      internalID: -2084574454901243273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_59
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 395
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f8a189513619094fbde50eff08cd982
+      internalID: -9004360573572947490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_60
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 395
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dd271bca8a3def4c9c4060153a52bca
+      internalID: -4454157743955954633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_61
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 395
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99adef5c323b29746b352b632cd820da
+      internalID: 6389532311586027974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_62
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 395
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3d9752b622c2514ebaa28c5be7ad270
+      internalID: 5759576319278309542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_63
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 395
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86d85044f661b745b49838dcea38255
+      internalID: -246676077650357840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 316
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 430445f52dfb71940bf1ec8d8a359f82
+      internalID: 1994042210927853648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_65
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 316
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 557ca3d09bd621244a3bc1e57d0b3d40
+      internalID: 7707640107414223942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_66
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 316
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 335dd43417dba4445b91c1a79e101d63
+      internalID: -1698716665697097902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_67
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 316
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcca02307e2d3c848bde92c3c6f9001e
+      internalID: -4374259806649652487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_68
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 237
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ae72677b12cf1b48a9d0aef8e45290d
+      internalID: 8156751007603285136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_69
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 237
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d14e3387a4a044e4e829358e10ea34d5
+      internalID: 9167007859763916829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_70
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 237
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f57b86ae25e07b4eb5d03bb9c340de8
+      internalID: -1229105520245639261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_71
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 237
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5c835c2b0e5dd341a9690e1bc8d350e
+      internalID: -1848127370938720498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 158
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eaf6b89690249041874accd5ffad019
+      internalID: 4680122133813939740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_73
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 158
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c98e5df6a0a9ee4ca3f9a5536bb46c5
+      internalID: -7567869183115881982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_74
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 158
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e1c3c6f7bbc33142b45266dbd8e38e4
+      internalID: -7835041734102531220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_75
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 158
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70473482a32b7ca49b373e8f0fd380bf
+      internalID: 2974028392624933949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_76
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 158
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ada55bdc5e6518479016526c507b1b8
+      internalID: -6473077396674039776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_77
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 158
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7472c88741ac9cf4aa17e5a091f0d1ec
+      internalID: -8457989491595770836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 79
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae710baee5414994ea38aff658ebf379
+      internalID: -4999936176593884613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_79
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 79
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a438b5f08c142a442ababb56f8c869b7
+      internalID: 6418198301745232671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_80
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 79
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8f07a6c98cedd042aeaff3d1149933d
+      internalID: 4599452836295140115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_81
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 79
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 674624c512b5d93429b3a224cf0e0cd6
+      internalID: -8123764372000241524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_82
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 79
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99f7efddb7b5c404d9ea27080e9a3ec5
+      internalID: 2843353235703735321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_83
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 79
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c638eabf0cda9c3439d66186b4f39770
+      internalID: -3571418181126269017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00031a9c6d3e1d44b8e59eca01913e16
+      internalID: -8178141736608278700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_85
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25fe7b90fc42a1943b2973c9a20812a1
+      internalID: 3678825754995464936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_86
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 971ae814de1ce7a47a5d2e0c06d32f4e
+      internalID: 7124615479612191559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_87
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ff183f1a65f52a4ba4ee924b6372351
+      internalID: 1931623346367299315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_88
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a012babdc5950e748b9d157f04773f3a
+      internalID: -3587537231702478068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_89
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8824ce43047f2f64186a5298a86864f9
+      internalID: 1080135874763711793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_90
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc50109a95570ab4cbecbe39362fd067
+      internalID: -5849081606332850672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_redKnight_91
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce1ac475f2f0df14d98fa7708d4974fd
+      internalID: -7717640045614492877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: d9f7df13b99ca5d439da80bc65b30f7b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,2309 @@
+fileFormatVersion: 2
+guid: 215ab82d87afb3b479d20df1e1b3dd22
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1809849767884029370
+    second: sp_brownKnight_0
+  - first:
+      213: -1100084355438517930
+    second: sp_brownKnight_1
+  - first:
+      213: -5316516131463893196
+    second: sp_brownKnight_2
+  - first:
+      213: 2695763445802969858
+    second: sp_brownKnight_3
+  - first:
+      213: 5074095002354046354
+    second: sp_brownKnight_4
+  - first:
+      213: 6166794167851723053
+    second: sp_brownKnight_5
+  - first:
+      213: 2190068187882095017
+    second: sp_brownKnight_6
+  - first:
+      213: 5437289230415309157
+    second: sp_brownKnight_7
+  - first:
+      213: 8508484914126339040
+    second: sp_brownKnight_8
+  - first:
+      213: 8636678179022686197
+    second: sp_brownKnight_9
+  - first:
+      213: 2007079598081011083
+    second: sp_brownKnight_10
+  - first:
+      213: 8678801848847065138
+    second: sp_brownKnight_11
+  - first:
+      213: 1860157937550452902
+    second: sp_brownKnight_12
+  - first:
+      213: 5482337799436070038
+    second: sp_brownKnight_13
+  - first:
+      213: 4427519396488111088
+    second: sp_brownKnight_14
+  - first:
+      213: 6271518684549069848
+    second: sp_brownKnight_15
+  - first:
+      213: 2963266643384327350
+    second: sp_brownKnight_16
+  - first:
+      213: 3163051452914117349
+    second: sp_brownKnight_17
+  - first:
+      213: 2984187684687878750
+    second: sp_brownKnight_18
+  - first:
+      213: 7258759886580950890
+    second: sp_brownKnight_19
+  - first:
+      213: 2732060161732452094
+    second: sp_brownKnight_20
+  - first:
+      213: 6766992138347629469
+    second: sp_brownKnight_21
+  - first:
+      213: -1884544203095745517
+    second: sp_brownKnight_22
+  - first:
+      213: 7064035964854693271
+    second: sp_brownKnight_23
+  - first:
+      213: 3419050562655067588
+    second: sp_brownKnight_24
+  - first:
+      213: -3383537146064034473
+    second: sp_brownKnight_25
+  - first:
+      213: 1063279270897351576
+    second: sp_brownKnight_26
+  - first:
+      213: 2558490114832241435
+    second: sp_brownKnight_27
+  - first:
+      213: -3914827659365408209
+    second: sp_brownKnight_28
+  - first:
+      213: 4167949536443690228
+    second: sp_brownKnight_29
+  - first:
+      213: 4354072309726192616
+    second: sp_brownKnight_30
+  - first:
+      213: 8046112372410054212
+    second: sp_brownKnight_31
+  - first:
+      213: 2605547595944513586
+    second: sp_brownKnight_32
+  - first:
+      213: -3332073286815683919
+    second: sp_brownKnight_33
+  - first:
+      213: 658589281612851860
+    second: sp_brownKnight_34
+  - first:
+      213: -8171535209656521704
+    second: sp_brownKnight_35
+  - first:
+      213: -1913275074892420185
+    second: sp_brownKnight_36
+  - first:
+      213: 7833934460655329815
+    second: sp_brownKnight_37
+  - first:
+      213: -206690001440828502
+    second: sp_brownKnight_38
+  - first:
+      213: -8063434834512452806
+    second: sp_brownKnight_39
+  - first:
+      213: 7089852682504323692
+    second: sp_brownKnight_40
+  - first:
+      213: -6898981977846803468
+    second: sp_brownKnight_41
+  - first:
+      213: -936558154335886664
+    second: sp_brownKnight_42
+  - first:
+      213: -2942883798897609353
+    second: sp_brownKnight_43
+  - first:
+      213: -7968026997250106889
+    second: sp_brownKnight_44
+  - first:
+      213: 628179016668144372
+    second: sp_brownKnight_45
+  - first:
+      213: -7904077176646525884
+    second: sp_brownKnight_46
+  - first:
+      213: -651767680651468937
+    second: sp_brownKnight_47
+  - first:
+      213: -7372543736556164641
+    second: sp_brownKnight_48
+  - first:
+      213: -4248128953295401874
+    second: sp_brownKnight_49
+  - first:
+      213: -1332856716363200652
+    second: sp_brownKnight_50
+  - first:
+      213: 648761055652483588
+    second: sp_brownKnight_51
+  - first:
+      213: 8785133427271376931
+    second: sp_brownKnight_52
+  - first:
+      213: 4924938149160040648
+    second: sp_brownKnight_53
+  - first:
+      213: 2206672383931529186
+    second: sp_brownKnight_54
+  - first:
+      213: 5699387005214382265
+    second: sp_brownKnight_55
+  - first:
+      213: -3680329582753198166
+    second: sp_brownKnight_56
+  - first:
+      213: -4381892996453620933
+    second: sp_brownKnight_57
+  - first:
+      213: -5547232648794119443
+    second: sp_brownKnight_58
+  - first:
+      213: -3911412058165772386
+    second: sp_brownKnight_59
+  - first:
+      213: 2279457750175250107
+    second: sp_brownKnight_60
+  - first:
+      213: -4434076357787849229
+    second: sp_brownKnight_61
+  - first:
+      213: 1664975538136630850
+    second: sp_brownKnight_62
+  - first:
+      213: 601995304374646058
+    second: sp_brownKnight_63
+  - first:
+      213: 7068833080049025064
+    second: sp_brownKnight_64
+  - first:
+      213: 1206531325790295459
+    second: sp_brownKnight_65
+  - first:
+      213: 326394327117008231
+    second: sp_brownKnight_66
+  - first:
+      213: -972943807839867380
+    second: sp_brownKnight_67
+  - first:
+      213: -6048913340320329471
+    second: sp_brownKnight_68
+  - first:
+      213: 3010177578969563443
+    second: sp_brownKnight_69
+  - first:
+      213: 5036654463881827690
+    second: sp_brownKnight_70
+  - first:
+      213: -2466613506453039655
+    second: sp_brownKnight_71
+  - first:
+      213: -3791138817035863005
+    second: sp_brownKnight_72
+  - first:
+      213: 4125630166775373924
+    second: sp_brownKnight_73
+  - first:
+      213: 7958557175421045858
+    second: sp_brownKnight_74
+  - first:
+      213: -3586087536228062177
+    second: sp_brownKnight_75
+  - first:
+      213: 7235131782673334209
+    second: sp_brownKnight_76
+  - first:
+      213: 5824539297515319625
+    second: sp_brownKnight_77
+  - first:
+      213: -7201526785355010074
+    second: sp_brownKnight_78
+  - first:
+      213: 1847348014324802849
+    second: sp_brownKnight_79
+  - first:
+      213: -397448755500684485
+    second: sp_brownKnight_80
+  - first:
+      213: 32813751040657406
+    second: sp_brownKnight_81
+  - first:
+      213: -3071910763491178335
+    second: sp_brownKnight_82
+  - first:
+      213: -254352951779042339
+    second: sp_brownKnight_83
+  - first:
+      213: -4945378528976401679
+    second: sp_brownKnight_84
+  - first:
+      213: 2493388662779331743
+    second: sp_brownKnight_85
+  - first:
+      213: 5892535015973744030
+    second: sp_brownKnight_86
+  - first:
+      213: -7679194273671177910
+    second: sp_brownKnight_87
+  - first:
+      213: 1311810965597116565
+    second: sp_brownKnight_88
+  - first:
+      213: 9052728395584254306
+    second: sp_brownKnight_89
+  - first:
+      213: -2173958378392092084
+    second: sp_brownKnight_90
+  - first:
+      213: -4829113887347138982
+    second: sp_brownKnight_91
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 79
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sp_brownKnight_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 708a0269be7933e4ab093dcb76cf2357
+      internalID: 1809849767884029370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bc905d9dda15984cbc0a6745f75361f
+      internalID: -1100084355438517930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_2
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4feeadf6481dc8b4485c8151455dc187
+      internalID: -5316516131463893196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_3
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 739b8397813cd224297ae1d847a593f1
+      internalID: 2695763445802969858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_4
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26e8525c3d2fcbd499297fdf0d443455
+      internalID: 5074095002354046354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_5
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c422289a5141ff44ab328696b4aaa321
+      internalID: 6166794167851723053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_6
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc1ea50002ac0dc4d8f1ea0b62c20316
+      internalID: 2190068187882095017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_7
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 081b510fa15e28642a15389df5e91bf3
+      internalID: 5437289230415309157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_8
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38797a8980b4760478c55793166def8d
+      internalID: 8508484914126339040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_9
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f485ca68e1cd5ff45ab8ea67a76174f3
+      internalID: 8636678179022686197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_10
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f16ed0399b081cb4aa903a7445defb5c
+      internalID: 2007079598081011083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_11
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01cd90e5ef016864a841f9fb6323579c
+      internalID: 8678801848847065138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_12
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84004857452ad4143a15bf937e943771
+      internalID: 1860157937550452902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_13
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ff1852ce8be16640b7693ed59aec445
+      internalID: 5482337799436070038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 730dc1a13cfed8848a3956bb9a641e8c
+      internalID: 4427519396488111088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_15
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a694f3cc66226b4ca65812604083c9d
+      internalID: 6271518684549069848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_16
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0c30cf5ae5ca3e43bb6baf3081385d8
+      internalID: 2963266643384327350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_17
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb0eccdb06e5f0f498dbc1435cf221d0
+      internalID: 3163051452914117349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_18
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 364d97f66c167284488232591a53592a
+      internalID: 2984187684687878750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_19
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db34cd08922e74b459637d339c7656ed
+      internalID: 7258759886580950890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_20
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3ea4c4069d472e42830a1df25aa4af8
+      internalID: 2732060161732452094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_21
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f018e945b184ba34ca5096e6ead5fe42
+      internalID: 6766992138347629469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_22
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e10d5dd9748fb8a42a08d0316c9116a1
+      internalID: -1884544203095745517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_23
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61ec815aae7d443429f01adf0faba3a9
+      internalID: 7064035964854693271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_24
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d63baf4dbc1e7e2468004ee77ca300a3
+      internalID: 3419050562655067588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_25
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9acf63098cffc57418da157ac54ea2e1
+      internalID: -3383537146064034473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_26
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e9a2f2eb2b9b6943bb52ae2713ed8d3
+      internalID: 1063279270897351576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcbafdc745ce8f2478bbe9ad3581c217
+      internalID: 2558490114832241435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_28
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c474a2bd5e32da648a3b73222659c2cf
+      internalID: -3914827659365408209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_29
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91982f2f8946e2b43ab01b9a8a0eb3cf
+      internalID: 4167949536443690228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_30
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1c7ab401548fdf4c8c1649ae1a8082f
+      internalID: 4354072309726192616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_31
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8b8de0a457cfaa4c9d1eac8d366b297
+      internalID: 8046112372410054212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_32
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b035fba8f55044346bb6f1443624b80d
+      internalID: 2605547595944513586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_33
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da91b208e103ee240a71420e7bad43b8
+      internalID: -3332073286815683919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_34
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82cc37b691e377c41bf67554cf08d888
+      internalID: 658589281612851860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_35
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6aa1f993d0b75b449927d1063d3f5ac
+      internalID: -8171535209656521704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_36
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66a0e7d47cfbd494b9345971a807be25
+      internalID: -1913275074892420185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_37
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ff07372f24accb49b053648db20baee
+      internalID: 7833934460655329815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_38
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d227f014f113f746b740219b291b929
+      internalID: -206690001440828502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_39
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd76925773276ad49b886c80c60890d6
+      internalID: -8063434834512452806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_40
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3e496cb32db2d34598e8f43fce7ce0d
+      internalID: 7089852682504323692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_41
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 989740e1da89c5a4e9b3029c3c78bcc6
+      internalID: -6898981977846803468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_42
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55a450a7c0d77754996e4ce2f34ae089
+      internalID: -936558154335886664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_43
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d0f99ec96a85f64d8c6db401bb44382
+      internalID: -2942883798897609353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_44
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1d06d2dd499af2498db8d4f669a08be
+      internalID: -7968026997250106889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_45
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 329d05843bdacac4480d91aeec8b01f1
+      internalID: 628179016668144372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_46
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20bfb47f208932446bc2b416469ec229
+      internalID: -7904077176646525884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_47
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ae51a90e0850214896d2aee75b875b6
+      internalID: -651767680651468937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_48
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f099f848b04104840b2390454203fa97
+      internalID: -7372543736556164641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_49
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86de470b19ac83d44b03a75698791ffb
+      internalID: -4248128953295401874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_50
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1582c3ee5becfe84b9f0405104f26ef3
+      internalID: -1332856716363200652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_51
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 553
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dbd765f7cebebd41900bccb13b6706f
+      internalID: 648761055652483588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_52
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 553
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1caa857e0a8f544ebe0ae01e9ca5c89
+      internalID: 8785133427271376931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_53
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 474
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91cf307100b2a0f42af886252e525e7a
+      internalID: 4924938149160040648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_54
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 474
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99cf2167a322c3f4c879a09150a3c46f
+      internalID: 2206672383931529186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_55
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 474
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a030986516ff68e4ab7b3216c74bfd8e
+      internalID: 5699387005214382265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_56
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 474
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fddf4b3b83f0fd04983c3a534de8caa9
+      internalID: -3680329582753198166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_57
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 474
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fc75663791add44cb36fda130f6ae74
+      internalID: -4381892996453620933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_58
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 395
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70e1262260155634c8545f470eb7f9e1
+      internalID: -5547232648794119443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_59
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 395
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a24026ec2fbe42e429bcef66f2c2d3e5
+      internalID: -3911412058165772386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_60
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 395
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecfde99b8152dbe4489470badc02e8f5
+      internalID: 2279457750175250107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_61
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 395
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80e301473d3dc3147841dd314637f0fe
+      internalID: -4434076357787849229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_62
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 395
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a33d7cd1bfe7ce54c978df586b398ae5
+      internalID: 1664975538136630850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_63
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 395
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf591cbda9ab43a4682cf876861b5ef3
+      internalID: 601995304374646058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 316
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b04fb5bc0de7b294d845d882db4abc2e
+      internalID: 7068833080049025064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_65
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 316
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcd9515d6146785498ed4d9129678a56
+      internalID: 1206531325790295459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_66
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 316
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e20780bb0ec13d6418cc3dc9733d4500
+      internalID: 326394327117008231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_67
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 316
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beffadc8542195c499d88a6f98a97bda
+      internalID: -972943807839867380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_68
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 237
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 101eb8c20d5375245a51c8a32310f415
+      internalID: -6048913340320329471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_69
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 237
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f9bc6e726ac9ba41b1094a7e9122631
+      internalID: 3010177578969563443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_70
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 237
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6f469cae46b43c428bd596b3bf6339c
+      internalID: 5036654463881827690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_71
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 237
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f31bce756b4d36459cd81e8d0d03110
+      internalID: -2466613506453039655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 158
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d26fad6cb1c49f4aa98c4eeefe4e115
+      internalID: -3791138817035863005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_73
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 158
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6e9286a8e43a4843abd29671fd7ffbe
+      internalID: 4125630166775373924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_74
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 158
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b9c6d9b74d816d408c3839252ea4d4f
+      internalID: 7958557175421045858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_75
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 158
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42a0be7e16aa2674e9d3042edd7de8b7
+      internalID: -3586087536228062177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_76
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 158
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceced6d90ffb9794192fee25f79f4f43
+      internalID: 7235131782673334209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_77
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 158
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a73d8c7c2d1e7cb42a1f4b8c05e87c80
+      internalID: 5824539297515319625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 79
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e774f3c44c81664396f1a3a63a9e42b
+      internalID: -7201526785355010074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_79
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 79
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c51d1c6e1930c647ac5e9b9ca645e72
+      internalID: 1847348014324802849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_80
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 79
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ea4f38f1607f194b9c33d39dbf34468
+      internalID: -397448755500684485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_81
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 79
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7be2238e5a3e40845914c15a943822d3
+      internalID: 32813751040657406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_82
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 79
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8279d8911b8c1b34f98a960bb40af01b
+      internalID: -3071910763491178335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_83
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 79
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f228e35699b5c34aa366d7fc247da82
+      internalID: -254352951779042339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea62ad6213788b94c86e9a9445eade14
+      internalID: -4945378528976401679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_85
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0766bf40ad746214eafd84572ae29db4
+      internalID: 2493388662779331743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_86
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7efa16dd5f3ddd49b8a02f8dff1cd27
+      internalID: 5892535015973744030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_87
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 482690df9209ccb42bc10425aaf456f4
+      internalID: -7679194273671177910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_88
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 570157d805b58dd4ba95e95ca818553c
+      internalID: 1311810965597116565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_89
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01c560a634327c9478b67a25773602ed
+      internalID: 9052728395584254306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_90
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 746df5cc288573e4abf9eec6f4c51948
+      internalID: -2173958378392092084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_brownKnight_91
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 751a105ff7c938a4aa9622a3a2345e1d
+      internalID: -4829113887347138982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: c895d9862222860448fe168ad008a8ec
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,2309 @@
+fileFormatVersion: 2
+guid: 8da71d543bc280642a40aaa4d3f86643
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7884630085026690162
+    second: sp_greenKnight_0
+  - first:
+      213: 6069370414494882763
+    second: sp_greenKnight_1
+  - first:
+      213: 2973471473396568937
+    second: sp_greenKnight_2
+  - first:
+      213: -6063196030484259896
+    second: sp_greenKnight_3
+  - first:
+      213: -2773437574496102390
+    second: sp_greenKnight_4
+  - first:
+      213: 540064447510264789
+    second: sp_greenKnight_5
+  - first:
+      213: -3371914197162339767
+    second: sp_greenKnight_6
+  - first:
+      213: -7160229505155251443
+    second: sp_greenKnight_7
+  - first:
+      213: 8206669473580238346
+    second: sp_greenKnight_8
+  - first:
+      213: -5983171184923189925
+    second: sp_greenKnight_9
+  - first:
+      213: -1637592994019267788
+    second: sp_greenKnight_10
+  - first:
+      213: 2746072071868153250
+    second: sp_greenKnight_11
+  - first:
+      213: -155995924131318129
+    second: sp_greenKnight_12
+  - first:
+      213: 5065425608937234448
+    second: sp_greenKnight_13
+  - first:
+      213: 6627032397370673041
+    second: sp_greenKnight_14
+  - first:
+      213: 5507010178862143031
+    second: sp_greenKnight_15
+  - first:
+      213: 8862884450438445705
+    second: sp_greenKnight_16
+  - first:
+      213: 4161416255895991104
+    second: sp_greenKnight_17
+  - first:
+      213: 3720578014895394457
+    second: sp_greenKnight_18
+  - first:
+      213: -437445536224158855
+    second: sp_greenKnight_19
+  - first:
+      213: 6833562493813199956
+    second: sp_greenKnight_20
+  - first:
+      213: 1610016680801529352
+    second: sp_greenKnight_21
+  - first:
+      213: -7544830184180907487
+    second: sp_greenKnight_22
+  - first:
+      213: 7422002302075904723
+    second: sp_greenKnight_23
+  - first:
+      213: 4154405518116606712
+    second: sp_greenKnight_24
+  - first:
+      213: -5916495744136383496
+    second: sp_greenKnight_25
+  - first:
+      213: 2074024252339548472
+    second: sp_greenKnight_26
+  - first:
+      213: -4306838389341035457
+    second: sp_greenKnight_27
+  - first:
+      213: -8559864016574137434
+    second: sp_greenKnight_28
+  - first:
+      213: 860024258873753282
+    second: sp_greenKnight_29
+  - first:
+      213: -5168417837567093035
+    second: sp_greenKnight_30
+  - first:
+      213: -1202331477014330235
+    second: sp_greenKnight_31
+  - first:
+      213: -5991537782513425685
+    second: sp_greenKnight_32
+  - first:
+      213: -4480988606114673252
+    second: sp_greenKnight_33
+  - first:
+      213: 8752617286831464866
+    second: sp_greenKnight_34
+  - first:
+      213: -4320903769165106875
+    second: sp_greenKnight_35
+  - first:
+      213: -7473959266981786906
+    second: sp_greenKnight_36
+  - first:
+      213: -4639862795523137969
+    second: sp_greenKnight_37
+  - first:
+      213: 8496587810352797091
+    second: sp_greenKnight_38
+  - first:
+      213: -2131073642538648443
+    second: sp_greenKnight_39
+  - first:
+      213: 7534246081823838314
+    second: sp_greenKnight_40
+  - first:
+      213: 7813482773022104262
+    second: sp_greenKnight_41
+  - first:
+      213: 2885127355547902216
+    second: sp_greenKnight_42
+  - first:
+      213: -5000325099102085348
+    second: sp_greenKnight_43
+  - first:
+      213: 1924767587728027850
+    second: sp_greenKnight_44
+  - first:
+      213: 3857402781856345762
+    second: sp_greenKnight_45
+  - first:
+      213: -7550806946881531446
+    second: sp_greenKnight_46
+  - first:
+      213: -6827804950517134050
+    second: sp_greenKnight_47
+  - first:
+      213: -4599238632798851568
+    second: sp_greenKnight_48
+  - first:
+      213: -6979588203541832325
+    second: sp_greenKnight_49
+  - first:
+      213: -1391057986177722235
+    second: sp_greenKnight_50
+  - first:
+      213: -8755487812628449118
+    second: sp_greenKnight_51
+  - first:
+      213: -2034267446004812940
+    second: sp_greenKnight_52
+  - first:
+      213: 2568105525630537308
+    second: sp_greenKnight_53
+  - first:
+      213: -3827958099191851135
+    second: sp_greenKnight_54
+  - first:
+      213: -8831268294676401412
+    second: sp_greenKnight_55
+  - first:
+      213: -8446448697140524715
+    second: sp_greenKnight_56
+  - first:
+      213: -6227021448866328844
+    second: sp_greenKnight_57
+  - first:
+      213: 6484202530176764897
+    second: sp_greenKnight_58
+  - first:
+      213: 5656216547486070029
+    second: sp_greenKnight_59
+  - first:
+      213: 1508274875788383025
+    second: sp_greenKnight_60
+  - first:
+      213: 3851785162973252351
+    second: sp_greenKnight_61
+  - first:
+      213: -3161028251551279647
+    second: sp_greenKnight_62
+  - first:
+      213: -3717359687939611336
+    second: sp_greenKnight_63
+  - first:
+      213: -3716134306343655992
+    second: sp_greenKnight_64
+  - first:
+      213: 3440970661470711868
+    second: sp_greenKnight_65
+  - first:
+      213: 8328192508753938405
+    second: sp_greenKnight_66
+  - first:
+      213: -4101611492590377845
+    second: sp_greenKnight_67
+  - first:
+      213: 4355828786155837007
+    second: sp_greenKnight_68
+  - first:
+      213: 8986016502518697327
+    second: sp_greenKnight_69
+  - first:
+      213: 1601684359741746737
+    second: sp_greenKnight_70
+  - first:
+      213: -2421609099166178283
+    second: sp_greenKnight_71
+  - first:
+      213: 3890736856655763884
+    second: sp_greenKnight_72
+  - first:
+      213: 6658584559409429394
+    second: sp_greenKnight_73
+  - first:
+      213: -8259090186346315574
+    second: sp_greenKnight_74
+  - first:
+      213: -8020112180867608592
+    second: sp_greenKnight_75
+  - first:
+      213: -7361606981519600826
+    second: sp_greenKnight_76
+  - first:
+      213: -4899379424090316150
+    second: sp_greenKnight_77
+  - first:
+      213: 6260035841603944860
+    second: sp_greenKnight_78
+  - first:
+      213: -2242668433975207437
+    second: sp_greenKnight_79
+  - first:
+      213: -1178261071957897818
+    second: sp_greenKnight_80
+  - first:
+      213: 3993900888414081360
+    second: sp_greenKnight_81
+  - first:
+      213: 3865787495697140288
+    second: sp_greenKnight_82
+  - first:
+      213: -7373483950465921209
+    second: sp_greenKnight_83
+  - first:
+      213: 2384173169312069572
+    second: sp_greenKnight_84
+  - first:
+      213: -5101801026039823347
+    second: sp_greenKnight_85
+  - first:
+      213: 5769437806353228751
+    second: sp_greenKnight_86
+  - first:
+      213: -2832833873770240309
+    second: sp_greenKnight_87
+  - first:
+      213: -1696001556894417891
+    second: sp_greenKnight_88
+  - first:
+      213: 286595212614137133
+    second: sp_greenKnight_89
+  - first:
+      213: -7715128459650157684
+    second: sp_greenKnight_90
+  - first:
+      213: 5599390554300508356
+    second: sp_greenKnight_91
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 79
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sp_greenKnight_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd131a0876e42ce46a8c896e306fb5f2
+      internalID: -7884630085026690162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f21613e6c5889b242b97dfeaffedfe53
+      internalID: 6069370414494882763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_2
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deb9d2b510f1afe4ab4a8d0934fafb0d
+      internalID: 2973471473396568937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_3
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a88c8a498389764896c915870e0332a
+      internalID: -6063196030484259896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_4
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 937f3fd821e89f4409e2d8837af3d560
+      internalID: -2773437574496102390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_5
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ff52dc9cac961947981bca640750472
+      internalID: 540064447510264789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_6
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 647253f39d5821a4fa3cf4fa8984a965
+      internalID: -3371914197162339767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_7
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18bd59208388ee14dbfcd67250e236ae
+      internalID: -7160229505155251443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_8
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81761c5ae5eedc4479f7f48482349820
+      internalID: 8206669473580238346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_9
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6a0437f5b473ac40aafce0c6e493fee
+      internalID: -5983171184923189925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_10
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b284e3fa2f4166848a38857da129facc
+      internalID: -1637592994019267788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_11
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfa8561dbfcceca4da75e83714162a8a
+      internalID: 2746072071868153250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_12
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0f05066e2f5a6d449eb35394063a46f
+      internalID: -155995924131318129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_13
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90040340dc0e5084b96a6fa5973b5f93
+      internalID: 5065425608937234448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efb3974cd6c434f45b82230a1cedc28c
+      internalID: 6627032397370673041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_15
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2214ac80cd71ce9428c019b306b9b6ad
+      internalID: 5507010178862143031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_16
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edd56a8a2c7795e4fa66c97f3bd4b5f1
+      internalID: 8862884450438445705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_17
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba8ac10de990a7b44bdeb13c638db89f
+      internalID: 4161416255895991104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_18
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78230f70435f3ff4c937d72278029df5
+      internalID: 3720578014895394457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_19
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9534b03b9416b846923fbcc64987554
+      internalID: -437445536224158855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_20
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5043209f77de73340953c53220ea9306
+      internalID: 6833562493813199956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_21
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 411269c94ea33f847a162a34dda0f712
+      internalID: 1610016680801529352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_22
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db5b7f1066176194fbd0fc068a4edcb3
+      internalID: -7544830184180907487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_23
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1885be4f0c5016840a43648293952bc8
+      internalID: 7422002302075904723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_24
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c0c5c885ac2e8145b02e5bce25d45be
+      internalID: 4154405518116606712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_25
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b87e9c5d0ace2d347820e075a6627d25
+      internalID: -5916495744136383496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_26
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d3a4635932feb64b962710d4f988fd7
+      internalID: 2074024252339548472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0309913ff153fe94d9709b0c8e02605c
+      internalID: -4306838389341035457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_28
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc8a8729d75dd9d4a8869998fcd2f132
+      internalID: -8559864016574137434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_29
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e4b0f50da9424348ad11e7dbf4889a3
+      internalID: 860024258873753282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_30
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b39f2a375e4bb7240a5dafda121c333e
+      internalID: -5168417837567093035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_31
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a37002e57947c44c9de4f20803b8c96
+      internalID: -1202331477014330235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_32
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8bd78422061f6543aab33959878862e
+      internalID: -5991537782513425685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_33
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0f11c70313bc7f488ee0f51b1a49685
+      internalID: -4480988606114673252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_34
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b1bfef8f9df4ff48802aec1b92cb876
+      internalID: 8752617286831464866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_35
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a49f814b097a616438a649c02bef13e2
+      internalID: -4320903769165106875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_36
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23e6366445178404b8ece0abbfb8a365
+      internalID: -7473959266981786906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_37
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d003babea7db2214bb8f0c6f88e15c73
+      internalID: -4639862795523137969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_38
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c64032379cf2234db898f5c6cf796aa
+      internalID: 8496587810352797091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_39
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33714ab8f0d24c843b251145a621a9cd
+      internalID: -2131073642538648443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_40
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ffe1b58c5a0a745a42ee0e769105d1
+      internalID: 7534246081823838314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_41
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f89a2c5bb1c3f449ba5d236601a9951
+      internalID: 7813482773022104262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_42
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 833f99ef83691c242be3aed14ce08dbb
+      internalID: 2885127355547902216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_43
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd6836f832e9df9408c83d84c604ca6d
+      internalID: -5000325099102085348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_44
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b77f99f89e27c69459833894535f8528
+      internalID: 1924767587728027850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_45
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d91cc4f71997f864a9ef26ebd8adc0c2
+      internalID: 3857402781856345762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_46
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72ae9aa691dc9874b959b9f3e316eb3c
+      internalID: -7550806946881531446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_47
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5833581b799b666429e8648e4f4b51af
+      internalID: -6827804950517134050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_48
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4edb363a6aa1944f9f70b777685d9cf
+      internalID: -4599238632798851568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_49
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc17be4e969b048478dbab678de14e08
+      internalID: -6979588203541832325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_50
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75f7f2e31b70fc042a0441234df04bc0
+      internalID: -1391057986177722235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_51
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 553
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 140a5ba1704b31546927799d08971429
+      internalID: -8755487812628449118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_52
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 553
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0a2e8f91a0d3214ca65023d7958237c
+      internalID: -2034267446004812940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_53
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 474
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3df8d6251cca0747a2b398421ab24e9
+      internalID: 2568105525630537308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_54
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 474
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27e91d61f7865bb43a5807f17b7775ff
+      internalID: -3827958099191851135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_55
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 474
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a3b8e13af582c74b9422276f0191b3a
+      internalID: -8831268294676401412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_56
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 474
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e375adcfd505f7845b81a21e213703d2
+      internalID: -8446448697140524715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_57
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 474
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a41b641bb1213d6438c631c53f7d3c73
+      internalID: -6227021448866328844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_58
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 395
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d25b3d3d2088bb44da082cc24c41b57a
+      internalID: 6484202530176764897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_59
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 395
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5d653b3c5e18bd4e96b21a1ea21fdaa
+      internalID: 5656216547486070029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_60
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 395
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f0a0a9ea463e884b81d44b67aa1c901
+      internalID: 1508274875788383025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_61
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 395
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e3b865712aad0242892ca75640243e5
+      internalID: 3851785162973252351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_62
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 395
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98a5359937b69154da195c457b3bdbf4
+      internalID: -3161028251551279647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_63
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 395
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d57e6bdc1e0100469da92e04692080d
+      internalID: -3717359687939611336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 316
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88bd828f4292cdf49a6002721cbfb242
+      internalID: -3716134306343655992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_65
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 316
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d604439e63aa98479cb1777c415cacb
+      internalID: 3440970661470711868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_66
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 316
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0661608ca445bab49bb503c120d603c1
+      internalID: 8328192508753938405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_67
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 316
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72c5e8d58148b354d8e05237bd013c37
+      internalID: -4101611492590377845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_68
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 237
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bebe7f9f1a54e8642b25138fe4dc2ec6
+      internalID: 4355828786155837007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_69
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 237
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59a7481eb23b99044a9fd768475e9d8b
+      internalID: 8986016502518697327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_70
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 237
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37c541a5d63e6af4a99ff405fdc113ce
+      internalID: 1601684359741746737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_71
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 237
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5282657e71bd70d478c661856a3c9f93
+      internalID: -2421609099166178283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 158
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 682677fbb428a1d4db064da118101e44
+      internalID: 3890736856655763884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_73
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 158
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d7cc23da25b88d418c6f47f34754eae
+      internalID: 6658584559409429394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_74
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 158
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f45cc96bba2c50e47ad27248799d9648
+      internalID: -8259090186346315574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_75
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 158
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 756610ec97f50e84e9f0ff2e32e78f66
+      internalID: -8020112180867608592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_76
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 158
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce5c6d33b00aff54dbbaae9f540fb66f
+      internalID: -7361606981519600826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_77
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 158
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 189aabcfc25768c44b083baa40524b20
+      internalID: -4899379424090316150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 79
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ee00789b3ca02d4398aa1057715f7d7
+      internalID: 6260035841603944860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_79
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 79
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb1513d24c7816940b72279b348e76a0
+      internalID: -2242668433975207437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_80
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 79
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e959491abedc8f14e859488c6a726474
+      internalID: -1178261071957897818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_81
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 79
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79f65cc5dc82ce04e893e8f12033c5fc
+      internalID: 3993900888414081360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_82
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 79
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c168f0921ac84194390322068890c0c9
+      internalID: 3865787495697140288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_83
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 79
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05b616e54696957459e8d30ebe9d7eb9
+      internalID: -7373483950465921209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c88adaec29957d14682069c4afe933c9
+      internalID: 2384173169312069572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_85
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aff00dca324a7b41a1e6b9814e52b82
+      internalID: -5101801026039823347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_86
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d29ebcdb4cb363448a8c86bdfe130c91
+      internalID: 5769437806353228751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_87
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ad91037e6c9d8b4fb85513ca38e8c64
+      internalID: -2832833873770240309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_88
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bbd2d2f763d5304fa6a8a8853805a53
+      internalID: -1696001556894417891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_89
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 091e4a1560455274b9abd5a376a9868f
+      internalID: 286595212614137133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_90
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87c0b9a7759d13c428a39fa1684c2c12
+      internalID: -7715128459650157684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_greenKnight_91
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9784373eeff22144d8c809a03c338e19
+      internalID: 5599390554300508356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: f4a702120a9844347970cf781d406b5a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

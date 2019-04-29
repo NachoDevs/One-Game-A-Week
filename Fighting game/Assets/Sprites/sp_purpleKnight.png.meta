@@ -1,0 +1,2309 @@
+fileFormatVersion: 2
+guid: 37ca69ac4a16ad24696adb68337a693f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2722528022054702429
+    second: sp_purpleKnight_0
+  - first:
+      213: 212282548070102270
+    second: sp_purpleKnight_1
+  - first:
+      213: -4318692894010695432
+    second: sp_purpleKnight_2
+  - first:
+      213: 435487374674666333
+    second: sp_purpleKnight_3
+  - first:
+      213: 4789167885964860288
+    second: sp_purpleKnight_4
+  - first:
+      213: 2366499357744790128
+    second: sp_purpleKnight_5
+  - first:
+      213: -1523216756818378018
+    second: sp_purpleKnight_6
+  - first:
+      213: 6631459886836862342
+    second: sp_purpleKnight_7
+  - first:
+      213: 2721957877546462380
+    second: sp_purpleKnight_8
+  - first:
+      213: -2419830677047526583
+    second: sp_purpleKnight_9
+  - first:
+      213: 8962524180499259563
+    second: sp_purpleKnight_10
+  - first:
+      213: -6322705761141576669
+    second: sp_purpleKnight_11
+  - first:
+      213: -1408364543816150220
+    second: sp_purpleKnight_12
+  - first:
+      213: 5506982115842523587
+    second: sp_purpleKnight_13
+  - first:
+      213: 3215179391353318358
+    second: sp_purpleKnight_14
+  - first:
+      213: -1851197615388255974
+    second: sp_purpleKnight_15
+  - first:
+      213: 9049419411869625796
+    second: sp_purpleKnight_16
+  - first:
+      213: -2629455571186998069
+    second: sp_purpleKnight_17
+  - first:
+      213: -7548869168964639120
+    second: sp_purpleKnight_18
+  - first:
+      213: -4284183079902236137
+    second: sp_purpleKnight_19
+  - first:
+      213: 2663975948277641310
+    second: sp_purpleKnight_20
+  - first:
+      213: 1441969857132740834
+    second: sp_purpleKnight_21
+  - first:
+      213: -3099205661180881748
+    second: sp_purpleKnight_22
+  - first:
+      213: -795174207906506307
+    second: sp_purpleKnight_23
+  - first:
+      213: 8501912012361063830
+    second: sp_purpleKnight_24
+  - first:
+      213: 5894321461938739816
+    second: sp_purpleKnight_25
+  - first:
+      213: -2269653343939399376
+    second: sp_purpleKnight_26
+  - first:
+      213: 1936934689703828412
+    second: sp_purpleKnight_27
+  - first:
+      213: 3741093122308122557
+    second: sp_purpleKnight_28
+  - first:
+      213: 3798524720229709106
+    second: sp_purpleKnight_29
+  - first:
+      213: -8191615304749094605
+    second: sp_purpleKnight_30
+  - first:
+      213: -2534233410019080720
+    second: sp_purpleKnight_31
+  - first:
+      213: 3352021172194956290
+    second: sp_purpleKnight_32
+  - first:
+      213: 4533609219953585199
+    second: sp_purpleKnight_33
+  - first:
+      213: 2353973533859256228
+    second: sp_purpleKnight_34
+  - first:
+      213: -5892048704776421987
+    second: sp_purpleKnight_35
+  - first:
+      213: -6301515116639605101
+    second: sp_purpleKnight_36
+  - first:
+      213: 6737124134837256025
+    second: sp_purpleKnight_37
+  - first:
+      213: -3198964478015328907
+    second: sp_purpleKnight_38
+  - first:
+      213: -4678487533316148045
+    second: sp_purpleKnight_39
+  - first:
+      213: -644025003510279511
+    second: sp_purpleKnight_40
+  - first:
+      213: 6007166176247501338
+    second: sp_purpleKnight_41
+  - first:
+      213: 4862863671011368928
+    second: sp_purpleKnight_42
+  - first:
+      213: 8822544290561118775
+    second: sp_purpleKnight_43
+  - first:
+      213: -5523760260694140386
+    second: sp_purpleKnight_44
+  - first:
+      213: -5705527461228194552
+    second: sp_purpleKnight_45
+  - first:
+      213: -3816343078549387779
+    second: sp_purpleKnight_46
+  - first:
+      213: -8508557379217175431
+    second: sp_purpleKnight_47
+  - first:
+      213: -2437746706640103552
+    second: sp_purpleKnight_48
+  - first:
+      213: 1293925632702957722
+    second: sp_purpleKnight_49
+  - first:
+      213: -439025913939068619
+    second: sp_purpleKnight_50
+  - first:
+      213: -7977006252876799770
+    second: sp_purpleKnight_51
+  - first:
+      213: 5270396703119578760
+    second: sp_purpleKnight_52
+  - first:
+      213: 2890875526255945573
+    second: sp_purpleKnight_53
+  - first:
+      213: -4157603054482353390
+    second: sp_purpleKnight_54
+  - first:
+      213: 3710257110434807317
+    second: sp_purpleKnight_55
+  - first:
+      213: 574201743691842416
+    second: sp_purpleKnight_56
+  - first:
+      213: -8600606439714800118
+    second: sp_purpleKnight_57
+  - first:
+      213: 20108467687663605
+    second: sp_purpleKnight_58
+  - first:
+      213: -3534173754000883041
+    second: sp_purpleKnight_59
+  - first:
+      213: -2473428445455279495
+    second: sp_purpleKnight_60
+  - first:
+      213: -6850592759069455486
+    second: sp_purpleKnight_61
+  - first:
+      213: -5722069048161056922
+    second: sp_purpleKnight_62
+  - first:
+      213: -3765641302572898575
+    second: sp_purpleKnight_63
+  - first:
+      213: 5701742746676227676
+    second: sp_purpleKnight_64
+  - first:
+      213: 175918389519447197
+    second: sp_purpleKnight_65
+  - first:
+      213: -1484582522440673393
+    second: sp_purpleKnight_66
+  - first:
+      213: 5529827889417342221
+    second: sp_purpleKnight_67
+  - first:
+      213: -361170155547787456
+    second: sp_purpleKnight_68
+  - first:
+      213: 6194670385757437329
+    second: sp_purpleKnight_69
+  - first:
+      213: 8087038210202313197
+    second: sp_purpleKnight_70
+  - first:
+      213: 6280553532443849483
+    second: sp_purpleKnight_71
+  - first:
+      213: 3263294834211419736
+    second: sp_purpleKnight_72
+  - first:
+      213: -4924174450522136388
+    second: sp_purpleKnight_73
+  - first:
+      213: 6004005392083014418
+    second: sp_purpleKnight_74
+  - first:
+      213: 2207102428035065424
+    second: sp_purpleKnight_75
+  - first:
+      213: 1302764678331770432
+    second: sp_purpleKnight_76
+  - first:
+      213: -5823728839189182794
+    second: sp_purpleKnight_77
+  - first:
+      213: 4961341832597269397
+    second: sp_purpleKnight_78
+  - first:
+      213: -8611863711487278027
+    second: sp_purpleKnight_79
+  - first:
+      213: 541265917808995060
+    second: sp_purpleKnight_80
+  - first:
+      213: -8089818733982500018
+    second: sp_purpleKnight_81
+  - first:
+      213: -9006214583999227997
+    second: sp_purpleKnight_82
+  - first:
+      213: -3706069832429013855
+    second: sp_purpleKnight_83
+  - first:
+      213: 7516640512469268495
+    second: sp_purpleKnight_84
+  - first:
+      213: -872520992989593911
+    second: sp_purpleKnight_85
+  - first:
+      213: -3395986949809142215
+    second: sp_purpleKnight_86
+  - first:
+      213: 4064552889454719865
+    second: sp_purpleKnight_87
+  - first:
+      213: 1955299608763269508
+    second: sp_purpleKnight_88
+  - first:
+      213: -1090335578127554473
+    second: sp_purpleKnight_89
+  - first:
+      213: 7694865161417056974
+    second: sp_purpleKnight_90
+  - first:
+      213: -3523846512756400274
+    second: sp_purpleKnight_91
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 79
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sp_purpleKnight_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 548126ac9257d7a4a9d32dd8b29917ba
+      internalID: -2722528022054702429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f9bab690c3441b4488f12287213b2f0
+      internalID: 212282548070102270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_2
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 666daee119b525248860801fbd39b6d1
+      internalID: -4318692894010695432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_3
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 016f77131ff50aa4faffdb2018c1fe23
+      internalID: 435487374674666333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_4
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebcc43bc94ae6d247a239f58f6bd267a
+      internalID: 4789167885964860288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_5
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a61d31b25e27bc148aa16bebc3e64d50
+      internalID: 2366499357744790128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_6
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bd38a93708e0854b9b941f282f111f7
+      internalID: -1523216756818378018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_7
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fe02f953d32e894291d027834234260
+      internalID: 6631459886836862342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_8
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32b34add73e2d8346a5c522ab1fbd1bd
+      internalID: 2721957877546462380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_9
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6835f4e66c1bd8a428b24a37ec405857
+      internalID: -2419830677047526583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_10
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaa9fbffd0c93b64391c32117e7e1432
+      internalID: 8962524180499259563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_11
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b655eeb08487c24c91d965c95fae1a3
+      internalID: -6322705761141576669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_12
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d182c9efae469d748bffa8ea33d5dc70
+      internalID: -1408364543816150220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_13
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 869
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97f28effc8daf6341bbffff8d95e7667
+      internalID: 5506982115842523587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7ff80d91b4bd2f42bd732d0a823e5cd
+      internalID: 3215179391353318358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_15
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17ab20338800557499bfcabbbdf64f7a
+      internalID: -1851197615388255974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_16
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 012e740dce2bd3845b3b47e5f9150934
+      internalID: 9049419411869625796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_17
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3335df0b05e37284a92a504e763c6d25
+      internalID: -2629455571186998069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_18
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43fd768c1dff25a4da62bfaca7924522
+      internalID: -7548869168964639120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_19
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c54c41a25f62d9544b8e83ab21cdb934
+      internalID: -4284183079902236137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_20
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cc96ba4a34bcf545a3c59b65bd032aa
+      internalID: 2663975948277641310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_21
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4edbe6cf3344a14098089ea6a4cbfaf
+      internalID: 1441969857132740834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_22
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9129148c2d72f624e972156e00fa168b
+      internalID: -3099205661180881748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_23
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95e1241782cb2df4caee6a3bdeff7491
+      internalID: -795174207906506307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_24
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12c0c474a96f4ce499352072b2cb4466
+      internalID: 8501912012361063830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_25
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3876442d57c2444ba13fc2280bad341
+      internalID: 5894321461938739816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_26
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 790
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77262a84364c1c14da8857eeb781063e
+      internalID: -2269653343939399376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9f98b6689364b44094de2d609372ad9
+      internalID: 1936934689703828412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_28
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd56c75a8333c544fa0891ed5ffb311b
+      internalID: 3741093122308122557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_29
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdfe8d8338ecbef41a49f89de3e274dc
+      internalID: 3798524720229709106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_30
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42f490cd2da00de428cecd6575fe62a0
+      internalID: -8191615304749094605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_31
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72b0a5b7bfe781e498eb43f5a7390e81
+      internalID: -2534233410019080720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_32
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4bf1c44389cbdd4da0dc5574cf612ec
+      internalID: 3352021172194956290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_33
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aa27a1b925acd942b4e5e13681c1ea3
+      internalID: 4533609219953585199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_34
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43cd9fda58fd583498cce118dd016a7d
+      internalID: 2353973533859256228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_35
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d3f060f6724f2c4186dcfa9f533638c
+      internalID: -5892048704776421987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_36
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45cc268fd3d2c8f4b8b3be6dc27a0a23
+      internalID: -6301515116639605101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_37
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec547db99bb7b9248b777fad0915f3d1
+      internalID: 6737124134837256025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_38
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eef4440434ef0245b0194d9c009892a
+      internalID: -3198964478015328907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_39
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd343a0550f7c2b48b02e41f8fbba720
+      internalID: -4678487533316148045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_40
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 711
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3438010899b84914f90b963cd703214d
+      internalID: -644025003510279511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_41
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd9e75097466ddf41b6a7f4c84c0f89c
+      internalID: 6007166176247501338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_42
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7557e4b0ec906544a9c41739bc62bcfd
+      internalID: 4862863671011368928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_43
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a97efd86f6a76347b1e2a7d55933462
+      internalID: 8822544290561118775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_44
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1770021747fb8484ebfff86c6f739890
+      internalID: -5523760260694140386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_45
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3d09ba0f4f6de14cab642928cfaffa7
+      internalID: -5705527461228194552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_46
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d88661550ab80942b911f234a88bd09
+      internalID: -3816343078549387779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_47
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22849a080bad4eb4596287b3e1ae41c8
+      internalID: -8508557379217175431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_48
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd208e6893e200a438a9a2f99ff6b078
+      internalID: -2437746706640103552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_49
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd5247fbc8f12cf488ce644d48ba1f53
+      internalID: 1293925632702957722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_50
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 632
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f95105bdaa9e0643924854e68b485cc
+      internalID: -439025913939068619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_51
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 553
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fbbe8778823d1f4da59d23ea447a7f8
+      internalID: -7977006252876799770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_52
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 553
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a90ddfff028cf1c438fac6477f6903d0
+      internalID: 5270396703119578760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_53
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 474
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f43b8352a4ec234e9a53749373bc4f0
+      internalID: 2890875526255945573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_54
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 474
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c106c366a285f5d40bc632aa7776301d
+      internalID: -4157603054482353390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_55
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 474
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc48ce092df44e0439c46d285feb70e8
+      internalID: 3710257110434807317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_56
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 474
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e07080d3218987243a7b10c2a710dafb
+      internalID: 574201743691842416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_57
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 474
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be2bb881ca813214ebafe788db2ca2fa
+      internalID: -8600606439714800118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_58
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 395
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78350e65e571ec94ca0394a6bebc5f0e
+      internalID: 20108467687663605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_59
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 395
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fd3db048a61a0e45862bc342102cd68
+      internalID: -3534173754000883041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_60
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 395
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71fc859bec34f1c4ab2f42c1f9e9efe1
+      internalID: -2473428445455279495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_61
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 395
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc4dd6efdc7c874449fe423ffdca2c27
+      internalID: -6850592759069455486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_62
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 395
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b184913439361c6419fd0e51eb6f4a0d
+      internalID: -5722069048161056922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_63
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 395
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 781e3b2c526ee0242b4bec508ce893ae
+      internalID: -3765641302572898575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 316
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f5c0b6614cdcd449918166abb346daf
+      internalID: 5701742746676227676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_65
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 316
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3118ac179036d8b4985f634aaa7490f7
+      internalID: 175918389519447197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_66
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 316
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b4e86c0dbc962a4e9e54644b0b35977
+      internalID: -1484582522440673393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_67
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 316
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 806066c8c03e0e24dbf12ab0df6679b5
+      internalID: 5529827889417342221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_68
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 237
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6aebba1a8a5cda409e85bdf685cef71
+      internalID: -361170155547787456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_69
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 237
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21ee9f54c62c06343b7fab342433cd7b
+      internalID: 6194670385757437329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_70
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 237
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c59921f4facdf324e85d6018c6ee3a4d
+      internalID: 8087038210202313197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_71
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 237
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 789e4866168b1f24cb036aa0b86bec69
+      internalID: 6280553532443849483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 158
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16a0b0ca21f588a48b69b784d5c0dc35
+      internalID: 3263294834211419736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_73
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 158
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52bee0137bc829e4295f0e9b4c21a118
+      internalID: -4924174450522136388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_74
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 158
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c8628d0dc93b0e4690501fdedeab93a
+      internalID: 6004005392083014418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_75
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 158
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19e3da833a40b0044b4cf7061f1cd0fe
+      internalID: 2207102428035065424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_76
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 158
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa7a7e9be2b41c743b901aca7f1d34e0
+      internalID: 1302764678331770432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_77
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 158
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8e7043f4be05774d8f301f783e4ba1e
+      internalID: -5823728839189182794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 79
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 994cec610771a7b42b8c5dfd82a0a26c
+      internalID: 4961341832597269397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_79
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 79
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87dc99bba4623a8489a071be0948b042
+      internalID: -8611863711487278027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_80
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 79
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5beb2f8abad8b9428ba197e99cd1e11
+      internalID: 541265917808995060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_81
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 79
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b236dd92322325d4dbb2a75025fe2ea4
+      internalID: -8089818733982500018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_82
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 79
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2f250b06fc4d00438e1413404d1dc11
+      internalID: -9006214583999227997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_83
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 79
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feed13eefcead7a4cb258a604c26facd
+      internalID: -3706069832429013855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ef1bf1231a0a284c9146c9696b70994
+      internalID: 7516640512469268495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_85
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f8fe83314996fd428e6f38096c5191f
+      internalID: -872520992989593911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_86
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8e469804e529d9478e9bb04a218d470
+      internalID: -3395986949809142215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_87
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9790b11e360812a439f4b78fd47f89a4
+      internalID: 4064552889454719865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_88
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe59a7baae8101b4d846ebca35af8af1
+      internalID: 1955299608763269508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_89
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 027370fcb8f0d2040992b855bad6ed62
+      internalID: -1090335578127554473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_90
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5669a724abd70f4280d3991b3f9f9c6
+      internalID: 7694865161417056974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sp_purpleKnight_91
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 0
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0378878fe244cb14caa7dd5ada726b10
+      internalID: -3523846512756400274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 3d2a25d44d745084997e7277148eb9e1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
