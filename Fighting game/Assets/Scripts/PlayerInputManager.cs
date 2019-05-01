@@ -43,6 +43,11 @@ public class PlayerInputManager : MonoBehaviour
             m_isJumping = true;
         }
 
+        if (Input.GetKeyUp(KeyCode.Q))
+        {
+            StartCoroutine(SpecialAttack());
+        }
+
         m_meleeTimer += Time.deltaTime;
         if (Input.GetButton("Fire1"))
         {
@@ -92,5 +97,13 @@ public class PlayerInputManager : MonoBehaviour
         {
             m_rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
+    }
+
+    IEnumerator SpecialAttack()
+    {
+        m_controller.m_animator.SetTrigger("special");
+        yield return new WaitForSeconds(.1f);
+        m_controller.Move((transform.position.x + 15) * ((m_controller.isFacingRight) ? 1 : -1), false, false);
+        m_controller.m_canMove = false;
     }
 }
