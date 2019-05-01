@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerInputManager : MonoBehaviour
 {
+    public float meleeRate = 2f;
     public float movementSpeed = 20f;
 
     public float fallMultiplier = 2.5f;
@@ -13,6 +14,7 @@ public class PlayerInputManager : MonoBehaviour
     bool m_isBlocking;
 
     float m_horizontalMove = 0f;
+    float m_meleeTimer = 2.0f;
 
     CharacterController2D m_controller;
     Rigidbody2D m_rb;
@@ -41,11 +43,32 @@ public class PlayerInputManager : MonoBehaviour
             m_isJumping = true;
         }
 
+        m_meleeTimer += Time.deltaTime;
+        if (Input.GetButton("Fire1"))
+        {
+            if(m_meleeTimer >= meleeRate)
+            {
+                if(m_controller.m_Grounded)
+                {
+                    m_controller.m_canMove = false;
+                    m_controller.m_animator.SetTrigger("melee" + Random.Range(1, 3));
+                    m_meleeTimer = .0f;
+                }
+            }
+        }
+
         m_isBlocking = false;
+        m_controller.m_AirControl = true;
         if (Input.GetButton("Fire2"))
         {
             m_isBlocking = true;
-            m_horizontalMove = 0;
+            if(m_controller.m_Grounded)
+            {
+                m_horizontalMove *= .3f;
+            }else
+            {
+                m_controller.m_AirControl = false;
+            }
         }
         m_controller.m_animator.SetBool("blocking", m_isBlocking);
     }
