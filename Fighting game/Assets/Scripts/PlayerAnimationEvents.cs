@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class PlayerAnimationEvents : MonoBehaviour
 {
-    CharacterController2D m_cc;
+    PlayerScript m_ps;
 
-    void Start()
+    void Awake()
     {
-        m_cc = GetComponentInParent<CharacterController2D>();
+        m_ps = GetComponentInParent<PlayerScript>();
     }
 
     public void CanMoveAgain()
     {
-        m_cc.m_canMove = true;
+        m_ps.m_controller.m_canMove = true;
+        m_ps.meleeCollider.gameObject.SetActive(false);
+        m_ps.specialCollider.gameObject.SetActive(false);
     }
 }

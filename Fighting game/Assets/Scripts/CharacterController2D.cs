@@ -21,7 +21,6 @@ public class CharacterController2D : MonoBehaviour
     const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
     internal bool m_Grounded;            // Whether or not the player is grounded.
     const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
-    private Rigidbody2D m_Rigidbody2D;
     private Vector3 m_Velocity = Vector3.zero;
 
     [Header("Events")]
@@ -29,7 +28,7 @@ public class CharacterController2D : MonoBehaviour
 
     public UnityEvent OnLandEvent;
 
-    internal Animator m_animator;
+    PlayerScript m_ps;  
     
     [System.Serializable]
     public class BoolEvent : UnityEvent<bool> { }
@@ -39,20 +38,18 @@ public class CharacterController2D : MonoBehaviour
 
     private void Awake()
     {
-        m_Rigidbody2D = GetComponent<Rigidbody2D>();
+        m_ps = GetComponent<PlayerScript>();
 
         if (OnLandEvent == null)
             OnLandEvent = new UnityEvent();
 
         if (OnCrouchEvent == null)
             OnCrouchEvent = new BoolEvent();
-
-        m_animator = GetComponentInChildren<Animator>();
     }
 
     private void FixedUpdate()
     {
-        m_animator.SetBool("grounded", m_Grounded);
+        m_ps.m_animator.SetBool("grounded", m_Grounded);
 
         bool wasGrounded = m_Grounded;
         m_Grounded = false;
@@ -80,7 +77,7 @@ public class CharacterController2D : MonoBehaviour
             move = 0;
         }
 
-        m_animator.SetFloat("movSpeed", Math.Abs(move));
+        m_ps.m_animator.SetFloat("movSpeed", Math.Abs(move));
         // If crouching, check to see if the character can stand up
         /*if (!crouch)
         {
@@ -125,9 +122,9 @@ public class CharacterController2D : MonoBehaviour
             }
 
             // Move the character by finding the target velocity
-            Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
+            Vector3 targetVelocity = new Vector2(move * 10f, m_ps.m_rb.velocity.y);
             // And then smoothing it out and applying it to the character
-            m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+            m_ps.m_rb.velocity = Vector3.SmoothDamp(m_ps.m_rb.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
             // If the input is moving the player right and the player is facing left...
             if (move > 0 && !isFacingRight)
@@ -147,7 +144,7 @@ public class CharacterController2D : MonoBehaviour
         {
             // Add a vertical force to the player.
             m_Grounded = false;
-            m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+            m_ps.m_rb.AddForce(new Vector2(0f, m_JumpForce));
         }
     }
 
