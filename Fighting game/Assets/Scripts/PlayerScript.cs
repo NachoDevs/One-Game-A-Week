@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+    public GameObject blockEffect;
+
     public BoxCollider2D meleeCollider;
     public PolygonCollider2D specialCollider;
 
@@ -32,6 +34,9 @@ public class PlayerScript : MonoBehaviour
         {
             m_pInput.m_isBlocking = false;
             m_pInput.m_blockTimer = 0;
+            Vector3 blockPos = transform.position;
+            blockPos.y -= 0.2f;
+            Destroy(Instantiate(blockEffect, blockPos, Quaternion.identity), .35f);
         }
         else
         {
