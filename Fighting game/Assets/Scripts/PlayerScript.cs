@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -74,7 +75,7 @@ public class PlayerScript : MonoBehaviour
         }
         else
         {
-            Die();
+            StartCoroutine(Die());
         }
     }
 
@@ -90,10 +91,13 @@ public class PlayerScript : MonoBehaviour
         MeleeDamaged();
     }
 
-    void Die()
+    IEnumerator Die()
     {
         m_controller.m_canMove = false;
         m_animator.SetTrigger("dead");
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(0);
+
     }
 
     void CameraShake()
