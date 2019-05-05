@@ -12,9 +12,5 @@ public class Deadzone : MonoBehaviour
         {
             collision.transform.parent.transform.position = respawnPos;
         }
-        else
-        {
-            Destroy(collision.transform.parent.transform);
-        }
     }
 }
