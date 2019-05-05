@@ -474,6 +474,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 622faf3bfe458514e87a083f485a7c5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shakeDuration: 0.5
+  shakeAmplitude: 1.5
+  shakeFrequency: 2
   blockEffect: {fileID: 3319313664144846389, guid: e8174f28e56b7f0408f7c622ace239c6,
     type: 3}
   meleeCollider: {fileID: 7697215968660206654}

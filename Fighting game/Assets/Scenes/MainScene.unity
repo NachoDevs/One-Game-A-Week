@@ -181,7 +181,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 86359121}
-  m_LocalRotation: {x: 1e-45, y: 0, z: -0.0000000010708008, w: 1}
+  m_LocalRotation: {x: -1e-45, y: 1e-45, z: -0.0000000011725739, w: 1}
   m_LocalPosition: {x: 1.77, y: 1.77, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -281,6 +281,11 @@ PrefabInstance:
       propertyPath: specialAxis
       value: Special_P2
       objectReference: {fileID: 0}
+    - target: {fileID: 8311664956420466548, guid: 5498862c1824d6640b7f773da2419d0b,
+        type: 3}
+      propertyPath: cVirtualCamera
+      value: 
+      objectReference: {fileID: 86359122}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5498862c1824d6640b7f773da2419d0b, type: 3}
 --- !u!1 &519420028
@@ -397,7 +402,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_LocalRotation: {x: 1e-45, y: 0, z: -0.0000000010708008, w: 1}
+  m_LocalRotation: {x: -1e-45, y: 1e-45, z: -0.0000000011725739, w: 1}
   m_LocalPosition: {x: 1.77, y: 1.77, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -416,6 +421,7 @@ GameObject:
   - component: {fileID: 676574576}
   - component: {fileID: 676574575}
   - component: {fileID: 676574574}
+  - component: {fileID: 676574577}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -510,6 +516,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &676574577
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676574572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_AmplitudeGain: 1
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 524.4221, y: 643.7938, z: 755.79736}
 --- !u!1 &704365573
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,6 +786,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8311664956420466548, guid: 5498862c1824d6640b7f773da2419d0b,
+        type: 3}
+      propertyPath: cVirtualCamera
+      value: 
+      objectReference: {fileID: 86359122}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5498862c1824d6640b7f773da2419d0b, type: 3}
 --- !u!1 &1897227527

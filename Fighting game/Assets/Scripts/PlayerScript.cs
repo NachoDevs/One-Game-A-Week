@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+    public float shakeDuration = .5f;
+    public float shakeAmplitude = 1.5f;
+    public float shakeFrequency = 2.0f;
+
     public GameObject blockEffect;
 
     public BoxCollider2D meleeCollider;
     public PolygonCollider2D specialCollider;
+
+    public Cinemachine.CinemachineVirtualCamera cVirtualCamera;
 
     internal Animator m_animator;
 
@@ -19,6 +25,10 @@ public class PlayerScript : MonoBehaviour
 
     internal GameManager m_gm;
 
+    internal Cinemachine.CinemachineBasicMultiChannelPerlin m_vcNoise;
+
+    float shakeElapsedTime = 0f;
+
     void Awake()
     {
         m_gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -26,6 +36,30 @@ public class PlayerScript : MonoBehaviour
         m_rb = GetComponent<Rigidbody2D>();
         m_pInput = GetComponent<PlayerInputManager>();
         m_animator = GetComponentInChildren<Animator>();
+
+        if (cVirtualCamera != null)
+        {
+            m_vcNoise = cVirtualCamera.GetCinemachineComponent<Cinemachine.CinemachineBasicMultiChannelPerlin>();
+        }
+    }
+
+    void Update()
+    {
+        if (cVirtualCamera != null && m_vcNoise != null)
+        {
+            if(shakeElapsedTime > 0)
+            {
+                m_vcNoise.m_AmplitudeGain = shakeAmplitude;
+                m_vcNoise.m_FrequencyGain = shakeFrequency;
+
+                shakeElapsedTime -= Time.deltaTime;
+            }
+            else
+            {
+                m_vcNoise.m_AmplitudeGain = .0f;
+                shakeElapsedTime = .0f;
+            }
+        }
     }
 
     public void MeleeDamaged()
@@ -46,6 +80,8 @@ public class PlayerScript : MonoBehaviour
 
     public void SpecialDamaged(GameObject t_target)
     {
+        CameraShake();
+
         if (m_pInput.m_isBlocking)
         {
             t_target.GetComponent<Rigidbody2D>().AddForce(new Vector2(10f * ((m_controller.isFacingRight) ? 1 : -1), 200f));
@@ -58,5 +94,10 @@ public class PlayerScript : MonoBehaviour
     {
         m_controller.m_canMove = false;
         m_animator.SetTrigger("dead");
+    }
+
+    void CameraShake()
+    {
+        shakeElapsedTime = shakeDuration;
     }
 }
