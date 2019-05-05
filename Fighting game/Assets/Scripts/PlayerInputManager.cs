@@ -17,6 +17,7 @@ public class PlayerInputManager : MonoBehaviour
     public string fire1Axis = "Fire1_P1";
     public string fire2Axis = "Fire2_P1";
     public string specialAxis = "Special_P1";
+    public string downPlatform = "DownPlatform_P1";
 
     internal bool m_isJumping;
     internal bool m_isBlocking;
@@ -27,11 +28,14 @@ public class PlayerInputManager : MonoBehaviour
 
     float m_horizontalMove = 0f;
 
+    // This references shouldn't exist, changes should be made
     PlayerScript m_ps;
+    CharacterController2D m_cc2d;
 
     void Awake()
     {
         m_ps = GetComponent<PlayerScript>();
+        m_cc2d = GetComponent<CharacterController2D>();
     }
 
     void Start()
@@ -53,6 +57,20 @@ public class PlayerInputManager : MonoBehaviour
         if (Input.GetButtonDown(jumpAxis))
         {
             m_isJumping = true;
+        }
+
+        if(Input.GetButton(downPlatform))
+        {
+            // This doesn't take into account which player is hitting the platform, so all of them would fall down, not just one
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(m_cc2d.m_GroundCheck.position, CharacterController2D.k_GroundedRadius, m_cc2d.m_WhatIsGround);
+            foreach(Collider2D cd in colliders)
+            {
+                if(cd.gameObject.GetComponentInParent<Platform2D>() != null)
+                {
+                    StartCoroutine(cd.gameObject.GetComponentInParent<Platform2D>().InvertRotationalOffset());
+                }
+            }
+
         }
 
         m_specialTimer += Time.deltaTime;
