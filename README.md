@@ -23,20 +23,20 @@ All projects will also have a trello board (all links below)
 This is a list with all the topics I want to tackle, the ones already ticked are the ones already done (the order is not representative of the development order):
 
 - [ ] Boardgame
-- [x] Bullet hell; 22 ->28.04.19; https://trello.com/b/ZQOZTI1A/bullet-hell; Unity 2019.1.0.f2 
-- [ ] Clicker
-- [x] Couch coop; 25->31.03.19; https://trello.com/b/pe8qGy9H/couch-coop; Unity 2018.3.0.f2
-- [x] Growing plant;  18->24.02.19; https://trello.com/b/ElPueIoH/growing-plant; Unity 2018.3.0.f2
-- [x] Fighting game; 29.04.19->05.05.19; https://trello.com/b/cRIpog2f/fighting-game; Unity 2019.1.0.f2 
-- [x] Logistics game;	25.02.19->03.03.19; https://trello.com/b/Vha8bVYV/logistics-game; Unity 2018.3.0.f2; Not finished in time :( 
-- [x] Platformer; 18->24.03.19; https://trello.com/b/IH3tcNoT/platformer; Unity 2018.3.0.f2
+- [x] Bullet hell; 22->28.04.19; Unity 2019.1.0.f2 
+- [ ] Clicker; 13->19.05.19; https://trello.com/b/l8BxOh8m/clicker; Unity 2019.1.1.f1
+- [x] Couch coop; 25->31.03.19; Unity 2018.3.0.f2
+- [x] Growing plant;  18->24.02.19; Unity 2018.3.0.f2
+- [x] Fighting game; 29.04.19->05.05.19; Unity 2019.1.0.f2 
+- [x] Logistics game;	25.02.19->03.03.19; Unity 2018.3.0.f2; Not finished in time :( 
+- [x] Platformer; 18->24.03.19; Unity 2018.3.0.f2
 - [ ] Real Time Strategy
-- [x] Social game(relations with npcs); 08->14.04.19; https://trello.com/b/uEB3rjPt/social-game; Unity 2018.3.0.f2
+- [x] Social game(relations with npcs); 08->14.04.19; Unity 2018.3.0.f2
 - [ ] Stealth game
-- [x] Tower defense; 11->17.03.19; https://trello.com/b/Lq1sfXny/tower-defense; Unity 2018.3.0.f2
+- [x] Tower defense; 11->17.03.19; Unity 2018.3.0.f2
 - [ ] Town building game
-- [x] Turn based game; 15->21.04.19; https://trello.com/b/83eNsg5Q/turn-based-game; Unity 2018.3.0.f2
-- [x] 3rd person shoot and cover game; 04->10.03.19; https://trello.com/b/cl4YwOPN/3rd-person-shoot-and-cover-game; Unity 2018.3.0.f2
+- [x] Turn based game; 15->21.04.19; Unity 2018.3.0.f2
+- [x] 3rd person shoot and cover game; 04->10.03.19; Unity 2018.3.0.f2
 
 ## Links
 Trello: [trello.com/onegameaweek](https://trello.com/onegameaweek/)
