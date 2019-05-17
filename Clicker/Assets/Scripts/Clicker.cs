@@ -5,8 +5,7 @@ using UnityEngine;
 public class Clicker : MonoBehaviour
 {
     public float clickPoints = 1;
-
-    float pointsPerFrame = 0;
+    public float pointsPerFrame = 0;
 
     GameManager m_gm;
 
