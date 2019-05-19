@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI pointsText;
     public TextMeshProUGUI moneyText;
 
-    Camera m_mainCamera1;
+    Camera m_mainCamera;
     Clicker m_clicker;
 
     RaycastHit2D m_hit;
@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_mainCamera1 = Camera.main;
+        m_mainCamera = Camera.main;
     }
 
     // Update is called once per frame
@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            m_hit = Physics2D.Raycast(m_mainCamera1.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            m_hit = Physics2D.Raycast(m_mainCamera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
             if (m_hit.collider == null)
             {
@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
             if(m_clicker != null)
             {
                 AddPoints(m_clicker.clickPoints);
+                StartCoroutine(m_mainCamera.GetComponent<CamShake>().Shake(.15f, .1f));
             }
         }
     }
