@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
     public TextMeshProUGUI pointsText;
     public TextMeshProUGUI moneyText;
+    public GameObject popupText;
+    public Transform popupParent;
 
     Camera m_mainCamera;
     Clicker m_clicker;
@@ -51,6 +53,17 @@ public class GameManager : MonoBehaviour
     {
         currentPoints += t_points;
         money += (int)t_points;
+
+        if(t_points >= 1)
+        {
+            Vector3 pos = new Vector3(Random.insideUnitCircle.x, Random.insideUnitCircle.y, 0) * 200;
+
+            GameObject number = Instantiate(popupText, popupParent);
+            number.transform.position += pos;
+            number.GetComponent<TextMeshProUGUI>().text = "+" + ((int)t_points).ToString();
+            Destroy(number, .35f);
+        }
+
     }
 
     public void IncreaseAuto(float t_points)
