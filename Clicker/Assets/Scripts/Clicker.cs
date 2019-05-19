@@ -19,6 +19,7 @@ public class Clicker : MonoBehaviour
     void Update()
     {
         m_gm.AddPoints(pointsPerFrame);
+        m_gm.money += pointsPerFrame;
     }
 
 }

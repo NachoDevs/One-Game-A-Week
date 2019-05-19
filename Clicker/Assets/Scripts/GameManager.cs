@@ -6,9 +6,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public float currentPoints = 0;
+    public float money;
 
     [Header("UI")]
     public TextMeshProUGUI pointsText;
+    public TextMeshProUGUI moneyText;
 
     Camera m_mainCamera1;
     Clicker m_clicker;
@@ -25,6 +27,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         pointsText.text = ((int)currentPoints).ToString();
+        moneyText.text = ((int)money).ToString() + "$";
 
         if (Input.GetMouseButtonUp(0))
         {
@@ -46,5 +49,16 @@ public class GameManager : MonoBehaviour
     public void AddPoints(float t_points)
     {
         currentPoints += t_points;
+        money += (int)t_points;
+    }
+
+    public void IncreaseAuto(float t_points)
+    {
+        m_clicker.pointsPerFrame += t_points;
+    }
+
+    public void IncreaseCick(float t_points)
+    {
+        m_clicker.clickPoints += t_points;
     }
 }
