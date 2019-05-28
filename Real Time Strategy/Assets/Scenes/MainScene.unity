@@ -149,8 +149,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 059c568617a78ab499cedc2c7299b2fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBuilding: {fileID: 0}
   buildings:
   - {fileID: 8208189544062984533, guid: 3d730fa26409b6647b39942043f0ea00, type: 3}
+  - {fileID: 8598699378445353410, guid: 62c554f5e6796544b95b96fe68fe183e, type: 3}
   teamMats:
   - {fileID: 2100000, guid: ec70346085bd4b24f82e85df3c0e0339, type: 2}
   - {fileID: 2100000, guid: f0354374823141f4488b9ed1266ffe92, type: 2}

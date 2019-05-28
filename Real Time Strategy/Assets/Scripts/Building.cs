@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
+    public bool owned;
+    public bool clicked;
+
     public int team;
 
     public BuildingType buildingType;
@@ -23,7 +26,6 @@ public class Building : MonoBehaviour
 
         m_rend = GetComponentInChildren<Renderer>();
 
-
         TeamSetUp();
     }
 
@@ -36,7 +38,7 @@ public class Building : MonoBehaviour
     void TeamSetUp()
     {
         Material teamMat;
-        String teamName;
+        string teamName;
         switch(team)
         {
             default:
@@ -58,8 +60,11 @@ public class Building : MonoBehaviour
         bool parentFound = false;
         foreach ( GameObject teamParent in GameObject.FindGameObjectsWithTag("TeamParent"))
         {
-            if (teamParent.name == teamName)
+            print(teamParent.name);
+            if (teamParent.name == "teamParent_" + teamName)
             {
+                transform.parent = teamParent.transform;
+                parentFound = true;
                 break;
             }
         }
