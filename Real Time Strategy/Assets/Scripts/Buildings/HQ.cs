@@ -9,6 +9,9 @@ public class HQ : BuildingTypeBase
     void Start()
     {
         base.Start();
+
+        canBuild.Add(BuildingType.HQ);
+        canBuild.Add(BuildingType.collector);
     }
 
     // Update is called once per frame
@@ -20,6 +23,5 @@ public class HQ : BuildingTypeBase
     protected override void LeftClick()
     {
         base.LeftClick();
-        m_gm.CreateNewBuilding(BuildingType.collector, assignedBuilding.team, new Vector3(5,0,5));
     }
 }

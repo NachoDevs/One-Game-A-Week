@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GameManager
   - TeamParent
+  - Terrain
   layers:
   - Default
   - TransparentFX

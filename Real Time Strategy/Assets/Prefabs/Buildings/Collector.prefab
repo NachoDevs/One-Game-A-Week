@@ -136,7 +136,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1caa217fcec76914cb37f45b92bffd34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 0
+  owned: 0
+  clicked: 0
+  team: 1
   buildingType: 1
 --- !u!114 &8598699378445353469
 MonoBehaviour:
@@ -150,3 +152,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ac31ce2ba5de94d81cb5a6173b821c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBuild: 

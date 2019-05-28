@@ -45,7 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1caa217fcec76914cb37f45b92bffd34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 0
+  owned: 1
+  clicked: 0
+  team: 1
   buildingType: 0
 --- !u!114 &8821707134250912912
 MonoBehaviour:
@@ -59,6 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e897224e0e4c61a48a8efb22e7df2f57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBuild: 
 --- !u!1 &8208189544266681258
 GameObject:
   m_ObjectHideFlags: 0

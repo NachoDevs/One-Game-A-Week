@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildingTypeBase : MonoBehaviour
 {
+    public List<BuildingType> canBuild;
+
     protected static GameManager m_gm;
 
-    protected Building assignedBuilding;
+    protected Building m_assignedBuilding;
 
     RaycastHit hit;
 
@@ -20,41 +23,57 @@ public class BuildingTypeBase : MonoBehaviour
             m_gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         }
 
-        assignedBuilding = GetComponent<Building>();
+        m_assignedBuilding = GetComponent<Building>();
+
+        canBuild = new List<BuildingType>();
     }
 
     // Update is called once per frame
     protected void Update()
     {
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+        if(!m_gm.isBuilding)
         {
-            if (!assignedBuilding.clicked)
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
-                if (Input.GetMouseButtonUp(0))
+                if (!m_assignedBuilding.clicked)
                 {
-                    if (hit.transform.parent.GetComponent<Building>() == GetComponent<Building>())
+                    if (Input.GetMouseButtonUp(0))
                     {
-                        assignedBuilding.clicked = true;
-                        m_gm.selectedBuilding = hit.transform.parent.gameObject;
-                        if (hit.transform.parent.GetComponent<Building>().owned)
+                        if (hit.transform.parent.GetComponent<Building>() == GetComponent<Building>())
                         {
-                            LeftClick();
+                            m_assignedBuilding.clicked = true;
+                            m_gm.selectedBuilding = hit.transform.parent.gameObject;
+                            if (hit.transform.parent.GetComponent<Building>().owned)
+                            {
+                                LeftClick();
+                            }
                         }
                     }
                 }
-            }
-            else
-            {
-                if (Input.GetMouseButtonUp(0))
+                else
                 {
-                    assignedBuilding.clicked = false;
+                    if (Input.GetMouseButtonUp(0))
+                    {
+                        m_assignedBuilding.clicked = false;
+                    }
                 }
             }
         }
+
     }
 
     protected virtual void LeftClick()
     {
-        print("left click");
+        foreach (Transform child in m_gm.buildingButtonsPanel)
+        {
+            Destroy(child.gameObject);
+        }
+
+        foreach (BuildingType bt in canBuild)
+        {
+            GameObject go = Instantiate(m_gm.buildingButtonPrefab, m_gm.buildingButtonsPanel);
+            go.GetComponentInChildren<Text>().text = bt.ToString();
+            go.GetComponent<BuildingButton>().SetButtonFunctionality(bt);
+        }
     }
 }
