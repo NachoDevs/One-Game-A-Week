@@ -24,13 +24,13 @@ This is a list with all the topics I want to tackle, the ones already ticked are
 
 - [ ] Boardgame
 - [x] Bullet hell; 22->28.04.19; Unity 2019.1.0.f2 
-- [ ] Clicker; 13->19.05.19; https://trello.com/b/l8BxOh8m/clicker; Unity 2019.1.1.f1
+- [x] Clicker; 13->19.05.19; https://trello.com/b/l8BxOh8m/clicker; Unity 2019.1.1.f1
 - [x] Couch coop; 25->31.03.19; Unity 2018.3.0.f2
 - [x] Growing plant;  18->24.02.19; Unity 2018.3.0.f2
 - [x] Fighting game; 29.04.19->05.05.19; Unity 2019.1.0.f2 
 - [x] Logistics game;	25.02.19->03.03.19; Unity 2018.3.0.f2; Not finished in time :( 
 - [x] Platformer; 18->24.03.19; Unity 2018.3.0.f2
-- [ ] Real Time Strategy
+- [ ] Real Time Strategy; 27.05.19->2.06.19; https://trello.com/b/6hBaT7qI/real-time-strategy; Unity 2019.1.1.f1
 - [x] Social game(relations with npcs); 08->14.04.19; Unity 2018.3.0.f2
 - [ ] Stealth game
 - [x] Tower defense; 11->17.03.19; Unity 2018.3.0.f2
