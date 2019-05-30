@@ -10,7 +10,11 @@ public class Unit : MonoBehaviour
 
     internal static GameManager m_gm;
 
-    Renderer m_rend;
+    internal Camera m_cam;
+
+    internal Renderer m_rend;
+
+    internal Material teamMat;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +23,8 @@ public class Unit : MonoBehaviour
         {
             m_gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         }
+
+        m_cam = Camera.main;
 
         m_rend = GetComponentInChildren<Renderer>();
 
@@ -32,7 +38,6 @@ public class Unit : MonoBehaviour
 
     void UnitSetUp()
     {
-        Material teamMat;
         switch (team)
         {
             default:

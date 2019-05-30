@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
     public List<GameObject> buildings;
     public List<GameObject> resources;
     public List<GameObject> units;
+    [HideInInspector]
+    public List<GameObject> soldiers;
 
     public List<Material> teamMats;
     public List<Material> resourceMats;
@@ -39,6 +41,8 @@ public class GameManager : MonoBehaviour
     {
         GameObject hq = Instantiate(CreateNewBuilding(BuildingType.HQ, 1));
         hq.GetComponent<Building>().isBuilded = true;
+
+        soldiers = new List<GameObject>();
 
         SetBuildingButtons();
 
