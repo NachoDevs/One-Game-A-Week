@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b236c32ec5b6cbf4d8474c3461e30aba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intentions: 0
+  maxCarryingAmount: 10
+  currentCarryingAmount: 0
 --- !u!1001 &6853496577064247350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22,22 +25,22 @@ PrefabInstance:
     - target: {fileID: 5783162569802935903, guid: 07a29ae486fbd6e4db251391f5230abf,
         type: 3}
       propertyPath: m_Name
-      value: UnitBase
+      value: Builder
       objectReference: {fileID: 0}
     - target: {fileID: 5783162569802935904, guid: 07a29ae486fbd6e4db251391f5230abf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.593
+      value: -6.49
       objectReference: {fileID: 0}
     - target: {fileID: 5783162569802935904, guid: 07a29ae486fbd6e4db251391f5230abf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.17
+      value: -0.006999992
       objectReference: {fileID: 0}
     - target: {fileID: 5783162569802935904, guid: 07a29ae486fbd6e4db251391f5230abf,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.443
+      value: -6.22
       objectReference: {fileID: 0}
     - target: {fileID: 5783162569802935904, guid: 07a29ae486fbd6e4db251391f5230abf,
         type: 3}
@@ -78,6 +81,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5783162569802935905, guid: 07a29ae486fbd6e4db251391f5230abf,
+        type: 3}
+      propertyPath: team
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5783162569454990449, guid: 07a29ae486fbd6e4db251391f5230abf,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5783162569454990449, guid: 07a29ae486fbd6e4db251391f5230abf,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5783162569454990449, guid: 07a29ae486fbd6e4db251391f5230abf,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5783162569454990453, guid: 07a29ae486fbd6e4db251391f5230abf,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 5783162569454990453, guid: 07a29ae486fbd6e4db251391f5230abf,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07a29ae486fbd6e4db251391f5230abf, type: 3}

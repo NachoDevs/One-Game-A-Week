@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Resource : MonoBehaviour
 {
+    public static Transform resourcesParent;
+
+    public int resourcesLeft;
+    public int maxResources;
+
     public ResourceType resourceType;
 
     static GameManager m_gm;
 
     Renderer m_rend;
-
-    static Transform resourcesParent;
 
     // Start is called before the first frame update
     void Start()
@@ -28,11 +31,12 @@ public class Resource : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     void ResourceSetUp()
     {
+        resourcesLeft = maxResources;
+        
         Material resMat;
         switch (resourceType)
         {

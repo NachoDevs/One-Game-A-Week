@@ -31,11 +31,11 @@ public class GameManager : MonoBehaviour
     {
         Instantiate(CreateNewBuilding(BuildingType.HQ, 1));
 
-        for (int i = 0; i < 10; ++i)
+        for (int i = 0; i < 25; ++i)
         {
-            Vector3 a = UnityEngine.Random.insideUnitCircle * 5;
+            Vector3 randCirclePos = UnityEngine.Random.insideUnitCircle * 5;
 
-            Instantiate(resources[0], new Vector3(a.x, .15f, a.y), Quaternion.identity);
+            Instantiate(resources[0], new Vector3(randCirclePos.x, .15f, randCirclePos.y), Quaternion.identity);
         }
     }
 
@@ -75,12 +75,6 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-    }
-
-    public void CreateHQ()
-    {
-        toBuildBuilding = CreateNewBuilding(BuildingType.HQ, 1);
-        isBuilding = true;
     }
 
     public GameObject CreateNewBuilding(BuildingType t_type, int t_team, Vector3 t_pos = new Vector3())
@@ -137,4 +131,11 @@ public enum UnitType
 public enum ResourceType
 {
     greeResource,
+}
+
+public enum AIIntentions
+{
+    idle,
+    collectResources,
+    deliverResources,
 }

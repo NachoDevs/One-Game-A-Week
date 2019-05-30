@@ -1,17 +1,16 @@
 ﻿using UnityEngine;
-using UnityEngine.AI;
 
 public class Unit : MonoBehaviour
 {
     public int team;
+
+    public string teamName;
 
     public UnitType unitType;
 
     static GameManager m_gm;
 
     Renderer m_rend;
-
-    NavMeshAgent m_navAgent;
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +21,8 @@ public class Unit : MonoBehaviour
         }
 
         m_rend = GetComponentInChildren<Renderer>();
-        m_navAgent = GetComponentInChildren<NavMeshAgent>();
 
-        TeamSetUp();
+        UnitSetUp();
     }
 
     // Update is called once per frame
@@ -32,10 +30,9 @@ public class Unit : MonoBehaviour
     {
     }
 
-    void TeamSetUp()
+    void UnitSetUp()
     {
         Material teamMat;
-        string teamName;
         switch (team)
         {
             default:
@@ -57,7 +54,7 @@ public class Unit : MonoBehaviour
         bool parentFound = false;
         foreach (GameObject teamParent in GameObject.FindGameObjectsWithTag("TeamParent"))
         {
-            if (teamParent.name == "teamParent_" + teamName)
+            if (teamParent.name == "unitsParent_" + teamName)
             {
                 transform.parent = teamParent.transform;
                 parentFound = true;
@@ -69,11 +66,12 @@ public class Unit : MonoBehaviour
         {
             GameObject tParent = new GameObject
             {
-                name = "teamParent_" + teamName,
+                name = "unitsParent_" + teamName,
                 tag = "TeamParent"
             };
 
             transform.parent = tParent.transform;
         }
     }
+
 }
