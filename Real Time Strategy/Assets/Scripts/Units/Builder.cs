@@ -1,11 +1,13 @@
-﻿public class Collector : BuildingTypeBase
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Builder : UnitTypeBase
 {
     // Start is called before the first frame update
     void Start()
     {
         base.Start();
-
-        canBuild.Add(BuildingType.collector);
     }
 
     // Update is called once per frame
@@ -14,10 +16,8 @@
         base.Update();
     }
 
-    protected override void LeftClick()
+    protected override void Move()
     {
-        base.LeftClick();
-
+        base.Move();
     }
-
 }

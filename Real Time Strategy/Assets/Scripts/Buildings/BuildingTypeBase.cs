@@ -1,6 +1,5 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -33,22 +32,29 @@ public class BuildingTypeBase : MonoBehaviour
     {
         if(!m_gm.isBuilding)
         {
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+            Ray a = new Ray(Camera.main.ScreenToWorldPoint(Input.mousePosition), Camera.main.transform.forward);
+            if (Physics.Raycast(a, out hit))
             {
+                //Debug.DrawRay(Camera.main.ScreenToWorldPoint(Input.mousePosition), Camera.main.transform.forward * 50);
+
                 if (!m_assignedBuilding.clicked)
                 {
                     if (Input.GetMouseButtonUp(0))
                     {
-                        if (hit.transform.parent.GetComponent<Building>() == GetComponent<Building>())
+                        try
                         {
-                            m_assignedBuilding.clicked = true;
-                            m_gm.selectedBuilding = hit.transform.parent.gameObject;
-                            if (hit.transform.parent.GetComponent<Building>().owned)
+                            if (hit.transform.parent.GetComponent<Building>() == GetComponent<Building>())
                             {
-                                LeftClick();
+                                m_assignedBuilding.clicked = true;
+                                m_gm.selectedBuilding = hit.transform.parent.gameObject;
+                                if (hit.transform.parent.GetComponent<Building>().owned)
+                                {
+                                    LeftClick();
+                                }
                             }
                         }
-                    }
+                        catch (Exception e) { GameManager.PrintException(e); }
+                }
                 }
                 else
                 {
