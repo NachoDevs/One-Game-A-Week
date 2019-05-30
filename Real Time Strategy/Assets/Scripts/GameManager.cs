@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public bool isBuilding;
+
+    public int greenAmount;
 
     [HideInInspector]
     public GameObject selectedBuilding;
@@ -15,6 +18,7 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
     public Transform buildingButtonsPanel;
     public GameObject buildingButtonPrefab;
+    public TextMeshProUGUI greenText;
 
     [Space]
 

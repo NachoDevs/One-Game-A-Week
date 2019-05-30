@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourcesLeft: 0
-  maxResources: 5
+  maxResources: 100
   resourceType: 0
 --- !u!1001 &9137864887197848683
 PrefabInstance:
@@ -164,8 +164,7 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5df8ba94da10add40a76772ee87cd44a, type: 2}
-    m_RemovedComponents:
-    - {fileID: -6057140222963153312, guid: be23cd18156dde34b866aa00b0de2899, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be23cd18156dde34b866aa00b0de2899, type: 3}
 --- !u!1 &1004824594638310754 stripped
 GameObject:

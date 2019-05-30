@@ -99,6 +99,8 @@ public class Builder : UnitTypeBase
 
                 if (building != null)
                 {
+                    Unit.m_gm.greenAmount += currentCarryingAmount;
+                    Unit.m_gm.greenText.text = Unit.m_gm.greenAmount.ToString();
                     currentCarryingAmount = 0;
 
                     intentions = AIIntentions.collectResources;

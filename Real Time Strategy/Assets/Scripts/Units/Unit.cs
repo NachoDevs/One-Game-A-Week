@@ -8,7 +8,7 @@ public class Unit : MonoBehaviour
 
     public UnitType unitType;
 
-    static GameManager m_gm;
+    internal static GameManager m_gm;
 
     Renderer m_rend;
 
