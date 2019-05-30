@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourcesLeft: 0
-  maxResources: 10
+  maxResources: 5
   resourceType: 0
 --- !u!1001 &9137864887197848683
 PrefabInstance:

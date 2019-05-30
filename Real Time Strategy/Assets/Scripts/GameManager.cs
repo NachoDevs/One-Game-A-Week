@@ -31,12 +31,12 @@ public class GameManager : MonoBehaviour
     {
         Instantiate(CreateNewBuilding(BuildingType.HQ, 1));
 
-        for (int i = 0; i < 25; ++i)
-        {
-            Vector3 randCirclePos = UnityEngine.Random.insideUnitCircle * 5;
+        //for (int i = 0; i < 25; ++i)
+        //{
+        //    Vector3 randCirclePos = UnityEngine.Random.insideUnitCircle * 5;
 
-            Instantiate(resources[0], new Vector3(randCirclePos.x, .15f, randCirclePos.y), Quaternion.identity);
-        }
+        //    Instantiate(resources[0], new Vector3(randCirclePos.x, .15f, randCirclePos.y), Quaternion.identity);
+        //}
     }
 
     // Update is called once per frame

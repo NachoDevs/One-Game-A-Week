@@ -16,7 +16,6 @@ public class Builder : UnitTypeBase
     {
         base.Start();
         intentions = AIIntentions.collectResources;
-
     }
 
     // Update is called once per frame
@@ -46,7 +45,14 @@ public class Builder : UnitTypeBase
         // No target found
         if (target == null)
         {
-            intentions = AIIntentions.idle;
+            if(currentCarryingAmount > 0)
+            {
+                intentions = AIIntentions.deliverResources;
+            }
+            else
+            {
+                intentions = AIIntentions.idle;
+            }
             return;
         }
         m_navAgent.SetDestination(target.transform.position);
@@ -126,6 +132,7 @@ public class Builder : UnitTypeBase
 
     void SetTargetToClosestCollector()
     {
+        float distance = 0;
         float minDistance = float.MaxValue;
         Transform teamParent = GameObject.Find("teamParent_" + m_unitRef.teamName).transform;
         foreach (Transform building in teamParent)
@@ -140,7 +147,7 @@ public class Builder : UnitTypeBase
             }
             catch (Exception e) { GameManager.PrintException(e); continue; }
 
-            float distance = Vector3.Distance(transform.position, building.transform.position);
+            distance = Vector3.Distance(transform.position, building.transform.position);
             if (distance < minDistance)
             {
                 minDistance = distance;
