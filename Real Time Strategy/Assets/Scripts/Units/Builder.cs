@@ -146,6 +146,11 @@ public class Builder : UnitTypeBase
                 {
                     continue;
                 }
+
+                if (!building.GetComponent<Building>().isBuilded)
+                {
+                    continue;
+                }
             }
             catch (Exception e) { GameManager.PrintException(e); continue; }
 

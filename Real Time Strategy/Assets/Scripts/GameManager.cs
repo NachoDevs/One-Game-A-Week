@@ -37,7 +37,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(CreateNewBuilding(BuildingType.HQ, 1));
+        GameObject hq = Instantiate(CreateNewBuilding(BuildingType.HQ, 1));
+        hq.GetComponent<Building>().isBuilded = true;
 
         SetBuildingButtons();
 
@@ -62,10 +63,11 @@ public class GameManager : MonoBehaviour
                     //inst.layer = 2; // Ignore Raycast
                     if (Input.GetMouseButtonUp(0))
                     {
-                        Instantiate(CreateNewBuilding(inst.GetComponent<Building>().buildingType, inst.GetComponent<Building>().team, hit.point));
+                        GameObject definitive = Instantiate(CreateNewBuilding(inst.GetComponent<Building>().buildingType, inst.GetComponent<Building>().team, hit.point));
                         //inst.layer = 0; // Default 
                         isBuilding = false;
                         toBuildBuilding = null;
+                        definitive.GetComponent<Building>().isBuilded = true;
                     }
                     else if(Input.GetMouseButtonUp(1))
                     {

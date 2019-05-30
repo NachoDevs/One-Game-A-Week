@@ -7,6 +7,7 @@ public class Building : MonoBehaviour
 {
     public bool owned;
     public bool clicked;
+    public bool isBuilded;
 
     public int team;
 
