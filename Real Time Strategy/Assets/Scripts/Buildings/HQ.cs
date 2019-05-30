@@ -10,8 +10,7 @@ public class HQ : BuildingTypeBase
     {
         base.Start();
 
-        canBuild.Add(BuildingType.HQ);
-        canBuild.Add(BuildingType.collector);
+        canBuild.Add(UnitType.builder);
     }
 
     // Update is called once per frame

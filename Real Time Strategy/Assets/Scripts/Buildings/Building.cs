@@ -79,4 +79,37 @@ public class Building : MonoBehaviour
             transform.parent = tParent.transform;
         }
     }
+
+    public void QueueNewUnit(UnitType t_type, int t_team, Vector3 t_pos = new Vector3())
+    {
+        int unitCost = 0;
+        GameObject unit;
+
+        switch (t_type)
+        {
+            default:
+            case UnitType.builder:
+                unit = m_gm.units[0];
+                unitCost = 15;
+                break;
+            case UnitType.soldier:
+                unit = m_gm.units[1];
+                unitCost = 100;
+                break;
+        }
+
+        if(m_gm.greenAmount < unitCost)
+        {
+            return;
+        }
+
+        m_gm.greenAmount -= unitCost;
+        m_gm.greenText.text = m_gm.greenAmount.ToString();
+
+        unit.GetComponent<Unit>().team = t_team;
+        unit.GetComponent<Unit>().unitType = t_type;
+
+        Instantiate(unit);
+        unit.transform.position = t_pos;
+    }
 }

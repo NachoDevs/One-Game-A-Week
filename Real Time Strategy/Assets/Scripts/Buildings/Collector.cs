@@ -4,8 +4,6 @@
     void Start()
     {
         base.Start();
-
-        canBuild.Add(BuildingType.collector);
     }
 
     // Update is called once per frame

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class BuildingTypeBase : MonoBehaviour
 {
-    public List<BuildingType> canBuild;
+    public List<UnitType> canBuild;
 
     protected static GameManager m_gm;
 
@@ -24,7 +24,7 @@ public class BuildingTypeBase : MonoBehaviour
 
         m_assignedBuilding = GetComponent<Building>();
 
-        canBuild = new List<BuildingType>();
+        canBuild = new List<UnitType>();
     }
 
     // Update is called once per frame
@@ -53,7 +53,7 @@ public class BuildingTypeBase : MonoBehaviour
                                 }
                             }
                         }
-                        catch (Exception e) { GameManager.PrintException(e); }
+                        catch (Exception e) { GameManager.PrintException(e); m_gm.selectedBuilding = null; ClearUnitsPanel(); }
                 }
                 }
                 else
@@ -70,16 +70,29 @@ public class BuildingTypeBase : MonoBehaviour
 
     protected virtual void LeftClick()
     {
-        foreach (Transform child in m_gm.buildingButtonsPanel)
+        ClearUnitsPanel();
+
+        m_gm.unitsButtonsPanel.gameObject.SetActive(true);
+
+        foreach (UnitType ut in canBuild)
+        {
+            Vector3 spawnPos = Vector3.zero;
+            spawnPos.x = -transform.position.x - transform.localScale.x;
+            spawnPos.z = -transform.position.z - transform.localScale.z;
+
+            GameObject go = Instantiate(m_gm.buttonPrefab, m_gm.unitsButtonsPanel);
+            go.GetComponentInChildren<Text>().text = ut.ToString();
+            go.GetComponent<BuildingButton>().SetButtonFunctionalityForUnits(ut, spawnPos);
+        }
+    }
+
+    void ClearUnitsPanel()
+    {
+        foreach (Transform child in m_gm.unitsButtonsPanel)
         {
             Destroy(child.gameObject);
         }
 
-        foreach (BuildingType bt in canBuild)
-        {
-            GameObject go = Instantiate(m_gm.buildingButtonPrefab, m_gm.buildingButtonsPanel);
-            go.GetComponentInChildren<Text>().text = bt.ToString();
-            go.GetComponent<BuildingButton>().SetButtonFunctionality(bt);
-        }
+        m_gm.unitsButtonsPanel.gameObject.SetActive(false);
     }
 }

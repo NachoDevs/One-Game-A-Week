@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public bool isBuilding;
 
     public int greenAmount;
+    public int initialGreen = 25;
 
     [HideInInspector]
     public GameObject selectedBuilding;
@@ -17,13 +19,15 @@ public class GameManager : MonoBehaviour
 
     [Header("UI")]
     public Transform buildingButtonsPanel;
-    public GameObject buildingButtonPrefab;
+    public Transform unitsButtonsPanel;
+    public GameObject buttonPrefab;
     public TextMeshProUGUI greenText;
 
     [Space]
 
     public List<GameObject> buildings;
     public List<GameObject> resources;
+    public List<GameObject> units;
 
     public List<Material> teamMats;
     public List<Material> resourceMats;
@@ -35,12 +39,9 @@ public class GameManager : MonoBehaviour
     {
         Instantiate(CreateNewBuilding(BuildingType.HQ, 1));
 
-        //for (int i = 0; i < 25; ++i)
-        //{
-        //    Vector3 randCirclePos = UnityEngine.Random.insideUnitCircle * 5;
+        SetBuildingButtons();
 
-        //    Instantiate(resources[0], new Vector3(randCirclePos.x, .15f, randCirclePos.y), Quaternion.identity);
-        //}
+        greenAmount = initialGreen;
     }
 
     // Update is called once per frame
@@ -105,6 +106,21 @@ public class GameManager : MonoBehaviour
         building.GetComponent<Building>().owned = true;
 
         return building;
+    }
+
+    void SetBuildingButtons()
+    {
+        foreach (Transform child in buildingButtonsPanel)
+        {
+            Destroy(child.gameObject);
+        }
+
+        foreach (GameObject bt in buildings)
+        {
+            GameObject go = Instantiate(buttonPrefab, buildingButtonsPanel);
+            go.GetComponentInChildren<Text>().text = bt.GetComponent<Building>().buildingType.ToString();
+            go.GetComponent<BuildingButton>().SetButtonFunctionalityForBuildings(bt.GetComponent<Building>().buildingType);
+        }
     }
 
     public static void PrintException(Exception t_e)
