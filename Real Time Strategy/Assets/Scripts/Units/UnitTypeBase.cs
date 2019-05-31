@@ -16,8 +16,8 @@ public class UnitTypeBase : MonoBehaviour
     // Start is called before the first frame update
     protected void Start()
     {
-        m_navAgent = GetComponentInChildren<NavMeshAgent>();
-        m_unitRef = GetComponent <Unit> ();
+        m_navAgent = GetComponent<NavMeshAgent>();
+        m_unitRef = GetComponent<Unit> ();
     }
 
     // Update is called once per frame

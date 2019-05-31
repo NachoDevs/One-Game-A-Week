@@ -373,8 +373,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   intentions: 0
-  enable: 0
+  selected: 0
   m_canvas: {fileID: 0}
+--- !u!195 &5603377013461537885
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4112163245221189642}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1
+  m_Speed: 2.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 270
+  m_StoppingDistance: 5
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &4212565826608001519
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,20 +663,25 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Selectable
       objectReference: {fileID: 0}
+    - target: {fileID: 5783162569802935907, guid: 07a29ae486fbd6e4db251391f5230abf,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 84
+      objectReference: {fileID: 0}
     - target: {fileID: 5783162569802935904, guid: 07a29ae486fbd6e4db251391f5230abf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.17
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5783162569802935904, guid: 07a29ae486fbd6e4db251391f5230abf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5783162569802935904, guid: 07a29ae486fbd6e4db251391f5230abf,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.549
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5783162569802935904, guid: 07a29ae486fbd6e4db251391f5230abf,
         type: 3}
@@ -701,10 +728,10 @@ PrefabInstance:
       propertyPath: unitType
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5783162569802935907, guid: 07a29ae486fbd6e4db251391f5230abf,
+    - target: {fileID: 5783162569802935905, guid: 07a29ae486fbd6e4db251391f5230abf,
         type: 3}
-      propertyPath: m_Constraints
-      value: 84
+      propertyPath: team
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5783162569454990446, guid: 07a29ae486fbd6e4db251391f5230abf,
         type: 3}
@@ -715,6 +742,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Selectable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5783162569454990453, guid: 07a29ae486fbd6e4db251391f5230abf,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5783162569454990451, guid: 07a29ae486fbd6e4db251391f5230abf,
         type: 3}

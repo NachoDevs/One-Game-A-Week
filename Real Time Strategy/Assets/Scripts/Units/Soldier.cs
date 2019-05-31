@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Soldier : UnitTypeBase
 {
-    public bool enable = false;
+    public bool selected;
 
     [Header("UI")]
     public Canvas m_canvas;
@@ -50,6 +50,12 @@ public class Soldier : UnitTypeBase
         {
             default:
             case AIIntentions.idle:
+                if(Input.GetMouseButtonDown(0) && selected)
+                {
+                    RaycastHit hit;
+                    Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100f);
+                    m_navAgent.SetDestination(hit.point);
+                }
                 break;
         }
     }

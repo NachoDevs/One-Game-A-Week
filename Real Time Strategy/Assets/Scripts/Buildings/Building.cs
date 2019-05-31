@@ -95,7 +95,7 @@ public class Building : MonoBehaviour
                 break;
             case UnitType.soldier:
                 unit = m_gm.units[1];
-                unitCost = 100;
+                unitCost = 0;
                 break;
         }
 

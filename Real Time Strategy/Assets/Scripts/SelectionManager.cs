@@ -89,6 +89,8 @@ public class SelectionManager : MonoBehaviour
 
                 mouseDragStartPosition = Input.mousePosition;
 
+                print(hit.collider.gameObject.name);
+
                 //click to select unit, or click the ground to deselect all
                 if (hit.collider.gameObject.tag == "Selectable")
                 {
@@ -136,8 +138,9 @@ public class SelectionManager : MonoBehaviour
             {
                 for (int i = 0; i < currentlySelectedUnits.Count; i++)
                 {
-                    currentlySelectedUnits[i].GetComponent<Soldier>().m_canvas.enabled = false;
                     currentlySelectedUnits.Remove(currentlySelectedUnits[i]);
+                    currentlySelectedUnits[i].GetComponent<Soldier>().m_canvas.enabled = false;
+                    currentlySelectedUnits[i].GetComponent<Soldier>().selected = false;
                 }
             }
             else if (currentlySelectedUnits.Count == 0)
@@ -186,18 +189,15 @@ public class SelectionManager : MonoBehaviour
         foreach (GameObject go in m_gm.soldiers)
         {
             Unit goU = go.GetComponent<Unit>();
-            if (go.GetComponent<Soldier>().m_canvas.enabled)
-            {
-                Vector2 unitScreenPosition = m_cam.WorldToScreenPoint(go.transform.position);
+            Vector2 unitScreenPosition = m_cam.WorldToScreenPoint(go.transform.position);
 
-                if (unitScreenPosition.x < boxFinish.x && unitScreenPosition.y > boxFinish.y && unitScreenPosition.x > boxStart.x && unitScreenPosition.y < boxStart.y)
-                {
-                    AddToCurrentlySelectedUnits(go);
-                }
-                else
-                {
-                    RemoveFromCurrentlySelectedUnits(go);
-                }
+            if (unitScreenPosition.x < boxFinish.x && unitScreenPosition.y > boxFinish.y && unitScreenPosition.x > boxStart.x && unitScreenPosition.y < boxStart.y)
+            {
+                AddToCurrentlySelectedUnits(go);
+            }
+            else
+            {
+                RemoveFromCurrentlySelectedUnits(go);
             }
         }
     }
@@ -208,6 +208,7 @@ public class SelectionManager : MonoBehaviour
         {
             currentlySelectedUnits.Add(unitToAdd);
             unitToAdd.GetComponent<Soldier>().m_canvas.enabled = true;
+            unitToAdd.GetComponent<Soldier>().selected = true;
         }
     }
 
@@ -215,19 +216,22 @@ public class SelectionManager : MonoBehaviour
     {
         if (currentlySelectedUnits.Count > 0)
         {
-            unitToRemove.GetComponent<Soldier>().m_canvas.enabled = false;
             currentlySelectedUnits.Remove(unitToRemove);
+            unitToRemove.GetComponent<Soldier>().m_canvas.enabled = false;
+            unitToRemove.GetComponent<Soldier>().selected = false;
         }
     }
 
     private void DeselectAll()
     {
+        selectedUnit = null;
         if (currentlySelectedUnits.Count > 0)
         {
             for (int i = 0; i < currentlySelectedUnits.Count; i++)
             {
-                currentlySelectedUnits[i].GetComponent<Soldier>().m_canvas.enabled = false;
                 currentlySelectedUnits.Remove(currentlySelectedUnits[i]);
+                currentlySelectedUnits[i].GetComponent<Soldier>().m_canvas.enabled = false;
+                currentlySelectedUnits[i].GetComponent<Soldier>().selected = false;
             }
         }
         else if (currentlySelectedUnits.Count == 0)

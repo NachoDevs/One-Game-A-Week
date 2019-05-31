@@ -11,6 +11,7 @@ public class HQ : BuildingTypeBase
         base.Start();
 
         canBuild.Add(UnitType.builder);
+        canBuild.Add(UnitType.soldier);
     }
 
     // Update is called once per frame
