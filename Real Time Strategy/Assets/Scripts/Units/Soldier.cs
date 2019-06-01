@@ -45,16 +45,20 @@ public class Soldier : UnitTypeBase
     {
         base.HandleAI();
 
+        if(Input.GetMouseButtonDown(1) && selected)
+        {
+            RaycastHit hit;
+            Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100f);
+            m_navAgent.SetDestination(hit.point);
+        }
+
         switch (intentions)
         {
             default:
             case AIIntentions.idle:
-                if(Input.GetMouseButtonDown(0) && selected)
-                {
-                    RaycastHit hit;
-                    Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100f);
-                    m_navAgent.SetDestination(hit.point);
-                }
+                break;
+            case AIIntentions.attack:
+                print("I am attacking");
                 break;
         }
     }
@@ -65,8 +69,23 @@ public class Soldier : UnitTypeBase
         {
             default:
             case AIIntentions.idle:
-                return;
+                if (t_other.gameObject.GetComponentInParent<Building>() != null)
+                {
+                    if (t_other.gameObject.GetComponentInParent<Building>().team != m_unitRef.team)
+                    {
+                        target = t_other.transform.parent.gameObject;
+                        transform.LookAt(target.transform);
+                        Attack();
+                    }
+                }
+                break;
         }
+    }
+
+    void Attack()
+    {
+        m_navAgent.SetDestination(transform.position);
+        intentions = AIIntentions.attack;
     }
 
     void SetMaterials()
@@ -74,6 +93,15 @@ public class Soldier : UnitTypeBase
         foreach (Transform meshPart in GetComponentInChildren<Renderer>().transform)
         {
             meshPart.GetComponent<Renderer>().material = m_unitRef.teamMat;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.transform.parent.gameObject == target)
+        {
+            target = null;
+            intentions = AIIntentions.idle;
         }
     }
 }

@@ -168,4 +168,5 @@ public enum AIIntentions
     idle,
     collectResources,
     deliverResources,
+    attack,
 }

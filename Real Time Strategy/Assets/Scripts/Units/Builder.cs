@@ -139,15 +139,22 @@ public class Builder : UnitTypeBase
         Transform teamParent = GameObject.Find("teamParent_" + m_unitRef.teamName).transform;
         foreach (Transform building in teamParent)
         {
-            // If the building doesn't is a collector, we continue iterating
             try
             {
+                // If the building doesn't is a collector, we continue iterating
                 if(building.GetComponent<Collector>() == null)
                 {
                     continue;
                 }
 
+                // If it is bing build, we continue iterating
                 if (!building.GetComponent<Building>().isBuilded)
+                {
+                    continue;
+                }
+
+                // If it is not from our team, we continue iterating
+                if (m_unitRef.team != building.GetComponent<Building>().team)
                 {
                     continue;
                 }
