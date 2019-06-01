@@ -39,9 +39,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject hq = Instantiate(CreateNewBuilding(BuildingType.HQ, 1));
-        hq.GetComponent<Building>().isBuilded = true;
-
         soldiers = new List<GameObject>();
 
         greenAmount = initialGreen;
