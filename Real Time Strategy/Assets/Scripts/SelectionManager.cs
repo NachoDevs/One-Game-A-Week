@@ -141,9 +141,9 @@ public class SelectionManager : MonoBehaviour
             {
                 for (int i = 0; i < currentlySelectedUnits.Count; i++)
                 {
-                    currentlySelectedUnits.Remove(currentlySelectedUnits[i]);
                     currentlySelectedUnits[i].GetComponent<Soldier>().m_canvas.enabled = false;
                     currentlySelectedUnits[i].GetComponent<Soldier>().selected = false;
+                    currentlySelectedUnits.Remove(currentlySelectedUnits[i]);
                 }
             }
             else if (currentlySelectedUnits.Count == 0)
@@ -209,9 +209,9 @@ public class SelectionManager : MonoBehaviour
     {
         if (!currentlySelectedUnits.Contains(unitToAdd))
         {
-            currentlySelectedUnits.Add(unitToAdd);
             unitToAdd.GetComponent<Soldier>().m_canvas.enabled = true;
             unitToAdd.GetComponent<Soldier>().selected = true;
+            currentlySelectedUnits.Add(unitToAdd);
         }
     }
 
@@ -219,9 +219,9 @@ public class SelectionManager : MonoBehaviour
     {
         if (currentlySelectedUnits.Count > 0)
         {
-            currentlySelectedUnits.Remove(unitToRemove);
             unitToRemove.GetComponent<Soldier>().m_canvas.enabled = false;
             unitToRemove.GetComponent<Soldier>().selected = false;
+            currentlySelectedUnits.Remove(unitToRemove);
         }
     }
 
@@ -232,9 +232,9 @@ public class SelectionManager : MonoBehaviour
         {
             for (int i = 0; i < currentlySelectedUnits.Count; i++)
             {
-                currentlySelectedUnits.Remove(currentlySelectedUnits[i]);
                 currentlySelectedUnits[i].GetComponent<Soldier>().m_canvas.enabled = false;
                 currentlySelectedUnits[i].GetComponent<Soldier>().selected = false;
+                currentlySelectedUnits.Remove(currentlySelectedUnits[i]);
             }
         }
         else if (currentlySelectedUnits.Count == 0)

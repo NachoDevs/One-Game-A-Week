@@ -41,7 +41,6 @@ public class Soldier : UnitTypeBase
         }
     }
 
-
     protected override void HandleAI()
     {
         base.HandleAI();

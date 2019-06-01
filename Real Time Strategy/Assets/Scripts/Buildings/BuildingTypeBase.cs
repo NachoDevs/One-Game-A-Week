@@ -70,19 +70,24 @@ public class BuildingTypeBase : MonoBehaviour
 
     protected virtual void LeftClick()
     {
-        ClearUnitsPanel();
-
-        m_gm.unitsButtonsPanel.gameObject.SetActive(true);
-
-        foreach (UnitType ut in canBuild)
+        if(canBuild.Count > 0)
         {
-            Vector3 spawnPos = Vector3.zero;
-            spawnPos.x = -transform.position.x - transform.localScale.x;
-            spawnPos.z = -transform.position.z - transform.localScale.z;
+            ClearUnitsPanel();
 
-            GameObject go = Instantiate(m_gm.buttonPrefab, m_gm.unitsButtonsPanel);
-            go.GetComponentInChildren<Text>().text = ut.ToString();
-            go.GetComponent<BuildingButton>().SetButtonFunctionalityForUnits(ut, spawnPos);
+            m_gm.unitsButtonsPanel.gameObject.SetActive(true);
+
+            foreach (UnitType ut in canBuild)
+            {
+                Vector3 spawnPos = Vector3.zero;
+                spawnPos.x = transform.position.x - 2 * transform.localScale.x;
+                spawnPos.z = transform.position.z - 2 * transform.localScale.z;
+                print("----"+transform.position);
+                print("----" + spawnPos);
+
+                GameObject go = Instantiate(m_gm.buttonPrefab, m_gm.unitsButtonsPanel);
+                go.GetComponentInChildren<Text>().text = ut.ToString();
+                go.GetComponent<BuildingButton>().SetButtonFunctionalityForUnits(ut, spawnPos);
+            }
         }
     }
 
