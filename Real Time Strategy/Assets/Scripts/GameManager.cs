@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public bool isBuilding;
 
     public int greenAmount;
-    public int initialGreen = 25;
+    public int initialGreen = 95;
 
     [HideInInspector]
     public GameObject selectedBuilding;
@@ -44,9 +44,10 @@ public class GameManager : MonoBehaviour
 
         soldiers = new List<GameObject>();
 
-        SetBuildingButtons();
-
         greenAmount = initialGreen;
+        greenText.text = greenAmount.ToString();
+
+        SetBuildingButtons();
     }
 
     // Update is called once per frame
@@ -101,13 +102,15 @@ public class GameManager : MonoBehaviour
             case BuildingType.collector:
                 building = buildings[1];
                 break;
+            case BuildingType.barracks:
+                building = buildings[2];
+                break;
         }
 
         building.transform.position = t_pos;
 
         building.GetComponent<Building>().team = t_team;
         building.GetComponent<Building>().buildingType = t_type;
-
 
         building.GetComponent<Building>().owned = true;
 
@@ -146,6 +149,7 @@ public enum BuildingType
 {
     HQ,
     collector,
+    barracks,
 }
 
 public enum UnitType

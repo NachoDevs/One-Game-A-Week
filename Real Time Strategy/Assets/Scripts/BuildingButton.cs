@@ -31,6 +31,25 @@ public class BuildingButton : MonoBehaviour
 
         m_button.onClick.AddListener(delegate 
         {
+            int unitCost = 0;
+            switch (t_type)
+            {
+                default:
+                case UnitType.builder:
+                    unitCost = 15;
+                    break;
+                case UnitType.soldier:
+                    unitCost = 100;
+                    break;
+            }
+
+            if (m_gm.greenAmount < unitCost)
+            {
+                return;
+            }
+
+            m_gm.greenAmount -= unitCost;
+
             m_gm.selectedBuilding.GetComponent<Building>().QueueNewUnit(t_type, 1, t_spawnPos);
         });
     }
@@ -49,6 +68,28 @@ public class BuildingButton : MonoBehaviour
 
         m_button.onClick.AddListener(delegate
         {
+            int buildCost = 0;
+            switch (t_type)
+            {
+                default:
+                case BuildingType.HQ:
+                    buildCost = 500;
+                    break;
+                case BuildingType.collector:
+                    buildCost = 75;
+                    break;
+                case BuildingType.barracks:
+                    buildCost = 150;
+                    break;
+            }
+
+            if (m_gm.greenAmount < buildCost)
+            {
+                return;
+            }
+
+            m_gm.greenAmount -= buildCost;
+
             m_gm.toBuildBuilding = m_gm.CreateNewBuilding(t_type, 1); m_gm.isBuilding = true;
         });
     }

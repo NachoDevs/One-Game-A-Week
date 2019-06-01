@@ -50,7 +50,10 @@ public class SelectionManager : MonoBehaviour
 
     private void Update()
     {
-        SelectUnitsFSM();
+        if(!m_gm.isBuilding)
+        {
+            SelectUnitsFSM();
+        }
     }
 
     private void OnGUI()
@@ -97,7 +100,7 @@ public class SelectionManager : MonoBehaviour
                     selectedUnit = hit.collider.transform.parent.gameObject;
                     selectFSM = SelectFSM.clickSelect;
                 }
-                else if (hit.collider.gameObject.tag == "Terrain")
+                else /*if (hit.collider.gameObject.tag == "Terrain")*/
                 {
                     selectFSM = SelectFSM.clickDeselect;
                 }

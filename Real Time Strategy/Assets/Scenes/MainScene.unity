@@ -164,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBuilding: 0
   greenAmount: 0
-  initialGreen: 25
+  initialGreen: 95
   selectedBuilding: {fileID: 0}
   toBuildBuilding: {fileID: 0}
   buildingButtonsPanel: {fileID: 983028133}
@@ -175,6 +175,7 @@ MonoBehaviour:
   buildings:
   - {fileID: 3306186943874153100, guid: f74de68a030054049b763164ef602acf, type: 3}
   - {fileID: 295918327550716052, guid: 75700cb5b5c565a468a0b872da7f8aa7, type: 3}
+  - {fileID: 3357475443105081907, guid: 5487fbb7a54a2bb4d91e39992a080ec5, type: 3}
   resources:
   - {fileID: 9137864887756729636, guid: 7b39fc029fa046048b1a120e1cc83f36, type: 3}
   units:
