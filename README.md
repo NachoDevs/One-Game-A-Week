@@ -34,7 +34,7 @@ This is a list with all the topics I want to tackle, the ones already ticked are
 - [x] Social game(relations with npcs); 08->14.04.19; Unity 2018.3.0.f2
 - [ ] Stealth game
 - [x] Tower defense; 11->17.03.19; Unity 2018.3.0.f2
-- [ ] Town building game; 03 -> 09.06.19; https://trello.com/b/34wuhdKN/town-building-game; Unity 2019.1.4.f1
+- [ ] Town building game; 03->09.06.19; https://trello.com/b/34wuhdKN/town-building-game; Unity 2019.1.4.f1
 - [x] Turn based game; 15->21.04.19; Unity 2018.3.0.f2
 - [x] 3rd person shoot and cover game; 04->10.03.19; Unity 2018.3.0.f2
 
