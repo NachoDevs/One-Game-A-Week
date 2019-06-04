@@ -11,12 +11,15 @@ public enum TileState
 
 public class WorldTile : MonoBehaviour
 {
+    public TileState tileState;
+
     public bool walkable = true;
     public bool selected = false;
+    //public bool hovered = false;
 
     public int gridX, gridY;        // Location on grid
 
-    public List<WorldTile> myNeighbours;
+    public List<WorldTile> neighbours;
 
     public WorldTile parent;
 
@@ -25,10 +28,13 @@ public class WorldTile : MonoBehaviour
     void Start()
     {
         m_sp = GetComponentInChildren<SpriteRenderer>();
+        UpdateTIle(TileState.Default);
     }
 
     public void UpdateTIle(TileState t_state)
     {
+        tileState = t_state;
+
         switch (t_state)
         {
             case TileState.Hovered:
@@ -46,7 +52,10 @@ public class WorldTile : MonoBehaviour
                 }
                 break;
             default:
-                m_sp.color = new Color(0, 0, 0, .05f);
+                //if(!hovered)
+                //{
+                    m_sp.color = new Color(0, 0, 0, 0);
+                //}
                 selected = false;
                 break;
         }

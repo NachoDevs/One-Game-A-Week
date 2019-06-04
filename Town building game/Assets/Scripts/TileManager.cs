@@ -71,7 +71,7 @@ public class TileManager : MonoBehaviour
                         //if we want to add an unwalkable edge round our unwalkable nodes then we use this to get the neighbours and make them unwalkable
                         if (unwalkableNodeBorder > 0)
                         {
-                            List<TileBase> neighbours = getNeighbouringTiles(xCount, yCount, t);
+                            List<TileBase> neighbours = GetNeighbouringTiles(xCount, yCount, t);
                             foreach (TileBase tl in neighbours)
                             {
                                 if (tl == null)
@@ -156,7 +156,7 @@ public class TileManager : MonoBehaviour
                 {
                     WorldTile wt = nodes[x, y].GetComponent<WorldTile>(); //if they do then assign the neighbours
                     //if (wt.walkable == true) {
-                        wt.myNeighbours = GetNeighbours(x, y, gridBoundX, gridBoundY);
+                        wt.neighbours = GetNeighbours(x, y, gridBoundX, gridBoundY);
                     //}
                 }
             }
@@ -164,7 +164,7 @@ public class TileManager : MonoBehaviour
         //after this we have our grid of nodes ready to be used by the astar algorigthm
     }
 
-    public List<TileBase> getNeighbouringTiles(int x, int y, Tilemap t)
+    public List<TileBase> GetNeighbouringTiles(int x, int y, Tilemap t)
     {
         List<TileBase> retVal = new List<TileBase>();
 
@@ -670,14 +670,14 @@ public class TileManager : MonoBehaviour
         return myNeighbours;
     }
 
-    public WorldTile GetTile(int t_x, int t_y)
+    public WorldTile GetTile(float t_x, float t_y)
     {
         foreach (var tile in unsortedNodes)
         {
             WorldTile wt = tile.GetComponent<WorldTile>();
             if (wt.walkable)
             {
-                if (wt.gridX == t_x && wt.gridY == t_y)
+                if (Mathf.Abs(wt.transform.position.x - t_x) < .5f && Mathf.Abs(wt.transform.position.y - t_y) < .5f)
                 {
                     return wt;
                 }
