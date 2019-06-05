@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum GameState
 {
@@ -10,10 +12,12 @@ public enum GameState
 public class GameManager : MonoBehaviour
 {
     [Header("Prefabs")]
-    public GameObject buildingPrefab;
+    public GameObject buttonPrefab;
+    public List<GameObject> buildings;
 
     [Header("Parents")]
     public Transform buildingParent;
+    public Transform buildingButtonParent;
 
     GameState m_currGameState;
 
@@ -23,6 +27,7 @@ public class GameManager : MonoBehaviour
 
     GameObject m_selectedObject;
     GameObject m_hoveredObject;
+    GameObject m_selectedBulding;
 
     TileManager m_tman;
 
@@ -41,6 +46,37 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         m_previousTile = m_tman.GetTile(0, 0);
+
+        foreach(GameObject building in buildings)
+        {
+            GameObject button = Instantiate(buttonPrefab, buildingButtonParent);
+            button.GetComponentsInChildren<Image>()[1].sprite = building.GetComponentInChildren<SpriteRenderer>().sprite;
+
+            button.GetComponent<Button>().onClick.AddListener(delegate
+            {
+                switch(building.GetComponentInChildren<SpriteRenderer>().sprite.name)
+                {
+                    default:
+                    case "bakery":
+                        m_selectedBulding = buildings[0];
+                        break;
+                    case "farm":
+                        m_selectedBulding = buildings[1];
+                        break;
+                    case "lumber":
+                        m_selectedBulding = buildings[2];
+                        break;
+                    case "mine":
+                        m_selectedBulding = buildings[3];
+                        break;
+                    case "windmill":
+                        m_selectedBulding = buildings[4];
+                        break;
+                }
+
+                m_currGameState = GameState.Building;
+            });
+        }
     }
 
     // Update is called once per frame
@@ -56,11 +92,18 @@ public class GameManager : MonoBehaviour
             case GameState.Building:
                 TileSelectionBehaviour();
 
-                if (Input.GetMouseButtonUp(0))
+                if(m_hit.collider.transform.parent.gameObject.GetComponent<WorldTile>() != null)
                 {
-                    GameObject building = Instantiate(buildingPrefab, m_currentTile.transform.position, Quaternion.identity, buildingParent);
+                    Destroy(Instantiate(m_selectedBulding, m_currentTile.transform.position, Quaternion.identity, buildingParent), .02f);
+                    if(Input.GetMouseButtonUp(0))
+                    {
+                        GameObject building = Instantiate(m_selectedBulding, m_currentTile.transform.position, Quaternion.identity, buildingParent);
+                        building.GetComponent<Building>().isBuilded = true;
+                        m_hoveredObject.GetComponent<WorldTile>().UpdateTIle(TileState.Default);
+                        m_currGameState = GameState.TileSelecting;
+                    }
                 }
-
+        
                 break;
             default:
             case GameState.TileSelecting:
@@ -74,6 +117,7 @@ public class GameManager : MonoBehaviour
         try
         {
             m_hit = Physics2D.Raycast(m_cam.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            // Not checking if it is a WorldTile might cause bugs?
             m_hoveredObject = m_hit.collider.transform.parent.gameObject;
 
             m_previousTile = m_currentTile;
@@ -123,6 +167,13 @@ public class GameManager : MonoBehaviour
 
         if (m_selectedObject.GetComponent<Building>() != null)
         {
+            // If we are placing the building
+            if(!m_selectedObject.GetComponent<Building>().isBuilded)
+            {
+                m_hoveredObject = m_tman.GetTile(m_hoveredObject.transform.position.x, m_hoveredObject.transform.position.y).gameObject;
+                return;
+            }
+
             print("this is a building");
 
             return;

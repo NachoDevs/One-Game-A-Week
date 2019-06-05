@@ -47,6 +47,7 @@ public class TileManager : MonoBehaviour
 
                 //go through our world bounds in increments of 1
                 TileBase tb = floor.GetTile(new Vector3Int(xCount, yCount, 0)); //check if we have a floor tile at that world coords
+
                 if (tb == null)
                 {
                 }
@@ -96,6 +97,13 @@ public class TileManager : MonoBehaviour
                         unsortedNodes.Add(node);
 
                         node.name = gridX.ToString() + " : " + gridY.ToString() + " - NODE";
+
+                        Vector3Int pos = new Vector3Int();
+                        ITilemap itilemap = null;
+                        TileData td = new TileData();
+                        tb.GetTileData(pos, itilemap, ref td);
+
+                        wt.SetWorldTileType(td.sprite.name);
                     }
                     else
                     {

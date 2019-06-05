@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public enum TileState
@@ -8,9 +9,17 @@ public enum TileState
     Selected
 }
 
+public enum TileType
+{
+    grass,
+    trees,
+    rocks
+}
+
 public class WorldTile : MonoBehaviour
 {
     public TileState tileState;
+    public TileType tileType;
 
     public bool walkable = true;
     public bool selected = false;
@@ -58,5 +67,10 @@ public class WorldTile : MonoBehaviour
                 selected = false;
                 break;
         }
+    }
+
+    internal void SetWorldTileType(string t_name)
+    {
+        Enum.TryParse<TileType>(t_name, out tileType);
     }
 }
