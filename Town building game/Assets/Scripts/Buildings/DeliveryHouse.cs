@@ -8,7 +8,8 @@ public class DeliveryHouse : Building
     void Start()
     {
         base.Start();
-        maxStorageCapacity = 100;
+        hasPopUp = false;
+        maxStorageCapacity = 50;
         productionRate = 5;
     }
 
@@ -16,5 +17,9 @@ public class DeliveryHouse : Building
     void Update()
     {
         base.Update();
+    }
+
+    public override void Clicked()
+    {
     }
 }

@@ -31,13 +31,14 @@ public class GameManager : MonoBehaviour
     public Transform buildingButtonParent;
     public Transform resourcesParent;
 
+    public Dictionary<ResourceType, int> resourceCount;
+
     GameState m_currGameState;
 
     RaycastHit2D m_hit;
 
     Camera m_cam;
 
-    Dictionary<ResourceType, int> resourceCount;
     Dictionary<ResourceType, TextMeshProUGUI> resourceText;
 
     GameObject m_selectedObject;
@@ -63,6 +64,7 @@ public class GameManager : MonoBehaviour
         m_currentTile = m_tman.GetTile(0, 0);
 
         resourceCount = new Dictionary<ResourceType, int>();
+        resourceText = new Dictionary<ResourceType, TextMeshProUGUI>();
 
         foreach (GameObject building in buildings)
         {
@@ -111,6 +113,8 @@ public class GameManager : MonoBehaviour
             resourceCount.Add(rt, 0);
             resourceText.Add(rt, panel.GetComponentInChildren<TextMeshProUGUI>());
         }
+
+        UpdateResource(ResourceType.wood, 50);
     }
 
     // Update is called once per frame
@@ -132,23 +136,35 @@ public class GameManager : MonoBehaviour
             case GameState.Building:
                 TileSelectionBehaviour();
 
+                if(!m_selectedBulding.GetComponent<Building>().CanAfford())
+                {
+                    m_currGameState = GameState.TileSelecting;
+                    break;
+                }
+
+                if (!m_selectedBulding.GetComponent<Building>().CanBuildHere(m_hoveredObject))
+                {
+                    break;
+                }
+
                 WorldTile hitWT = null;
                 try
                 {
                     hitWT = m_hit.collider.transform.parent.gameObject.GetComponent<WorldTile>();
-                }
-                catch (Exception e) { /*print("The mouse is not over a tile");*/ }
-
-                if (hitWT != null)
-                {
-                    Destroy(Instantiate(m_selectedBulding, m_currentTile.transform.position, Quaternion.identity, buildingParent), .02f);
-                    if(Input.GetMouseButtonUp(0))
+                    if(hitWT == null)
                     {
-                        GameObject building = Instantiate(m_selectedBulding, m_currentTile.transform.position, Quaternion.identity, buildingParent);
-                        building.GetComponent<Building>().isBuilded = true;
-                        m_hoveredObject.GetComponent<WorldTile>().UpdateTIle(TileState.Default);
-                        m_currGameState = GameState.TileSelecting;
+                        return;
                     }
+                }
+                catch (Exception e) { /*print("The mouse is not over a tile");*/ return; }
+
+                Destroy(Instantiate(m_selectedBulding, m_currentTile.transform.position, Quaternion.identity, buildingParent), .02f);
+                if(Input.GetMouseButtonUp(0))
+                {
+                    GameObject building = Instantiate(m_selectedBulding, m_currentTile.transform.position, Quaternion.identity, buildingParent);
+                    building.GetComponent<Building>().Build();
+                    m_hoveredObject.GetComponent<WorldTile>().UpdateTIle(TileState.Default);
+                    m_currGameState = GameState.TileSelecting;
                 }
 
                 break;
@@ -221,6 +237,8 @@ public class GameManager : MonoBehaviour
                 m_hoveredObject = m_tman.GetTile(m_hoveredObject.transform.position.x, m_hoveredObject.transform.position.y).gameObject;
                 return;
             }
+
+            m_selectedObject.GetComponent<Building>().Clicked();
 
             return;
         }

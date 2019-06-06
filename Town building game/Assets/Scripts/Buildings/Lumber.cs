@@ -8,7 +8,7 @@ public class Lumber : Building
     void Start()
     {
         base.Start();
-        maxStorageCapacity = 100;
+        maxStorageCapacity = 50;
         productionRate = 5;
     }
 
@@ -16,5 +16,10 @@ public class Lumber : Building
     void Update()
     {
         base.Update();
+    }
+
+    public override void Clicked()
+    {
+        base.Clicked();
     }
 }

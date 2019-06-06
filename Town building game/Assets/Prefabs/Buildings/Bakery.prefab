@@ -13,7 +13,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBuilded: 0
+  woodCost: 500
+  stoneCost: 200
+  wheatCost: 100
+  breadCost: 0
+  maxStorageCapacity: 50
+  whereToBuild: 0
   fullPopUp: {fileID: 1529445303039697002}
+  resource: {fileID: 21300000, guid: 4d2966ab2c1445b43a18d08c415870e0, type: 3}
 --- !u!1001 &8002988792231368821
 PrefabInstance:
   m_ObjectHideFlags: 0

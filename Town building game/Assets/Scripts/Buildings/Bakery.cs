@@ -18,4 +18,9 @@ public class Bakery : Building
     {
         base.Update();
     }
+
+    public override void Clicked()
+    {
+        base.Clicked();
+    }
 }

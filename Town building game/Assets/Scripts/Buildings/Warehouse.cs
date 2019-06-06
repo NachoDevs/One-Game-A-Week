@@ -8,6 +8,7 @@ public class Warehouse : Building
     void Start()
     {
         base.Start();
+        hasPopUp = false;
         maxStorageCapacity = 100;
         productionRate = 5;
     }
@@ -16,5 +17,9 @@ public class Warehouse : Building
     void Update()
     {
         base.Update();
+    }
+
+    public override void Clicked()
+    {
     }
 }
