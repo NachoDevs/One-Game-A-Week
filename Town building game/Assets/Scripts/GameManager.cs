@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,21 +10,35 @@ public enum GameState
     Building,
 }
 
+public enum ResourceType
+{
+    wood,
+    stone,
+    wheat,
+    bread,
+}
+
 public class GameManager : MonoBehaviour
 {
     [Header("Prefabs")]
     public GameObject buttonPrefab;
+    public GameObject resourcePanelPrefab;
     public List<GameObject> buildings;
+    public List<Sprite> resources;
 
     [Header("Parents")]
     public Transform buildingParent;
     public Transform buildingButtonParent;
+    public Transform resourcesParent;
 
     GameState m_currGameState;
 
     RaycastHit2D m_hit;
 
     Camera m_cam;
+
+    Dictionary<ResourceType, int> resourceCount;
+    Dictionary<ResourceType, TextMeshProUGUI> resourceText;
 
     GameObject m_selectedObject;
     GameObject m_hoveredObject;
@@ -47,6 +62,8 @@ public class GameManager : MonoBehaviour
     {
         m_currentTile = m_tman.GetTile(0, 0);
 
+        resourceCount = new Dictionary<ResourceType, int>();
+
         foreach (GameObject building in buildings)
         {
             GameObject button = Instantiate(buttonPrefab, buildingButtonParent);
@@ -60,22 +77,39 @@ public class GameManager : MonoBehaviour
                     case "bakery":
                         m_selectedBulding = buildings[0];
                         break;
-                    case "farm":
+                    case "deliveryHouse":
                         m_selectedBulding = buildings[1];
                         break;
-                    case "lumber":
+                    case "farm":
                         m_selectedBulding = buildings[2];
                         break;
-                    case "mine":
+                    case "lumber":
                         m_selectedBulding = buildings[3];
                         break;
-                    case "windmill":
+                    case "mine":
                         m_selectedBulding = buildings[4];
+                        break;
+                    case "warehouse":
+                        m_selectedBulding = buildings[5];
+                        break;
+                    case "windmill":
+                        m_selectedBulding = buildings[6];
                         break;
                 }
 
                 m_currGameState = GameState.Building;
             });
+        }
+
+        foreach(Sprite res in resources)
+        {
+            GameObject panel = Instantiate(resourcePanelPrefab, resourcesParent);
+            panel.GetComponentsInChildren<Image>()[1].sprite = res;
+            panel.GetComponentInChildren<TextMeshProUGUI>().text = 0.ToString();
+            ResourceType rt;
+            Enum.TryParse(res.name, out rt);
+            resourceCount.Add(rt, 0);
+            resourceText.Add(rt, panel.GetComponentInChildren<TextMeshProUGUI>());
         }
     }
 
@@ -83,6 +117,12 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         HandleGameState();
+    }
+
+    public void UpdateResource(ResourceType t_rType, int t_amount)
+    {
+        resourceCount[t_rType] += t_amount;
+        resourceText[t_rType].text = resourceCount[t_rType].ToString();
     }
 
     private void HandleGameState()
@@ -181,8 +221,6 @@ public class GameManager : MonoBehaviour
                 m_hoveredObject = m_tman.GetTile(m_hoveredObject.transform.position.x, m_hoveredObject.transform.position.y).gameObject;
                 return;
             }
-
-            print("this is a building");
 
             return;
         }

@@ -14,6 +14,11 @@ public class Building : MonoBehaviour
 {
     public bool isBuilded;
 
+    public int woodCost;
+    public int stoneCost;
+    public int wheatCost;
+    public int breadCost;
+
     public GameObject fullPopUp;
 
     protected int maxStorageCapacity;
