@@ -45,9 +45,9 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        m_previousTile = m_tman.GetTile(0, 0);
+        m_currentTile = m_tman.GetTile(0, 0);
 
-        foreach(GameObject building in buildings)
+        foreach (GameObject building in buildings)
         {
             GameObject button = Instantiate(buttonPrefab, buildingButtonParent);
             button.GetComponentsInChildren<Image>()[1].sprite = building.GetComponentInChildren<SpriteRenderer>().sprite;
@@ -92,7 +92,14 @@ public class GameManager : MonoBehaviour
             case GameState.Building:
                 TileSelectionBehaviour();
 
-                if(m_hit.collider.transform.parent.gameObject.GetComponent<WorldTile>() != null)
+                WorldTile hitWT = null;
+                try
+                {
+                    hitWT = m_hit.collider.transform.parent.gameObject.GetComponent<WorldTile>();
+                }
+                catch (Exception e) { /*print("The mouse is not over a tile");*/ }
+
+                if (hitWT != null)
                 {
                     Destroy(Instantiate(m_selectedBulding, m_currentTile.transform.position, Quaternion.identity, buildingParent), .02f);
                     if(Input.GetMouseButtonUp(0))
@@ -103,7 +110,7 @@ public class GameManager : MonoBehaviour
                         m_currGameState = GameState.TileSelecting;
                     }
                 }
-        
+
                 break;
             default:
             case GameState.TileSelecting:
@@ -114,37 +121,38 @@ public class GameManager : MonoBehaviour
 
     void TileSelectionBehaviour()
     {
+        m_hit = Physics2D.Raycast(m_cam.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+        // Not checking if it is a WorldTile might cause bugs?
+
         try
         {
-            m_hit = Physics2D.Raycast(m_cam.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            // Not checking if it is a WorldTile might cause bugs?
             m_hoveredObject = m_hit.collider.transform.parent.gameObject;
+        }
+        catch (Exception e) { /*PrintException(e);*/ return; }
 
-            m_previousTile = m_currentTile;
+        m_previousTile = m_currentTile;
 
-            m_currentTile = m_tman.GetTile(m_hoveredObject.transform.position.x, m_hoveredObject.transform.position.y);
+        m_currentTile = m_tman.GetTile(m_hoveredObject.transform.position.x, m_hoveredObject.transform.position.y);
 
-            if (!m_currentTile.selected)
+        if (!m_currentTile.selected)
+        {
+            m_currentTile.UpdateTIle(TileState.Hovered);
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            m_selectedObject = m_hoveredObject;
+
+            HandleSelection();
+        }
+
+        if (!m_previousTile.selected)
+        {
+            if (m_previousTile != m_currentTile)
             {
-                m_currentTile.UpdateTIle(TileState.Hovered);
-            }
-
-            if (Input.GetMouseButtonUp(0))
-            {
-                m_selectedObject = m_hoveredObject;
-
-                HandleSelection();
-            }
-
-            if (!m_previousTile.selected)
-            {
-                if (m_previousTile != m_currentTile)
-                {
-                    m_previousTile.UpdateTIle(TileState.Default);
-                }
+                m_previousTile.UpdateTIle(TileState.Default);
             }
         }
-        catch (Exception e) { /*PrintException(e);*/ }
     }
 
     void HandleSelection()
