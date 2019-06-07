@@ -62,7 +62,7 @@ public class BuildingInfoPanel : MonoBehaviour
                 costs[3] = m_gm.buildings[4].GetComponent<Mine>().breadCost;
                 buidlingDescription.text = "Produces stone.";
                 break;
-            case BuildingType.wareHouse:
+            case BuildingType.warehouse:
                 costs[0] = m_gm.buildings[5].GetComponent<Warehouse>().woodCost;
                 costs[1] = m_gm.buildings[5].GetComponent<Warehouse>().stoneCost;
                 costs[2] = m_gm.buildings[5].GetComponent<Warehouse>().wheatCost;

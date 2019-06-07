@@ -9,7 +9,7 @@ public enum BuildingType
     farm,
     lumber,
     mine,
-    wareHouse,
+    warehouse,
     windmill
 }
 
