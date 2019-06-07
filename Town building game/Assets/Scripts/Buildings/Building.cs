@@ -2,14 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-//public enum BuildingType
-//{
-//    bakery,
-//    farm,
-//    lumber,
-//    mine,
-//    windmill
-//}
+public enum BuildingType
+{
+    bakery,
+    deliveryHouse,
+    farm,
+    lumber,
+    mine,
+    wareHouse,
+    windmill
+}
 
 public class Building : MonoBehaviour
 {

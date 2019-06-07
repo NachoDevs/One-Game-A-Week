@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public enum GameState
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     [Header("Prefabs")]
     public GameObject buttonPrefab;
     public GameObject resourcePanelPrefab;
+    public GameObject buildingInfoPanelPrefab;
     public List<GameObject> buildings;
     public List<Sprite> resources;
 
@@ -30,6 +32,7 @@ public class GameManager : MonoBehaviour
     public Transform buildingParent;
     public Transform buildingButtonParent;
     public Transform resourcesParent;
+    public Transform buildingInfoPanelParent;
 
     public Dictionary<ResourceType, int> resourceCount;
 
@@ -44,6 +47,7 @@ public class GameManager : MonoBehaviour
     GameObject m_selectedObject;
     GameObject m_hoveredObject;
     GameObject m_selectedBulding;
+    GameObject m_currentInfoPanel;
 
     TileManager m_tman;
 
@@ -101,6 +105,17 @@ public class GameManager : MonoBehaviour
 
                 m_currGameState = GameState.Building;
             });
+
+            EventTrigger.Entry pointerEnterEvent = new EventTrigger.Entry();
+            pointerEnterEvent.eventID = EventTriggerType.PointerEnter;
+            pointerEnterEvent.callback.AddListener((eventData) => { PointerEnterButton(button); });
+            EventTrigger.Entry pointerExitEvent = new EventTrigger.Entry();
+            pointerExitEvent.eventID = EventTriggerType.PointerExit;
+            pointerExitEvent.callback.AddListener((eventData) => { PointerExitButton(); });
+
+            button.AddComponent<EventTrigger>();
+            button.GetComponent<EventTrigger>().triggers.Add(pointerEnterEvent);
+            button.GetComponent<EventTrigger>().triggers.Add(pointerExitEvent);
         }
 
         foreach(Sprite res in resources)
@@ -129,7 +144,7 @@ public class GameManager : MonoBehaviour
         resourceText[t_rType].text = resourceCount[t_rType].ToString();
     }
 
-    private void HandleGameState()
+    void HandleGameState()
     {
         switch(m_currGameState)
         {
@@ -178,8 +193,8 @@ public class GameManager : MonoBehaviour
     void TileSelectionBehaviour()
     {
         m_hit = Physics2D.Raycast(m_cam.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-        // Not checking if it is a WorldTile might cause bugs?
 
+        // Not checking if it is a WorldTile might cause bugs?
         try
         {
             m_hoveredObject = m_hit.collider.transform.parent.gameObject;
@@ -242,6 +257,22 @@ public class GameManager : MonoBehaviour
 
             return;
         }
+    }
+
+    void PointerEnterButton(GameObject t_button)
+    {
+        Vector3 pos = new Vector3();
+        pos.x = 50 + Input.mousePosition.x;
+        pos.y = 100;
+        m_currentInfoPanel = Instantiate(buildingInfoPanelPrefab, pos, Quaternion.identity, buildingInfoPanelParent);
+        BuildingType bt;
+        Enum.TryParse(t_button.GetComponentsInChildren<Image>()[1].sprite.name, out bt);
+        m_currentInfoPanel.GetComponent<BuildingInfoPanel>().SetUpPanel(bt);
+    }
+
+    void PointerExitButton()
+    {
+        Destroy(m_currentInfoPanel);
     }
 
     public void GoToBuildingMode()
