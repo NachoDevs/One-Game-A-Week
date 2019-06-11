@@ -23,8 +23,11 @@ public class Enemy : MonoBehaviour
     public Material mat_Pursuit;
     public Material mat_Searching;
 
+    static GameManager m_gm;
+
     bool m_waiting;
     bool m_mooving;
+    bool m_canSeePlayer;
 
     int m_checkpointIndex;
 
@@ -54,9 +57,48 @@ public class Enemy : MonoBehaviour
         m_idleCenter = Vector3.zero;
     }
 
+    void Start()
+    {
+        if(m_gm == null)
+        {
+            m_gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        }
+    }
+
     void Update()
     {
+        //if (!m_canSeePlayer)
+        //{
+            CheckPlayer();
+        //}
+
         HandleBehaviour();
+    }
+
+    void CheckPlayer()
+    {
+        float result = Vector3.Dot(Vector3.Normalize(transform.position - m_gm.player.transform.position), transform.forward);
+        if (result < -.75f)
+        {
+            RaycastHit hit;
+            Debug.DrawRay(transform.position, m_gm.player.transform.position - transform.position, Color.red);
+            if (Physics.Raycast(transform.position, m_gm.player.transform.position - transform.position, out hit, 100f))
+            {
+                m_canSeePlayer = hit.collider.GetComponentInParent<Player>() != null;
+                if (m_canSeePlayer)
+                {
+                    m_targetPos = hit.point;
+                    GameObject go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+
+                    Vector3 newPos = m_targetPos;
+                    newPos.y += 3;
+                    go.transform.position = newPos;
+                    Destroy(go, 2);
+
+                    ChangeBehaviour(EnemyState.Pursuit);
+                }
+            }
+        }
     }
 
     void HandleBehaviour()
@@ -95,13 +137,11 @@ public class Enemy : MonoBehaviour
                 {
                     ChangeBehaviour(EnemyState.Patrol);
                 }
-                else
+
+                if (!m_mooving)
                 {
-                    if (!m_mooving)
-                    {
-                        m_targetPos = FindClosestCheckpoint();
-                        MoveTo(m_targetPos);
-                    }
+                    m_targetPos = FindClosestCheckpoint();
+                    MoveTo(m_targetPos);
                 }
                 break;
             case EnemyState.Patrol:
@@ -112,8 +152,26 @@ public class Enemy : MonoBehaviour
                 }
                 break;
             case EnemyState.Pursuit:
+                MoveTo(m_targetPos);
+
+                if(IsCloseToPosition(m_targetPos))
+                {
+                    ChangeBehaviour(EnemyState.Searching);
+                }
+
                 break;
             case EnemyState.Searching:
+                transform.Rotate(Vector3.up * 150 * Time.deltaTime, Space.Self);
+
+                m_waitTime = 3;
+                m_waitCounter += Time.deltaTime;
+
+                if (m_waitTime < m_waitCounter)
+                {
+                    ChangeBehaviour(EnemyState.ReturnToPatrol);
+                    m_waitCounter = 0;
+                }
+
                 break;
         }
     }
