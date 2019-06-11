@@ -17,6 +17,12 @@ public class Enemy : MonoBehaviour
 {
     public List<Transform> patrolCheckpoints;
 
+    [Header("Materials")]
+    public Material mat_Idle;
+    public Material mat_Patrol;
+    public Material mat_Pursuit;
+    public Material mat_Searching;
+
     bool m_waiting;
     bool m_mooving;
 
@@ -32,12 +38,16 @@ public class Enemy : MonoBehaviour
 
     NavMeshAgent m_navAgent;
 
+    Renderer m_renderer;
+
     void Awake()
     {
         m_navAgent = GetComponent<NavMeshAgent>();
+        m_renderer = GetComponentInChildren<Renderer>();
 
         m_waitTime = 5;
-        m_currentState = EnemyState.ReturnToPatrol;
+
+        ChangeBehaviour(EnemyState.ReturnToPatrol);
 
         m_waiting = false;
 
@@ -83,7 +93,7 @@ public class Enemy : MonoBehaviour
             case EnemyState.ReturnToPatrol:
                 if (IsCloseToPosition(m_targetPos))
                 {
-                    m_currentState = EnemyState.Patrol;
+                    ChangeBehaviour(EnemyState.Patrol);
                 }
                 else
                 {
@@ -104,6 +114,28 @@ public class Enemy : MonoBehaviour
             case EnemyState.Pursuit:
                 break;
             case EnemyState.Searching:
+                break;
+        }
+    }
+
+    void ChangeBehaviour(EnemyState t_state)
+    {
+        m_currentState = t_state;
+        switch (t_state)
+        {
+            default:
+            case EnemyState.Idle:
+                m_renderer.material = mat_Idle;
+                break;
+            case EnemyState.ReturnToPatrol:
+            case EnemyState.Patrol:
+                m_renderer.material = mat_Patrol;
+                break;
+            case EnemyState.Pursuit:
+                m_renderer.material = mat_Pursuit;
+                break;
+            case EnemyState.Searching:
+                m_renderer.material = mat_Searching;
                 break;
         }
     }
