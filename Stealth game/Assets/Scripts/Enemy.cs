@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -25,7 +26,7 @@ public class Enemy : MonoBehaviour
 
     static GameManager m_gm;
 
-    bool m_waiting;
+    bool m_TimerStarted;
     bool m_mooving;
     bool m_canSeePlayer;
 
@@ -50,9 +51,9 @@ public class Enemy : MonoBehaviour
 
         m_waitTime = 5;
 
-        ChangeBehaviour(EnemyState.ReturnToPatrol);
+        ChangeBehaviour(EnemyState.Idle);
 
-        m_waiting = false;
+        m_TimerStarted = false;
 
         m_idleCenter = Vector3.zero;
     }
@@ -67,11 +68,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        //if (!m_canSeePlayer)
-        //{
-            CheckPlayer();
-        //}
-
+        //CheckPlayer();
         HandleBehaviour();
     }
 
@@ -103,25 +100,22 @@ public class Enemy : MonoBehaviour
 
     void HandleBehaviour()
     {
-        if(m_waiting)
-        {
-            m_waitCounter += Time.deltaTime;
-
-            if(m_waitTime > m_waitCounter)
-            {
-                return;
-            }
-            StopTimer();
-        }
-
         switch (m_currentState)
         {
             default:
             case EnemyState.Idle:
 
+                CountdownBehaviour(() => {
+                    if (m_waitTime > m_waitCounter)
+                    {
+                        return;
+                    }
+                    StopTimer();
+                });
+
                 if (IsCloseToPosition(m_targetPos))
                 {
-                    StartTimer(.1f);
+                    StartTimer(2);
                     m_mooving = false;
                     m_targetPos = m_idleCenter + FindNewRandomePositionInRadius(5);
                     return;
@@ -163,15 +157,14 @@ public class Enemy : MonoBehaviour
             case EnemyState.Searching:
                 transform.Rotate(Vector3.up * 150 * Time.deltaTime, Space.Self);
 
-                m_waitTime = 3;
-                m_waitCounter += Time.deltaTime;
-
-                if (m_waitTime < m_waitCounter)
-                {
-                    ChangeBehaviour(EnemyState.ReturnToPatrol);
-                    m_waitCounter = 0;
-                }
-
+                CountdownBehaviour(() => {
+                    if (m_waitTime <= m_waitCounter)
+                    {
+                        ChangeBehaviour(EnemyState.ReturnToPatrol);
+                        StopTimer();
+                    }
+                });
+                StartTimer(5);
                 break;
         }
     }
@@ -200,15 +193,28 @@ public class Enemy : MonoBehaviour
 
     void StartTimer(float t_time)
     {
-        m_waitTime = t_time;
-        m_waitCounter = 0;
-        m_waiting = true;
+        if(!m_TimerStarted)
+        {
+            m_waitTime = t_time;
+            m_waitCounter = 0;
+            m_TimerStarted = true;
+        }
     }
 
     void StopTimer()
     {
         m_waitTime = 0;
-        m_waiting = false;
+        m_TimerStarted = false;
+    }
+
+    void CountdownBehaviour(Action t_lambda)
+    {
+        if (m_TimerStarted)
+        {
+            m_waitCounter += Time.deltaTime;
+
+            t_lambda.Invoke();
+        }
     }
 
     void MoveTo(Vector3 t_newPos)
@@ -249,7 +255,7 @@ public class Enemy : MonoBehaviour
 
     Vector3 FindNewRandomePositionInRadius(int t_radius)
     {
-        Vector2 randomPos = Random.insideUnitCircle * t_radius;
+        Vector2 randomPos = UnityEngine.Random.insideUnitCircle * t_radius;
         return new Vector3(randomPos.x, transform.position.y, randomPos.y);
     }
 }
