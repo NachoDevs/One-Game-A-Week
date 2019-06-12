@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float movementSpeed = 10f;
+    public bool movingSlow;
+
+    public int walkSpeed = 5;
+    public int slowSpeed = 2;
+
+    float movementSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +25,17 @@ public class Player : MonoBehaviour
 
     void HandleMovement()
     {
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+            movementSpeed = slowSpeed;
+            movingSlow = true;
+        }
+        else
+        {
+            movementSpeed = walkSpeed;
+            movingSlow = false;
+        }
+
         if (Input.GetKey(KeyCode.W))
         {
             transform.position += new Vector3(movementSpeed * Time.deltaTime,
@@ -46,24 +62,6 @@ public class Player : MonoBehaviour
             transform.position += new Vector3(movementSpeed * Time.deltaTime,
                                 0,
                                 -movementSpeed * Time.deltaTime);
-        }
-
-        // Boundaries, to be improved
-        if (transform.position.x <= -65)
-        {
-            transform.position = new Vector3(-60, transform.position.y, transform.position.z);
-        }
-        if (transform.position.x >= 35)
-        {
-            transform.position = new Vector3(30, transform.position.y, transform.position.z);
-        }
-        if (transform.position.z <= -35)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y, -30);
-        }
-        if (transform.position.z >= 20)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y, 16);
         }
     }
 }

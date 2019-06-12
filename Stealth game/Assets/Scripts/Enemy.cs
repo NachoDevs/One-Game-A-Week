@@ -79,15 +79,31 @@ public class Enemy : MonoBehaviour
 
     void CheckPlayer()
     {
-        float result = Vector3.Dot(Vector3.Normalize(transform.position - m_gm.player.transform.position), transform.forward);
-        if (result < -.45f)
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, m_gm.player.transform.position - transform.position, out hit, 25f))
         {
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, m_gm.player.transform.position - transform.position, out hit, 25f))
+            float result = Vector3.Dot(Vector3.Normalize(transform.position - m_gm.player.transform.position), transform.forward);
+            if (result < -.45f)
             {
                 Debug.DrawRay(transform.position, m_gm.player.transform.position - transform.position, Color.red);
                 m_canSeePlayer = hit.collider.GetComponentInParent<Player>() != null;
                 if (m_canSeePlayer)
+                {
+                    m_targetPos = hit.point;
+                    ResetTimer();
+                    ChangeBehaviour(EnemyState.Pursuit);
+                }
+            }
+            else
+            {
+                Player p = hit.collider.GetComponentInParent<Player>();
+
+                if(p == null)
+                {
+                    return;
+                }
+
+                if (Vector3.Distance(transform.position, p.transform.position) < 5f && !p.movingSlow)
                 {
                     m_targetPos = hit.point;
                     ResetTimer();
