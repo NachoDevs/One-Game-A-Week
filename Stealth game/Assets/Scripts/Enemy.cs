@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour
 
         m_waitTime = 5;
 
-        ChangeBehaviour(EnemyState.Idle);
+        ChangeBehaviour(EnemyState.ReturnToPatrol);
 
         m_TimerStarted = false;
 
@@ -68,7 +68,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        //CheckPlayer();
+        CheckPlayer();
         HandleBehaviour();
     }
 
@@ -85,13 +85,7 @@ public class Enemy : MonoBehaviour
                 if (m_canSeePlayer)
                 {
                     m_targetPos = hit.point;
-                    GameObject go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-
-                    Vector3 newPos = m_targetPos;
-                    newPos.y += 3;
-                    go.transform.position = newPos;
-                    Destroy(go, 2);
-
+                    ResetTimer();
                     ChangeBehaviour(EnemyState.Pursuit);
                 }
             }
@@ -105,19 +99,30 @@ public class Enemy : MonoBehaviour
             default:
             case EnemyState.Idle:
 
-                CountdownBehaviour(() => {
-                    if (m_waitTime > m_waitCounter)
+                if (m_TimerStarted)
+                {
+                    m_waitCounter += Time.deltaTime;
+
+                    if (!(m_waitTime > m_waitCounter))
                     {
-                        return;
+                        print("end wait");
+                        StopTimer();
                     }
-                    StopTimer();
-                });
+                    break;
+                }
 
                 if (IsCloseToPosition(m_targetPos))
                 {
-                    StartTimer(2);
+                    StartTimer(5);
                     m_mooving = false;
                     m_targetPos = m_idleCenter + FindNewRandomePositionInRadius(5);
+
+                    GameObject go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                    Vector3 newPos = m_targetPos;
+                    newPos.y += 3;
+                    go.transform.position = newPos;
+                    Destroy(go, 2);
+
                     return;
                 }
 
@@ -157,13 +162,18 @@ public class Enemy : MonoBehaviour
             case EnemyState.Searching:
                 transform.Rotate(Vector3.up * 150 * Time.deltaTime, Space.Self);
 
-                CountdownBehaviour(() => {
+                if (m_TimerStarted)
+                {
+                    m_waitCounter += Time.deltaTime;
+
                     if (m_waitTime <= m_waitCounter)
                     {
                         ChangeBehaviour(EnemyState.ReturnToPatrol);
                         StopTimer();
                     }
-                });
+                    break;
+                }
+
                 StartTimer(5);
                 break;
         }
@@ -191,6 +201,12 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    void ResetTimer()
+    {
+        m_waitCounter = 0;
+        m_TimerStarted = false;
+    }
+
     void StartTimer(float t_time)
     {
         if(!m_TimerStarted)
@@ -205,16 +221,6 @@ public class Enemy : MonoBehaviour
     {
         m_waitTime = 0;
         m_TimerStarted = false;
-    }
-
-    void CountdownBehaviour(Action t_lambda)
-    {
-        if (m_TimerStarted)
-        {
-            m_waitCounter += Time.deltaTime;
-
-            t_lambda.Invoke();
-        }
     }
 
     void MoveTo(Vector3 t_newPos)
