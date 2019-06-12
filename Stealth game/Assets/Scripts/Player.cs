@@ -5,22 +5,26 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public bool movingSlow;
+    public bool isDetected;
 
     public int walkSpeed = 5;
     public int slowSpeed = 2;
 
     float movementSpeed;
 
+    SphereCollider attackHitbox;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        attackHitbox = GetComponent<SphereCollider>();
     }
 
     // Update is called once per frame
     void Update()
     {
         HandleMovement();
+        HandleAbilities();
     }
 
     void HandleMovement()
@@ -63,5 +67,25 @@ public class Player : MonoBehaviour
                                 0,
                                 -movementSpeed * Time.deltaTime);
         }
+    }
+
+    void HandleAbilities()
+    {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            if(!isDetected)
+            {
+                attackHitbox.enabled = true;
+            }
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.GetComponentInParent<Enemy>())
+        {
+            Destroy(other.transform.parent.gameObject);
+        }
+        attackHitbox.enabled = false;
     }
 }

@@ -90,6 +90,7 @@ public class Enemy : MonoBehaviour
                 if (m_canSeePlayer)
                 {
                     m_targetPos = hit.point;
+                    m_gm.player.GetComponent<Player>().isDetected = true;
                     ResetTimer();
                     ChangeBehaviour(EnemyState.Pursuit);
                 }
@@ -176,6 +177,7 @@ public class Enemy : MonoBehaviour
 
                 if(IsCloseToPosition(m_targetPos))
                 {
+                    m_gm.player.GetComponent<Player>().isDetected = false;
                     ChangeBehaviour(EnemyState.Searching);
                 }
 
