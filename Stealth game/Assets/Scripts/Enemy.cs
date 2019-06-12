@@ -75,12 +75,12 @@ public class Enemy : MonoBehaviour
     void CheckPlayer()
     {
         float result = Vector3.Dot(Vector3.Normalize(transform.position - m_gm.player.transform.position), transform.forward);
-        if (result < -.75f)
+        if (result < -.45f)
         {
             RaycastHit hit;
-            Debug.DrawRay(transform.position, m_gm.player.transform.position - transform.position, Color.red);
-            if (Physics.Raycast(transform.position, m_gm.player.transform.position - transform.position, out hit, 100f))
+            if (Physics.Raycast(transform.position, m_gm.player.transform.position - transform.position, out hit, 25f))
             {
+                Debug.DrawRay(transform.position, m_gm.player.transform.position - transform.position, Color.red);
                 m_canSeePlayer = hit.collider.GetComponentInParent<Player>() != null;
                 if (m_canSeePlayer)
                 {
@@ -115,7 +115,7 @@ public class Enemy : MonoBehaviour
                 {
                     StartTimer(5);
                     m_mooving = false;
-                    m_targetPos = m_idleCenter + FindNewRandomePositionInRadius(5);
+                    m_targetPos = m_idleCenter + FindNewRandomPositionInRadius(1);
 
                     GameObject go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
                     Vector3 newPos = m_targetPos;
@@ -147,7 +147,7 @@ public class Enemy : MonoBehaviour
                 if(IsCloseToPosition(m_targetPos))
                 {
                     SetNextPatrolPosition();
-                    MoveTo(m_targetPos + FindNewRandomePositionInRadius(2));
+                    MoveTo(m_targetPos + FindNewRandomPositionInRadius(2));
                 }
                 break;
             case EnemyState.Pursuit:
@@ -259,7 +259,7 @@ public class Enemy : MonoBehaviour
         return targetPos;
     }
 
-    Vector3 FindNewRandomePositionInRadius(int t_radius)
+    Vector3 FindNewRandomPositionInRadius(int t_radius)
     {
         Vector2 randomPos = UnityEngine.Random.insideUnitCircle * t_radius;
         return new Vector3(randomPos.x, transform.position.y, randomPos.y);
