@@ -84,6 +84,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 542b9b6300968414a9ea9da673c8eddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  questionMark: {fileID: -927199367670048503, guid: 6166d5e623a0dee4a863e5affc5f934e,
+    type: 3}
+  exclamationMark: {fileID: -927199367670048503, guid: 95e7af5318555de49a76ddce4eae96d3,
+    type: 3}
   patrolCheckpoints:
   - {fileID: 0}
   - {fileID: 0}

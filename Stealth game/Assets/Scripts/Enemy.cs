@@ -16,6 +16,9 @@ enum EnemyState
 
 public class Enemy : MonoBehaviour
 {
+    public GameObject questionMark;
+    public GameObject exclamationMark;
+
     public List<Transform> patrolCheckpoints;
 
     [Header("Materials")]
@@ -39,6 +42,8 @@ public class Enemy : MonoBehaviour
     Vector3 m_idleCenter;
 
     EnemyState m_currentState;
+
+    GameObject m_currentMark;
 
     NavMeshAgent m_navAgent;
 
@@ -193,9 +198,11 @@ public class Enemy : MonoBehaviour
                 m_renderer.material = mat_Patrol;
                 break;
             case EnemyState.Pursuit:
+                StartCoroutine(ShowMark(exclamationMark));
                 m_renderer.material = mat_Pursuit;
                 break;
             case EnemyState.Searching:
+                StartCoroutine(ShowMark(questionMark));
                 m_renderer.material = mat_Searching;
                 break;
         }
@@ -263,5 +270,15 @@ public class Enemy : MonoBehaviour
     {
         Vector2 randomPos = UnityEngine.Random.insideUnitCircle * t_radius;
         return new Vector3(randomPos.x, transform.position.y, randomPos.y);
+    }
+
+    IEnumerator ShowMark(GameObject t_mark)
+    {
+        Vector3 markPos = transform.position;
+        markPos.y += 1;
+        Destroy(m_currentMark);
+        m_currentMark = Instantiate(t_mark, markPos, Quaternion.identity, transform);
+        yield return new WaitForSeconds(2f);
+        Destroy(m_currentMark);
     }
 }
