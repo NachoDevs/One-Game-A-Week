@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
 
     float movementSpeed;
 
+    GameManager m_gm;
+
     SphereCollider attackHitbox;
 
     MeshRenderer m_meshRenderer;
@@ -23,6 +25,8 @@ public class Player : MonoBehaviour
     {
         attackHitbox = GetComponent<SphereCollider>();
         m_meshRenderer = GetComponentInChildren<MeshRenderer>();
+
+        m_gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -102,6 +106,7 @@ public class Player : MonoBehaviour
     {
         if(other.GetComponentInParent<Enemy>())
         {
+            m_gm.enemies.Remove(other.transform.parent.gameObject);
             Destroy(other.transform.parent.gameObject);
         }
         attackHitbox.enabled = false;

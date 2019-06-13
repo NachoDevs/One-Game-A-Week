@@ -73,8 +73,8 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        //CheckPlayer();
-        //HandleBehaviour();
+        CheckPlayer();
+        HandleBehaviour();
     }
 
     void CheckPlayer()

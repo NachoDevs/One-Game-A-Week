@@ -28,10 +28,6 @@ public class GameManager : MonoBehaviour
             enemy.GetComponentsInChildren<MeshRenderer>()[1].enabled = false;
 
             float result = Vector3.Dot(Vector3.Normalize(player.transform.position - enemy.transform.position), player.GetComponent<Player>().forwardVector);
-            if (enemy.name.Contains("5"))
-            {
-                print(result);
-            }
             if (result < -.45f)
             {
                 if (Physics.Raycast(player.transform.position, enemy.transform.position - player.transform.position, out RaycastHit hit))
