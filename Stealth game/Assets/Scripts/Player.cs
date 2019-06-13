@@ -10,21 +10,39 @@ public class Player : MonoBehaviour
     public int walkSpeed = 5;
     public int slowSpeed = 2;
 
+    public Vector3 forwardVector;
+
     float movementSpeed;
 
     SphereCollider attackHitbox;
+
+    MeshRenderer m_meshRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
         attackHitbox = GetComponent<SphereCollider>();
+        m_meshRenderer = GetComponentInChildren<MeshRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        HandleLookDirection();
         HandleMovement();
         HandleAbilities();
+    }
+
+    void HandleLookDirection()
+    {
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit))
+        {
+            Vector3 pointToLook = hit.point;
+            pointToLook.y = .55f;
+            pointToLook -= m_meshRenderer.transform.position;
+            m_meshRenderer.transform.rotation = Quaternion.LookRotation(pointToLook, Vector3.up);
+            forwardVector = m_meshRenderer.transform.forward;
+        }
     }
 
     void HandleMovement()
