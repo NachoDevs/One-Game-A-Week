@@ -35,8 +35,8 @@ public class GameManager : MonoBehaviour
                     if(hit.transform.gameObject.GetComponentInParent<Enemy>())
                     {
                         Debug.DrawRay(player.transform.position, enemy.transform.position - player.transform.position, Color.blue);
-                        enemy.GetComponentsInChildren<MeshRenderer>()[0].enabled = (hit.collider.GetComponentInParent<Enemy>() != null);
-                        enemy.GetComponentsInChildren<MeshRenderer>()[1].enabled = (hit.collider.GetComponentInParent<Enemy>() != null);
+                        enemy.GetComponentsInChildren<MeshRenderer>()[0].enabled = true;
+                        enemy.GetComponentsInChildren<MeshRenderer>()[1].enabled = true;
                     }
                 }
             }

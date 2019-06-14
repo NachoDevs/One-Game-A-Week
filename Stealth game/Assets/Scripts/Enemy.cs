@@ -16,6 +16,8 @@ enum EnemyState
 
 public class Enemy : MonoBehaviour
 {
+    public bool isDead;
+
     public GameObject questionMark;
     public GameObject exclamationMark;
 
@@ -49,9 +51,12 @@ public class Enemy : MonoBehaviour
 
     Renderer m_renderer;
 
+    Rigidbody m_rigidbody;
+
     void Awake()
     {
         m_navAgent = GetComponent<NavMeshAgent>();
+        m_rigidbody = GetComponent<Rigidbody>();
         m_renderer = GetComponentInChildren<Renderer>();
 
         m_waitTime = 5;
@@ -73,8 +78,29 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        CheckPlayer();
-        HandleBehaviour();
+        if(!isDead)
+        {
+            CheckPlayer();
+            HandleBehaviour();
+        }
+    }
+
+    public void Die()
+    {
+        isDead = true;
+
+        m_navAgent.isStopped = true;
+        m_rigidbody.isKinematic = false;
+        m_rigidbody.freezeRotation = true;
+        m_rigidbody.velocity = Vector3.zero;
+
+        print("Im dead");
+
+        Vector3 newPos = transform.position;
+        newPos.y = 0;
+        transform.position = newPos;
+
+        transform.rotation = new Quaternion(45, 0, 45, 0);
     }
 
     void CheckPlayer()
@@ -104,7 +130,7 @@ public class Enemy : MonoBehaviour
                     return;
                 }
 
-                if (Vector3.Distance(transform.position, p.transform.position) < 5f && !p.movingSlow)
+                if (Vector3.Distance(transform.position, p.transform.position) < 5f && !p.isMovingSlow)
                 {
                     m_targetPos = hit.point;
                     ResetTimer();

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public bool movingSlow;
     public bool isDetected;
+    public bool isDragging;
+    public bool isMovingSlow;
 
     public int walkSpeed = 5;
     public int slowSpeed = 2;
@@ -14,7 +15,11 @@ public class Player : MonoBehaviour
 
     float movementSpeed;
 
+    Vector3 dragOffset;
+
     GameManager m_gm;
+
+    GameObject m_dragging;
 
     SphereCollider attackHitbox;
 
@@ -51,15 +56,15 @@ public class Player : MonoBehaviour
 
     void HandleMovement()
     {
-        if(Input.GetKey(KeyCode.LeftShift))
+        if(Input.GetKey(KeyCode.LeftShift) || isDragging)
         {
             movementSpeed = slowSpeed;
-            movingSlow = true;
+            isMovingSlow = true;
         }
         else
         {
             movementSpeed = walkSpeed;
-            movingSlow = false;
+            isMovingSlow = false;
         }
 
         if (Input.GetKey(KeyCode.W))
@@ -93,12 +98,25 @@ public class Player : MonoBehaviour
 
     void HandleAbilities()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyUp(KeyCode.E))
         {
-            if(!isDetected)
+            if(isDragging)
+            {
+                isDragging = false;
+                m_dragging = null;
+                return;
+            }
+
+            if (!isDetected)
             {
                 attackHitbox.enabled = true;
             }
+        }
+
+        if(isDragging)
+        {
+            Drag();
+            print("dragging");
         }
     }
 
@@ -106,9 +124,23 @@ public class Player : MonoBehaviour
     {
         if(other.GetComponentInParent<Enemy>())
         {
-            m_gm.enemies.Remove(other.transform.parent.gameObject);
-            Destroy(other.transform.parent.gameObject);
+            if(!other.GetComponentInParent<Enemy>().isDead)
+            {
+                other.GetComponentInParent<Enemy>().Die();
+            }
+            else
+            {
+                m_dragging = other.transform.parent.gameObject;
+                dragOffset = transform.position - m_dragging.transform.position;
+                isDragging = true;
+
+            }
         }
         attackHitbox.enabled = false;
+    }
+
+    void Drag()
+    {
+        m_dragging.transform.position = transform.position - dragOffset;
     }
 }
