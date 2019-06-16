@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4550286412541498921}
   - component: {fileID: 4550286412541498920}
   - component: {fileID: 4550286412541498919}
+  - component: {fileID: 2369433623842562036}
   m_Layer: 0
   m_Name: BaseEnemy
   m_TagString: Untagged
@@ -84,6 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 542b9b6300968414a9ea9da673c8eddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDead: 0
   questionMark: {fileID: -927199367670048503, guid: 6166d5e623a0dee4a863e5affc5f934e,
     type: 3}
   exclamationMark: {fileID: -927199367670048503, guid: 95e7af5318555de49a76ddce4eae96d3,
@@ -97,6 +99,19 @@ MonoBehaviour:
   mat_Patrol: {fileID: 2100000, guid: 7df5bb3c09ffd1f489217815f9c7d573, type: 2}
   mat_Pursuit: {fileID: 2100000, guid: 4f90ff01c32d877448e6bcd4f4343046, type: 2}
   mat_Searching: {fileID: 2100000, guid: 4d672ac6e9cb9ea4196fec78d6db3936, type: 2}
+--- !u!135 &2369433623842562036
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4550286412541498917}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4550286413209070725
 GameObject:
   m_ObjectHideFlags: 0

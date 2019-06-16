@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -116,7 +114,6 @@ public class Player : MonoBehaviour
         if(isDragging)
         {
             Drag();
-            print("dragging");
         }
     }
 

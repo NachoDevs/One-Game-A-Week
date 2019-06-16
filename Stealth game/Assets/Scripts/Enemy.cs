@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 enum EnemyState
 {
@@ -94,8 +94,6 @@ public class Enemy : MonoBehaviour
         m_rigidbody.freezeRotation = true;
         m_rigidbody.velocity = Vector3.zero;
 
-        print("Im dead");
-
         Vector3 newPos = transform.position;
         newPos.y = 0;
         transform.position = newPos;
@@ -153,7 +151,6 @@ public class Enemy : MonoBehaviour
 
                     if (!(m_waitTime > m_waitCounter))
                     {
-                        print("end wait");
                         StopTimer();
                     }
                     break;
@@ -324,5 +321,16 @@ public class Enemy : MonoBehaviour
         m_currentMark = Instantiate(t_mark, markPos, Quaternion.identity, transform);
         yield return new WaitForSeconds(2f);
         Destroy(m_currentMark);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponentInParent<Player>() != null)
+        {
+            if (other.GetComponentInParent<Player>().isDetected)
+            {
+                SceneManager.LoadScene(0);
+            }
+        }
     }
 }
