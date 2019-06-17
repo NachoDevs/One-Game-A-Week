@@ -22,7 +22,7 @@ All projects will also have a trello board (all links below)
 ## List
 This is a list with all the topics I want to tackle, the ones already ticked are the ones already done (the order is not representative of the development order):
 
-- [ ] Boardgame
+- [ ] Boardgame; 17->23.06.19; https://trello.com/b/rUmb3cbH/boardgame; Unity 2019.1.5.f1
 - [x] Bullet hell; 22->28.04.19; Unity 2019.1.0.f2 
 - [x] Clicker; 13->19.05.19; Unity 2019.1.1.f1
 - [x] Couch coop; 25->31.03.19; Unity 2018.3.0.f2
