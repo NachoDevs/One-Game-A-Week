@@ -22,7 +22,7 @@ All projects will also have a trello board (all links below)
 ## List
 This is a list with all the topics I want to tackle, the ones already ticked are the ones already done (the order is not representative of the development order):
 
-- [ ] Boardgame
+- [ ] Boardgame; 24->30.06.19; https://trello.com/b/rUmb3cbH/boardgame; Unity 2019.1.5.f1
 - [x] Bullet hell; 22->28.04.19; Unity 2019.1.0.f2 
 - [x] Clicker; 13->19.05.19; Unity 2019.1.1.f1
 - [x] Couch coop; 25->31.03.19; Unity 2018.3.0.f2
@@ -32,7 +32,7 @@ This is a list with all the topics I want to tackle, the ones already ticked are
 - [x] Platformer; 18->24.03.19; Unity 2018.3.0.f2
 - [x] Real Time Strategy; 27.05.19->2.06.19; Unity 2019.1.1.f1
 - [x] Social game(relations with npcs); 08->14.04.19; Unity 2018.3.0.f2
-- [ ] Stealth game; 10->16.06.19; https://trello.com/b/yLeYryvW/stealth-game; Unity 2019.1.5.f1
+- [x] Stealth game; 10->16.06.19; Unity 2019.1.5.f1
 - [x] Tower defense; 11->17.03.19; Unity 2018.3.0.f2
 - [x] Town building game; 03->09.06.19; Unity 2019.1.4.f1
 - [x] Turn based game; 15->21.04.19; Unity 2018.3.0.f2
