@@ -393,6 +393,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 9600a8f13d43859488d1a229f3ca04ac,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: -3967155926740473129, guid: 9600a8f13d43859488d1a229f3ca04ac,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -503,6 +508,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f31698fcb88225c4586fd17539834996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currGameState: 0
+  defaultTerritoryColor: {r: 1, g: 1, b: 0.6862745, a: 1}
+  hoveredTerritoryColor: {r: 0.735849, g: 0.735849, b: 0.5171769, a: 1}
+  selectedTerritoryColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!4 &910732502
 Transform:
   m_ObjectHideFlags: 0
