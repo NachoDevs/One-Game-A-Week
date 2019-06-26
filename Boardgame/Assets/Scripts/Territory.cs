@@ -64,9 +64,10 @@ public class Territory : MonoBehaviour
         MeshCollider meshCollider = GetComponent<MeshCollider>();
         meshCollider.convex = true;
 
-        yield return new WaitForSeconds(1.01f);
+        yield return new WaitForSeconds(.01f);
 
         meshCollider.convex = false;
+        GetComponent<Rigidbody>().isKinematic = true;
     }
 
     private void OnCollisionEnter(Collision collision)
