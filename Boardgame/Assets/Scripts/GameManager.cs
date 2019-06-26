@@ -87,24 +87,6 @@ public class GameManager : MonoBehaviour
 
     void TileSelectedBehaviour()
     {
-        //if (m_currTerritory != null)
-        //{
-        //    if(m_currTerritory.GetComponent<Renderer>().material.GetColor("_Color") != selectedTerritoryColor)
-        //    {
-        //        m_currTerritory.GetComponent<Territory>().UpdateTerritoryState(TerritoryState.Hovered);
-        //    }
-
-        //    if (m_prevTerritory != null)
-        //    {
-        //        if (m_prevTerritory != m_currTerritory)
-        //        {
-        //            UpdateTerritoryColor(m_prevTerritory, defaultTerritoryColor);
-        //        }
-        //    }
-
-        //    m_prevTerritory = m_currTerritory;
-        //}
-
         if (m_currTerritory != null)
         {
             if(m_prevTerritory != null)

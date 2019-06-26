@@ -13,6 +13,8 @@ public class Territory : MonoBehaviour
 {
     public bool selected = false;
 
+    public List<Territory> neighbours;
+
     static GameManager m_gm;
 
     Renderer m_renderer;
@@ -26,6 +28,10 @@ public class Territory : MonoBehaviour
         {
             m_gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         }
+
+        neighbours = new List<Territory>();
+
+        StartCoroutine(NeighboursSetUp());
     }
 
     public void UpdateTerritoryState(TerritoryState t_state)
@@ -50,6 +56,28 @@ public class Territory : MonoBehaviour
                 m_renderer.material.SetColor("_Color", m_gm.defaultTerritoryColor);
                 selected = false;
                 break;
+        }
+    }
+
+    IEnumerator NeighboursSetUp()
+    {
+        MeshCollider meshCollider = GetComponent<MeshCollider>();
+        meshCollider.convex = true;
+
+        yield return new WaitForSeconds(1.01f);
+
+        meshCollider.convex = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        print(collision.gameObject.name);
+        if(collision.gameObject.GetComponent<Territory>() != null)
+        {
+            if (!neighbours.Contains(collision.gameObject.GetComponent<Territory>()))
+            {
+                neighbours.Add(collision.gameObject.GetComponent<Territory>());
+            }
         }
     }
 }
