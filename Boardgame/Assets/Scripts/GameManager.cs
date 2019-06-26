@@ -16,12 +16,12 @@ public class GameManager : MonoBehaviour
 {
     public GameState currGameState;
 
-    [SerializeField] Color defaultTerritoryColor;
-    [SerializeField] Color hoveredTerritoryColor;
-    [SerializeField] Color selectedTerritoryColor;
+    [SerializeField] internal Color defaultTerritoryColor;
+    [SerializeField] internal Color hoveredTerritoryColor;
+    [SerializeField] internal Color selectedTerritoryColor;
 
-    GameObject m_currTerritory;
-    GameObject m_prevTerritory;
+    Territory m_currTerritory;
+    Territory m_prevTerritory;
 
     Camera m_cam;
 
@@ -39,7 +39,6 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         HandleGameState();
-
     }
 
     void HandleGameState()
@@ -55,9 +54,9 @@ public class GameManager : MonoBehaviour
                     if (Physics.Raycast(ray, out m_hit, Mathf.Infinity))
                     {
                         m_currTerritory = null;
-                        if (m_hit.collider.gameObject.GetComponentInParent<Board>() != null)
+                        if (m_hit.collider.gameObject.GetComponent<Territory>() != null)
                         {
-                            m_currTerritory = m_hit.collider.gameObject;
+                            m_currTerritory = m_hit.collider.gameObject.GetComponent<Territory>();
                         }
                     }
                     TileSelectedBehaviour();
@@ -88,19 +87,40 @@ public class GameManager : MonoBehaviour
 
     void TileSelectedBehaviour()
     {
+        //if (m_currTerritory != null)
+        //{
+        //    if(m_currTerritory.GetComponent<Renderer>().material.GetColor("_Color") != selectedTerritoryColor)
+        //    {
+        //        m_currTerritory.GetComponent<Territory>().UpdateTerritoryState(TerritoryState.Hovered);
+        //    }
+
+        //    if (m_prevTerritory != null)
+        //    {
+        //        if (m_prevTerritory != m_currTerritory)
+        //        {
+        //            UpdateTerritoryColor(m_prevTerritory, defaultTerritoryColor);
+        //        }
+        //    }
+
+        //    m_prevTerritory = m_currTerritory;
+        //}
+
         if (m_currTerritory != null)
         {
-            if(m_currTerritory.GetComponent<Renderer>().material.GetColor("_Color") != selectedTerritoryColor)
-            {
-                UpdateTerritoryColor(m_currTerritory, hoveredTerritoryColor);
-            }
-
-            if (m_prevTerritory != null)
+            if(m_prevTerritory != null)
             {
                 if (m_prevTerritory != m_currTerritory)
                 {
-                    UpdateTerritoryColor(m_prevTerritory, defaultTerritoryColor);
+                    if (!m_prevTerritory.selected)
+                    {
+                        m_prevTerritory.UpdateTerritoryState(TerritoryState.Default);
+                    }
                 }
+            }
+
+            if (!m_currTerritory.selected)
+            {
+                m_currTerritory.UpdateTerritoryState(TerritoryState.Hovered);
             }
 
             m_prevTerritory = m_currTerritory;
