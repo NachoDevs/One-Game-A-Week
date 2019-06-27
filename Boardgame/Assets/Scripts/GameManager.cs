@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public enum GameState
@@ -15,6 +16,12 @@ public enum GameState
 public class GameManager : MonoBehaviour
 {
     public GameState currGameState;
+
+    [Header("UI")]
+    public GameObject TroopCountUI;
+    public TextMeshProUGUI troopCount;
+
+    [Space]
 
     [SerializeField] internal Color defaultTerritoryColor;
     [SerializeField] internal Color hoveredTerritoryColor;
@@ -39,6 +46,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         HandleGameState();
+
+        if(m_currTerritory != null)
+        {
+            troopCount.text = m_currTerritory.troopCount.ToString();
+        }
     }
 
     void HandleGameState()
@@ -63,13 +75,16 @@ public class GameManager : MonoBehaviour
                 }
                 catch (Exception e) { PrintException(e); }
 
-                //if (Input.GetMouseButtonUp(0))
-                //{
-                //    if(m_currTerritory != null)
-                //    {
-                //        UpdateTerritoryColor(m_currTerritory, selectedTerritoryColor);
-                //    }
-                //}
+                if (Input.GetMouseButtonUp(0))
+                {
+                    if (m_currTerritory != null)
+                    {
+                        foreach(Territory t in m_currTerritory.neighbours)
+                        {
+                            t.UpdateTerritoryState(TerritoryState.Selected);
+                        }
+                    }
+                }
                 break;
             case GameState.PlayerMove:
                 break;
@@ -107,11 +122,6 @@ public class GameManager : MonoBehaviour
 
             m_prevTerritory = m_currTerritory;
         }
-    }
-
-    void UpdateTerritoryColor(GameObject t_territory, Color t_color)
-    {
-        t_territory.GetComponent<Renderer>().material.SetColor("_Color", t_color);
     }
 
     public static void PrintException(Exception t_e)

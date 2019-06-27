@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public enum TerritoryState
@@ -13,9 +14,13 @@ public class Territory : MonoBehaviour
 {
     public bool selected = false;
 
+    public int troopCount = 0;
+
     public List<Territory> neighbours;
 
     static GameManager m_gm;
+
+    TextMeshProUGUI troopCountText;
 
     Renderer m_renderer;
 
@@ -32,6 +37,7 @@ public class Territory : MonoBehaviour
         neighbours = new List<Territory>();
 
         StartCoroutine(NeighboursSetUp());
+        SetUpCanvas();
     }
 
     public void UpdateTerritoryState(TerritoryState t_state)
@@ -70,9 +76,37 @@ public class Territory : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = true;
     }
 
+    void SetUpCanvas()
+    {
+        //GameObject newCanvas = new GameObject("Canvas");
+        //newCanvas.transform.SetParent(transform, true);
+        //newCanvas.transform.localScale.Scale(new Vector3(.0005f, .0005f, .0005f));
+        //newCanvas.AddComponent<CanvasRenderer>();
+        //Canvas c = newCanvas.AddComponent<Canvas>();
+        //c.renderMode = RenderMode.WorldSpace;
+
+        //GameObject panel = new GameObject("Panel");
+        //panel.transform.localScale.Scale(new Vector3(.001f, .001f, .001f));
+        //panel.AddComponent<CanvasRenderer>();
+        //troopCountText = panel.AddComponent<TextMeshProUGUI>();
+        //troopCountText.color = Color.black;
+        //troopCountText.text = troopCount.ToString();
+
+        //panel.transform.SetParent(newCanvas.transform, false);
+
+        //--------------
+
+        //GameObject troopPanel = Instantiate(m_gm.TroopCountUI);
+        //troopPanel.transform.SetParent(transform, false);
+        //troopPanel.transform.position = transform.position + new Vector3(12.5f, 10, 514f);
+        //troopCountText = troopPanel.GetComponentInChildren<TextMeshProUGUI>();
+        //troopCountText.text = troopCount.ToString();
+
+
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        print(collision.gameObject.name);
         if(collision.gameObject.GetComponent<Territory>() != null)
         {
             if (!neighbours.Contains(collision.gameObject.GetComponent<Territory>()))
