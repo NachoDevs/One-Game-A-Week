@@ -16,6 +16,8 @@ public class Territory : MonoBehaviour
 
     public int troopCount = 0;
 
+    public Team team;
+
     public List<Territory> neighbours;
 
     static GameManager m_gm;
@@ -38,14 +40,30 @@ public class Territory : MonoBehaviour
 
         StartCoroutine(NeighboursSetUp());
         SetUpCanvas();
+        UpdateTerritoryState(TerritoryState.Default);
     }
 
     public void UpdateTerritoryState(TerritoryState t_state)
     {
+        Color materialColor = m_gm.defaultTerritoryColor;
+
+        switch(team)
+        {
+            case Team.Blue:
+                materialColor = m_gm.blueTerritoryColor;
+                break;
+            case Team.Red:
+                materialColor = m_gm.redTerritoryColor;
+                break;
+            default:
+                materialColor = m_gm.defaultTerritoryColor;
+                break;
+        }
+
         switch (t_state)
         {
             case TerritoryState.Hovered:
-                m_renderer.material.SetColor("_Color", m_gm.hoveredTerritoryColor);
+                materialColor *= (team == Team.Neutral) ? 1 : .95f;
                 break;
             case TerritoryState.Selected:
                 if (selected)
@@ -54,15 +72,17 @@ public class Territory : MonoBehaviour
                 }
                 else
                 {
-                    m_renderer.material.SetColor("_Color", m_gm.selectedTerritoryColor);
+                    materialColor = m_gm.selectedTerritoryColor;
                     selected = true;
                 }
                 break;
             default:
-                m_renderer.material.SetColor("_Color", m_gm.defaultTerritoryColor);
                 selected = false;
                 break;
         }
+
+
+        m_renderer.material.SetColor("_Color", materialColor);
     }
 
     IEnumerator NeighboursSetUp()

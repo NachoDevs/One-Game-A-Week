@@ -13,6 +13,13 @@ public enum GameState
     NewTurn
 }
 
+public enum Team
+{
+    Neutral,
+    Blue,
+    Red,
+}
+
 public class GameManager : MonoBehaviour
 {
     public GameState currGameState;
@@ -23,12 +30,15 @@ public class GameManager : MonoBehaviour
 
     [Space]
 
+    [SerializeField] internal Color blueTerritoryColor;
+    [SerializeField] internal Color redTerritoryColor;
     [SerializeField] internal Color defaultTerritoryColor;
     [SerializeField] internal Color hoveredTerritoryColor;
     [SerializeField] internal Color selectedTerritoryColor;
 
     Territory m_currTerritory;
     Territory m_prevTerritory;
+    Territory m_selectedTerritory;
 
     Camera m_cam;
 
@@ -79,10 +89,26 @@ public class GameManager : MonoBehaviour
                 {
                     if (m_currTerritory != null)
                     {
-                        foreach(Territory t in m_currTerritory.neighbours)
+                        if(m_selectedTerritory != null)
                         {
-                            t.UpdateTerritoryState(TerritoryState.Selected);
+                            if(m_selectedTerritory.neighbours.Contains(m_currTerritory))
+                            {
+                                // Move troops
+                            }
                         }
+                        else
+                        {
+                            m_selectedTerritory = m_currTerritory;
+
+                            foreach (Territory t in m_currTerritory.neighbours)
+                            {
+                                t.UpdateTerritoryState(TerritoryState.Hovered);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        m_selectedTerritory = null;
                     }
                 }
                 break;

@@ -211,6 +211,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 125720333}
+  - {fileID: 49910047}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -219,6 +220,80 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &49910046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 49910047}
+  - component: {fileID: 49910049}
+  - component: {fileID: 49910048}
+  m_Layer: 5
+  m_Name: TroopTransferPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &49910047
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49910046}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 45287302}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 250, y: 100}
+  m_Pivot: {x: 1, y: 0}
+--- !u!114 &49910048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49910046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &49910049
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49910046}
+  m_CullTransparentMesh: 0
 --- !u!1 &113472731
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,6 +343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   troopCount: 0
+  team: 0
   neighbours: []
 --- !u!64 &113472734
 MeshCollider:
@@ -661,6 +737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   troopCount: 0
+  team: 0
   neighbours: []
 --- !u!64 &422385942
 MeshCollider:
@@ -786,6 +863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   troopCount: 0
+  team: 0
   neighbours: []
 --- !u!64 &450708216
 MeshCollider:
@@ -911,6 +989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   troopCount: 0
+  team: 0
   neighbours: []
 --- !u!64 &559914706
 MeshCollider:
@@ -1036,6 +1115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   troopCount: 0
+  team: 0
   neighbours: []
 --- !u!64 &651754247
 MeshCollider:
@@ -1252,6 +1332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   troopCount: 0
+  team: 0
   neighbours: []
 --- !u!64 &763547735
 MeshCollider:
@@ -1377,6 +1458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   troopCount: 0
+  team: 0
   neighbours: []
 --- !u!64 &800402066
 MeshCollider:
@@ -1502,6 +1584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   troopCount: 0
+  team: 0
   neighbours: []
 --- !u!64 &803283658
 MeshCollider:
@@ -1611,6 +1694,8 @@ MonoBehaviour:
   TroopCountUI: {fileID: 6271582577494051149, guid: 67555b9100dc44a47911e271e7c01d25,
     type: 3}
   troopCount: {fileID: 125720334}
+  blueTerritoryColor: {r: 0.39999998, g: 0.49999988, b: 1, a: 1}
+  redTerritoryColor: {r: 1, g: 0.39999998, b: 0.39999998, a: 1}
   defaultTerritoryColor: {r: 1, g: 1, b: 0.6862745, a: 1}
   hoveredTerritoryColor: {r: 0.7924528, g: 0.7924528, b: 0.58686364, a: 1}
   selectedTerritoryColor: {r: 1, g: 0, b: 0, a: 1}
@@ -1760,6 +1845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   troopCount: 0
+  team: 0
   neighbours: []
 --- !u!64 &1333499644
 MeshCollider:
@@ -1885,6 +1971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   troopCount: 0
+  team: 0
   neighbours: []
 --- !u!64 &1494200411
 MeshCollider:
@@ -2010,6 +2097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   troopCount: 0
+  team: 0
   neighbours: []
 --- !u!64 &1815200121
 MeshCollider:
@@ -2135,6 +2223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   troopCount: 0
+  team: 0
   neighbours: []
 --- !u!64 &1923359996
 MeshCollider:
@@ -2260,6 +2349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   troopCount: 0
+  team: 2
   neighbours: []
 --- !u!64 &1986974666
 MeshCollider:
@@ -2385,6 +2475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   troopCount: 0
+  team: 0
   neighbours: []
 --- !u!64 &2022231537
 MeshCollider:
@@ -2510,6 +2601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   troopCount: 0
+  team: 1
   neighbours: []
 --- !u!64 &2103426059
 MeshCollider:
