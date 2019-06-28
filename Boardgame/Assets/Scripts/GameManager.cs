@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     [Header("UI")]
     public GameObject TroopCountUI;
+    public GameObject troopSliderPanel;
     public TextMeshProUGUI troopCount;
 
     [Space]
@@ -80,37 +81,49 @@ public class GameManager : MonoBehaviour
                         {
                             m_currTerritory = m_hit.collider.gameObject.GetComponent<Territory>();
                         }
-                    }
-                    TileSelectedBehaviour();
-                }
-                catch (Exception e) { PrintException(e); }
 
-                if (Input.GetMouseButtonUp(0))
-                {
-                    if (m_currTerritory != null)
-                    {
-                        if(m_selectedTerritory != null)
+                        if (Input.GetMouseButtonUp(0))
                         {
-                            if(m_selectedTerritory.neighbours.Contains(m_currTerritory))
+                            if (m_currTerritory != null)
                             {
-                                // Move troops
+                                if(m_selectedTerritory != null)
+                                {
+                                    if(m_selectedTerritory.neighbours.Contains(m_currTerritory))
+                                    {
+                                        ManageCombat(m_selectedTerritory, m_currTerritory);
+
+                                        m_selectedTerritory = null;
+                                        troopSliderPanel.SetActive(false);
+                                    }
+                                }
+                                else
+                                {
+                                    m_selectedTerritory = m_currTerritory;
+
+                                    foreach (Territory t in m_currTerritory.neighbours)
+                                    {
+                                        t.UpdateTerritoryState(TerritoryState.Hovered);
+                                    }
+
+                                    ShowTroopSliderPanel();
+                                }
                             }
-                        }
-                        else
-                        {
-                            m_selectedTerritory = m_currTerritory;
-
-                            foreach (Territory t in m_currTerritory.neighbours)
+                            else
                             {
-                                t.UpdateTerritoryState(TerritoryState.Hovered);
+                                m_selectedTerritory = null;
+                                troopSliderPanel.SetActive(false);
                             }
                         }
                     }
                     else
                     {
-                        m_selectedTerritory = null;
+                        m_currTerritory = null;
                     }
+
+                    TileSelectedBehaviour();
                 }
+                catch (Exception e) { PrintException(e); }
+
                 break;
             case GameState.PlayerMove:
                 break;
@@ -124,6 +137,40 @@ public class GameManager : MonoBehaviour
                 //ResetTurn();
                 break;
         }
+    }
+
+    private void ManageCombat(Territory t_fromTerritory, Territory t_toTerritory)
+    {
+        int fromTroops = troopSliderPanel.GetComponent<TroopSliderPanel>().toSendTroops;
+
+        if(fromTroops == 0)
+        {
+            return;
+        }
+
+        int casualties = (t_fromTerritory.team != t_toTerritory.team) ? fromTroops - t_toTerritory.troopCount : fromTroops;
+        print(casualties);
+        if(casualties > 0)
+        {
+            if(t_fromTerritory.team != t_toTerritory.team)
+            {
+                t_toTerritory.troopCount = 0;
+            }
+
+            t_toTerritory.team = t_fromTerritory.team;
+            t_toTerritory.UpdateTerritoryState(TerritoryState.Default);
+        }
+
+        if (casualties == 0)
+        {
+            t_toTerritory.troopCount = 0;
+        }
+        else
+        {
+            t_toTerritory.troopCount += casualties;
+        }
+
+        t_fromTerritory.troopCount -= fromTroops;
     }
 
     void TileSelectedBehaviour()
@@ -148,6 +195,17 @@ public class GameManager : MonoBehaviour
 
             m_prevTerritory = m_currTerritory;
         }
+    }
+
+    void ShowTroopSliderPanel()
+    {
+        troopSliderPanel.SetActive(true);
+        TroopSliderPanel tsp = troopSliderPanel.GetComponent<TroopSliderPanel>();
+
+        tsp.troopSlider.value = 0;
+        tsp.maxTroops = m_selectedTerritory.troopCount;
+        tsp.maxText.text = m_selectedTerritory.troopCount.ToString();
+        tsp.troopSlider.maxValue = m_selectedTerritory.troopCount;
     }
 
     public static void PrintException(Exception t_e)
